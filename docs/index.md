@@ -1,6 +1,6 @@
 ---
-title: My page
-permalink: mypageurl.html
+title: Start of Documentation
+permalink: index.html
 ---
 
 Test
