@@ -15,6 +15,8 @@ Test
 
 <button class="a-button">Das ist ein Testbutton!</button>
 
+<div id="UGQe2$UR60i" class="documentationHint" style=""><span id="UGQe2$IC4mu" class="label" style="">This is an info box! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></div>
+
 <pre class="line-numbers language-php">
 <code class="language-php">
 <?php
