@@ -15,7 +15,7 @@ Test
 
 <button class="a-button">Das ist ein Testbutton!</button>
 
-
+    ```ruby
     <?php
 
     namespace Impulse\Bundles\ImpulseBundle\Events;
@@ -38,5 +38,6 @@ Test
 
         const INTERNAL = 'internal';
     }
+    ```
     
     
