@@ -16,8 +16,6 @@ Test
 <button class="a-button">Das ist ein Testbutton!</button>
 
 ```ruby
-<?php 
-echo "HEY";
 
 
     <?php
@@ -42,5 +40,6 @@ echo "HEY";
 
         const INTERNAL = 'internal';
     }
+```
     
     
