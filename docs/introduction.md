@@ -17,6 +17,12 @@ Test
 
 <pre class="line-numbers language-php">
     <code class="language-php">
+        echo "das ist ein test";
+    </code>
+</pre>
+
+<pre class="line-numbers language-php">
+    <code class="language-php">
 <span class="token delimiter">&lt;?php</span>
 <span class="token keyword">namespace</span> <span class="token package">Impulse<span class="token punctuation">\</span>Bundles<span class="token punctuation">\</span>DevBundle<span class="token punctuation">\</span>Controller</span><span class="token punctuation">;</span><span class="token keyword">use</span> <span class="token package">Impulse<span class="token punctuation">\</span>Bundles<span class="token punctuation">\</span>ImpulseBundle<span class="token punctuation">\</span>Controller<span class="token punctuation">\</span>AbstractController</span><span class="token punctuation">;</span>
 <span class="token keyword">use</span> <span class="token package">Impulse<span class="token punctuation">\</span>Bundles<span class="token punctuation">\</span>ImpulseBundle<span class="token punctuation">\</span>Execution<span class="token punctuation">\</span>Events<span class="token punctuation">\</span>Event</span><span class="token punctuation">;</span>
