@@ -16,7 +16,8 @@ Test
 <button class="a-button">Das ist ein Testbutton!</button>
 
 <pre class="line-numbers language-php">
-<code class="language-php"><?php
+<code class="language-php">
+<?php
 namespace Impulse\Bundles\DevBundle\Controller;
 use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
