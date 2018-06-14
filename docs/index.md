@@ -9,6 +9,8 @@ Test
 - b
 - c
 
+> {tip} Looking for more information?
+
 <b>Test</b>
 
 
