@@ -16,7 +16,7 @@ Test
 <button class="a-button">Das ist ein Testbutton!</button>
 
 <pre class="line-numbers language-php">
-    <code class="language-php">echo "das ist ein test";</code>
+<code class="language-php">echo "das ist ein test";</code>
 </pre>
 
 <pre class="line-numbers language-php">
