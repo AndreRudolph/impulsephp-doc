@@ -8,3 +8,12 @@ Test
 - a
 - b
 - c
+
+<b>Test</b>
+
+<code>
+    <pre>
+<?php 
+  echo "yoooo";        
+    </pre>
+</code>
