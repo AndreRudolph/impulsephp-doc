@@ -79,7 +79,7 @@ class AppController extends AbstractController
 
     public function handleEvent(Event $event)
     {
-        // TODO: Implement handleEvent() method.
+        // app specific controller logic
     }
 
     /**
@@ -92,6 +92,8 @@ class AppController extends AbstractController
     }
 }</code>
 </pre>
+
+The controller has been extended by two new attributes and an onClick method. The name of the attributes correlate with their id in the view template. Thus, they can be automatically injected to the controller. The onClick method is annotated with a @Listen annotation. This is a marker for the framework to automatically register an event listener. The event listener will be created for the btnGreet component and will be executed when the user clicks on the component.
 
 
 Test
