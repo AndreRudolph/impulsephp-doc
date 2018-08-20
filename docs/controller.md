@@ -54,8 +54,8 @@ Just defining a controller is by far not the only supported feature. As you mayb
 <pre class="line-numbers language-markup">
 <code class="language-markup">&lt;window apply="App\Controller\AppController"&gt;
     &lt;textbox id="tbName" /&gt;
-    &lt;button id="btnGreet" /gt;
-    &lt;label id="lbGreet" /gt;
+    &lt;button id="btnGreet" &/gt;
+    &lt;label id="lbGreet" &/gt;
 &lt;/window&gt;</code>
 </pre>
 
