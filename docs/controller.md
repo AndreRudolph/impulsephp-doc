@@ -11,6 +11,7 @@ title: Start of Documentation
     - [Defining Controllers](#defining-controllers)
 - [Controllers as event listener](#controller-eventlistener)
     - [Defining an event listener](#defining-an-event-listener)
+- [Nested controllers](#nested-controllers)
 
 <a name="introduction"></a>
 ## Introduction
@@ -101,3 +102,5 @@ The controller has been extended by two new attributes and an onClick method. Th
 
 The annotation consists of two parameters. The component parameter requires (at the moment) one id of a component for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
 
+<a name="nested-controllers"></a>
+## Nested controllers
