@@ -15,7 +15,25 @@ title: Start of Documentation
 
 A controller is the main component that is responsible for handling (and thus managing) user interactions. Unlike other frameworks, a controller in the Impulse PHP Framework itself does not directly return views. Instead, a view template specifies the related controller that will be rendered. 
 
+<a name="basis-controller">
+## Basic controllers
+Defining a controller is not very complicated. The following example is the bare minimum that composes a controller.  
+  
+<pre class="line-numbers language-php">
+<code class="language-php">
+<?php
+namespace App\Controller;
+use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
 
+class AppController extends AbstractController
+{
+    public function handleEvent(Event $event)
+    {
+        // app specific controller logic
+    }
+}</code>
+</pre>
 
 Test
 
