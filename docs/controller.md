@@ -64,7 +64,7 @@ Just defining a controller is by far not the only supported feature. As you mayb
 <pre class="line-numbers language-php">
 <code class="language-php">
 <?php
-namespace Impulse\Bundles\DevBundle\Controller;
+namespace App\Controller;
 use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
 use Impulse\Bundles\ImpulseBundle\Controller\Annotations\Listen;
