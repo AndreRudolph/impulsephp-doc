@@ -24,8 +24,7 @@ A controller is the main component that is responsible for handling (and thus ma
 Defining a controller is not very complicated. The following example is the bare minimum that composes a controller.  
   
 <pre class="line-numbers language-php">
-<code class="language-php">
-<?php
+<code class="language-php"><?php
 namespace App\Controller;
 use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
