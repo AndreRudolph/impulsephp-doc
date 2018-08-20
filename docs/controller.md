@@ -9,6 +9,8 @@ title: Start of Documentation
 - [Introduction](#introduction)
 - [Basic Controllers](#basic-controllers)
     - [Defining Controllers](#defining-controllers)
+- [Controllers as event listener] (#controller-eventlistener)
+    - [Defining an event listener] (#defining-eventlistener)
 
 <a name="introduction"></a>
 ## Introduction
@@ -41,6 +43,20 @@ The handleEvent method is the only required method and represents the entry poin
 
 <pre class="line-numbers language-markup">
 <code class="language-markup">&lt;window apply="App\Controller\AppController" /&gt;</code>
+</pre>
+
+<a name="controller-eventlistener"></a>
+## Controllers as event listener
+
+### Defining an event listener
+Just defining a controller is by far not the only supported feature. As you maybe noticed, controllers can also work as event listeners as well. Consider the following example.
+
+<pre class="line-numbers language-markup">
+<code class="language-markup">&lt;window apply="App\Controller\AppController"&gt;
+    &lt;textbox id="tbName" /&gt;
+    &lt;button id="btnGreet" /gt;
+    &lt;label id="lbGreet" /gt;
+&lt;/window&gt;</code>
 </pre>
 
 Test
