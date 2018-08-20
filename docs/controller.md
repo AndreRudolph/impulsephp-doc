@@ -11,6 +11,9 @@ title: Start of Documentation
     - [Defining Controllers](#defining-controllers)
     - [Controllers as event listener](#controller-eventlistener)
     - [Nested controllers](#nested-controllers)
+- [Advanced topics](#advanced-topics)
+    - [Concept of serialization]
+    - [Excluding attributes from serialization]
 
 <a name="introduction"></a>
 # Introduction
@@ -128,3 +131,8 @@ class AppController extends AbstractController
 </pre>
 
 Line 13 is the important line. The <span class="highlightText">importView</span> method is called and takes two arguments. The first one is the view that will be imported and the second argument is the component that will be the direct parent of the root component of the imported view.
+
+<a name="advanced-topics"></a>
+# Advanced topics
+
+TODO 
