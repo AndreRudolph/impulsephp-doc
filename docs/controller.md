@@ -101,3 +101,4 @@ The annotation consists of two parameters. The component parameter requires (at 
 
 <a name="nested-controllers"></a>
 ### Nested controllers
+Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation.
