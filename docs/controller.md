@@ -29,7 +29,7 @@ Defining a controller is not very complicated. A controller is never called dire
 &lt;/impulse&gt;</code>
 </pre>
 
-The apply attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
+The <span class="highlightText">apply</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
   
 <pre class="line-numbers language-php">
 <code class="language-php"><?php
@@ -46,7 +46,7 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
-The handleEvent method is the only required method and represents the entry point of the controller. This method will be called automatically if the controller is bound to a view template.
+The <span class="highlightText">handleEvent</span> method is the only required method and represents the entry point of the controller. This method will be called automatically if the controller is bound to a view template.
 
 <a name="controller-eventlistener"></a>
 ### Controllers as event listener
@@ -95,7 +95,7 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
-The controller has been extended by two new attributes and an onClick method. The name of the attributes correlate with their id in the view template. Thus, the framework can automatically inject these component objects to the controller. The onClick method is annotated with a @Listen annotation. This is a marker for the framework to automatically register an event listener. 
+The controller has been extended by two new attributes and an <span class="highlightText">onClick</span> method. The name of the attributes correlate with their id in the view template. Thus, the framework can automatically inject these component objects to the controller. The onClick method is annotated with a <span class="highlightText">@Listen</span> annotation. This is a marker for the framework to automatically register an event listener. 
 
 The annotation consists of two parameters. The component parameter requires (at the moment) one id of a component for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
 
