@@ -61,6 +61,8 @@ Just defining a controller is by far not the only supported feature. As you mayb
 &lt;/impulse&gt;</code>
 </pre>
 
+The controller contains an event listener method.
+
 <pre class="line-numbers language-php">
 <code class="language-php">
 <?php
