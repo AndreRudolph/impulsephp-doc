@@ -35,6 +35,8 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
+The handleEvent method is the only required method and represents the entry point of the controller. This method will be called automatically if the controller is bound to a view template.
+
 Test
 
 - a
