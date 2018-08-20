@@ -17,6 +17,8 @@ A controller is the main component that is responsible for handling (and thus ma
 
 <a name="basis-controller">
 ## Basic controllers
+    
+### Defining controllers
 Defining a controller is not very complicated. The following example is the bare minimum that composes a controller.  
   
 <pre class="line-numbers language-php">
