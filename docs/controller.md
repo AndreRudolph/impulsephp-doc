@@ -39,7 +39,7 @@ The handleEvent method is the only required method and represents the entry poin
 
 <pre class="language-markup">
 <code class="language-markup">
-<window apply="App\Controller\AppController" /></code>
+&lt;window apply="App\Controller\AppController" /&gt;</code>
 </pre>
 
 Test
