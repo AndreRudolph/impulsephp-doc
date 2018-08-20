@@ -77,7 +77,7 @@ use Impulse\Bundles\ImpulseBundle\UI\Components\Textbox;
 class AppController extends AbstractController
 {
     /** @var Textbox */ private $tbName;
-    /** @var Label */ private $lbGreet;
+    /** @var Label */   private $lbGreet;
 
     public function handleEvent(Event $event)
     {
