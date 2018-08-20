@@ -9,8 +9,8 @@ title: Start of Documentation
 - [Introduction](#introduction)
 - [Basic Controllers](#basic-controllers)
     - [Defining Controllers](#defining-controllers)
-- [Controllers as event listener] (#controller-eventlistener)
-    - [Defining an event listener] (#defining-eventlistener)
+- [Controllers as event listener](#controller-eventlistener)
+    - [Defining an event listener](#defining-eventlistener)
 
 <a name="introduction"></a>
 ## Introduction
