@@ -21,7 +21,15 @@ A controller is the main component that is responsible for handling (and thus ma
 ## Basic controllers
     
 ### Defining controllers
-Defining a controller is not very complicated. The following example is the bare minimum that composes a controller.  
+Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
+
+<pre class="line-numbers language-markup">
+<code class="language-markup">&lt;impulse&gt;
+    &lt;window apply="App\Controller\AppController" /&gt;
+&lt;/impulse&gt;</code>
+</pre>
+
+The apply attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
   
 <pre class="line-numbers language-php">
 <code class="language-php"><?php
@@ -39,12 +47,6 @@ class AppController extends AbstractController
 </pre>
 
 The handleEvent method is the only required method and represents the entry point of the controller. This method will be called automatically if the controller is bound to a view template.
-
-<pre class="line-numbers language-markup">
-<code class="language-markup">&lt;impulse&gt;
-    &lt;window apply="App\Controller\AppController" /&gt;
-&lt;/impulse&gt;</code>
-</pre>
 
 <a name="controller-eventlistener"></a>
 ## Controllers as event listener
