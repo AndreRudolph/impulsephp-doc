@@ -3,6 +3,20 @@ layout: post
 title: Start of Documentation
 ---
 
+
+# Controllers
+
+- [Introduction](#introduction)
+- [Basic Controllers](#basic-controllers)
+    - [Defining Controllers](#defining-controllers)
+
+<a name="introduction"></a>
+## Introduction
+
+Instead of defining all of your request handling logic as Closures in route files, you may wish to organize this behavior using Controller classes. Controllers can group related request handling logic into a single class. Controllers are stored in the `app/Http/Controllers` directory.
+
+
+
 Test
 
 - a
