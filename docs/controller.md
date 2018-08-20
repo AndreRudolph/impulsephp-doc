@@ -101,4 +101,4 @@ The annotation consists of two parameters. The component parameter requires (at 
 
 <a name="nested-controllers"></a>
 ### Nested controllers
-Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation.
+Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation. This section will only cover controller nesting. This can be achieved by importing a template within the executed controllers method. Below is an example of controller nesting.
