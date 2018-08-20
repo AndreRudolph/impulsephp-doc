@@ -13,7 +13,7 @@ title: Start of Documentation
 <a name="introduction"></a>
 ## Introduction
 
-A Controller is the main component that is responsible for user interaction.
+A controller is the main component that is responsible for handling (and thus managing) user interactions. Unlike other frameworks, a controller in the Impulse PHP Framework itself does not directly return views. Instead, a view template specifies the related controller that will be rendered. 
 
 
 
