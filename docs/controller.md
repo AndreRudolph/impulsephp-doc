@@ -14,12 +14,12 @@ title: Start of Documentation
 - [Nested controllers](#nested-controllers)
 
 <a name="introduction"></a>
-## Introduction
+# Introduction
 
 A controller is the main component that is responsible for handling (and thus managing) user interactions. Unlike other frameworks, a controller in the Impulse PHP Framework itself does not directly return views. Instead, a view template specifies the related controller that will be rendered. 
 
 <a name="basis-controller">
-## Basic controllers
+# Basic controllers
     
 ### Defining controllers
 Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
@@ -50,7 +50,7 @@ class AppController extends AbstractController
 The handleEvent method is the only required method and represents the entry point of the controller. This method will be called automatically if the controller is bound to a view template.
 
 <a name="controller-eventlistener"></a>
-## Controllers as event listener
+# Controllers as event listener
 
 ### Defining an event listener
 Just defining a controller is by far not the only supported feature. As you maybe noticed, controllers can also work as event listeners as well. Consider the following example.
@@ -103,4 +103,4 @@ The controller has been extended by two new attributes and an onClick method. Th
 The annotation consists of two parameters. The component parameter requires (at the moment) one id of a component for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
 
 <a name="nested-controllers"></a>
-## Nested controllers
+# Nested controllers
