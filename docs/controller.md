@@ -61,6 +61,38 @@ Just defining a controller is by far not the only supported feature. As you mayb
 &lt;/impulse&gt;</code>
 </pre>
 
+<pre class="line-numbers language-php">
+<code class="language-php">
+<?php
+namespace Impulse\Bundles\DevBundle\Controller;
+use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+use Impulse\Bundles\ImpulseBundle\Controller\Annotations\Listen;
+use Impulse\Bundles\ImpulseBundle\UI\Components\Label;
+use Impulse\Bundles\ImpulseBundle\UI\Components\Textbox;
+
+class AppController extends AbstractController
+{
+    /** @var Textbox */ private $tbName;
+    /** @var Label */ private $lbGreet;
+
+    public function handleEvent(Event $event)
+    {
+        // TODO: Implement handleEvent() method.
+    }
+
+    /**
+     * @Listen(component="btnGreet", event="click")
+     */
+    public function onClick(Event $event)
+    {
+        $greeting = $this->tbName->getValue();
+        $this->lbGreet->setValue($greeting);
+    }
+}</code>
+</pre>
+
+
 Test
 
 - a
@@ -75,31 +107,4 @@ Test
 
 <div id="UGQe2$UR60i" class="documentationHint" style=""><span id="UGQe2$IC4mu" class="label" style="">This is an info box! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span></div>
 
-<pre class="line-numbers language-php">
-<code class="language-php">
-<?php
-namespace Impulse\Bundles\DevBundle\Controller;
-use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-use Impulse\Bundles\ImpulseBundle\Controller\Annotations\Listen;
-use Impulse\Bundles\ImpulseBundle\UI\Components\Label;
 
-class HomeController extends AbstractController
-{
-
-    /** @var Label */ private $lbClicked;
-
-    public function handleEvent(Event $event)
-    {
-        // TODO: Implement handleEvent() method.
-    }
-
-    /**
-     * @Listen(component="btnClick", event="click")
-     */
-    public function onClick(Event $event)
-    {
-        $this->lbClicked->setValue('Clicked!');
-    }
-}</code>
-</pre>
