@@ -9,9 +9,8 @@ title: Start of Documentation
 - [Introduction](#introduction)
 - [Basic Controllers](#basic-controllers)
     - [Defining Controllers](#defining-controllers)
-- [Controllers as event listener](#controller-eventlistener)
-    - [Defining an event listener](#defining-an-event-listener)
-- [Nested controllers](#nested-controllers)
+    - [Controllers as event listener](#controller-eventlistener)
+    - [Nested controllers](#nested-controllers)
 
 <a name="introduction"></a>
 # Introduction
@@ -50,9 +49,7 @@ class AppController extends AbstractController
 The handleEvent method is the only required method and represents the entry point of the controller. This method will be called automatically if the controller is bound to a view template.
 
 <a name="controller-eventlistener"></a>
-# Controllers as event listener
-
-### Defining an event listener
+### Controllers as event listener
 Just defining a controller is by far not the only supported feature. As you maybe noticed, controllers can also work as event listeners as well. Consider the following example.
 
 <pre class="line-numbers language-markup">
@@ -103,4 +100,4 @@ The controller has been extended by two new attributes and an onClick method. Th
 The annotation consists of two parameters. The component parameter requires (at the moment) one id of a component for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
 
 <a name="nested-controllers"></a>
-# Nested controllers
+### Nested controllers
