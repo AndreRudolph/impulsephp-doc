@@ -127,4 +127,4 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
-Line 13 is the important line. The importView method is called and takes two arguments. The first one is the view that will be imported and the second argument is the component that will be the direct parent of the root component of the imported view.
+Line 13 is the important line. The <span class="highlightText">importView</span> method is called and takes two arguments. The first one is the view that will be imported and the second argument is the component that will be the direct parent of the root component of the imported view.
