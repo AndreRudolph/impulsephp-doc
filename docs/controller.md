@@ -128,7 +128,7 @@ The controller has been extended by two new attributes and an <span class="highl
 The annotation consists of two parameters. The component parameter requires one component id or a comma separated list of components ids for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
 
 <a name="explicit-controllerEventListener"></a>
-# Explicit Controller Event Listener registration]
+# Explicit Controller Event Listener registration
 
 <a name="advanced-topics"></a>
 # Advanced topics
