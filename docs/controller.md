@@ -42,14 +42,11 @@ use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
 
 class AppController extends AbstractController
 {
-    public function handleEvent(Event $event)
-    {
-        // app specific controller logic
-    }
+    
 }</code>
 </pre>
 
-The <span class="highlightText">handleEvent</span> method is the only required method and represents the entry point of the controller. This method will be called automatically if the controller is bound to a view template.
+This example controller above would do nothing. For doing initial tasks you may override the handleEvent method from the AbstractController. The <span class="highlightText">handleEvent</span> represents the entry point of the controller and will  will be called automatically if the controller is bound to a view template.
 
 <a name="controller-eventlistener"></a>
 ### Controllers as event listener
