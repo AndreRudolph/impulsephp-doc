@@ -79,11 +79,6 @@ class AppController extends AbstractController
     /** @var Textbox */ private $tbName;
     /** @var Label */   private $lbGreet;
 
-    public function handleEvent(Event $event)
-    {
-        // app specific controller logic
-    }
-
     /**
      * @Listen(component="btnGreet", event="click")
      */
