@@ -124,6 +124,8 @@ class AppController extends AbstractController
 
 Line 13 is the important line. The <span class="highlightText">importView</span> method is called and takes two arguments. The first one is the view that will be imported and the second argument is the component that will be the direct parent of the root component of the imported view.
 
+By default this will remove all childs of the given parent component internally. To append instead of removing all childs, you can set an optional third parameter with <i>true</i> as value.
+
 <a name="advanced-topics"></a>
 # Advanced topics
 
