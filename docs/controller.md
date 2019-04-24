@@ -39,7 +39,6 @@ The <span class="highlightText">apply</span> attribute defines which controller 
 <code class="language-php"><?php
 namespace App\Controller;
 use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
 
 class AppController extends AbstractController
 {
