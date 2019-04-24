@@ -9,8 +9,8 @@ title: Start of Documentation
 - [Introduction](#introduction)
 - [Basic Controllers](#basic-controllers)
     - [Defining Controllers](#defining-controllers)
-    - [Controllers as event listener](#controller-eventlistener)
     - [Nested controllers](#nested-controllers)
+    - [Controllers as event listener](#controller-eventlistener)
 - [Advanced topics](#advanced-topics)
     - [Concept of serialization]
     - [Excluding attributes from serialization]
@@ -47,6 +47,38 @@ class AppController extends AbstractController
 </pre>
 
 This example controller above would do nothing. For doing initial tasks you may override the handleEvent method from the AbstractController. The <span class="highlightText">handleEvent</span> represents the entry point of the controller and will  will be called automatically if the controller is bound to a view template.
+
+<a name="nested-controllers"></a>
+### Nested controllers
+Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation. This section will only cover controller nesting. This can be achieved by importing a template within the executed controllers method. Below is an example of controller nesting.
+
+<pre class="line-numbers language-markup">
+<code class="language-markup">&lt;impulse&gt;
+    &lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
+&lt;/impulse&gt;</code>
+</pre>
+
+<pre class="line-numbers language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+use Impulse\Bundles\ImpulseBundle\UI\Components\Window;
+
+class AppController extends AbstractController
+{
+    /** @var Window */ private $wndMain;
+
+    public function handleEvent(Event $event)
+    {
+        $this->importView('importedView.imp', $this->wndMain);
+    }
+}</code>
+</pre>
+
+Line 13 is the important line. The <span class="highlightText">importView</span> method is called and takes two arguments. The first one is the view that will be imported and the second argument is the component that will be the direct parent of the root component of the imported view.
+
+By default this will remove all childs of the given parent component internally. To append instead of removing all childs, you can set an optional third parameter with <i>true</i> as value.
 
 <a name="controller-eventlistener"></a>
 ### Controllers as event listener
@@ -93,38 +125,6 @@ class AppController extends AbstractController
 The controller has been extended by two new attributes and an <span class="highlightText">onClick</span> method. The name of the attributes correlate with their id in the view template. Thus, the framework can automatically inject these component objects to the controller. The <span class="highlightText">onClick</span> method is annotated with a <span class="highlightText">@Listen</span> annotation. This is a marker for the framework to automatically register an event listener. 
 
 The annotation consists of two parameters. The component parameter requires one component id or a comma separated list of components ids for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
-
-<a name="nested-controllers"></a>
-### Nested controllers
-Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation. This section will only cover controller nesting. This can be achieved by importing a template within the executed controllers method. Below is an example of controller nesting.
-
-<pre class="line-numbers language-markup">
-<code class="language-markup">&lt;impulse&gt;
-    &lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
-&lt;/impulse&gt;</code>
-</pre>
-
-<pre class="line-numbers language-php">
-<code class="language-php"><?php
-namespace App\Controller;
-use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-use Impulse\Bundles\ImpulseBundle\UI\Components\Window;
-
-class AppController extends AbstractController
-{
-    /** @var Window */ private $wndMain;
-
-    public function handleEvent(Event $event)
-    {
-        $this->importView('importedView.imp', $this->wndMain);
-    }
-}</code>
-</pre>
-
-Line 13 is the important line. The <span class="highlightText">importView</span> method is called and takes two arguments. The first one is the view that will be imported and the second argument is the component that will be the direct parent of the root component of the imported view.
-
-By default this will remove all childs of the given parent component internally. To append instead of removing all childs, you can set an optional third parameter with <i>true</i> as value.
 
 <a name="advanced-topics"></a>
 # Advanced topics
