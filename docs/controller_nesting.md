@@ -25,7 +25,7 @@ With controller nesting you can create a tree of controllers. Like view nesting,
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <pre class="line-numbers language-markup">
       <code class="language-markup">&lt;impulse&gt;
         &lt;window id="wndApp" apply="App\Controller\AppController"&gt;
