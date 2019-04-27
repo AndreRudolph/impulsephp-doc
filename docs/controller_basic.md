@@ -63,6 +63,10 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
+<div class="alert alert-primary" role="alert">
+  Wiring components is not limited to the scope of the view and its controller. You can also wire components of another view. This may result in conflicts if two components have the same ID. See TODO to solve this issue.
+</div>
+
 <div class="alert alert-warning" role="alert">
   <span class="fa fa-exclamation-triangle" /> At the moment, only wiring via IDs is supported. In future there might be other wiring strategies support, such as CSS based selectors, etc..
 </div>
