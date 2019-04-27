@@ -17,7 +17,7 @@ Defining a controller is not complicated. Unlike other frameworks, a controller 
 &lt;/impulse&gt;</code>
 </pre>
 
-The <span class="highlightText">apply</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
+The <span class="highlightText">apply</span> attribute defines which controller will be directly connected to the view. The following controller example is the bare minimum.  
   
 <pre class="line-numbers language-php">
 <code class="language-php"><?php
