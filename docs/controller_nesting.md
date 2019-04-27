@@ -21,7 +21,7 @@ With controller nesting you can create a tree of controllers. Like view nesting,
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">navigation.imp</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="navController-tab" data-toggle="tab" href="#nacController" role="tab" aria-controls="navController" aria-selected="false">NavigationController.php</a>
+    <a class="nav-link" id="navController-tab" data-toggle="tab" href="#navController" role="tab" aria-controls="navController" aria-selected="false">NavigationController.php</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
