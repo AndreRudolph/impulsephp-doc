@@ -13,15 +13,7 @@ With controller nesting you can create a tree of controllers. Like view nesting,
 <div class="alert alert-dark" role="alert">
   templates/app.imp
 </div>
-<pre class="line-numbers language-markup">
-<code class="language-markup">&lt;impulse&gt;
-    &lt;window id="wndApp" apply="App\Controller\AppController"&gt;
-        &lt;import src="navigation.imp" /&gt;
-        &lt;div id="content" /&gt;
-    &lt;/window&gt;
-</impulse>
-</code>
-</pre>
+
 
 <div class="alert alert-dark" role="alert">
   src/Controller/AppController.php
@@ -78,20 +70,30 @@ class NavigationController extends AbstractController
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">app.imp</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">AppController.php</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">navigation.imp</a>
   </li>
     <li class="nav-item">
-    <a class="nav-link" id="navController-tab" data-toggle="tab" href="#nacController" role="tab" aria-controls="navController" aria-selected="false">NavigationController</a>
+    <a class="nav-link" id="navController-tab" data-toggle="tab" href="#nacController" role="tab" aria-controls="navController" aria-selected="false">NavigationController.php</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">A</div>
+  <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <pre class="line-numbers language-markup">
+      <code class="language-markup">&lt;impulse&gt;
+        &lt;window id="wndApp" apply="App\Controller\AppController"&gt;
+            &lt;import src="navigation.imp" /&gt;
+            &lt;div id="content" /&gt;
+        &lt;/window&gt;
+        &lt;/impulsew&gt;
+      </code>
+    </pre>
+  </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">B</div>
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">C</div>
   <div class="tab-pane fade" id="navController" role="tabpanel" aria-labelledby="navController-tab">C</div>
