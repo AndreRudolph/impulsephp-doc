@@ -10,6 +10,9 @@ Thanks to nesting views you may nest controllers as well. Consider a web page co
 
 With controller nesting you can create a tree of controllers. Like view nesting, this can be achieved by nesting views and applying controllers to them (if needed). Consider the following example for a simple navigation (wihtout functions):
 
+<div class="alert alert-dark" role="alert">
+  templates/app.imp
+</div>
 <pre class="line-numbers language-markup">
 <code class="language-markup">&lt;impulse&gt;
     &lt;window id="wndApp" apply="App\Controller\AppController"&gt;
@@ -20,6 +23,9 @@ With controller nesting you can create a tree of controllers. Like view nesting,
 </code>
 </pre>
 
+<div class="alert alert-dark" role="alert">
+  src/Controller/AppController.php
+</div>
 <pre class="line-numbers language-php">
 <code class="language-php"><?php
 namespace App\Controller;
@@ -31,6 +37,9 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
+<div class="alert alert-dark" role="alert">
+  templates/navigation.imp
+</div>
 <pre class="line-numbers language-markup">
 <code class="language-markup">&lt;impulse&gt;
     &lt;window id="wndNavigation" apply="App\Controller\NavigationController"&gt;
@@ -43,6 +52,9 @@ class AppController extends AbstractController
 </code>
 </pre>
 
+<div class="alert alert-dark" role="alert">
+  src/Controller/NavigationController.php
+</div>
 <pre class="line-numbers language-php">
 <code class="language-php"><?php
 namespace App\Controller;
