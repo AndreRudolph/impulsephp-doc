@@ -89,7 +89,7 @@ With controller nesting you can create a tree of controllers. Like view nesting,
 The above example is not the only possibility to nest views. The AbstractController provides a method <i>importView</i> which is also able to import views. This is more sophisticated since you have full control of it. You may add your own logic if and when you want to import a specific view to your page.
 
 <h5>importView - Parameters</h5>
-<table class="table table-hover">
+<table class="table table-hover table-responsive">
     <tbody>
         <tr class="d-flex">
           <td class="col-2">view</td>
