@@ -94,7 +94,13 @@ The above example is not the only possibility to nest views. The AbstractControl
         <tr class="d-flex">
           <td class="col-2">view</td>
           <td class="col-2">string</td>
-          <td class="col-6">Name of the template that shall be imported</td>
+          <td class="col-6">Name of the template that shall be imported.</td>
+          <td class="col-2"><b>required</b></td>
+        </tr>
+        <tr class="d-flex">
+          <td class="col-2">component</td>
+          <td class="col-2">ComponentCotract</td>
+          <td class="col-6">The component that will be the parent component of the imported view.</td>
           <td class="col-2"><b>required</b></td>
         </tr>
     </tbody>
