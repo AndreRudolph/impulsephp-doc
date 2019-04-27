@@ -109,5 +109,11 @@ The above example is not the only possibility to nest views. The AbstractControl
           <td class="col-6">Default: false. If false, all childs will be automatically removed of the component parameter. Otherwise, if true, all components of the view will be appended.</td>
           <td class="col-2"><b>optional</b></td>
         </tr>
+        <tr class="d-flex">
+          <td class="col-2">parameters</td>
+          <td class="col-2" style="word-wrap: break-word;">array</td>
+          <td class="col-6">Array of parameters which can be shared of the callee controller to the called controller.</td>
+          <td class="col-2"><b>optional</b></td>
+        </tr>
     </tbody>
 </table>
