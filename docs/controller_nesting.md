@@ -11,10 +11,10 @@ Thanks to nesting views you may nest controllers as well. Consider a web page co
 With controller nesting you can create a tree of controllers. Like view nesting, this can be achieved by nesting views and applying controllers to them (if needed). Consider the following example for a simple navigation:
 
 <pre class="line-numbers language-markup">
-<code class="language-markup"><impulse>
-    <window id="wndApp" apply="App\Controller\AppController">
+<code class="language-markup">&lt;impulse&gt;
+    &lt;window id="wndApp" apply="App\Controller\AppController"&gt;
     
-    </window>
+    &lt;/window&gt;
 </impulse>
 </code>
 </pre>
