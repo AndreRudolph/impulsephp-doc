@@ -6,32 +6,15 @@ title: Start of Documentation
 <a name="nesting"></a>
 
 ### Nested controllers
-Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation. This section will only cover controller nesting. This can be achieved by importing a template within the executed controllers method. Below is an example of controller nesting.
+Thanks to nesting views you may nest controllers as well. Consider a web page consisting of different page sections like navigation, content, footer, etc. The bad approach would be that you would create one controller for the whole page. As a good software developer you try to separate concerns as much as possible and reasonable. That's why the framework offers a feature that is called <b>controller nesting</b>.
+
+With controller nesting you can create a tree of controllers. Like view nesting, this can be achieved by nesting views and applying controllers to them (if needed). Consider the following example for a simple navigation:
 
 <pre class="line-numbers language-markup">
 <code class="language-markup">&lt;impulse&gt;
-    &lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
-&lt;/impulse&gt;</code>
+    &lt;window id="wndApp" apply="App\Controller\AppController">;
+    
+    </window>
+&lt;/impulse&gt;
+</code>
 </pre>
-
-<pre class="line-numbers language-php">
-<code class="language-php"><?php
-namespace App\Controller;
-use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-use Impulse\Bundles\ImpulseBundle\UI\Components\Window;
-
-class AppController extends AbstractController
-{
-    /** @var Window */ private $wndMain;
-
-    public function handleEvent(Event $event)
-    {
-        $this->importView('importedView.imp', $this->wndMain);
-    }
-}</code>
-</pre>
-
-Line 13 is the important line. The <span class="highlightText">importView</span> method is called and takes two arguments. The first one is the view that will be imported and the second argument is the component that will be the direct parent of the root component of the imported view.
-
-By default this will remove all childs of the given parent component internally. To append instead of removing all childs, you can set an optional third parameter with <i>true</i> as value.
