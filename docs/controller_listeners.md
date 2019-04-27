@@ -41,9 +41,13 @@ class AppController extends AbstractController
     public function onClick(Event $event)
     {
         $greeting = $this->tbName->getValue();
-        $this->lbGreet->setValue($greeting);
+        $this->lbGreet->setValue('Welcome ' . $greeting);
     }
 }</code>
 </pre>
 
 Internally, the framework scans controllers for methods which are annotated by <i>@Listen</i>. This annotation creates a connection between a client interaction (in this case a click event) of a component with the controller. Whenever the button <b>btnGreet</b> is clicked in the browser, the AJAX engine sends a request to execute the <i>onClick</i> method in the AppController.
+
+<div class="alert alert-primary" role="alert">
+  You can add as many listen annotated methods as you want. Each of them is created as its own event listener. Be aware that all of them will share the same controller space! In near future, a third parameter will be added to create an own controller space.
+</div>
