@@ -6,7 +6,7 @@ title: Start of Documentation
 <a name="listeners"></a>
 ### Controller listeners
 
-Just defining the controller as itself for initial tasks is by far not the only feature. As you maybe noticed, controllers can also work as event listeners as well. Consider the following example.
+Just defining the controller as itself for initial tasks is by far not the only feature. As you have maybe noticed, controllers can also work as event listeners as well. Consider the following example.
 
 <pre class="line-numbers language-markup">
 <code class="language-markup">&lt;impulse&gt;
