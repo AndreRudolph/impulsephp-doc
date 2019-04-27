@@ -13,7 +13,7 @@ Defining a controller is not complicated. Unlike other frameworks, a controller 
 
 <pre class="line-numbers language-markup">
 <code class="language-markup">&lt;impulse&gt;
-    &lt;window id="wndApp" apply="App\Controller\AppController" /&gt;
+    &lt;window apply="App\Controller\AppController" /&gt;
 &lt;/impulse&gt;</code>
 </pre>
 
@@ -33,7 +33,17 @@ class AppController extends AbstractController
 This example controller above would do nothing. For doing initial tasks you may override the handleEvent method from the AbstractController. The <span class="highlightText">handleEvent</span> represents the entry point of the controller and will  will be called automatically if the controller is bound to a view template. This gets invoked after the controller has been created. 
 
 ### Wiring components
-In the following code listing, a new Label with a greeting message will be appended to the wiried window component.
+You may automatically inject components, which are placed a view template, within your controller. Wiring components into controllers are done by naming conventions. Whenever you define an ID to your component, the component is injectable into your controller.
+
+For instance, consider the folling view:
+
+<pre class="line-numbers language-markup">
+<code class="language-markup">&lt;impulse&gt;
+    &lt;window id="wndApp" apply="App\Controller\AppController" /&gt;
+&lt;/impulse&gt;</code>
+</pre>
+
+It's the same example with an exception: the window component has now an ID. Thus, you can connect the window component to your AppController:
 
 <pre class="line-numbers language-php">
 <code class="language-php"><?php
@@ -52,3 +62,5 @@ class AppController extends AbstractController
     }
 }</code>
 </pre>
+
+At the moment, only wiring with IDs are supported. In future, there might be support for CSS based selectors.
