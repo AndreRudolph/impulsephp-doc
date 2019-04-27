@@ -8,13 +8,58 @@ title: Start of Documentation
 ### Nested controllers
 Thanks to nesting views you may nest controllers as well. Consider a web page consisting of different page sections like navigation, content, footer, etc. The bad approach would be that you would create one controller for the whole page. As a good software developer you try to separate concerns as much as possible and reasonable. That's why the framework offers a feature that is called <b>controller nesting</b>.
 
-With controller nesting you can create a tree of controllers. Like view nesting, this can be achieved by nesting views and applying controllers to them (if needed). Consider the following example for a simple navigation:
+With controller nesting you can create a tree of controllers. Like view nesting, this can be achieved by nesting views and applying controllers to them (if needed). Consider the following example for a simple navigation (wihtout functions):
 
 <pre class="line-numbers language-markup">
 <code class="language-markup">&lt;impulse&gt;
     &lt;window id="wndApp" apply="App\Controller\AppController"&gt;
-    
+        &lt;import src="navigation.imp" /&gt;
+        &lt;div id="content" /&gt;
     &lt;/window&gt;
 </impulse>
 </code>
+</pre>
+
+<pre class="line-numbers language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+
+class AppController extends AbstractController
+{
+    
+}</code>
+</pre>
+
+<pre class="line-numbers language-markup">
+<code class="language-markup">&lt;impulse&gt;
+    &lt;window id="wndNavigation" apply="App\Controller\NavigationController"&gt;
+        &lt;hbox&gt;
+            &lt;label&gt;Home&lt;/label&gt;
+            &lt;label&gt;News&lt;/label&gt;
+        &lt;/hbox&gt;
+    &lt;/window&gt;
+</impulse>
+</code>
+</pre>
+
+<pre class="line-numbers language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\UI\Components\Div;
+use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+
+class NavigationController extends AbstractController
+{
+    /** @var Div */
+    private $content;   
+    
+    public function handleEvent()
+    {
+        parent::handleEvent();
+        $labelContent = new Label();
+        $labelContent->setValue('Content is here.');
+        $this->content->addChild($content);
+    }
+}</code>
 </pre>
