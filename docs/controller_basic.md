@@ -63,4 +63,7 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
-At the moment, only wiring with IDs are supported. In future, there might be support for CSS based selectors.
+<div class="alert alert-warning" role="alert">
+  At the moment, only wiring with IDs are supported. In future, there might be support for CSS based selectors.
+</div>
+
