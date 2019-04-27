@@ -86,9 +86,13 @@ class NavigationController extends AbstractController
   <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
   </li>
+    <li class="nav-item">
+    <a class="nav-link" id="navController-tab" data-toggle="tab" href="#nacController" role="tab" aria-controls="navController" aria-selected="false">NavigationController</a>
+  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">A</div>
+  <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">A</div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">B</div>
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">C</div>
+  <div class="tab-pane fade" id="navController" role="tabpanel" aria-labelledby="navController-tab">C</div>
 </div>
