@@ -7,12 +7,9 @@ title: Start of Documentation
 # Introduction
 
 A controller is the main component that is responsible for handling (and thus managing) user interactions. Unlike other frameworks, a controller in the Impulse PHP Framework itself does not directly return views. Instead, a view template specifies the related controller that will be rendered. 
-
-<a name="basis-controller">
-# Basic controllers
     
 ### Defining controllers
-Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
+Defining a controller is not complicated. Unlike other frameworks, a controller will be bound to a certain template.
 
 <pre class="line-numbers language-markup">
 <code class="language-markup">&lt;impulse&gt;
@@ -33,4 +30,4 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
-This example controller above would do nothing. For doing initial tasks you may override the handleEvent method from the AbstractController. The <span class="highlightText">handleEvent</span> represents the entry point of the controller and will  will be called automatically if the controller is bound to a view template.
+This example controller above would do nothing. For doing initial tasks you may override the handleEvent method from the AbstractController. The <span class="highlightText">handleEvent</span> represents the entry point of the controller and will  will be called automatically if the controller is bound to a view template. This gets invoked after the controller has been created.
