@@ -92,9 +92,9 @@ The above example is not the only possibility to nest views. The AbstractControl
 <table class="table table-hover">
     <tbody>
         <tr class="d-flex">
-          <td class="col-1">view</td>
-          <td class="col-1">string</td>
-          <td class="col-4">Name of the template that shall be imported</td>
+          <td class="col-2">view</td>
+          <td class="col-2">string</td>
+          <td class="col-6">Name of the template that shall be imported</td>
           <td class="col-2"><b>required</b></td>
         </tr>
     </tbody>
