@@ -64,6 +64,10 @@ class AppController extends AbstractController
 </pre>
 
 <div class="alert alert-warning" role="alert">
-  At the moment, only wiring via IDs is supported. In future there might be other wiring strategies support, such as CSS based selectors, etc..
+  <span class="fa fa-exclamation-triangle" /> At the moment, only wiring via IDs is supported. In future there might be other wiring strategies support, such as CSS based selectors, etc..
+</div>
+
+<div class="alert alert-warning" role="alert">
+  <span class="fa fa-exclamation-triangle" /> The method handleEvent will be renamed to afterCreate in near future!
 </div>
 
