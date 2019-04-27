@@ -99,7 +99,7 @@ The above example is not the only possibility to nest views. The AbstractControl
         </tr>
         <tr class="d-flex">
           <td class="col-2">component</td>
-          <td class="col-2">ComponentCotract</td>
+          <td class="col-2" style="white-space: normal; word-wrap: break-word;">ComponentCotract</td>
           <td class="col-6">The component that will be the parent component of the imported view.</td>
           <td class="col-2"><b>required</b></td>
         </tr>
