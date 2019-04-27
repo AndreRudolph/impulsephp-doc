@@ -10,64 +10,6 @@ Thanks to nesting views you may nest controllers as well. Consider a web page co
 
 With controller nesting you can create a tree of controllers. Like view nesting, this can be achieved by nesting views and applying controllers to them (if needed). Consider the following example for a simple navigation (wihtout functions):
 
-<div class="alert alert-dark" role="alert">
-  templates/app.imp
-</div>
-
-
-<div class="alert alert-dark" role="alert">
-  src/Controller/AppController.php
-</div>
-<pre class="line-numbers language-php">
-<code class="language-php"><?php
-namespace App\Controller;
-use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-
-class AppController extends AbstractController
-{
-    
-}</code>
-</pre>
-
-<div class="alert alert-dark" role="alert">
-  templates/navigation.imp
-</div>
-<pre class="line-numbers language-markup">
-<code class="language-markup">&lt;impulse&gt;
-    &lt;window id="wndNavigation" apply="App\Controller\NavigationController"&gt;
-        &lt;hbox&gt;
-            &lt;label&gt;Home&lt;/label&gt;
-            &lt;label&gt;News&lt;/label&gt;
-        &lt;/hbox&gt;
-    &lt;/window&gt;
-</impulse>
-</code>
-</pre>
-
-<div class="alert alert-dark" role="alert">
-  src/Controller/NavigationController.php
-</div>
-<pre class="line-numbers language-php">
-<code class="language-php"><?php
-namespace App\Controller;
-use Impulse\ImpulseBundle\UI\Components\Div;
-use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-
-class NavigationController extends AbstractController
-{
-    /** @var Div */
-    private $content;   
-    
-    public function handleEvent()
-    {
-        parent::handleEvent();
-        $labelContent = new Label();
-        $labelContent->setValue('Content is here.');
-        $this->content->addChild($content);
-    }
-}</code>
-</pre>
-
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">app.imp</a>
@@ -83,7 +25,7 @@ class NavigationController extends AbstractController
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
     <pre class="line-numbers language-markup">
       <code class="language-markup">&lt;impulse&gt;
         &lt;window id="wndApp" apply="App\Controller\AppController"&gt;
@@ -94,7 +36,51 @@ class NavigationController extends AbstractController
       </code>
     </pre>
   </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">B</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">C</div>
-  <div class="tab-pane fade" id="navController" role="tabpanel" aria-labelledby="navController-tab">C</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <pre class="line-numbers language-php">
+      <code class="language-php"><?php
+      namespace App\Controller;
+      use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+
+      class AppController extends AbstractController
+      {
+
+      }</code>
+    </pre>  
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <pre class="line-numbers language-markup">
+      <code class="language-markup">&lt;impulse&gt;
+          &lt;window id="wndNavigation" apply="App\Controller\NavigationController"&gt;
+              &lt;hbox&gt;
+                  &lt;label&gt;Home&lt;/label&gt;
+                  &lt;label&gt;News&lt;/label&gt;
+              &lt;/hbox&gt;
+          &lt;/window&gt;
+        &lt;/impulse&gt;
+      </code>
+    </pre>
+  </div>
+  <div class="tab-pane fade" id="navController" role="tabpanel" aria-labelledby="navController-tab">
+    <pre class="line-numbers language-php">
+      <code class="language-php"><?php
+      namespace App\Controller;
+      use Impulse\ImpulseBundle\UI\Components\Div;
+      use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+
+      class NavigationController extends AbstractController
+      {
+          /** @var Div */
+          private $content;   
+
+          public function handleEvent()
+          {
+              parent::handleEvent();
+              $labelContent = new Label();
+              $labelContent->setValue('Content is here.');
+              $this->content->addChild($content);
+          }
+      }</code>
+    </pre>
+  </div>
 </div>
