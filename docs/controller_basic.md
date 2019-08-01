@@ -6,6 +6,7 @@ title: Start of Documentation
 <a name="introduction"></a>
 # Introduction
 
+<div class="documentationContent">
 A controller is the main component that is responsible for handling (and thus managing) user interactions. Unlike other frameworks, a controller in the Impulse PHP Framework itself does not directly return views. Instead, a view template specifies the related controller that will be rendered. 
     
 ### Defining controllers
@@ -70,8 +71,4 @@ class AppController extends AbstractController
 <div class="alert alert-warning" role="alert">
   <span class="fa fa-exclamation-triangle" /> At the moment, only wiring via IDs is supported. In future there might be other wiring strategies support, such as CSS based selectors, etc..
 </div>
-
-<div class="alert alert-warning" role="alert">
-  <span class="fa fa-exclamation-triangle" /> The method handleEvent will be renamed to afterCreate in near future!
 </div>
-
