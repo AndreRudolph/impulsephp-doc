@@ -55,7 +55,7 @@ class AppController extends AbstractController
 {
     private $wndApp;
 
-    public function handleEvent()
+    public function afterCreate()
     {
         $lbGreet = new Label();
         $lbGreet->setValue('Welcome stranger!');
