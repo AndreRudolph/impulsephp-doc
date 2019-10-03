@@ -4,6 +4,6 @@ title: Views
 published: true
 ---
 
-Views
+## Views
 
 This is a test
