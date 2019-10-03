@@ -20,8 +20,7 @@ Views in Impulse are simple to understand but very powerful. A view encapsulates
     	&lt;window&gt;
         	Hello world
         &lt;/window&gt;
-    &lt;/impulse&gt;
-	</code>
+    &lt;/impulse&gt;</code>
 </pre>
 
 -- example with only label
