@@ -47,7 +47,7 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
-This example controller above would do nothing. For doing initial tasks you may override the handleEvent method from the AbstractController. The <span class="highlightText">handleEvent</span> represents the entry point of the controller and will  will be called automatically if the controller is bound to a view template.
+This example controller above would do nothing. For doing initial tasks you may override the afterCreate method from the AbstractController. The <span class="highlightText">afterCreate</span> represents the entry point of the controller and will  will be called automatically when the view was rendered.
 
 <a name="nested-controllers"></a>
 ### Nested controllers
