@@ -54,6 +54,34 @@ This example controller above would do nothing. For doing initial tasks you may 
 #### Wire components
 Components can be wired directly into the controller by naming conventions. They must be named exactly like their id in the view. 
 
+<pre class="line-numbers language-markup">
+	<code class="language-markup">&lt;impulse&gt;
+    	&lt;window&gt;
+        	&lt;textbox id="tb" /&gt;
+        &lt;/window&gt;
+    &lt;/impulse&gt;</code>
+</pre>
+
+We have created a textbox with the id <span class="highlightText">tb</span>. This component is - by naming convention - wireable for a controller.
+
+<pre class="line-numbers language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+
+class AppController extends AbstractController
+{
+    private $tb;
+
+    public function afterCreate(Event $event)
+    {
+        parent::afterCreate($event);
+        $this->tb->setValue('Hello world');
+    }
+}</code>
+</pre>
+
 <a name="nested-controllers"></a>
 #### Nested controllers
 Thanks to nesting views you may nest controllers as well. Consider a web page consisting of different page sections like navigation, content, footer, etc. The bad approach would be that you would create one controller for the whole page. As a good software developer you try to separate concerns as much as possible and reasonable. That's why the framework offers a feature that is called controller nesting.
