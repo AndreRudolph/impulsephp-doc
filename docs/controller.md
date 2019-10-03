@@ -14,7 +14,7 @@ published: true
     - [Controllers as event listener](#controller-eventlistener)
     - [Explicit Controller Event Listener registration](#explicit-controllerEventListener)
 - [Advanced topics](#advanced-topics)
-    - [Concept of serialization]
+    - [Concept of serialization](#concept-serialization)
     - [Excluding attributes from serialization]
 
 <a name="introduction"></a>
@@ -135,5 +135,8 @@ The annotation consists of two parameters. The component parameter requires one 
 
 <a name="advanced-topics"></a>
 # Advanced topics
+
+<a name="concept-serialization"></a>
+### Concept of serialization
 
 TODO
