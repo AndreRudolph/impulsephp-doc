@@ -18,6 +18,5 @@ The framework also provides a possibility to nest views:
 
 -- example with view nesting
 
-
-
-
+### Applying controllers to views
+In the next documentation section for controllers you will learn how to connect a view with a controller.
