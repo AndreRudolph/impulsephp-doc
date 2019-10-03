@@ -50,7 +50,7 @@ class AppController extends AbstractController
 This example controller above would do nothing. For doing initial tasks you may override the handleEvent method from the AbstractController. The <span class="highlightText">handleEvent</span> represents the entry point of the controller and will  will be called automatically if the controller is bound to a view template.
 
 <a name="nested-controllers"></a>
-###Nested controllers
+### Nested controllers
 Thanks to nesting views you may nest controllers as well. Consider a web page consisting of different page sections like navigation, content, footer, etc. The bad approach would be that you would create one controller for the whole page. As a good software developer you try to separate concerns as much as possible and reasonable. That's why the framework offers a feature that is called controller nesting.
 
 ### Nested controllers
