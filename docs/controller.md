@@ -10,6 +10,7 @@ published: true
 - [Introduction](#introduction)
 - [Basic Controllers](#basic-controllers)
     - [Defining Controllers](#defining-controllers)
+    - [Wire components](#wire-components)
     - [Nested controllers](#nested-controllers)
     - [Controllers as event listener](#controller-eventlistener)
     - [Explicit Controller Event Listener registration](#explicit-controllerEventListener)
@@ -48,6 +49,9 @@ class AppController extends AbstractController
 </pre>
 
 This example controller above would do nothing. For doing initial tasks you may override the afterCreate method from the AbstractController. The <span class="highlightText">afterCreate</span> represents the entry point of the controller and will  will be called automatically when the view was rendered.
+
+<a name="wire-components" />
+### Wire components
 
 <a name="nested-controllers"></a>
 ### Nested controllers
