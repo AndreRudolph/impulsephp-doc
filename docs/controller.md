@@ -77,10 +77,12 @@ class AppController extends AbstractController
     public function afterCreate(Event $event)
     {
         parent::afterCreate($event);
-        $this->tb->setValue('Hello world');
+        $this->tb->setValue('Hello world!');
     }
 }</code>
 </pre>
+
+After the execution is finished, the value of the textbox should be <span class="highlightText">Hello world!</span>.
 
 <a name="nested-controllers"></a>
 #### Nested controllers
