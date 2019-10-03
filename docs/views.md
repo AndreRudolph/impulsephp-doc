@@ -4,7 +4,14 @@ title: Views
 published: true
 ---
 
-## Views
+# Views
+
+- [Introduction](#introduction)
+- [Custom attributes](#custom-attributes)
+- [Nesting views](#nesting-views)
+- [Apply controllers to views](#apply-controllers)
+
+<a name="introduction"></a>
 
 Views in Impulse are simple to understand but very powerful. A view encapsulates a set of components which will be later converted to HTML in the browser. The following example is a minimal example with just a simple text output.
 
@@ -12,16 +19,19 @@ Views in Impulse are simple to understand but very powerful. A view encapsulates
 
 A view must start with an opening impulse tag and must be closed with a closing impulse tag.
 
-### Custom attributes
+<a name="custom-attributes"></a>
+## Custom attributes
 Each component within a view can be extended by custom attributes. These attributes may be used to customize special components for e.g. specific processing with the component.
 
 -- example with custom attributes
 
-### Nesting views
+<a name="nesting-views"></a>
+## Nesting views
 
 The framework also provides a possibility to nest views:
 
 -- example with view nesting
 
-### Applying controllers to views
+<a name="apply-controllers"></a>
+## Applying controllers to views
 In the next documentation section for controllers you will learn how to connect a view with a controller.
