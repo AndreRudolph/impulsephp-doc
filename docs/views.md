@@ -10,4 +10,14 @@ Views in Impulse are simple to understand but very powerful. A view encapsulates
 
 -- example with only label
 
+A view must start with an opening impulse tag and must be closed with a closing impulse tag.
+
+### Nesting views
+
+The framework also provides a possibility to nest views:
+
+-- example with view nesting
+
+
+
 
