@@ -12,6 +12,11 @@ Views in Impulse are simple to understand but very powerful. A view encapsulates
 
 A view must start with an opening impulse tag and must be closed with a closing impulse tag.
 
+### Custom attributes
+Each component within a view can be extended by custom attributes. These attributes may be used to customize special components for e.g. specific processing with the component.
+
+-- example with custom attributes
+
 ### Nesting views
 
 The framework also provides a possibility to nest views:
