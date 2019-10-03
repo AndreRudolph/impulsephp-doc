@@ -34,6 +34,7 @@ Each component within a view can be extended by custom attributes. These attribu
     	&lt;window&gt;
         	&lt;button&gt;
             	&lt;custom-attributes attr1="val1" attr2="val2" /&gt;
+            &lt;/button&gt;
         &lt;/window&gt;
     &lt;/impulse&gt;</code>
 </pre>
