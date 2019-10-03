@@ -39,6 +39,8 @@ Each component within a view can be extended by custom attributes. These attribu
     &lt;/impulse&gt;</code>
 </pre>
 
+Custom attributes of a component are only accessible on server side. You may access them to handle components with custom attributes in that way that fit your needs.
+
 <a name="nesting-views"></a>
 ## Nesting views
 
@@ -47,7 +49,7 @@ The framework also provides a possibility to nest views:
 <pre class="line-numbers language-markup">
 	<code class="language-markup">&lt;impulse&gt;
     	&lt;window&gt;
-            &lt;import src="helloWorld.imp /&gt;
+            &lt;import src="helloWorld.imp" /&gt;
         &lt;/window&gt;
     &lt;/impulse&gt;</code>
 </pre>
