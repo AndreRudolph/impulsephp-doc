@@ -52,6 +52,7 @@ This example controller above would do nothing. For doing initial tasks you may 
 
 <a name="wire-components" />
 #### Wire components
+Components can be wired directly into the controller by naming conventions. They must be named exactly like their id in the view. 
 
 <a name="nested-controllers"></a>
 #### Nested controllers
