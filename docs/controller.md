@@ -26,7 +26,7 @@ A controller is the main component that is responsible for handling (and thus ma
 <a name="basis-controller">
 ## Basic controllers
     
-### Defining controllers
+#### Defining controllers
 Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
 
 <pre class="line-numbers language-markup">
@@ -51,13 +51,13 @@ class AppController extends AbstractController
 This example controller above would do nothing. For doing initial tasks you may override the afterCreate method from the AbstractController. The <span class="highlightText">afterCreate</span> represents the entry point of the controller and will  will be called automatically when the view was rendered.
 
 <a name="wire-components" />
-### Wire components
+#### Wire components
 
 <a name="nested-controllers"></a>
-### Nested controllers
+#### Nested controllers
 Thanks to nesting views you may nest controllers as well. Consider a web page consisting of different page sections like navigation, content, footer, etc. The bad approach would be that you would create one controller for the whole page. As a good software developer you try to separate concerns as much as possible and reasonable. That's why the framework offers a feature that is called controller nesting.
 
-### Nested controllers
+#### Nested controllers
 Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation. This section will only cover controller nesting. This can be achieved by importing a template within the executed controllers method. Below is an example of controller nesting.
 
 <pre class="line-numbers language-markup">
@@ -89,7 +89,7 @@ Line 13 is the important line. The <span class="highlightText">importView</span>
 By default this will remove all childs of the given parent component internally. To append instead of removing all childs, you can set an optional third parameter with <i>true</i> as value.
 
 <a name="controller-eventlistener"></a>
-### Controllers as event listener
+#### Controllers as event listener
 Just defining a controller is by far not the only supported feature. As you maybe noticed, controllers can also work as event listeners as well. Consider the following example.
 
 <pre class="line-numbers language-markup">
@@ -135,7 +135,7 @@ The controller has been extended by two new attributes and an <span class="highl
 The annotation consists of two parameters. The component parameter requires one component id or a comma separated list of components ids for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
 
 <a name="explicit-controllerEventListener"></a>
-### Explicit Controller Event Listener registration
+#### Explicit Controller Event Listener registration
 
 <a name="advanced-topics"></a>
 ## Advanced topics
