@@ -23,8 +23,6 @@ Views in Impulse are simple to understand but very powerful. A view encapsulates
     &lt;/impulse&gt;</code>
 </pre>
 
--- example with only label
-
 A view must start with an opening impulse tag and must be closed with a closing impulse tag.
 
 <a name="custom-attributes"></a>
