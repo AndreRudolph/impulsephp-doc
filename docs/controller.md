@@ -139,4 +139,4 @@ The annotation consists of two parameters. The component parameter requires one 
 <a name="concept-serialization"></a>
 ### Concept of serialization
 
-TODO
+Serialization is a very complex topic in the framework. Controllers itself will be serialized in the session and thus its attributes. Component objects will not be directly serialized as part of the serialized controller. The component objects will be represented by its uuids.
