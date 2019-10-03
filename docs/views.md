@@ -29,7 +29,14 @@ A view must start with an opening impulse tag and must be closed with a closing 
 ## Custom attributes
 Each component within a view can be extended by custom attributes. These attributes may be used to customize special components for e.g. specific processing with the component.
 
--- example with custom attributes
+<pre class="line-numbers language-markup">
+	<code class="language-markup">&lt;impulse&gt;
+    	&lt;window&gt;
+        	&lt;button&gt;
+            	&lt;custom-attributes attr1="val1" attr2="val2" /&gt;
+        &lt;/window&gt;
+    &lt;/impulse&gt;</code>
+</pre>
 
 <a name="nesting-views"></a>
 ## Nesting views
