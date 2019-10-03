@@ -44,7 +44,13 @@ Each component within a view can be extended by custom attributes. These attribu
 
 The framework also provides a possibility to nest views:
 
--- example with view nesting
+<pre class="line-numbers language-markup">
+	<code class="language-markup">&lt;impulse&gt;
+    	&lt;window&gt;
+            &lt;import src="helloWorld.imp /&gt;
+        &lt;/window&gt;
+    &lt;/impulse&gt;</code>
+</pre>
 
 <a name="apply-controllers"></a>
 ## Applying controllers to views
