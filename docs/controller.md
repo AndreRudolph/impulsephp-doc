@@ -69,10 +69,11 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
 namespace App\Controller;
 use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+use Impulse\ImpulseBundle\UI\Components\Textbox;
 
 class AppController extends AbstractController
 {
-    private $tb;
+    private ?Textbox $tb = null;
 
     public function afterCreate(Event $event)
     {
@@ -106,7 +107,7 @@ use Impulse\Bundles\ImpulseBundle\UI\Components\Window;
 
 class AppController extends AbstractController
 {
-    /** @var Window */ private $wndMain;
+    private ?Window $wndMain = null;
 
     public function handleEvent(Event $event)
     {
@@ -128,7 +129,7 @@ Just defining a controller is by far not the only supported feature. As you mayb
     &lt;window apply="App\Controller\AppController"&gt;
         &lt;textbox id="tbName" /&gt;
         &lt;button id="btnGreet" /&gt;
-        &lt;label id="lbGreet" /&gt;
+        &lt;span id="lbGreet" /&gt;
     &lt;/window&gt;
 &lt;/impulse&gt;</code>
 </pre>
@@ -142,13 +143,13 @@ namespace App\Controller;
 use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
 use Impulse\Bundles\ImpulseBundle\Controller\Annotations\Listen;
-use Impulse\Bundles\ImpulseBundle\UI\Components\Label;
+use Impulse\Bundles\ImpulseBundle\UI\Components\Span;
 use Impulse\Bundles\ImpulseBundle\UI\Components\Textbox;
 
 class AppController extends AbstractController
 {
-    /** @var Textbox */ private $tbName;
-    /** @var Label */   private $lbGreet;
+    private ?Textbox $tbName = null;
+    private ?Span $lbGreet = null;
 
     /**
      * @Listen(component="btnGreet", event="click")
