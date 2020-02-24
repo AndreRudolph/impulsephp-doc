@@ -45,6 +45,12 @@ To achieve this, most of the setters for attributes (e.g. setHeight, setVisible,
 
 You can also extend the framework or your app with your own components. You can also created more complex and customized components. You can create everything from small, atomic components (e.g. span, textarea) to more complex components like a Breadcrumb or wysiwyg editor. 
 
+To support you, you can create a skeleton component with the following command.
+
+<pre class="imp-code line-numbers language-shell">
+<code class="language-bash">php bin/console make:impulse:component</code>
+</pre>
+
 <div class="documentationHint">
   	<span>No maker implemented yet!</span>  
 </div>
