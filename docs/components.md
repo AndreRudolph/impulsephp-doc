@@ -8,6 +8,8 @@
 
 Components are the heart of the Impulse PHP Framework. Almost every native html tag is considered as a component itself. Unlike 'normal' (ajax based) web application such componnets have a state on client as well on server side. 
 
+Each component has a set of server side managed attributes that are directly stored within the users session. For example width, height, custom attributes, etc. However, most of the components do have more attributes, e.g. 'value' for textbox components. 
+
 <a name="registered_components"></a>
 <h3>Registered components</h3>
 
