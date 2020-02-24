@@ -12,3 +12,5 @@ Defining routes with the Impulse framework is not very different from Symfony's 
     path: welcome
     defaults: { view: app/index.imp }</code>
 </pre>
+
+Unlike Symfony itself, routes are not bind to any controller. Instead they are bind to a specific view. The view applies to a Controller and not reverse.
