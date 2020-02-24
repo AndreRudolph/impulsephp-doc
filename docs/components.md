@@ -24,7 +24,7 @@ Like the html representatives, each component has exactly one parent (except roo
 
 For a complete list of currently registered components you can run the following command:
 
-<pre class="imp-code line-numbers language-bash">
+<pre class="imp-code line-numbers language-shell">
 <code class="language-bash">php bin/console debug:impulse:components</code>
 </pre>
 
@@ -59,7 +59,7 @@ Components are also capable of being wired with services via the dependency inje
 
 The ComponentClassRegistry is the lookup class in which all discovered components are registered. Remember the following command to list all available components.
 
-<pre class="imp-code line-numbers language-bash">
+<pre class="imp-code line-numbers language-shell">
 <code class="language-bash">php bin/console debug:impulse:components</code>
 </pre>
 
