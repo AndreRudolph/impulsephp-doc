@@ -9,6 +9,6 @@ Components are the heart of the Impulse PHP Framework. Almost every native html 
 
 For a complete list of currently registered components you can run the following command:
 
-<pre class="line-numbers language-bash">
+<pre class="imp-code line-numbers language-bash">
 <code class="language-bash">php bin/console debug:impulse:components</code>
 </pre>
