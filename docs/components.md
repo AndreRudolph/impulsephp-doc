@@ -74,7 +74,7 @@ App/
 In the example above in the App is another button component. The component scan discovery overwrites non contextual aliases with the last find. According to this, the following button
 
 <pre class="line-numbers language-markup">
-<code class="imp-codelanguage-php language-markup">&lt;impulse&gt;
+<code class="imp-code language-php language-markup">&lt;impulse&gt;
     &lt;button /&gt;
 &lt;/impulse&gt;</code>
 </pre>
@@ -82,7 +82,7 @@ In the example above in the App is another button component. The component scan 
 will be bound to the app button component class. However, you can also explicitly use the button implementation that is provided by the Impulse framework with a contextual prefix.
 
 <pre class="line-numbers language-markup">
-<code class="imp-codelanguage-php language-markup">&lt;impulse&gt;
+<code class="imp-code language-php language-markup">&lt;impulse&gt;
     &lt;impulse:button /&gt;
 &lt;/impulse&gt;</code>
 </pre>
