@@ -28,7 +28,7 @@ For a complete list of currently registered components you can run the following
 <code class="language-bash">php bin/console debug:impulse:components</code>
 </pre>
 
-Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions.
+Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the HtmlBasedComponentContract are registered as components automatically.
 
 <a name="basics"></a>
 ### Basics
