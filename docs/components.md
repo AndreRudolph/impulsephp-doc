@@ -51,7 +51,7 @@ To support you, you can create a skeleton component with the following command.
 <code class="language-bash">php bin/console make:impulse:component</code>
 </pre>
 
-<div class="documentationHint">
+<div class="documentationHint warning">
   	<span>No maker implemented yet!</span>  
 </div>
 
