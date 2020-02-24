@@ -1,7 +1,7 @@
 # Components
 
 - [Introduction](#introduction)
-	- [Registered components](#registered_components)
+	- [Registered components & discovery](#registered_components)
 - [Basics](#basics)
 	- [Client-server-synchronization](#client_server_synchronization)
     - [Creating own components](#create_own_components)
@@ -20,7 +20,7 @@ Each component has a set of server side managed attributes that are directly sto
 Like the html representatives, each component has exactly one parent (except root) and zero to any number of childs. When the session gets persisted or updated, the parent-/child relationships will also be stored.
 
 <a name="registered_components"></a>
-<h3>Registered components</h3>
+<h3>Registered components &amp; discovery</h3>
 
 For a complete list of currently registered components you can run the following command:
 
