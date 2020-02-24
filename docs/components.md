@@ -63,7 +63,7 @@ The ComponentClassRegistry is the lookup class in which all discovered component
 <code class="language-bash">php bin/console debug:impulse:components</code>
 </pre>
 
-As you maybe noticed each component is registered twice. For example the button component is registered as 'button' and 'impulse:button'. The reason behind this is that the Impulse framework offers you the opportunity to have multiple button components registered. 
+As you maybe noticed each component is registered at least twice. For example the button component is registered as 'button' and 'impulse:button'. The reason behind this is that the Impulse framework offers you the opportunity to have multiple button components registered. 
 
 Consider the following scenario:
 App/
