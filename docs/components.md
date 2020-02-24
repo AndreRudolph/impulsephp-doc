@@ -50,6 +50,7 @@ You can also extend the framework or your app with your own components. You can 
 
 <a name="component_lifecycle"></a>
 <h3>Component lifecycle</h3>
+<span style="color: red">TODO!!</span>
 
 <a name="wiring"></a>
 <h3>Wiring services into components</h3>
