@@ -4,9 +4,11 @@
 	- [Registered components](#registered_components)
 - [Basics](#basics)
 	- [Client-server-synchronization](#client_server_synchronization)
+    - [Creating own components](#create_own_components)
 - [Advanced topics](#advanced_topics)
 	- [Component lifecycle](#component_lifecycle)
     - [Wiring services into components](#wiring)
+    - [Component contexts](#component_contexts)
 
 <a name="introduction"></a>
 ### Introduction
@@ -36,6 +38,9 @@ The main purpose of the components is to store both the component at the client 
 
 To achieve this, most of the setters for attributes (e.g. setHeight, setVisible, etc.) are observed for changes. This means whenever you set the height of the component after it was created and populated in a request before, the internal server side state of the components gets updated and the client receives an update aswell.
 
+<a name="create_own_components"></a>
+<h3>Creating own components</h3>
+
 <a name="advanced_topics"></a>
 ### Advanced topics
 
@@ -46,3 +51,6 @@ To achieve this, most of the setters for attributes (e.g. setHeight, setVisible,
 <h3>Wiring services into components</h3>
 
 Components are also capable of being wired with services via the dependency injection container. All you have to do is let your component implement the WiringAware interface which is just a marker interface. 
+
+<a name="component_contexts"></a>
+<h3>Component contexts</h3>
