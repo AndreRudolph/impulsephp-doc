@@ -3,6 +3,7 @@
 - [Introduction](#introduction)
 	- [Registered components](#registered_components)
 - [Basics](#basics)
+	- [Client-server-synchronization](#client_server_synchronization)
 - [Advanced topics](#advanced_topics)
 	- [Component lifecycle](#component_lifecycle)
     - [Wiring services into components](#wiring)
@@ -27,6 +28,11 @@ For a complete list of currently registered components you can run the following
 
 <a name="basics"></a>
 ### Basics
+
+<a name="client_server_synchronization"></a>
+<h3>Client-server-synchronization</h3>
+
+The main purpose of the components is to store both the component at the client and at the server side. The logical conclusion is that server-side changes to a component that would affect its appeareance or behavior must be synchronized with the client (browser).
 
 <a name="advanced_topics"></a>
 ### Advanced topics
