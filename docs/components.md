@@ -28,6 +28,8 @@ For a complete list of currently registered components you can run the following
 <code class="language-bash">php bin/console debug:impulse:components</code>
 </pre>
 
+Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions.
+
 <a name="basics"></a>
 ### Basics
 
@@ -54,3 +56,11 @@ Components are also capable of being wired with services via the dependency inje
 
 <a name="component_contexts"></a>
 <h3>Component contexts</h3>
+
+The ComponentClassRegistry is the lookup class in which all discovered components are registered. Remember the following command to list all available components.
+
+<pre class="imp-code line-numbers language-bash">
+<code class="language-bash">php bin/console debug:impulse:components</code>
+</pre>
+
+As you maybe noticed each component is registered twice. For example the button component is registered as 'button' and 'impulse:button'. 
