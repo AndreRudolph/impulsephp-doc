@@ -30,7 +30,7 @@ A controller is the main component that is responsible for handling (and thus ma
 Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
 
 <pre class="line-numbers language-markup">
-<code class="imp-codelanguage-php language-markup">&lt;impulse&gt;
+<code class="imp-code language-markup">&lt;impulse&gt;
     &lt;window apply="App\Controller\AppController" /&gt;
 &lt;/impulse&gt;</code>
 </pre>
