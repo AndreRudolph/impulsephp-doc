@@ -1,8 +1,8 @@
 # Components
 
 - [Introduction](#introduction)
-	- [Registered components & discovery](#registered_components)
 - [Basics](#basics)
+	- [Registered components & discovery](#registered_components)
 	- [Client-server-synchronization](#client_server_synchronization)
     - [Creating own components](#create_own_components)
 - [Advanced topics](#advanced_topics)
@@ -19,6 +19,9 @@ Each component has a set of server side managed attributes that are directly sto
 
 Like the html representatives, each component has exactly one parent (except root) and zero to any number of childs. When the session gets persisted or updated, the parent-/child relationships will also be stored.
 
+<a name="basics"></a>
+### Basics
+
 <a name="registered_components"></a>
 <h3>Registered components &amp; discovery</h3>
 
@@ -29,9 +32,6 @@ For a complete list of currently registered components you can run the following
 </pre>
 
 Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the HtmlBasedComponentContract are registered as components automatically.
-
-<a name="basics"></a>
-### Basics
 
 <a name="client_server_synchronization"></a>
 <h3>Client-server-synchronization</h3>
