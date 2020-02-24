@@ -32,3 +32,5 @@ For a complete list of currently registered components you can run the following
 
 <a name="wiring"></a>
 <h3>Wiring services into components</h3>
+
+Components are also capable of being wired with services via the dependency injection container. All you have to do is let your component implement the WiringAware interface which is just a marker interface. 
