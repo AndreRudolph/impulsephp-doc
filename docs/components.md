@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 	- [Registered components](#registered_components)
+- [Basics](#basics)
 - [Advanced topics](#advanced_topics)
 	- [Component lifecycle](#component_lifecycle)
     - [Wiring services into components](#wiring)
@@ -23,6 +24,9 @@ For a complete list of currently registered components you can run the following
 <pre class="imp-code line-numbers language-bash">
 <code class="language-bash">php bin/console debug:impulse:components</code>
 </pre>
+
+<a name="basics"></a>
+### Basics
 
 <a name="advanced_topics"></a>
 ### Advanced topics
