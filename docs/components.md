@@ -43,6 +43,8 @@ To achieve this, most of the setters for attributes (e.g. setHeight, setVisible,
 <a name="create_own_components"></a>
 <h3>Creating own components</h3>
 
+You can also extend the framework or your app with your own components. You can also created more complex and customized components. You can create everything from small, atomic components (e.g. span, textarea) to more complex components like a Breadcrumb or wysiwyg editor. 
+
 <a name="advanced_topics"></a>
 ### Advanced topics
 
