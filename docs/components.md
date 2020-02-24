@@ -79,4 +79,10 @@ In the example above in the App is another button component. The component scan 
 &lt;/impulse&gt;</code>
 </pre>
 
-will be bound to the app button component class.
+will be bound to the app button component class. However, you can also explicitly use the button implementation that is provided by the Impulse framework with a contextual prefix.
+
+<pre class="line-numbers language-markup">
+<code class="imp-codelanguage-php language-markup">&lt;impulse&gt;
+    &lt;impulse:button /&gt;
+&lt;/impulse&gt;</code>
+</pre>
