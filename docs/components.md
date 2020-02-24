@@ -34,6 +34,8 @@ For a complete list of currently registered components you can run the following
 
 The main purpose of the components is to store both the component at the client and at the server side. The logical conclusion is that server-side changes to a component that would affect its appeareance or behavior must be synchronized with the client (browser).
 
+To achieve this, most of the setters for attributes (e.g. setHeight, setVisible, etc.) are observed for changes. This means whenever you set the height of the component after it was created and populated in a request before, the internal server side state of the components gets updated and the client receives an update aswell.
+
 <a name="advanced_topics"></a>
 ### Advanced topics
 
