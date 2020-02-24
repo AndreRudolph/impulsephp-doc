@@ -1,3 +1,8 @@
-## A New Post
+# Routing
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+- [Defining routes](#defining_routes)
+
+<a name="defining_routes"></a>
+## Defining routes
+
+Defining routes is as simple as in symfony itself.
