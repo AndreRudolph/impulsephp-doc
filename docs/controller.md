@@ -5,7 +5,7 @@ published: true
 ---
 
 
-# Controllers
+<h1 class="doc-title">Controllers</h1>
 
 - [Introduction](#introduction)
 - [Basic Controllers](#basic-controllers)
