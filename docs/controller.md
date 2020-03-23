@@ -29,7 +29,7 @@ A controller is the main component that is responsible for handling (and thus ma
 #### Defining controllers
 Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
 
-<pre class="line-numbers language-markup">
+<pre class="code-white line-numbers language-markup">
 <code class="imp-code language-markup">&lt;impulse&gt;
     &lt;window apply="App\Controller\AppController" /&gt;
 &lt;/impulse&gt;</code>
@@ -37,7 +37,7 @@ Defining a controller is not very complicated. A controller is never called dire
 
 The <span class="highlightText">apply</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
   
-<pre class="line-numbers language-php">
+<pre class="code-white line-numbers language-php">
 <code class="language-php"><?php
 namespace App\Controller;
 use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
@@ -54,7 +54,7 @@ This example controller above would do nothing. For doing initial tasks you may 
 #### Wire components
 Components can be wired directly into the controller by naming conventions. They must be named exactly like their id in the view. 
 
-<pre class="line-numbers language-markup">
+<pre class="code-white line-numbers language-markup">
 	<code class="language-markup">&lt;impulse&gt;
     	&lt;window&gt;
         	&lt;textbox id="tb" /&gt;
@@ -64,7 +64,7 @@ Components can be wired directly into the controller by naming conventions. They
 
 We have created a textbox with the id <span class="highlightText">tb</span>. This component is - by naming convention - wireable for a controller.
 
-<pre class="line-numbers language-php">
+<pre class="code-white line-numbers language-php">
 <code class="language-php"><?php
 namespace App\Controller;
 use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
@@ -92,13 +92,13 @@ Thanks to nesting views you may nest controllers as well. Consider a web page co
 #### Nested controllers
 Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation. This section will only cover controller nesting. This can be achieved by importing a template within the executed controllers method. Below is an example of controller nesting.
 
-<pre class="line-numbers language-markup">
+<pre class="code-white line-numbers language-markup">
 <code class="language-markup">&lt;impulse&gt;
     &lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
 &lt;/impulse&gt;</code>
 </pre>
 
-<pre class="line-numbers language-php">
+<pre class="code-white line-numbers language-php">
 <code class="language-php"><?php
 namespace App\Controller;
 use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
@@ -124,7 +124,7 @@ By default this will remove all childs of the given parent component internally.
 #### Controllers as event listener
 Just defining a controller is by far not the only supported feature. As you maybe noticed, controllers can also work as event listeners as well. Consider the following example.
 
-<pre class="line-numbers language-markup">
+<pre class="code-white line-numbers language-markup">
 <code class="language-markup">&lt;impulse&gt;
     &lt;window apply="App\Controller\AppController"&gt;
         &lt;textbox id="tbName" /&gt;
@@ -136,7 +136,7 @@ Just defining a controller is by far not the only supported feature. As you mayb
 
 The controller contains an event listener method.
 
-<pre class="line-numbers language-php">
+<pre class="code-white line-numbers language-php">
 <code class="language-php">
 <?php
 namespace App\Controller;
