@@ -9,7 +9,7 @@ published: true
 
 - [Introduction](#introduction)
 - [Basic Controllers](#basic-controllers)
-    - [<i class="fa fa-info"></i> Defining Controllers](#defining-controllers)
+    - [ Defining Controllers](#defining-controllers)
     - [Wire components](#wire-components)
     - [Nested controllers](#nested-controllers)
     - [Controllers as event listener](#controller-eventlistener)
