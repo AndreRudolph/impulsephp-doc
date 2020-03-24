@@ -46,29 +46,6 @@ Defining a controller is not very complicated. A controller is never called dire
     &lt;/impulse&gt;</code>
   </pre>
 </div>
-  
-<!--<pre class="code-white line-numbers language-markup">-->
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
-        </div>
-    </div>
-  </div>
-  <pre class="code-white line-numbers language-php">
-  	<code class="imp-code language-php"><?php
-  	namespace App\Controller;
-  	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-
-  	class AppController extends AbstractController
-  	{
-
-  	}</code>
-  </pre>
-</div>
 
 The <span class="highlightText">apply</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
  
