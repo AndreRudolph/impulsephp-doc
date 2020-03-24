@@ -29,7 +29,8 @@ A controller is the main component that is responsible for handling (and thus ma
 #### Defining controllers
 Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
 
-<pre class="code-white line-numbers language-markup">
+<!--<pre class="code-white line-numbers language-markup">-->
+<pre class="code-white language-markup">
 <code class="imp-code language-markup">&lt;impulse&gt;
     &lt;window apply="App\Controller\AppController" /&gt;
 &lt;/impulse&gt;</code>
