@@ -48,17 +48,28 @@ Defining a controller is not very complicated. A controller is never called dire
 </div>
 
 The <span class="highlightText">apply</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
-  
-<pre class="code-white language-php">
-<code class="language-php"><?php
-namespace App\Controller;
-use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+ 
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-php">
+  <code class="language-php"><?php
+  namespace App\Controller;
+  use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 
-class AppController extends AbstractController
-{
-    
-}</code>
-</pre>
+  class AppController extends AbstractController
+  {
+
+  }</code>
+  </pre>
+</div>
 
 This example controller above would do nothing. For doing initial tasks you may override the afterCreate method from the AbstractController. The <span class="highlightText">afterCreate</span> represents the entry point of the controller and will  will be called automatically when the view was rendered.
 
