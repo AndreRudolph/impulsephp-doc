@@ -15,7 +15,7 @@ published: true
 
 Views in Impulse are simple to understand but very powerful. A view encapsulates a set of components which will be later converted to HTML in the browser. The following example is a minimal example with just a simple text output.
 
-<pre class="line-numbers language-markup">
+<pre class="code-white line-numbers language-markup">
 	<code class="language-markup">&lt;impulse&gt;
     	&lt;window&gt;
         	Hello world
@@ -29,7 +29,7 @@ A view must start with an opening impulse tag and must be closed with a closing 
 ## Custom attributes
 Each component within a view can be extended by custom attributes. These attributes may be used to customize special components for e.g. specific processing with the component.
 
-<pre class="line-numbers language-markup">
+<pre class="code-white line-numbers language-markup">
 	<code class="language-markup">&lt;impulse&gt;
     	&lt;window&gt;
         	&lt;button&gt;
@@ -46,7 +46,7 @@ Custom attributes of a component are only accessible on server side. You may acc
 
 The framework also provides a possibility to nest views:
 
-<pre class="line-numbers language-markup">
+<pre class="code-white line-numbers language-markup">
 	<code class="language-markup">&lt;impulse&gt;
     	&lt;window&gt;
             &lt;import src="helloWorld.imp" /&gt;
