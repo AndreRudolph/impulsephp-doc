@@ -46,10 +46,20 @@ To achieve this, most of the setters for attributes (e.g. setHeight, setVisible,
 You can also extend the framework or your app with your own components. You can also created more complex and customized components. You can create everything from small, atomic components (e.g. span, textarea) to more complex components like a Breadcrumb or wysiwyg editor. 
 
 To support you, you can create a skeleton component with the following command.
-
-<pre class="code-white imp-code line-numbers language-shell">
-<code class="language-bash">php bin/console make:impulse:component</code>
-</pre>
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+	<pre class="code-white imp-code line-numbers language-shell">
+		<code class="language-bash">php bin/console make:impulse:component</code>
+	</pre>
+</div>
 
 <div class="documentationHint warning">
   	<span>No maker implemented yet!</span>  
@@ -72,9 +82,20 @@ Components are also capable of being wired with services via the dependency inje
 
 The ComponentClassRegistry is the lookup class in which all discovered components are registered. Remember the following command to list all available components.
 
-<pre class="code-white imp-code line-numbers language-shell">
-<code class="language-bash">php bin/console debug:impulse:components</code>
-</pre>
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-shell">
+  	<code class="language-bash">php bin/console debug:impulse:components</code>
+  </pre>
+</div>
 
 As you maybe noticed each component is registered at least twice. For example the button component is registered as 'button' and 'impulse:button'. The reason behind this is that the Impulse framework offers you the opportunity to have multiple button components registered. 
 
@@ -86,16 +107,38 @@ App/
             
 In the example above in the App is another button component. The component scan discovery overwrites non contextual aliases with the last find. According to this, the following button
 
-<pre class="code-white line-numbers language-markup">
-<code class="imp-code language-markup">&lt;impulse&gt;
-    &lt;button /&gt;
-&lt;/impulse&gt;</code>
-</pre>
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+    <pre class="code-white line-numbers language-markup">
+    <code class="imp-code language-markup">&lt;impulse&gt;
+        &lt;button /&gt;
+    &lt;/impulse&gt;</code>
+    </pre>
+</div>
 
 will be bound to the app button component class. However, you can also explicitly use the button implementation that is provided by the Impulse framework with a contextual prefix.
 
-<pre class="code-white line-numbers language-markup">
-<code class="imp-code language-markup">&lt;impulse&gt;
-    &lt;impulse:button /&gt;
-&lt;/impulse&gt;</code>
-</pre>
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-markup">
+    <code class="imp-code language-markup">&lt;impulse&gt;
+        &lt;impulse:button /&gt;
+    &lt;/impulse&gt;</code>
+  </pre>
+</div>
