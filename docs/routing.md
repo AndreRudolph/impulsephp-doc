@@ -1,4 +1,4 @@
-# Routing
+<h1 class="doc-title">Routing</h1>
 
 - [Defining routes](#defining_routes)
 
