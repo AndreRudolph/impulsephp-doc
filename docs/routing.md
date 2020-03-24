@@ -7,10 +7,21 @@
 
 Defining routes with the Impulse framework is not very different from Symfony's routes definition. The following example shows a route definition.
 
-<pre class="code-white line-numbers language-yaml">
-<code class="language-yaml">welcome:
-    path: welcome
-    defaults: { view: app/index.imp }</code>
-</pre>
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-yaml">
+  	<code class="language-yaml">welcome:
+      path: welcome
+      defaults: { view: app/index.imp }</code>
+  </pre>
+</div>
 
 Unlike Symfony itself, routes are not bind to any controller. Instead they are bind to a specific view. The view applies to a Controller and not reverse.
