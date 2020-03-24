@@ -83,14 +83,14 @@ The <span class="highlightText">apply</span> attribute defines which controller 
     </div>
   </div>
   <pre class="code-white line-numbers language-php">
-  <code class="imp-code language-php"><?php
-  namespace App\Controller;
-  use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+  	<code class="imp-code language-php"><?php
+  	namespace App\Controller;
+  	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 
-  class AppController extends AbstractController
-  {
+  	class AppController extends AbstractController
+  	{
 
-  }</code>
+  	}</code>
   </pre>
 </div>
 
