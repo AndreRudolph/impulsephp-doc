@@ -32,7 +32,7 @@ Defining a controller is not very complicated. A controller is never called dire
 <!--<pre class="code-white line-numbers language-markup">-->
 <div>
   <div class="code-header">
-    Abc test
+    <div class="button red" />
   </div>
   <pre class="code-white language-markup">
   	<code class="imp-code language-markup">&lt;impulse&gt;
