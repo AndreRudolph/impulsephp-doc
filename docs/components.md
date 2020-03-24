@@ -27,7 +27,7 @@ Like the html representatives, each component has exactly one parent (except roo
 
 For a complete list of currently registered components you can run the following command:
 
-<pre class="imp-code line-numbers language-shell">
+<pre class="code-white imp-code line-numbers language-shell">
 <code class="language-bash">php bin/console debug:impulse:components</code>
 </pre>
 
@@ -47,7 +47,7 @@ You can also extend the framework or your app with your own components. You can 
 
 To support you, you can create a skeleton component with the following command.
 
-<pre class="imp-code line-numbers language-shell">
+<pre class="code-white imp-code line-numbers language-shell">
 <code class="language-bash">php bin/console make:impulse:component</code>
 </pre>
 
@@ -72,7 +72,7 @@ Components are also capable of being wired with services via the dependency inje
 
 The ComponentClassRegistry is the lookup class in which all discovered components are registered. Remember the following command to list all available components.
 
-<pre class="imp-code line-numbers language-shell">
+<pre class="code-white imp-code line-numbers language-shell">
 <code class="language-bash">php bin/console debug:impulse:components</code>
 </pre>
 
@@ -86,7 +86,7 @@ App/
             
 In the example above in the App is another button component. The component scan discovery overwrites non contextual aliases with the last find. According to this, the following button
 
-<pre class="line-numbers language-markup">
+<pre class="code-white line-numbers language-markup">
 <code class="imp-code language-markup">&lt;impulse&gt;
     &lt;button /&gt;
 &lt;/impulse&gt;</code>
@@ -94,7 +94,7 @@ In the example above in the App is another button component. The component scan 
 
 will be bound to the app button component class. However, you can also explicitly use the button implementation that is provided by the Impulse framework with a contextual prefix.
 
-<pre class="line-numbers language-markup">
+<pre class="code-white line-numbers language-markup">
 <code class="imp-code language-markup">&lt;impulse&gt;
     &lt;impulse:button /&gt;
 &lt;/impulse&gt;</code>
