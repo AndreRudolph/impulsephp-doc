@@ -88,7 +88,7 @@ Components can be wired directly into the controller by naming conventions. They
     </div>
   </div>
   <pre class="code-white line-numbers language-markup">
-	<code class="language-markup">&lt;impulse&gt;
+	<code class="imp-code language-markup">&lt;impulse&gt;
     	&lt;window&gt;
         	&lt;textbox id="tb" /&gt;
 		&lt;/window&gt;
@@ -109,7 +109,7 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
     </div>
   </div>
   <pre class="code-white line-numbers language-php">
-	<code class="language-php"><?php
+	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
@@ -148,7 +148,7 @@ Another main feature is view and therefor controller nesting. See more for view 
     </div>
   </div>
   <pre class="code-white line-numbers language-markup">
-  	<code class="language-markup">&lt;impulse&gt;
+  	<code class="imp-code language-markup">&lt;impulse&gt;
 	&lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
 	&lt;/impulse&gt;</code>
   </pre>
@@ -165,7 +165,7 @@ Another main feature is view and therefor controller nesting. See more for view 
     </div>
   </div>
   <pre class="code-white line-numbers language-php">
-	<code class="language-php"><?php
+	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
@@ -202,7 +202,7 @@ Just defining a controller is by far not the only supported feature. As you mayb
     </div>
   </div>
   <pre class="code-white line-numbers language-markup">
-  	<code class="language-markup">&lt;impulse&gt;
+  	<code class="imp-code language-markup">&lt;impulse&gt;
 		&lt;window apply="App\Controller\AppController"&gt;
 			&lt;textbox id="tbName" /&gt;
 			&lt;button id="btnGreet" /&gt;
@@ -225,7 +225,7 @@ The controller contains an event listener method.
     </div>
   </div>
   <pre class="code-white line-numbers language-php">
-  	<code class="language-php"><?php
+  	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
