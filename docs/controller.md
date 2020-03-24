@@ -33,6 +33,7 @@ Defining a controller is not very complicated. A controller is never called dire
 <div>
   <div class="code-header">
     <div class="button red" />
+    Abc
   </div>
   <pre class="code-white language-markup">
   	<code class="imp-code language-markup">&lt;impulse&gt;
