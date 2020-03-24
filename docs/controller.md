@@ -66,7 +66,8 @@ Defining a controller is not very complicated. A controller is never called dire
   class AppController extends AbstractController
   {
 
-  }</pre>
+  }</code>
+  </pre>
 </div>
 
 The <span class="highlightText">apply</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
