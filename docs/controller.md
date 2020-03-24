@@ -109,22 +109,22 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
     </div>
   </div>
   <pre class="code-white line-numbers language-php">
-  <code class="language-php"><?php
-  namespace App\Controller;
-  use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-  use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-  use Impulse\ImpulseBundle\UI\Components\Textbox;
+	<code class="language-php"><?php
+	namespace App\Controller;
+	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+	use Impulse\ImpulseBundle\UI\Components\Textbox;
 
-  class AppController extends AbstractController
-  {
-      private ?Textbox $tb = null;
+	class AppController extends AbstractController
+	{
+		private ?Textbox $tb = null;
 
-      public function afterCreate(Event $event)
-      {
-          parent::afterCreate($event);
-          $this->tb->setValue('Hello world!');
-      }
-  }</code>
+		public function afterCreate(Event $event)
+		{
+			parent::afterCreate($event);
+			$this->tb->setValue('Hello world!');
+		}
+	}</code>
   </pre>
 </div>
 
@@ -149,7 +149,7 @@ Another main feature is view and therefor controller nesting. See more for view 
   </div>
   <pre class="code-white line-numbers language-markup">
   <code class="language-markup">&lt;impulse&gt;
-    &lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
+	&lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
 &lt;/impulse&gt;</code>
   </pre>
 </div>
@@ -165,21 +165,21 @@ Another main feature is view and therefor controller nesting. See more for view 
     </div>
   </div>
   <pre class="code-white line-numbers language-php">
-  <code class="language-php"><?php
-  namespace App\Controller;
-  use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-  use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-  use Impulse\Bundles\ImpulseBundle\UI\Components\Window;
+	<code class="language-php"><?php
+	namespace App\Controller;
+	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+	use Impulse\Bundles\ImpulseBundle\UI\Components\Window;
 
-  class AppController extends AbstractController
-  {
-      private ?Window $wndMain = null;
+	class AppController extends AbstractController
+	{
+		private ?Window $wndMain = null;
 
-      public function handleEvent(Event $event)
-      {
-          $this->importView('importedView.imp', $this->wndMain);
-      }
-  }</code>
+		public function handleEvent(Event $event)
+		{
+			$this->importView('importedView.imp', $this->wndMain);
+		}
+	}</code>
   </pre>
 </div>
 
@@ -202,13 +202,13 @@ Just defining a controller is by far not the only supported feature. As you mayb
     </div>
   </div>
   <pre class="code-white line-numbers language-markup">
-  <code class="language-markup">&lt;impulse&gt;
-      &lt;window apply="App\Controller\AppController"&gt;
-          &lt;textbox id="tbName" /&gt;
-          &lt;button id="btnGreet" /&gt;
-          &lt;span id="lbGreet" /&gt;
-      &lt;/window&gt;
-  &lt;/impulse&gt;</code>
+  	<code class="language-markup">&lt;impulse&gt;
+		&lt;window apply="App\Controller\AppController"&gt;
+			&lt;textbox id="tbName" /&gt;
+			&lt;button id="btnGreet" /&gt;
+			&lt;span id="lbGreet" /&gt;
+		&lt;/window&gt;
+	&lt;/impulse&gt;</code>
   </pre>
 </div>
 
@@ -225,29 +225,28 @@ The controller contains an event listener method.
     </div>
   </div>
   <pre class="code-white line-numbers language-php">
-  <code class="language-php">
-  <?php
-  namespace App\Controller;
-  use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-  use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-  use Impulse\Bundles\ImpulseBundle\Controller\Annotations\Listen;
-  use Impulse\Bundles\ImpulseBundle\UI\Components\Span;
-  use Impulse\Bundles\ImpulseBundle\UI\Components\Textbox;
+  	<code class="language-php"><?php
+	namespace App\Controller;
+	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+	use Impulse\Bundles\ImpulseBundle\Controller\Annotations\Listen;
+	use Impulse\Bundles\ImpulseBundle\UI\Components\Span;
+	use Impulse\Bundles\ImpulseBundle\UI\Components\Textbox;
 
-  class AppController extends AbstractController
-  {
-      private ?Textbox $tbName = null;
-      private ?Span $lbGreet = null;
+	class AppController extends AbstractController
+	{
+		private ?Textbox $tbName = null;
+		private ?Span $lbGreet = null;
 
-      /**
-       * @Listen(component="btnGreet", event="click")
-       */
-      public function onClick(Event $event)
-      {
-          $greeting = $this->tbName->getValue();
-          $this->lbGreet->setValue($greeting);
-      }
-  }</code>
+		/**
+		* @Listen(component="btnGreet", event="click")
+		*/
+		public function onClick(Event $event)
+		{
+			$greeting = $this->tbName->getValue();
+			$this->lbGreet->setValue($greeting);
+		}
+	}</code>
   </pre>
 </div>
 
