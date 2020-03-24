@@ -150,7 +150,7 @@ Another main feature is view and therefor controller nesting. See more for view 
   <pre class="code-white line-numbers language-markup">
   	<code class="language-markup">&lt;impulse&gt;
 	&lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
-&lt;/impulse&gt;</code>
+	&lt;/impulse&gt;</code>
   </pre>
 </div>
 
