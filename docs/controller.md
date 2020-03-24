@@ -149,7 +149,7 @@ Another main feature is view and therefor controller nesting. See more for view 
   </div>
   <pre class="code-white line-numbers language-markup">
   	<code class="imp-code language-markup">&lt;impulse&gt;
-	&lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
+		&lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
 	&lt;/impulse&gt;</code>
   </pre>
 </div>
