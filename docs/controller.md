@@ -60,13 +60,13 @@ Defining a controller is not very complicated. A controller is never called dire
   </div>
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
-  namespace App\Controller;
-  use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+  	namespace App\Controller;
+  	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 
-  class AppController extends AbstractController
-  {
+  	class AppController extends AbstractController
+  	{
 
-  }</code>
+  	}</code>
   </pre>
 </div>
 
