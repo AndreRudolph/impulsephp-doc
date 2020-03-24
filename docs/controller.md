@@ -88,11 +88,11 @@ Components can be wired directly into the controller by naming conventions. They
     </div>
   </div>
   <pre class="code-white line-numbers language-markup">
-      <code class="language-markup">&lt;impulse&gt;
-          &lt;window&gt;
-              &lt;textbox id="tb" /&gt;
-          &lt;/window&gt;
-      &lt;/impulse&gt;</code>
+	<code class="language-markup">&lt;impulse&gt;
+    	&lt;window&gt;
+        	&lt;textbox id="tb" /&gt;
+		&lt;/window&gt;
+	&lt;/impulse&gt;</code>
   </pre>
 </div>
 
