@@ -3,8 +3,7 @@ layout: post
 title: Views
 published: true
 ---
-
-# Views
+<h1 class="doc-title">Views</h1>
 
 - [Introduction](#introduction)
 - [Custom attributes](#custom-attributes)
