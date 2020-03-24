@@ -27,9 +27,20 @@ Like the html representatives, each component has exactly one parent (except roo
 
 For a complete list of currently registered components you can run the following command:
 
-<pre class="code-white imp-code line-numbers language-shell">
-<code class="language-bash">php bin/console debug:impulse:components</code>
-</pre>
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-shell">
+  	<code class="language-bash">php bin/console debug:impulse:components</code>
+  </pre>
+</div>
 
 Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the HtmlBasedComponentContract are registered as components automatically.
 
