@@ -29,9 +29,9 @@ For a simple installation you can unpack the downloaded zip, rename the director
         </div>
     </div>
   </div>
-	<pre class="code-white imp-code line-numbers language-shell">
-		<code class="language-bash">composer install</code>
-	</pre>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-bash">composer install</code>
+  </pre>
 </div>
 
 The procedure will ask you for the symfony apache pack if you want to use, type n. Once the procedure is finished, you can open the web application via browser (e.g. http://localhost/project/public/). You should see the example entry page.
@@ -91,7 +91,7 @@ An empty sqlite database is already provided in the var/ directory. The next ste
         </div>
     </div>
   </div>
-	<pre class="code-white imp-code line-numbers language-shell">
-		<code class="language-bash">DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db</code>
-	</pre>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-bash">DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db</code>
+  </pre>
 </div>
