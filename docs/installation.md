@@ -15,3 +15,20 @@ As long as the package is not public, you have to download the installer manuall
 
 <a name="installation"></a>
 # Installation
+
+For a simple installation you can unpack the downloaded zip, rename the directory (if you want) and afterwards you have to run the following command.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+	<pre class="code-white imp-code line-numbers language-shell">
+		<code class="language-bash">composer install</code>
+	</pre>
+</div>
