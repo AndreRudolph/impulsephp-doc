@@ -52,30 +52,32 @@ You can generate a very basic authentication example. First of all, you have to 
     </div>
   </div>
 	<pre class="code-white imp-code line-numbers language-yaml">
-		<code class="language-bash">parameters:
-    env(DATABASE_URL): ''
-doctrine:
-    dbal:
-        # configure these for your database server
-        driver: 'pdo_mysql'
-        server_version: '5.7'
-        charset: utf8mb4
-        default_table_options:
-            charset: utf8mb4
-            collate: utf8mb4_unicode_ci
+		<code class="language-bash">
+		parameters:
+			env(DATABASE_URL): ''
+		
+        doctrine:
+			dbal:
+				# configure these for your database server
+				driver: 'pdo_mysql'
+				server_version: '5.7'
+				charset: utf8mb4
+				default_table_options:
+					charset: utf8mb4
+					collate: utf8mb4_unicode_ci
 
-        url: '%env(resolve:DATABASE_URL)%'
-    orm:
-        auto_generate_proxy_classes: true
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
-        mappings:
-            App:
-                is_bundle: false
-                type: annotation
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
-                alias: App
+				url: '%env(resolve:DATABASE_URL)%'
+		orm:
+			auto_generate_proxy_classes: true
+			naming_strategy: doctrine.orm.naming_strategy.underscore
+			auto_mapping: true
+			mappings:
+			App:
+				is_bundle: false
+				type: annotation
+				dir: '%kernel.project_dir%/src/Entity'
+				prefix: 'App\Entity'
+				alias: App
 </code>
 	</pre>
 </div>
