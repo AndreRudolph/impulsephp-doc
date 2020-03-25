@@ -32,3 +32,5 @@ For a simple installation you can unpack the downloaded zip, rename the director
 		<code class="language-bash">composer install</code>
 	</pre>
 </div>
+
+The procedure will ask you for the symfony apache pack if you want to use, type n. 
