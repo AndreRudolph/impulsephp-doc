@@ -55,7 +55,6 @@ You can generate a very basic authentication example. First of all, you have to 
 		<code class="language-bash">
 		parameters:
 			env(DATABASE_URL): ''
-		
         doctrine:
 			dbal:
 				# configure these for your database server
@@ -65,7 +64,6 @@ You can generate a very basic authentication example. First of all, you have to 
 				default_table_options:
 					charset: utf8mb4
 					collate: utf8mb4_unicode_ci
-
 				url: '%env(resolve:DATABASE_URL)%'
 		orm:
 			auto_generate_proxy_classes: true
