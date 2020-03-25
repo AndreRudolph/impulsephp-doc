@@ -33,4 +33,4 @@ For a simple installation you can unpack the downloaded zip, rename the director
 	</pre>
 </div>
 
-The procedure will ask you for the symfony apache pack if you want to use, type n. 
+The procedure will ask you for the symfony apache pack if you want to use, type n. Once the procedure is finished, you can open the web application via browser (e.g. http://localhost/project/public/). You should see the example entry page.
