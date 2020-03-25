@@ -78,3 +78,20 @@ You can generate a very basic authentication example. First of all, you have to 
 </code>
 	</pre>
 </div>
+
+An empty sqlite database is already provided in the var/ directory. The next step is adjusting the database connection settings in the .env file.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+	<pre class="code-white imp-code line-numbers language-shell">
+		<code class="language-bash">DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db</code>
+	</pre>
+</div>
