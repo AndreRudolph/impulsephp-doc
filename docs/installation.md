@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Installation
+published: true
 ---
+<h1 class="doc-title">Installation and setup</h1>
 
-Installation!
+- [Download](#download)
+- [Installation](#Installation)
