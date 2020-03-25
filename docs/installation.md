@@ -11,7 +11,7 @@ published: true
 <a name="download"></a>
 # Download
 
-As long as the package is not public, you have to download the installer manually.
+As long as the package is not public, you have to download the installer manually. You can download the packahe <a href="public/downloads/installer.zip" target="_blank">here</a>.
 
 <a name="installation"></a>
 # Installation
