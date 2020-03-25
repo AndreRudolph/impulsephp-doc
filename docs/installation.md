@@ -52,8 +52,7 @@ You can generate a very basic authentication example. First of all, you have to 
     </div>
   </div>
 	<pre class="code-white imp-code line-numbers language-yaml">
-		<code class="language-bash">
-		parameters:
+		<code class="language-bash">parameters:
 			env(DATABASE_URL): ''
         doctrine:
 			dbal:
