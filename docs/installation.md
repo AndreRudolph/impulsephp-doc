@@ -7,3 +7,11 @@ published: true
 
 - [Download](#download)
 - [Installation](#Installation)
+
+<a name="download"></a>
+# Download
+
+As long as the package is not public, you have to download the installer manually.
+
+<a name="installation"></a>
+# Installation
