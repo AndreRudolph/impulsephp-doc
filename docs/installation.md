@@ -95,3 +95,22 @@ An empty sqlite database is already provided in the var/ directory. The next ste
 	<code class="language-bash">DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db</code>
   </pre>
 </div>
+
+The last step is just generating the authentication example with the following command.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-bash">php bin/console make:impulse:auth</code>
+  </pre>
+</div>
+
+After that, refresh the main page and you will see that "Login" and "Registration" menu entries have been added automatically.
