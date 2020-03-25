@@ -7,6 +7,7 @@ published: true
 
 - [Download](#download)
 - [Installation](#Installation)
+- [Authentication example](#authentication-example)
 
 <a name="download"></a>
 # Download
@@ -34,3 +35,6 @@ For a simple installation you can unpack the downloaded zip, rename the director
 </div>
 
 The procedure will ask you for the symfony apache pack if you want to use, type n. Once the procedure is finished, you can open the web application via browser (e.g. http://localhost/project/public/). You should see the example entry page.
+
+<a name="authentication-example"></a>
+# Authentication example
