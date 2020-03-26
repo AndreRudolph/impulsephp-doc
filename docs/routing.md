@@ -1,6 +1,10 @@
 <h1 class="doc-title">Routing</h1>
 
+- [Introduction](#introduction)
 - [Defining routes](#defining_routes)
+
+<a name="introduction"></a>
+## Introduction
 
 <a name="defining_routes"></a>
 ## Defining routes
