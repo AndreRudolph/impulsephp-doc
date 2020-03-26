@@ -7,12 +7,12 @@ published: true
 
 - [Introduction](#introduction)
 - [Custom attributes](#custom-attributes)
-- [Nesting views](#nesting-views)
+- [Import views](#import-views)
 - [Apply controllers to views](#apply-controllers)
 
 <a name="introduction"></a>
 
-Views in Impulse are simple to understand but very powerful. A view encapsulates a set of components which will be later converted to HTML in the browser. The following example is a minimal example with just a simple text output.
+Views in Impulse are almost as simple as HTML but very powerful. A view encapsulates a set of components which will be later converted by the Impulse js engine to HTML. The following example is a minimal example with just a simple text output.
 
 <div>
   <div class="code-header">
@@ -62,8 +62,8 @@ Each component within a view can be extended by custom attributes. These attribu
 
 Custom attributes of a component are only accessible on server side. You may access them to handle components with custom attributes in that way that fit your needs.
 
-<a name="nesting-views"></a>
-## Nesting views
+<a name="import-views"></a>
+## Import views
 
 The framework also provides a possibility to nest views:
 
