@@ -5,6 +5,8 @@
 
 <a name="introduction"></a>
 ## Introduction
+Routing is a key concept of a full stack framework and therefore essential. A route defines an entry point (e.g. an URI) of the application and refers to a specific callback or function that handles incoming requests that match this route. 
+
 
 <a name="defining_routes"></a>
 ## Defining routes
