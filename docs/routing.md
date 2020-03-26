@@ -7,6 +7,8 @@
 ## Introduction
 Routing is a key concept of a full stack framework and therefore essential. A route defines an entry point (e.g. an URI) of the application and refers to a specific callback or function that handles incoming requests that match this route. 
 
+For a general overview of the routing concept, you can read the symfony's <a href="https://symfony.com/doc/current/routing.html" target="_blank">documentation</a>.
+
 
 <a name="defining_routes"></a>
 ## Defining routes
