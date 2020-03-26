@@ -13,7 +13,7 @@ For a general overview of the routing concept, you can read the symfony's <a hre
 <a name="defining_routes"></a>
 ## Defining routes
 
-Defining routes with the Impulse framework is not very different from Symfony's routes definition. The following example shows a route definition.
+Route definitions in the Impulse framework are almost similar to symfonys native route definitions. Consider the following example.
 
 <div>
   <div class="code-header">
@@ -32,4 +32,4 @@ Defining routes with the Impulse framework is not very different from Symfony's 
   </pre>
 </div>
 
-Unlike Symfony itself, routes are not bind to any controller. Instead they are bind to a specific view. The view applies to a Controller and not reverse.
+Unlike Symfony itself, routes are not bind to any controller. Instead they are bind to a specific view. You can read more about views in the next documentation article.
