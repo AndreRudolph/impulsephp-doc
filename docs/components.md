@@ -13,9 +13,9 @@
 <a name="introduction"></a>
 ### Introduction
 
-Components are the heart of the Impulse PHP Framework. Almost every native html tag is considered as a component itself. Unlike 'normal' (ajax based) web application such componnets have a state on client as well on server side. 
+Components is the key concept behind the Impulse PHP Framework because literally everything is based on that. A component represent an object that itself is rendered as a HTML representation in the browser via the Impulse javascript engine. Components can be either trivial and atomar (e.g. a textbox) or even more complex like a caroussel component. Almost every native html tag is considered as a component itself. Unlike 'normal' (ajax based) web application such componnets have a state on client as well on server side. 
 
-Each component has a set of server side managed attributes that are directly stored within the users session. For example width, height, custom attributes, etc. However, most of the components do have more attributes, e.g. 'value' for textbox or 'label' for button components. 
+Each component (and of course its state) is stored within the user's session. This is required to keep the state of a component alive as long as the component resides in the DOM. Every component should inherit directly or indirectly form the AbstractComponent since it implements the necessary basics to have a working component. Once a component has been created either on server side as well on client side, the component resides in an updatable state. This means that most of the components attributes are synchronized with the client like e.g. width, height (defined in AbstractComponent) or value for textbox components. Whenever you update on of the synchronizable attributes, the changes are directly recorded and part of the response of the server.
 
 Like the html representatives, each component has exactly one parent (except root) and zero to any number of childs. When the session gets persisted or updated, the parent-/child relationships will also be stored.
 
