@@ -72,10 +72,6 @@ To support you, you can create a skeleton component with the following command.
 	</pre>
 </div>
 
-<div class="documentationHint warning">
-  	<span>No maker implemented yet!</span>  
-</div>
-
 <a name="advanced_topics"></a>
 ### Advanced topics
 
