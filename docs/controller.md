@@ -5,7 +5,9 @@ published: true
 ---
 
 
-<h1 class="doc-title">Controllers</h1>
+<h1 class="doc-title">Controllerssssss</h1>
+
+<div style="float: right">
 
 - [Introduction](#introduction)
 - [Basic Controllers](#basic-controllers)
@@ -17,6 +19,8 @@ published: true
 - [Advanced topics](#advanced-topics)
     - [Concept of serialization](#concept-serialization)
     - [Excluding attributes from serialization]
+  
+</div>
 
 <a name="introduction"></a>
 # Introduction
