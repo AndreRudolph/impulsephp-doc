@@ -16,4 +16,4 @@ Impulse is a modern web application framework that brings PHP applications to a 
 It is designed to be secure, extendable, scalable and simple to use.
 
 <a name="why-symfony"></a>
-###Why Symfony
+### Why Symfony
