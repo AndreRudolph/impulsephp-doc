@@ -17,3 +17,5 @@ It is designed to be secure, extendable, scalable and simple to use.
 
 <a name="why-symfony"></a>
 ### Why Symfony
+
+The Impulse PHP Framework is completely based on Symfony fullstack framework and benefits from all of its advantages for agile and professional application development. Due to its extendable and configurable nature, Impulse is aswell extendable by configurations and even with new bundles.  
