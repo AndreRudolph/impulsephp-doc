@@ -8,9 +8,13 @@ published: true
 - [Impulse](#impulse)
 - [Why Symfony](#why-symfony)
 
-<a name="impulse"><h3>Impulse</h3></a>
+<a name="impulse">
+###Impulse
+</a>
 Impulse is a modern web application framework that brings PHP applications to a complete new level. Though its simple approach, amazing and complex AJAX applications can be created without even the need of Javascript knowledge to a certain level.
 
 It is designed to be secure, extendable, scalable and simple to use.
 
-<a name="why-symfony"><h3>Why Symfony</h3></a>
+<a name="why-symfony">
+###Why Symfony
+</a>
