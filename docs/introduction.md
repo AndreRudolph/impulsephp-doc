@@ -11,7 +11,7 @@ published: true
 <a name="impulse"></a>
 ### Impulse
 
-Impulse is a modern web application framework that brings PHP applications to a complete new level. Though its simple approach, amazing and complex AJAX applications can be created without even the need of Javascript knowledge to a certain level.
+Impulse is a modern web application framework that brings PHP applications to a complete new level, that's why I selected that name. Though its simple approach, amazing and complex AJAX applications can be created without even the need of Javascript knowledge to a certain level.
 
 It is designed to be secure, extendable, scalable and simple to use.
 
