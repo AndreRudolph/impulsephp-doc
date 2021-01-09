@@ -5,7 +5,10 @@ published: true
 ---
 <h1 class="doc-title">Introduction</h1>
 
+- [Impulse](#impulse)
 - [Why Impulse](#why-impulse)
+
+<a name="impulse"><</a>
 
 <a name="why-impulse"></a>
 
