@@ -21,7 +21,7 @@ It is designed to be secure, extendable, scalable and simple to use.
 The Impulse PHP Framework is completely based on Symfony fullstack framework and benefits from all of its advantages for agile and professional application development. Due to its extendable and configurable nature, Impulse is aswell extendable by configurations and even with new bundles.  
 
 <h4>Bundle system</h4>
-Symfony is designed to be extendable with the so called concept of _bundles_. Bundles are extensions that can for example bring new features to application or even to framework core level. 
+Symfony is designed to be extendable with the so called concept of <a href="https://symfony.com/doc/current/bundles.html" target="_blank">_bundles_</a>. Bundles are extensions that can for example bring new features to application or even to framework core level. 
 
 
 <h4>Twig integration</h4>
