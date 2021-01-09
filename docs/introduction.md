@@ -6,7 +6,7 @@ published: true
 <h1 class="doc-title">Introduction</h1>
 
 - [Impulse](#impulse)
-- [Why Symfony](#why-symfony)
+- [Symfony integration](#symfony-integration)
 
 <a name="impulse"></a>
 ### Impulse
@@ -15,7 +15,13 @@ Impulse is a modern web application framework that brings PHP applications to a 
 
 It is designed to be secure, extendable, scalable and simple to use.
 
-<a name="why-symfony"></a>
-### Why Symfony
+<a name="symfony-integration"></a>
+### Symfony integration
 
 The Impulse PHP Framework is completely based on Symfony fullstack framework and benefits from all of its advantages for agile and professional application development. Due to its extendable and configurable nature, Impulse is aswell extendable by configurations and even with new bundles.  
+
+#### Bundle system
+Symfony is designed to be extendable with the so called concept of _bundles_. Bundles are extensions that can for example bring new features to application or even to framework core level. 
+
+
+#### Twig integration
