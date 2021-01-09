@@ -8,9 +8,9 @@ published: true
 - [Impulse](#impulse)
 - [Why Impulse](#why-impulse)
 
-<a name="impulse"><</a>
+<a name="impulse"><h3>Impulse</h3></a>
 
-<a name="why-impulse"></a>
+<a name="why-impulse"><h3>Why Impulse</h3></a>
 
 Views in Impulse are almost as simple as HTML but very powerful. A view encapsulates a set of components which will be later converted by the Impulse js engine to HTML. The following example is a minimal example with just a simple text output.
 
