@@ -1,0 +1,1 @@
+<h1 class="doc-title">Component service wiring</h1>
