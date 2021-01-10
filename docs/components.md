@@ -72,7 +72,7 @@ To support you, you can create a skeleton component with the following command.
 <a name="advanced_topics"></a>
 ### Learn more about components
 <ul>
-  <li data-target-menu-item="component_life_cycle">Component lifecycle</li>
+  <li data-target-menu-item="component_lifecycle">Component lifecycle</li>
   <li>B</li>
 </ul>
 
