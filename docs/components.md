@@ -5,10 +5,7 @@
 	- [Registered components & discovery](#registered_components)
 	- [Client-server-synchronization](#client_server_synchronization)
     - [Creating own components](#create_own_components)
-- [Advanced topics](#advanced_topics)
-	- [Component lifecycle](#component_lifecycle)
-    - [Wiring services into components](#wiring)
-    - [Component contexts](#component_contexts)
+- [Learn more about components](#advanced_topics)
 
 <a name="introduction"></a>
 ### Introduction
@@ -73,7 +70,8 @@ To support you, you can create a skeleton component with the following command.
 </div>
 
 <a name="advanced_topics"></a>
-### Advanced topics
+### Learn more about components
+- <a href="https://andrerudolph.github.io/impulsephp-doc/component_lifecycle.html">Component lifecycle</a>
 
 <a name="component_lifecycle"></a>
 <h3>Component lifecycle</h3>
