@@ -71,7 +71,7 @@ To support you, you can create a skeleton component with the following command.
 
 <a name="advanced_topics"></a>
 ### Learn more about components
-- <a href="https://andrerudolph.github.io/impulsephp-doc/component_lifecycle.html">Component lifecycle</a>
+- <a href="https://andrerudolph.github.io/impulsephp-doc/component_lifecycle.html" data-target-menu-item="component_a">Component lifecycle</a>
 
 <a name="component_lifecycle"></a>
 <h3>Component lifecycle</h3>
