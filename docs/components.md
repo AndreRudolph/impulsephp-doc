@@ -72,11 +72,9 @@ To support you, you can create a skeleton component with the following command.
 <a name="advanced_topics"></a>
 ### Learn more about components
 <ul>
-  <li>A</li>
+  <li data-target-menu-item="component_life_cycle">Component lifecycle</li>
   <li>B</li>
 </ul>
-
-- <a href="https://andrerudolph.github.io/impulsephp-doc/component_lifecycle.html" data-target-menu-item="component_a">Component lifecycle</a>
 
 <a name="component_lifecycle"></a>
 <h3>Component lifecycle</h3>
