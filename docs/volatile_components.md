@@ -1,0 +1,1 @@
+<h1 class="doc-title">Volatile components</h1>
