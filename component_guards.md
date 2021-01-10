@@ -1,1 +1,0 @@
-<h1 class="doc-title">Component guards</h1>
