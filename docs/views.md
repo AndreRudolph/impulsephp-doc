@@ -12,7 +12,9 @@ published: true
 
 <a name="introduction"></a>
 
-Views in Impulse are almost as simple as HTML but very powerful. A view encapsulates a set of components which will be later converted by the Impulse js engine to HTML. The following example is a minimal example with just a simple text output.
+A view (or template) is different to _normal_ templates in symfony. In impulse every tag must represent a component which will be later converted to HTML. Components will be covered in the next documentation page.
+
+The following example is a minimum example with just a simple text output.
 
 <div>
   <div class="code-header">
@@ -33,7 +35,34 @@ Views in Impulse are almost as simple as HTML but very powerful. A view encapsul
   </pre>
 </div>
  
-A view must start with an opening impulse tag and must be closed with a closing impulse tag.
+A view must start with an opening and must end with a closing impulse tag. The file extension is the same as it is in symfony: twig.html.
+
+As impulse seamlessly integrates twig, even more complex templates can be created.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-markup">
+      <code class="language-markup">&lt;impulse&gt;
+          &lt;window&gt;
+          	  &lt;ul&gt;
+          	  {% for i in 0..10 %}
+    		     &lt;li&gt;{{ i }}&lt;/li&gt;
+			  {% endfor %}
+              &lt;/ul&gt;
+          &lt;/window&gt;
+      &lt;/impulse&gt;</code>
+  </pre>
+</div>
+
+The above example displays a list with ten items counting up from 0 to 9. 
 
 <a name="custom-attributes"></a>
 ## Custom attributes
