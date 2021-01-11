@@ -14,7 +14,7 @@ For a general overview of the routing concept, you can read the symfony's <a hre
 <a name="defining_routes"></a>
 ## Defining routes
 
-Route definitions in the Impulse framework are almost similar to symfonys native route definitions. The following example shows an extended route definition.
+Route definitions in the Impulse framework are similar to symfonys native route definitions and uses the default parameters for required informations. The following example shows an extended route definition.
 
 <div>
   <div class="code-header">
@@ -34,7 +34,11 @@ Route definitions in the Impulse framework are almost similar to symfonys native
   </pre>
 </div>
 
+The view parameter is necessary and will be explained more in depth in the following Entry points chapter. 
+
 <a name="entry-points" />
 ## Entry points
 
-As mentioned above, routes represent entry points. By using impulse a route consists of two entry points. First one is the **_FrontController_** (App\Controller\ImpulseController::index) which works like a normal Symfony controller but routes every incoming, impulse related, request to the impulse engine. The engine then renders the given view template which represents the entry point of the impulse application itself.
+As mentioned above, routes represent entry points. By using impulse, a route consists of two entry points. First one is the **_FrontController_** (App\Controller\ImpulseController) which works like a normal Symfony controller but routes every incoming, impulse related, request to the impulse engine. The engine then renders the given view template which represents the entry point of the impulse application itself.
+
+The complete guide to views can be found in the following Views chapter.
