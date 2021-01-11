@@ -41,4 +41,4 @@ The view parameter is necessary and will be explained more in depth in the follo
 
 As mentioned above, routes represent entry points. By using impulse, a route consists of two entry points. First one is the **_FrontController_** (App\Controller\ImpulseController) which works like a normal Symfony controller but routes every incoming, impulse related, request to the impulse engine. The engine then renders the given view template which represents the entry point of the impulse application itself.
 
-The complete guide to views can be found in the following Views chapter.
+The complete guide to views can be found in the following <a data-target-menu-item="views">Views</a> chapter.
