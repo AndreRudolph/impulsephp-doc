@@ -26,8 +26,8 @@ The following example is a minimum example with just a simple text output.
         </div>
     </div>
   </div>
-  <pre class="code-white line-numbers language-markup">
-      <code class="language-markup">&lt;impulse&gt;
+  <pre class="code-white line-numbers language-twig">
+      <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
               Hello world
           &lt;/window&gt;
@@ -78,8 +78,8 @@ Each component within a view can be extended by custom attributes. These attribu
         </div>
     </div>
   </div>
-  <pre class="code-white line-numbers language-markup">
-      <code class="language-markup">&lt;impulse&gt;
+  <pre class="code-white line-numbers language-twig">
+      <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
               &lt;button&gt;
                   &lt;custom-attributes attr1="val1" attr2="val2" /&gt;
@@ -106,8 +106,8 @@ The framework also provides a possibility to nest views:
         </div>
     </div>
   </div>
-  <pre class="code-white line-numbers language-markup">
-      <code class="language-markup">&lt;impulse&gt;
+  <pre class="code-white line-numbers language-twig">
+      <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
               &lt;import src="helloWorld.imp" /&gt;
           &lt;/window&gt;
