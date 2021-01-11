@@ -53,9 +53,11 @@ As impulse seamlessly integrates twig, even more complex templates can be create
       <code class="language-markup">&lt;impulse&gt;
           &lt;window&gt;
           	  &lt;ul&gt;
+              {% raw  %}
           	  {% for i in 0..10 %}
     		     &lt;li&gt;{{ i }}&lt;/li&gt;
 			  {% endfor %}
+              {% endraw  %}
               &lt;/ul&gt;
           &lt;/window&gt;
       &lt;/impulse&gt;</code>
