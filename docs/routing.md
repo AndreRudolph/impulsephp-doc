@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Defining routes](#defining_routes)
+- [Front controller](#front-controller)
 
 <a name="introduction"></a>
 ## Introduction
@@ -33,6 +34,7 @@ Route definitions in the Impulse framework are almost similar to symfonys native
   </pre>
 </div>
 
-The example above looks very much familiar to symfonys route definition by one exception. In the Impulse PHP framework, a route can be further configured with a view that will be rendered. The controller 'App\Controller\ImpulseController' is designed as a front controller and represents the entry point of the framework. 
+<a name="front-controller" />
+## Front controller
 
-
+The previous example looks very much familiar to symfonys route definition by one exception. In the Impulse PHP framework, a route can be further configured with a view that will be rendered. In simplified words, the default App\Controller\ImpulseController controller works as a front controller and routes every incoming request to the impulse engine.
