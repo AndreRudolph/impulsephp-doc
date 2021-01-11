@@ -49,8 +49,8 @@ As impulse seamlessly integrates twig, even more complex templates can be create
         </div>
     </div>
   </div>
-  <pre class="code-white line-numbers language-markup">
-      <code class="language-markup">&lt;impulse&gt;
+  <pre class="code-white line-numbers language-twig">
+      <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
           	  &lt;ul&gt;{% raw  %}
           	      {% for i in 0..10 %}
