@@ -1,3 +1,9 @@
+<h1 class="doc-title">Components Expression Language based Wiring</h1>
+
+- [Introduction](#introduction)
+
+<a href="#introduction">Introduction</a>
+
 Creating more complex components should be as easy as possible without breaking any conventions of the Framework. Whenever you face the issue of wiring components from the same component tree, you can do this easily via the **_Wire_** annotation. 
 
 You can define the component(s) that will be wired by using symfonys awesome expression language. Impulse extends the expression language by adding four different functions to retrieve components based on their state and class instance.
