@@ -1,6 +1,11 @@
 <h1 class="doc-title">Components Expression Language based Wiring</h1>
 
 - [Introduction](#introduction)
+- [Available functions](#available-functions)
+	- [instanceOf()](#instanceOf)
+    - [component(attribute)](#componentAttribute)
+    - [id()](#id)
+    - [uid()](#uid)
 
 <a href="#introduction">Introduction</a>
 
