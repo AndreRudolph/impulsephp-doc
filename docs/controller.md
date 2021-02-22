@@ -38,7 +38,7 @@ Defining a controller is not very complicated. A controller is never called dire
           <div class="button green"></div>
         </div>
     </div>
-</div></div></div>
+</div>
 <pre class="code-white line-numbers language-markup">
 	<code class="imp-code language-markup">&lt;impulse&gt;
 		&lt;window apply="App\Controller\AppController" /&gt;
