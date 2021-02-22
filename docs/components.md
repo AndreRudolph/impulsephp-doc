@@ -28,9 +28,9 @@ For a complete list of currently registered components you can run the following
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -58,9 +58,9 @@ To support you, you can create a skeleton component with the following command.
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -94,9 +94,9 @@ The ComponentClassRegistry is the lookup class in which all discovered component
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -119,9 +119,9 @@ In the example above in the App is another button component. The component scan 
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -138,9 +138,9 @@ will be bound to the app button component class. However, you can also explicitl
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
