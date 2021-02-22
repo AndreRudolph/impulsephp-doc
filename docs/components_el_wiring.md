@@ -6,6 +6,7 @@
     - [component(attribute)](#componentAttribute)
     - [id()](#id)
     - [uid()](#uid)
+- [Options](#options)
 
 <a href="#introduction">Introduction</a>
 
@@ -40,6 +41,8 @@ class RadioGroup extends AbstractComponent implements AfterCreateChilds
     private ?Collection $radios;
 }</code>
 </pre>
+
+This function works the same like PHPs instanceof and also works with inheritance and interfaces.
 
 <a href="#componentAttribute">component(Attribute)</a>
 
