@@ -40,3 +40,23 @@ class RadioGroup extends AbstractComponent implements AfterCreateChilds
     private ?Collection $radios;
 }</code>
 </pre>
+
+<a href="#instanceOf">component(Attribute)</a>
+
+A more generic function is the component function which has one parameter that retrieves an attribute value of the component for comparison. The following example will look for all components with the id **_specialId_** .
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-markup">
+	<code class="imp-code language-markup"><?php
+
+	#[Wire('component("id") === "specialId')]
+    private ?Collection $radios;</code>
+</pre>
