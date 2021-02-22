@@ -51,9 +51,9 @@ The <span class="highlightText">apply</span> attribute defines which controller 
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -79,9 +79,9 @@ Components can be wired directly into the controller by naming conventions. They
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -100,9 +100,9 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -135,9 +135,9 @@ Another main feature is view and therefor controller nesting. See more for view 
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -152,9 +152,9 @@ Another main feature is view and therefor controller nesting. See more for view 
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -189,9 +189,9 @@ Just defining a controller is by far not the only supported feature. As you mayb
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -212,9 +212,9 @@ The controller contains an event listener method.
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
