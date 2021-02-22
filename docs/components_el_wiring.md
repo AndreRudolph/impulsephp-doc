@@ -4,7 +4,7 @@
 
 <a href="#introduction">Introduction</a>
 
-Creating more complex components should be as easy as possible without breaking any conventions of the Framework. Whenever you face the issue of wiring components from the same component tree, you can do this easily via the **_Wire_** annotation. 
+The more complex a component get the more functionalities are necessary. Whenever you face the issue of wiring components from the same component tree, you can do this easily via the **_Wire_** annotation. 
 
 You can define the component(s) that will be wired by using symfonys awesome expression language. Impulse extends the expression language by adding four different functions to retrieve components based on their state and class instance.
 
@@ -13,7 +13,7 @@ You can define the component(s) that will be wired by using symfonys awesome exp
 - uid()
 - component(attribute)
 
-The RadioGroup component uses the expression language to wire the direct descendant radio components.  
+The RadioGroup component uses the expression language to wire the direct descendant radio components by using the instanceOf() expression language function provied by Impulse. 
 
 <div class="code-header">
 	<div class="container-fluid">
