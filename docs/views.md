@@ -20,9 +20,9 @@ The following example is a minimum example with just a simple text output.
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -43,9 +43,9 @@ As impulse seamlessly integrates twig, even more complex templates can be create
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -72,9 +72,9 @@ Each component within a view can be extended by custom attributes. These attribu
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -100,9 +100,9 @@ The framework also provides a possibility to nest views:
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
