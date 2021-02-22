@@ -21,12 +21,6 @@ published: true
 <a name="introduction"></a>
 # Introduction
 
-  <pre class="code-white line-numbers language-markup">
-  	<code class="imp-code language-markup">&lt;impulse&gt;
-		&lt;window apply="App\Controller\AppController" /&gt;
-    &lt;/impulse&gt;</code>
-  </pre>
-
 A controller is the main component that is responsible for handling (and thus managing) user interactions. Unlike other frameworks, a controller in the Impulse PHP Framework itself does not directly return views. Instead, a view template specifies the related controller that will be rendered.
 
 <a name="basis-controller">
@@ -39,9 +33,9 @@ Defining a controller is not very complicated. A controller is never called dire
 <div class="code-header">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
         </div>
     </div>
 </div></div></div>
