@@ -21,28 +21,22 @@ published: true
 <a name="introduction"></a>
 # Introduction
 
-<?php
-	namespace App\Controller;
-	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-	use Impulse\Bundles\ImpulseBundle\Controller\Annotations\Listen;
-	use Impulse\Bundles\ImpulseBundle\UI\Components\Span;
-	use Impulse\Bundles\ImpulseBundle\UI\Components\Textbox;
-
-	class AppController extends AbstractController
-	{
-		private ?Textbox $tbName = null;
-		private ?Span $lbGreet = null;
-
-		/**
-		* @Listen(component="btnGreet", event="click")
-		*/
-		public function onClick(Event $event)
-		{
-			$greeting = $this->tbName->getValue();
-			$this->lbGreet->setValue($greeting);
-		}
-	}
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red" />
+          	<div class="button yellow" />
+          	<div class="button green" />
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-markup">
+  	<code class="imp-code language-markup">&lt;impulse&gt;
+		&lt;window apply="App\Controller\AppController" /&gt;
+    &lt;/impulse&gt;</code>
+  </pre>
+</div>
 
 A controller is the main component that is responsible for handling (and thus managing) user interactions. Unlike other frameworks, a controller in the Impulse PHP Framework itself does not directly return views. Instead, a view template specifies the related controller that will be rendered. 
 
