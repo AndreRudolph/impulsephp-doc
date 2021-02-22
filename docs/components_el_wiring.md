@@ -41,7 +41,7 @@ class RadioGroup extends AbstractComponent implements AfterCreateChilds
 }</code>
 </pre>
 
-<a href="#instanceOf">component(Attribute)</a>
+<a href="#componentAttribute">component(Attribute)</a>
 
 A more generic function is the component function which has one parameter that retrieves an attribute value of the component for comparison. The following example will look for all components with the id **_specialId_** .
 
