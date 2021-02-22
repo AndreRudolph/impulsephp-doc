@@ -78,8 +78,8 @@ The example above evaluates and finds components with the id **_specialId_** . H
     </div>
 </div>
 <pre class="code-white line-numbers language-markup">
-	<code class="imp-code language-markup"><?php
+<code class="imp-code language-markup"><?php
 
-	#[Wire('id() === "specialId"')]
-    private ?Collection $radios;</code>
+#[Wire('id() === "specialId"')]
+private ?Collection $radios;</code>
 </pre>
