@@ -11,12 +11,9 @@
 
 The more complex a component get the more functionalities are necessary. Whenever you face the issue of wiring components from the same component tree, you can do this easily via the **_Wire_** annotation. 
 
-You can define the component(s) that will be wired by using symfonys awesome expression language. Impulse extends the expression language by adding four different functions to retrieve components based on their state and class instance.
+You can define the component(s) that will be wired by using symfonys awesome expression language. Impulse extends the expression language by adding four different functions to retrieve components based on their state and class instance. The functions are explained in the sections below.
 
-- instanceOf
-- id()
-- uid()
-- component(attribute)
+<a href="#instanceOf">instanceOf()</a>
 
 The RadioGroup component uses the expression language to wire the direct descendant radio components by using the instanceOf() expression language function provied by Impulse. 
 
