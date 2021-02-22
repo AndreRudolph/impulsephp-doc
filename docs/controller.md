@@ -47,22 +47,20 @@ A controller is the main component that is responsible for handling (and thus ma
 Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
 
 <!--<pre class="code-white line-numbers language-markup">-->
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red" />
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="button red" />
           	<div class="button yellow" />
           	<div class="button green" />
         </div>
     </div>
-  </div>
-  <pre class="code-white line-numbers language-markup">
-  	<code class="imp-code language-markup">&lt;impulse&gt;
+</div>
+<pre class="code-white line-numbers language-markup">
+	<code class="imp-code language-markup">&lt;impulse&gt;
 		&lt;window apply="App\Controller\AppController" /&gt;
     &lt;/impulse&gt;</code>
-  </pre>
-</div>
+</pre>
 
 The <span class="highlightText">apply</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
  
