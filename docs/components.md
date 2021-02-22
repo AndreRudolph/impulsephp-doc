@@ -10,7 +10,7 @@
 <a name="introduction"></a>
 ### Introduction
 
-Components is the key concept behind the Impulse PHP Framework because literally everything is based on that. A component represents an object that itself is rendered as a HTML representation in the browser via the Impulse javascript engine. Components can be either trivial and atomar (e.g. a textbox) or even more complex like a caroussel component. Almost every native html tag is considered as a component itself. Unlike 'normal' (ajax based) web application such componnets have a state on client as well on server side. 
+Components is the key concept behind the Impulse PHP Framework because literally everything is based on that. A component represents an object that itself is rendered as a HTML representation in the browser via the Impulse javascript engine. Components can be either trivial and atomar (e.g. a textbox) or even more complex like a caroussel component. Almost every native html tag is considered as a component itself. Unlike 'normal' (ajax based) web application such componnets have a state on client as well on server side.
 
 Each component (and of course its state) is stored within the user's session. This is required to keep the state of a component alive as long as the component resides in the DOM. Every component should inherit directly or indirectly form the AbstractComponent since it implements the necessary basics to have a working component. Once a component has been created either on server side as well on client side, the component resides in an updatable state. This means that most of the components attributes are synchronized with the client like e.g. width, height (defined in AbstractComponent) or value for textbox components. Whenever you update on of the synchronizable attributes, the changes are directly recorded and part of the response of the server.
 
@@ -23,7 +23,7 @@ Like the html representatives, each component has exactly one parent (except roo
 <h3>Registered components &amp; discovery</h3>
 
 For a complete list of currently registered components you can run the following command:
-
+test
 <div>
   <div class="code-header">
     <div class="container-fluid">
@@ -51,7 +51,7 @@ To achieve this, most of the setters for attributes (e.g. setHeight, setVisible,
 <a name="create_own_components"></a>
 <h3>Creating own components</h3>
 
-You can also extend the framework or your app with your own components. You can also created more complex and customized components. You can create everything from small, atomic components (e.g. span, textarea) to more complex components like a Breadcrumb or wysiwyg editor. 
+You can also extend the framework or your app with your own components. You can also created more complex and customized components. You can create everything from small, atomic components (e.g. span, textarea) to more complex components like a Breadcrumb or wysiwyg editor.
 
 To support you, you can create a skeleton component with the following command.
 <div>
@@ -83,7 +83,7 @@ To support you, you can create a skeleton component with the following command.
 <a name="wiring"></a>
 <h3>Wiring services into components</h3>
 
-Components are also capable of being wired with services via the dependency injection container. All you have to do is let your component implement the WiringAware interface which is just a marker interface. 
+Components are also capable of being wired with services via the dependency injection container. All you have to do is let your component implement the WiringAware interface which is just a marker interface.
 
 <a name="component_contexts"></a>
 <h3>Component contexts</h3>
@@ -105,14 +105,14 @@ The ComponentClassRegistry is the lookup class in which all discovered component
   </pre>
 </div>
 
-As you maybe noticed each component is registered at least twice. For example the button component is registered as 'button' and 'impulse:button'. The reason behind this is that the Impulse framework offers you the opportunity to have multiple button components registered. 
+As you maybe noticed each component is registered at least twice. For example the button component is registered as 'button' and 'impulse:button'. The reason behind this is that the Impulse framework offers you the opportunity to have multiple button components registered.
 
 Consider the following scenario:
 App/
 	UI/
     	Components/
         	Button.php
-            
+
 In the example above in the App is another button component. The component scan discovery overwrites non contextual aliases with the last find. According to this, the following button
 
 <div>
