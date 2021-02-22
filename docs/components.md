@@ -23,7 +23,7 @@ Like the html representatives, each component has exactly one parent (except roo
 <h3>Registered components &amp; discovery</h3>
 
 For a complete list of currently registered components you can run the following command:
-test
+
 <div>
   <div class="code-header">
     <div class="container-fluid">
