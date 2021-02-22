@@ -57,6 +57,26 @@ A more generic function is the component function which has one parameter that r
 <pre class="code-white line-numbers language-markup">
 	<code class="imp-code language-markup"><?php
 
-	#[Wire('component("id") === "specialId')]
+	#[Wire('component("id") === "specialId"')]
+    private ?Collection $radios;</code>
+</pre>
+
+<a href="#id">id()</a>
+
+The example above evaluates and finds components with the id **_specialId_** . However, the Impulse framework provides a shortcut for this syntax with the id function. The following example is equivalent to the above example.
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-markup">
+	<code class="imp-code language-markup"><?php
+
+	#[Wire('id() === "specialId"')]
     private ?Collection $radios;</code>
 </pre>
