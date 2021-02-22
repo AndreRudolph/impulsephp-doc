@@ -9,9 +9,9 @@
 
 <a href="#introduction">Introduction</a>
 
-The more complex a component get the more functionalities are necessary. Whenever you face the issue of wiring components from the same component tree, you can do this easily via the **_Wire_** annotation. 
+Sometimes it is necessary to find direct descendant components by a condition within the same tree of components. This is the use case the annotation  **_Wire_** was designed for.
 
-You can define the component(s) that will be wired by using symfonys awesome expression language. Impulse extends the expression language by adding four different functions to retrieve components based on their state and class instance. The functions are explained in the sections below.
+You can define the component(s) that will be wired into an attribute of the class by using symfonys awesome expression language. Impulse extends the expression language by adding four different functions to retrieve components based on their state and class instance. The functions are explained in the sections below.
 
 <a href="#instanceOf">instanceOf()</a>
 
