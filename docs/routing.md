@@ -20,9 +20,9 @@ Route definitions in the Impulse framework are similar to symfonys native route 
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
