@@ -81,5 +81,5 @@ The example above evaluates and finds components with the id **_specialId_** . H
 	<code class="imp-code language-php"><?php
 
     #[Wire('id() === "specialId"')]
-	private ?Collection $radios;</code>
+    private ?Collection $radios;</code>
 </pre>
