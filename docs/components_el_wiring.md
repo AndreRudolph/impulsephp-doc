@@ -29,17 +29,17 @@ The RadioGroup component uses the expression language to wire the direct descend
 </div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
-namespace Impulse\ImpulseBundle\UI\Components;
-use Impulse\ImpulseBundle\Annotations\Wire;
-use Impulse\ImpulseBundle\Components\AfterCreateChilds;
-use Impulse\ImpulseBundle\Events\Events;
-use Tightenco\Collect\Support\Collection;
+	namespace Impulse\ImpulseBundle\UI\Components;
+    use Impulse\ImpulseBundle\Annotations\Wire;
+    use Impulse\ImpulseBundle\Components\AfterCreateChilds;
+    use Impulse\ImpulseBundle\Events\Events;
+	use Tightenco\Collect\Support\Collection;
 
-class RadioGroup extends AbstractComponent implements AfterCreateChilds
-{
-	#[Wire('instanceOf("Impulse\\\\ImpulseBundle\\\\UI\\\\Components\\\\Radio")')]
-    private ?Collection $radios;
-}</code>
+    class RadioGroup extends AbstractComponent implements AfterCreateChilds
+    {
+        #[Wire('instanceOf("Impulse\\\\ImpulseBundle\\\\UI\\\\Components\\\\Radio")')]
+        private ?Collection $radios;
+	}</code>
 </pre>
 
 This function works the same like PHPs instanceof and also works with inheritance and interfaces.
@@ -78,8 +78,8 @@ The example above evaluates and finds components with the id **_specialId_** . H
     </div>
 </div>
 <pre class="code-white line-numbers language-php">
-<code class="imp-code language-php"><?php
+	<code class="imp-code language-php"><?php
 
-#[Wire('id() === "specialId"')]
-private ?Collection $radios;</code>
+    #[Wire('id() === "specialId"')]
+	private ?Collection $radios;</code>
 </pre>
