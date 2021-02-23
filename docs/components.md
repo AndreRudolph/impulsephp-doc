@@ -69,13 +69,6 @@ To support you, you can create a skeleton component with the following command.
 	</pre>
 </div>
 
-<a name="advanced_topics"></a>
-### Learn more about components
-<ul>
-  <li data-target-menu-item="component_lifecycle">Component lifecycle</li>
-  <li data-target-menu-item="components_el_wiring">Components Expression Language Based Wiring</li>
-</ul>
-
 <a name="component_lifecycle"></a>
 <h3>Component lifecycle</h3>
 <span style="color: red">TODO!!</span>
@@ -150,3 +143,10 @@ will be bound to the app button component class. However, you can also explicitl
     &lt;/impulse&gt;</code>
   </pre>
 </div>
+
+<a name="advanced_topics"></a>
+### Learn more about components
+<ul>
+  <li data-target-menu-item="component_lifecycle">Component lifecycle</li>
+  <li data-target-menu-item="components_el_wiring">Components Expression Language Based Wiring</li>
+</ul>
