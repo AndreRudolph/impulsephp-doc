@@ -27,8 +27,8 @@ The RadioGroup component uses the expression language to wire the direct descend
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-markup">
-	<code class="imp-code language-markup"><?php
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
 namespace Impulse\ImpulseBundle\UI\Components;
 use Impulse\ImpulseBundle\Annotations\Wire;
 use Impulse\ImpulseBundle\Components\AfterCreateChilds;
@@ -57,8 +57,8 @@ A more generic function is the component function which has one parameter that r
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-markup">
-	<code class="imp-code language-markup"><?php
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
 
 	#[Wire('component("id") === "specialId"')]
     private ?Collection $radios;</code>
@@ -77,8 +77,8 @@ The example above evaluates and finds components with the id **_specialId_** . H
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-markup">
-<code class="imp-code language-markup"><?php
+<pre class="code-white line-numbers language-php">
+<code class="imp-code language-php"><?php
 
 #[Wire('id() === "specialId"')]
 private ?Collection $radios;</code>
