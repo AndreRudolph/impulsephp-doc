@@ -6,8 +6,8 @@ published: true
 <h3 class="doc-title">Controllers</h3>
 
 - [Introduction](#introduction)
-- [Basic Controllers](#basic-controllers)
-    - [ Defining Controllers](#defining-controllers)
+- [Basics](#basics)
+    - [Controller class](#controller-class)
     - [Wire components](#wire-components)
     - [Nested controllers](#nested-controllers)
     - [Controllers as event listener](#controller-eventlistener)
@@ -18,13 +18,15 @@ published: true
 
 <h4><a name="introduction"></a></h4>
 
-Controllers in Impulse PHP Framework are not exactly the same as you might be used with other frameworks. In most other frameworks among other responsibilites, a controller is that instance that decides which view must be rendered. However, in impulse the exact opposite is the case as you have already explored in the **_Views_** section.
+Controllers in Impulse PHP Framework are not exactly the same as you might be used with other frameworks. In most other frameworks among other responsibilites, a controller is that instance that decides which view must be rendered. However, in impulse the exact opposite is the case that a view binds a concrete controller class as you have already explored in the **_Views_** section.
 
-<h4><a name="basis-controller">Basic controllers</a></h4>
+<h4><a name="basics">Basics</a></h4>
 
-<h4><a name="defining-controllers">Defining controllers</a></h4>
+<h4><a name="controller-class">Controller class</a></h4>
 
-Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
+A minimalistic controller class is an empty class that extends the AbstractController class which is provided by the framework. The base class provides some useful functionalities that will be covered in a later section.
+
+As previousely mentioned, a controller will be rarely called directly from the frameworks user. 
 
 <!--<pre class="code-white line-numbers language-markup">-->
 <div class="code-header">
