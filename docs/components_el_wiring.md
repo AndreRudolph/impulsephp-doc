@@ -88,4 +88,4 @@ The example above evaluates and finds components with the id **_specialId_** . H
 
 <a href="#uid">uid()</a>
 
-Though this functions has less no cases yet, it can be useful in the future when you want to directly retrieve components by an expression on a concrete component instance.
+Though this functions has no use cases yet, it can be useful in the future when you want to directly retrieve components with a certain uid on a concrete component instance.
