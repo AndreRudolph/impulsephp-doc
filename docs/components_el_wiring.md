@@ -1,4 +1,4 @@
-<h2 class="doc-title">Components Expression Language based Wiring</h2>
+<h3 class="doc-title">Components Expression Language based Wiring</h3>
 
 - [Introduction](#introduction)
 - [Available functions](#available-functions)
