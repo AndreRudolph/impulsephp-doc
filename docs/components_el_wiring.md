@@ -32,10 +32,7 @@ The RadioGroup component uses the expression language to wire the direct descend
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 	namespace Impulse\ImpulseBundle\UI\Components;
-    use Impulse\ImpulseBundle\Annotations\Wire;
-    use Impulse\ImpulseBundle\Components\AfterCreateChilds;
-    use Impulse\ImpulseBundle\Events\Events;
-	use Tightenco\Collect\Support\Collection;
+    use ...
 
     class RadioGroup extends AbstractComponent implements AfterCreateChilds
     {
@@ -61,9 +58,13 @@ A more generic function is the component function which has one parameter that r
 </div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
+    
+    class SpecialComponent {
 
-	#[Wire('component("id") === "specialId"')]
-    private ?Collection $radios;</code>
+	    #[Wire('component("id") === "specialId"')]
+        private ?Collection $radios;</code>
+    
+    }
 </pre>
 
 <a href="#id">id()</a>
@@ -82,8 +83,12 @@ The example above evaluates and finds components with the id **_specialId_** . H
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 
-    #[Wire('id() === "specialId"')]
-    private ?Collection $radios;</code>
+    class SpecialComponent {
+
+        #[Wire('id() === "specialId"')]
+        private ?Collection $radios;</code>
+    
+    }
 </pre>
 
 <a href="#uid">uid()</a>
