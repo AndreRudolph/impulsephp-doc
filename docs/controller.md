@@ -17,7 +17,6 @@ published: true
     - [Excluding attributes from serialization]
 
 <h4><a name="introduction"></a></h4>
-# Introduction
 
 Controllers in Impulse PHP Framework are not exactly the same as you might be used with other frameworks. In most other frameworks among other responsibilites, a controller is that instance that decides which view must be rendered. However, in impulse the exact opposite is the case as you have already explored in the **_Views_** section.
 
