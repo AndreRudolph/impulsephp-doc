@@ -19,7 +19,7 @@ published: true
 <a name="introduction"></a>
 # Introduction
 
-A controller is the main component that is responsible for handling (and thus managing) user interactions. Unlike other frameworks, a controller in the Impulse PHP Framework itself does not directly return views. Instead, a view template specifies the related controller that will be rendered.
+Controllers in Impulse PHP Framework are not exactly the same as you might be used with other frameworks. In most other frameworks among other responsibilites, a controller is that instance that decides which view must be rendered. However, in impulse the exact opposite is the case as you have already explored in the **_Views_** section.
 
 <a name="basis-controller">
 ## Basic controllers
