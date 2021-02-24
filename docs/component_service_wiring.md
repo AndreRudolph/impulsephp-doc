@@ -8,6 +8,8 @@
 The concept of components is that a component can literally be anything, a simple div or an textbox or can be even more complex like a combobox which provided items stored in a database.
 However, whenever your component requires a service your component must implement the **_WiringAware_** interface.
 
+<h4><a id="#wire-services">Wire services</a></h4>
+
 Marked with that interface, the Impulse framework will delegate the component object construction to the symfony dependency injection container. Thus you can inject services as usual via constructor or setter for optional dependencies.
 
 <div class="code-header">
