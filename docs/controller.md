@@ -16,13 +16,12 @@ published: true
     - [Concept of serialization](#concept-serialization)
     - [Excluding attributes from serialization]
 
-<h4><a name="introduction"></a></h4>
+<a name="introduction"></a>
 
 Controllers in Impulse PHP Framework are not exactly the same as you might be used with other frameworks. In most other frameworks among other responsibilites, a controller is that instance that decides which view must be rendered. However, in impulse the exact opposite is the case that a view binds a concrete controller class as you have already explored in the **_Views_** section.
 
-<h4><a name="basics">Basics</a></h4>
-
-<h4><a name="controller-class">Controller class</a></h4>
+<a name="basics">Basics</a>
+<a name="controller-class">Controller class</a>
 
 A minimalistic controller class is an empty class that extends the AbstractController class which is provided by the framework. The base class provides some useful functionalities that will be covered in a later section.
 
