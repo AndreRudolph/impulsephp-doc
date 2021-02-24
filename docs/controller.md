@@ -41,11 +41,11 @@ Defining a controller is not very complicated. A controller is never called dire
 </div>
 <pre class="code-white line-numbers language-markup">
 	<code class="imp-code language-markup">&lt;impulse&gt;
-		&lt;window apply="App\Controller\AppController" /&gt;
+		&lt;window bind="App\Controller\AppController" /&gt;
     &lt;/impulse&gt;</code>
 </pre>
 
-The <span class="highlightText">apply</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
+The <span class="highlightText">bind</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
 
 <div>
   <div class="code-header">
@@ -143,7 +143,7 @@ Another main feature is view and therefor controller nesting. See more for view 
   </div>
   <pre class="code-white line-numbers language-markup">
   	<code class="imp-code language-markup">&lt;impulse&gt;
-		&lt;window id="wndMain" apply="App\Controller\AppController" /&gt;
+		&lt;window id="wndMain" bind="App\Controller\AppController" /&gt;
 	&lt;/impulse&gt;</code>
   </pre>
 </div>
@@ -197,7 +197,7 @@ Just defining a controller is by far not the only supported feature. As you mayb
   </div>
   <pre class="code-white line-numbers language-markup">
   	<code class="imp-code language-markup">&lt;impulse&gt;
-		&lt;window apply="App\Controller\AppController"&gt;
+		&lt;window bind="App\Controller\AppController"&gt;
 			&lt;textbox id="tbName" /&gt;
 			&lt;button id="btnGreet" /&gt;
 			&lt;span id="lbGreet" /&gt;
