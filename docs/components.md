@@ -147,6 +147,6 @@ will be bound to the app button component class. However, you can also explicitl
 <a name="advanced_topics"></a>
 ### Learn more about components
 <ul class="unstyled-list">
-  <li data-target-menu-item="component_lifecycle">Component lifecycle</li>
-  <li data-target-menu-item="components_el_wiring">Components Expression Language Based Wiring</li>
+  <li><a data-target-menu-item="component_lifecycle">Component lifecycle</a></li>
+  <li><a data-target-menu-item="components_el_wiring">Components Expression Language Based Wiring</a></li>
 </ul>
