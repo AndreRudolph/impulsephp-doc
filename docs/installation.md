@@ -23,9 +23,9 @@ For a simple installation you can unpack the downloaded zip, rename the director
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -40,9 +40,9 @@ The procedure will ask you for the symfony apache pack if you want to use, type 
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -63,9 +63,9 @@ You can generate a very basic authentication example. First of all, you have to 
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -103,9 +103,9 @@ An empty sqlite database is already provided in the var/ directory. The next ste
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
@@ -120,9 +120,9 @@ The last step is just generating the authentication example with the following c
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red" />
-          	<div class="button yellow" />
-          	<div class="button green" />
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
         </div>
     </div>
   </div>
