@@ -12,6 +12,8 @@
 
 Sometimes it is necessary to find direct descendant components by a condition within the same tree of components. This is the use case the annotation  **_Wire_** was designed for.
 
+<a href="#available-functions">Available functions</a>
+
 You can define the component(s) that will be wired into an attribute of the class by using symfonys awesome expression language. Impulse extends the expression language by adding four different functions to retrieve components based on their state and class instance. The functions are explained in the sections below.
 
 <a href="#instanceOf">instanceOf()</a>
