@@ -8,15 +8,15 @@
     - [uid()](#uid)
 - [Options](#options)
 
-<a href="#introduction">Introduction</a>
+<a id="introduction">Introduction</a>
 
 Sometimes it is necessary to find direct descendant components by a condition within the same tree of components. This is the use case the annotation  **_Wire_** was designed for.
 
-<a href="#available-functions">Available functions</a>
+<a id="available-functions">Available functions</a>
 
 You can define the component(s) that will be wired into an attribute of the class by using symfonys awesome expression language. Impulse extends the expression language by adding four different functions to retrieve components based on their state and class instance. The functions are explained in the sections below.
 
-<a href="#instanceOf">instanceOf()</a>
+<a id="instanceOf">instanceOf()</a>
 
 The RadioGroup component uses the expression language to wire the direct descendant radio components by using the instanceOf() expression language function provied by Impulse. 
 
@@ -43,7 +43,7 @@ The RadioGroup component uses the expression language to wire the direct descend
 
 This function works the same like PHPs instanceof and also works with inheritance and interfaces.
 
-<a href="#componentAttribute">component(Attribute)</a>
+<a id="componentAttribute">component(Attribute)</a>
 
 A more generic function is the component function which has one parameter that retrieves an attribute value of the component for comparison. The following example will look for all components with the id **_specialId_** .
 
@@ -66,7 +66,7 @@ A more generic function is the component function which has one parameter that r
     }</code>
 </pre>
 
-<a href="#id">id()</a>
+<a id="id">id()</a>
 
 The example above evaluates and finds components with the id **_specialId_** . However, the Impulse framework provides a shortcut for this syntax with the id function. The following example is equivalent to the above example.
 
@@ -89,6 +89,6 @@ The example above evaluates and finds components with the id **_specialId_** . H
     }</code>
 </pre>
 
-<a href="#uid">uid()</a>
+<a id="uid">uid()</a>
 
 Though this functions has no use cases yet, it can be useful in the future when you want to directly retrieve components with a certain uid on a concrete component instance.
