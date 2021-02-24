@@ -16,15 +16,15 @@ published: true
     - [Concept of serialization](#concept-serialization)
     - [Excluding attributes from serialization]
 
-<a name="introduction"></a>
+<h4><a name="introduction"></a></h4>
 # Introduction
 
 Controllers in Impulse PHP Framework are not exactly the same as you might be used with other frameworks. In most other frameworks among other responsibilites, a controller is that instance that decides which view must be rendered. However, in impulse the exact opposite is the case as you have already explored in the **_Views_** section.
 
-<a name="basis-controller">
-## Basic controllers
+<h4><a name="basis-controller">Basic controllers</a></h4>
 
-#### Defining controllers
+<h4><a name="defining-controllers">Defining controllers</a></h4>
+
 Defining a controller is not very complicated. A controller is never called directly from the frameworks user. Instead a controller will be bound to a certain template.
 
 <!--<pre class="code-white line-numbers language-markup">-->
