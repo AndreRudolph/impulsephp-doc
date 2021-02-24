@@ -1,1 +1,1 @@
-<h1 class="doc-title">Component service wiring</h1>
+<h3 class="doc-title">Component service wiring</h3>
