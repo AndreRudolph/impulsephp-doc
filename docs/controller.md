@@ -223,7 +223,8 @@ The controller contains an event listener method.
 	namespace App\Controller;
 	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
 	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-	use Impulse\Bundles\ImpulseBundle\Controller\Annotations\Listen;
+    use Impulse\ImpulseBundle\Events\Events;
+	use Impulse\ImpulseBundle\Controller\Annotations\Listen;
 	use Impulse\Bundles\ImpulseBundle\UI\Components\Span;
 	use Impulse\Bundles\ImpulseBundle\UI\Components\Textbox;
 
@@ -232,9 +233,7 @@ The controller contains an event listener method.
 		private ?Textbox $tbName = null;
 		private ?Span $lbGreet = null;
 
-		/**
-		* @Listen(component="btnGreet", event="click")
-		*/
+        #[Listen(event: Events::CLICK, component: 'btnGreet')]
 		public function onClick(Event $event)
 		{
 			$greeting = $this->tbName->getValue();
