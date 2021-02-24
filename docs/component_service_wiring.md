@@ -3,7 +3,7 @@
 - [Introduction](#introduction)
 - [Wire services](#wire-services)
 
-<a id="#introduction">Introduction</a>
+<a id="#introduction"><h4>Introduction</h4></a>
 
 The concept of components is that a component can literally be anything, a simple div or an textbox or can be even more complex like a combobox which provided items stored in a database.
 However, whenever your component requires a service your component must implement the **_WiringAware_** interface.
