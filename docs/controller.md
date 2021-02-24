@@ -3,9 +3,7 @@ layout: post
 title: Start of Documentation
 published: true
 ---
-
-
-<h1 class="doc-title">Controllers</h1>
+<h3 class="doc-title">Controllers</h3>
 
 - [Introduction](#introduction)
 - [Basic Controllers](#basic-controllers)
