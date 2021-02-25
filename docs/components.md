@@ -5,6 +5,7 @@
 	- [List available components](#registered_components)
 	- [Client-server-synchronization](#client_server_synchronization)
     - [Create custom components](#create_custom_components)
+    - [Component contexts](#component_contexts)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -71,6 +72,7 @@ A shortened extract of the output might look as the following:
   </pre>
 </div>
 
+You wonder why every component is listed twice? The reason behind this is covered in the <a href="#component_contexts">Component contexts</a> section below.
 
 Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the ComponentContract interface are registered as components automatically.
 
