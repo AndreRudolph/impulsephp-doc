@@ -196,8 +196,8 @@ Impulse is designed to provide programmers the possibility to create their own c
 	<code class="imp-code language-php"><?php
     
     class SpecialComponent {
-
-        private string $message = 'Hello World';
+        
+        // ... message property and its getter and setter
         
         public function getClientData(): array
         {
@@ -205,9 +205,6 @@ Impulse is designed to provide programmers the possibility to create their own c
             $data['message'] = $this->message;
             return $data;
         }
-        
-        
-        public function
     }</code>
 </pre>
 
@@ -227,7 +224,14 @@ Impulse is designed to provide programmers the possibility to create their own c
     
     class SpecialComponent {
 
-        private string $message = 'Hello World';
+        // ... message property and its getter and setter
+        
+        public function getServerData(): array
+        {
+        	$data = parent::getServerData();
+            $data['message'] = $this->message;
+            return $data;
+        }
     }</code>
 </pre>
 
