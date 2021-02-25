@@ -9,11 +9,11 @@
     - [uid()](#uid)
 - [Options](#options)
 
-<a id="introduction">Introduction</a>
+<h4><a id="introduction">Introduction</a></h4>
 
 Sometimes it is necessary to find direct descendant components by a condition within the same tree of components. This is the use case the annotation  **_Wire_** was designed for.
 
-<a id="available-functions">Available functions</a>
+<h4><a id="available-functions">Available functions</a></h4>
 
 You can define the component(s) that will be wired into an attribute of the class by using symfonys awesome expression language. Impulse extends the expression language by adding five different functions to retrieve components based on their state and class instance. The functions are explained in the sections below.
 
