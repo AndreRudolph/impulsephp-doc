@@ -15,9 +15,9 @@ Each component (and of course its state) is stored within the user's session. Th
 
 Like the html representatives, each component has exactly one parent (except root) and zero to any number of childs. When the session gets persisted or updated, the parent-/child relationships will also be stored.
 
-<a id="basics">Basics</a>
+<h4><a id="basics">Basics</a></h4>
 
-<a id="registered_components">Registered components &amp; discovery</a>
+<h5><a id="registered_components">Registered components &amp; discovery</a></h5>
 
 For a complete list of currently registered components you can run the following command:
 
@@ -38,13 +38,13 @@ For a complete list of currently registered components you can run the following
 
 Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the HtmlBasedComponentContract are registered as components automatically.
 
-<a id="client_server_synchronization">Client-server-synchronization</a>
+<h5><a id="client_server_synchronization">Client-server-synchronization</a></h5>
 
 The main purpose of the components is to store both the component at the client and at the server side. The logical conclusion is that server-side changes to a component that would affect its appeareance or behavior must be synchronized with the client (browser).
 
 To achieve this, most of the setters for attributes (e.g. setHeight, setVisible, etc.) are observed for changes. This means whenever you set the height of the component after it was created and populated in a request before, the internal server side state of the components gets updated and the client receives an update aswell.
 
-<a id="create_own_components">Creating own components</a>
+<h5><a id="create_own_components">Creating own components</a></h5>
 
 You can also extend the framework or your app with your own components. You can also created more complex and customized components. You can create everything from small, atomic components (e.g. span, textarea) to more complex components like a Breadcrumb or wysiwyg editor.
 
@@ -65,7 +65,7 @@ To support you, you can create a skeleton component with the following command.
 </div>
 
 
-<a id="component_contexts">Component contexts</a>
+<h5><a id="component_contexts">Component contexts</a></h5>
 
 The ComponentClassRegistry is the lookup class in which all discovered components are registered. Remember the following command to list all available components.
 
