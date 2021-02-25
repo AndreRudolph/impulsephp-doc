@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Available functions](#available-functions)
+    - [type()](#type)
 	- [instanceOf()](#instanceOf)
     - [component(attribute)](#componentAttribute)
     - [id()](#id)
@@ -16,7 +17,34 @@ Sometimes it is necessary to find direct descendant components by a condition wi
 
 You can define the component(s) that will be wired into an attribute of the class by using symfonys awesome expression language. Impulse extends the expression language by adding four different functions to retrieve components based on their state and class instance. The functions are explained in the sections below.
 
-<a id="instanceOf">instanceOf()</a>
+<h5><a id="type">type</a></h5>
+
+The RadioGroup as an example component uses the expression language to wire the direct descendant radio components by using the type() expression language function. 
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+	namespace Impulse\ImpulseBundle\UI\Components;
+    use ...
+
+    class RadioGroup extends AbstractComponent implements AfterCreateChilds
+    {
+        #[Wire('type("Radio")'))]
+        private ?Collection $radios;
+	}</code>
+</pre>
+
+This expression function matches all components with the class short name Radio either in the component class itself or interfaces or parent classes.  
+
+<h5><a id="instanceOf">instanceOf()</a></h5>
 
 The RadioGroup component uses the expression language to wire the direct descendant radio components by using the instanceOf() expression language function provied by Impulse. 
 
