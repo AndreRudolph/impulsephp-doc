@@ -8,7 +8,6 @@
     - [Custom attributes](#custom_attributes)
     - [Client synchronization](#client_synchronization)
     - [Server synchronization](#server_synchronization)
-    - [Sync updates with client](#sync_updates_with_client)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -165,7 +164,7 @@ Suppose you want to create a component class, lets call it **_SpecialComponent_*
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class SpecialComponent 
+    class SpecialComponent extends AbstractComponent 
     {
 
         private string $message = 'Hello World';
@@ -185,6 +184,8 @@ Suppose you want to create a component class, lets call it **_SpecialComponent_*
 
 <h5><a id="client_synchronization">Client synchronization</a></h5>
 
+The main purpose is to show the message to the client and therefor there is a method called **_getClientData_** which returns an array with all contain informations of the component that are relevant for the client.
+
 <div class="code-header">
 	<div class="container-fluid">
 		<div class="row">
@@ -197,7 +198,7 @@ Suppose you want to create a component class, lets call it **_SpecialComponent_*
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class SpecialComponent {
+    class SpecialComponent extends AbstractComponent {
         
         // ... message property and its getter and setter
         
@@ -209,6 +210,8 @@ Suppose you want to create a component class, lets call it **_SpecialComponent_*
         }
     }</code>
 </pre>
+
+You need also need to call the getClientData of the parent class (at least of AbstractComponent) since it contains necessary meta informations for the Impulse client engine.
 
 <h5><a id="server_synchronization">Server synchronization</a></h5>
 
@@ -224,7 +227,7 @@ Suppose you want to create a component class, lets call it **_SpecialComponent_*
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class SpecialComponent {
+    class SpecialComponent extends AbstractComponent {
 
         // ... message property and its getter and setter
         
@@ -251,7 +254,7 @@ Suppose you want to create a component class, lets call it **_SpecialComponent_*
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class SpecialComponent 
+    class SpecialComponent extends AbstractComponent
     {
 
         // ... 
