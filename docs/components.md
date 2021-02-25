@@ -5,6 +5,9 @@
 	- [List available components](#registered_components)
     - [Component contexts](#component_contexts)
 - [Create custom components](#create_custom_components)
+    - [Custom attributes](#custom_attributes)
+    - [Client synchronization](#client_synchronization)
+    - [Server synchronization](#server_synchronization)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
