@@ -146,7 +146,13 @@ will be bound to the app button component class. However, you can also explicitl
 
 <h5><a id="create_own_components">Create custom components</a></h5>
 
-Impulse is designed to provide programmers the possibility to create their own components for their very specific needs or to even share with other users of the Impulse framework. As previousely mentioned, a component can be either very basic and atomic components like a textbox or a label or can be even more sophisticated like even a wysiwyg editor.  
+Impulse is designed to provide programmers the possibility to create their own components for their very specific needs or to even share with other users of the Impulse framework. As previousely mentioned, a component can be either very basic and atomic components like a textbox or a label or can be even more sophisticated like even a wysiwyg editor. In this overall documentation part we will create a full working component together.
+
+<h5><a id="custom_attributes">Custom attributes</a></h5>
+
+<h5><a id="client_synchronization">Client synchronization</a></h5>
+
+<h5><a id="server_synchronization">Server synchronization</a></h5>
 
 To support you, you can create a skeleton component with the following command.
 
