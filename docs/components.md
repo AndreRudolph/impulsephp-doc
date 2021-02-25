@@ -211,7 +211,7 @@ The main purpose is to show the message to the client and therefor there is a me
     }</code>
 </pre>
 
-You need also need to call the getClientData of the parent class (at least of AbstractComponent) since it contains necessary meta informations for the Impulse client engine.
+You also need to call the getClientData of the parent class (at least of AbstractComponent) since it contains necessary meta informations for the Impulse client engine.
 
 <h5><a id="server_synchronization">Server synchronization</a></h5>
 
