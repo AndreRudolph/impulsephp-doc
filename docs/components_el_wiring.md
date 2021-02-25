@@ -19,7 +19,7 @@ You can define the component(s) that will be wired into an attribute of the clas
 
 <h5><a id="type">type()</a></h5>
 
-The probably most used and useful functions is the type function. It works almost similar as the instanceOf() function below with one exception. It compares only the short name of the class (like Radio in the example below) instead of its full qualified namespace.
+The probably most used and useful functions is the type function. It works almost similar as the <a href="#instanceOf">instanceOf()</a> function below with one exception. It compares only the short name of the class (like Radio in the example below) instead of its full qualified namespace.
 
 <div class="code-header">
 	<div class="container-fluid">
