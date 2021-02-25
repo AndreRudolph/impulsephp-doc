@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [Basics](#basics)
-	- [Registered components & discovery](#registered_components)
+	- [Show available components](#registered_components)
 	- [Client-server-synchronization](#client_server_synchronization)
     - [Create custom components](#create_custom_components)
 - [Learn more about components](#advanced_topics)
@@ -17,7 +17,7 @@ Like the html representatives, each component has exactly one parent (except roo
 
 <h4><a id="basics">Basics</a></h4>
 
-<h5><a id="registered_components">Registered components &amp; discovery</a></h5>
+<h5><a id="registered_components">Show available components</a></h5>
 
 For a complete list of currently registered components you can run the following command:
 
