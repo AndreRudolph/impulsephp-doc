@@ -69,14 +69,6 @@ To support you, you can create a skeleton component with the following command.
 	</pre>
 </div>
 
-<a name="component_lifecycle"></a>
-<h3>Component lifecycle</h3>
-<span style="color: red">TODO!!</span>
-
-<a name="wiring"></a>
-<h3>Wiring services into components</h3>
-
-Components are also capable of being wired with services via the dependency injection container. All you have to do is let your component implement the WiringAware interface which is just a marker interface.
 
 <a name="component_contexts"></a>
 <h3>Component contexts</h3>
