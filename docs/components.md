@@ -36,7 +36,7 @@ For a complete list of currently registered components you can run the following
   </pre>
 </div>
 
-The output might look as the following:
+An extract of the output might look as the following:
 
 <div>
   <div class="code-header">
@@ -62,126 +62,7 @@ The output might look as the following:
       impulse:button            Impulse\ImpulseBundle\UI\Components\Button           
       carousel                  Impulse\ImpulseBundle\UI\Components\Carousel         
       impulse:carousel          Impulse\ImpulseBundle\UI\Components\Carousel         
-      carouselitem              Impulse\ImpulseBundle\UI\Components\CarouselItem     
-      impulse:carouselitem      Impulse\ImpulseBundle\UI\Components\CarouselItem     
-      checkbox                  Impulse\ImpulseBundle\UI\Components\Checkbox         
-      impulse:checkbox          Impulse\ImpulseBundle\UI\Components\Checkbox         
-      combobox                  Impulse\ImpulseBundle\UI\Components\Combobox         
-      impulse:combobox          Impulse\ImpulseBundle\UI\Components\Combobox         
-      comboitem                 Impulse\ImpulseBundle\UI\Components\Comboitem        
-      impulse:comboitem         Impulse\ImpulseBundle\UI\Components\Comboitem        
-      datacombobox              Impulse\ImpulseBundle\UI\Components\DataCombobox     
-      impulse:datacombobox      Impulse\ImpulseBundle\UI\Components\DataCombobox     
-      div                       Impulse\ImpulseBundle\UI\Components\Div              
-      impulse:div               Impulse\ImpulseBundle\UI\Components\Div              
-      feedbacktextbox           Impulse\ImpulseBundle\UI\Components\FeedbackTextbox  
-      impulse:feedbacktextbox   Impulse\ImpulseBundle\UI\Components\FeedbackTextbox  
-      footer                    Impulse\ImpulseBundle\UI\Components\Footer           
-      impulse:footer            Impulse\ImpulseBundle\UI\Components\Footer           
-      form                      Impulse\ImpulseBundle\UI\Components\Form             
-      impulse:form              Impulse\ImpulseBundle\UI\Components\Form             
-      h1                        Impulse\ImpulseBundle\UI\Components\H1               
-      impulse:h1                Impulse\ImpulseBundle\UI\Components\H1               
-      h2                        Impulse\ImpulseBundle\UI\Components\H2               
-      impulse:h2                Impulse\ImpulseBundle\UI\Components\H2               
-      h3                        Impulse\ImpulseBundle\UI\Components\H3               
-      impulse:h3                Impulse\ImpulseBundle\UI\Components\H3               
-      h4                        Impulse\ImpulseBundle\UI\Components\H4               
-      impulse:h4                Impulse\ImpulseBundle\UI\Components\H4               
-      h5                        Impulse\ImpulseBundle\UI\Components\H5               
-      impulse:h5                Impulse\ImpulseBundle\UI\Components\H5               
-      h6                        Impulse\ImpulseBundle\UI\Components\H6               
-      impulse:h6                Impulse\ImpulseBundle\UI\Components\H6               
-      hbox                      Impulse\ImpulseBundle\UI\Components\Hbox             
-      impulse:hbox              Impulse\ImpulseBundle\UI\Components\Hbox             
-      header                    Impulse\ImpulseBundle\UI\Components\Header           
-      impulse:header            Impulse\ImpulseBundle\UI\Components\Header           
-      hr                        Impulse\ImpulseBundle\UI\Components\Hr               
-      impulse:hr                Impulse\ImpulseBundle\UI\Components\Hr               
-      i                         Impulse\ImpulseBundle\UI\Components\I                
-      impulse:i                 Impulse\ImpulseBundle\UI\Components\I                
-      iframe                    Impulse\ImpulseBundle\UI\Components\Iframe           
-      impulse:iframe            Impulse\ImpulseBundle\UI\Components\Iframe           
-      image                     Impulse\ImpulseBundle\UI\Components\Image            
-      impulse:image             Impulse\ImpulseBundle\UI\Components\Image            
-      intbox                    Impulse\ImpulseBundle\UI\Components\Intbox           
-      impulse:intbox            Impulse\ImpulseBundle\UI\Components\Intbox           
-      label                     Impulse\ImpulseBundle\UI\Components\Label            
-      impulse:label             Impulse\ImpulseBundle\UI\Components\Label            
-      li                        Impulse\ImpulseBundle\UI\Components\Li               
-      impulse:li                Impulse\ImpulseBundle\UI\Components\Li               
-      listbody                  Impulse\ImpulseBundle\UI\Components\Listbody         
-      impulse:listbody          Impulse\ImpulseBundle\UI\Components\Listbody         
-      listbox                   Impulse\ImpulseBundle\UI\Components\Listbox          
-      impulse:listbox           Impulse\ImpulseBundle\UI\Components\Listbox          
-      listcell                  Impulse\ImpulseBundle\UI\Components\Listcell         
-      impulse:listcell          Impulse\ImpulseBundle\UI\Components\Listcell         
-      listhead                  Impulse\ImpulseBundle\UI\Components\Listhead         
-      impulse:listhead          Impulse\ImpulseBundle\UI\Components\Listhead         
-      listheader                Impulse\ImpulseBundle\UI\Components\Listheader       
-      impulse:listheader        Impulse\ImpulseBundle\UI\Components\Listheader       
-      listitem                  Impulse\ImpulseBundle\UI\Components\Listitem         
-      impulse:listitem          Impulse\ImpulseBundle\UI\Components\Listitem         
-      navbar                    Impulse\ImpulseBundle\UI\Components\Navbar           
-      impulse:navbar            Impulse\ImpulseBundle\UI\Components\Navbar           
-      navgroup                  Impulse\ImpulseBundle\UI\Components\Navgroup         
-      impulse:navgroup          Impulse\ImpulseBundle\UI\Components\Navgroup         
-      navitem                   Impulse\ImpulseBundle\UI\Components\Navitem          
-      impulse:navitem           Impulse\ImpulseBundle\UI\Components\Navitem          
-      navmenu                   Impulse\ImpulseBundle\UI\Components\Navmenu          
-      impulse:navmenu           Impulse\ImpulseBundle\UI\Components\Navmenu          
-      notification              Impulse\ImpulseBundle\UI\Components\Notification     
-      impulse:notification      Impulse\ImpulseBundle\UI\Components\Notification     
-      ol                        Impulse\ImpulseBundle\UI\Components\Ol               
-      impulse:ol                Impulse\ImpulseBundle\UI\Components\Ol               
-      p                         Impulse\ImpulseBundle\UI\Components\P                
-      impulse:p                 Impulse\ImpulseBundle\UI\Components\P                
-      paging                    Impulse\ImpulseBundle\UI\Components\Paging           
-      impulse:paging            Impulse\ImpulseBundle\UI\Components\Paging           
-      progressbar               Impulse\ImpulseBundle\UI\Components\Progressbar      
-      impulse:progressbar       Impulse\ImpulseBundle\UI\Components\Progressbar      
-      radio                     Impulse\ImpulseBundle\UI\Components\Radio            
-      impulse:radio             Impulse\ImpulseBundle\UI\Components\Radio            
-      radiogroup                Impulse\ImpulseBundle\UI\Components\RadioGroup       
-      impulse:radiogroup        Impulse\ImpulseBundle\UI\Components\RadioGroup       
-      section                   Impulse\ImpulseBundle\UI\Components\Section          
-      impulse:section           Impulse\ImpulseBundle\UI\Components\Section          
-      space                     Impulse\ImpulseBundle\UI\Components\Space            
-      impulse:space             Impulse\ImpulseBundle\UI\Components\Space            
-      span                      Impulse\ImpulseBundle\UI\Components\Span             
-      impulse:span              Impulse\ImpulseBundle\UI\Components\Span             
-      strong                    Impulse\ImpulseBundle\UI\Components\Strong           
-      impulse:strong            Impulse\ImpulseBundle\UI\Components\Strong           
-      tbody                     Impulse\ImpulseBundle\UI\Components\TBody            
-      impulse:tbody             Impulse\ImpulseBundle\UI\Components\TBody            
-      tfoot                     Impulse\ImpulseBundle\UI\Components\TFoot            
-      impulse:tfoot             Impulse\ImpulseBundle\UI\Components\TFoot            
-      thead                     Impulse\ImpulseBundle\UI\Components\THead            
-      impulse:thead             Impulse\ImpulseBundle\UI\Components\THead            
-      tab                       Impulse\ImpulseBundle\UI\Components\Tab              
-      impulse:tab               Impulse\ImpulseBundle\UI\Components\Tab              
-      tabbox                    Impulse\ImpulseBundle\UI\Components\Tabbox           
-      impulse:tabbox            Impulse\ImpulseBundle\UI\Components\Tabbox           
-      table                     Impulse\ImpulseBundle\UI\Components\Table            
-      impulse:table             Impulse\ImpulseBundle\UI\Components\Table            
-      tabpanel                  Impulse\ImpulseBundle\UI\Components\Tabpanel         
-      impulse:tabpanel          Impulse\ImpulseBundle\UI\Components\Tabpanel         
-      tabpanels                 Impulse\ImpulseBundle\UI\Components\Tabpanels        
-      impulse:tabpanels         Impulse\ImpulseBundle\UI\Components\Tabpanels        
-      tabs                      Impulse\ImpulseBundle\UI\Components\Tabs             
-      impulse:tabs              Impulse\ImpulseBundle\UI\Components\Tabs             
-      td                        Impulse\ImpulseBundle\UI\Components\Td               
-      impulse:td                Impulse\ImpulseBundle\UI\Components\Td               
-      textarea                  Impulse\ImpulseBundle\UI\Components\Textarea         
-      impulse:textarea          Impulse\ImpulseBundle\UI\Components\Textarea         
-      textbox                   Impulse\ImpulseBundle\UI\Components\Textbox          
-      impulse:textbox           Impulse\ImpulseBundle\UI\Components\Textbox          
-      th                        Impulse\ImpulseBundle\UI\Components\Th               
-      impulse:th                Impulse\ImpulseBundle\UI\Components\Th               
-      tr                        Impulse\ImpulseBundle\UI\Components\Tr               
-      impulse:tr                Impulse\ImpulseBundle\UI\Components\Tr               
-      ul                        Impulse\ImpulseBundle\UI\Components\Ul               
-      impulse:ul                Impulse\ImpulseBundle\UI\Components\Ul               
+      ...           
       upload                    Impulse\ImpulseBundle\UI\Components\Upload           
       impulse:upload            Impulse\ImpulseBundle\UI\Components\Upload           
       window                    Impulse\ImpulseBundle\UI\Components\Window           
