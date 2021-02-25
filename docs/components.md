@@ -186,8 +186,7 @@ The output might look as the following:
       impulse:upload            Impulse\ImpulseBundle\UI\Components\Upload           
       window                    Impulse\ImpulseBundle\UI\Components\Window           
       impulse:window            Impulse\ImpulseBundle\UI\Components\Window                             
-     ------------------------- ----------------------------------------------------- 
-</code>
+     ------------------------- -----------------------------------------------------</code>
   </pre>
 </div>
 
