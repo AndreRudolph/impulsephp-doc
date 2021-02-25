@@ -7,7 +7,7 @@
     - [Creating own components](#create_own_components)
 - [Learn more about components](#advanced_topics)
 
-<a id="introduction"><h4>Introduction</h4></a>
+<h4><a id="introduction">Introduction</a></h4>
 
 Components is the key concept behind the Impulse PHP Framework because literally everything is based on that. A component represents an object that itself is rendered as a HTML representation in the browser via the Impulse javascript engine. Components can be either trivial and atomar (e.g. a textbox) or even more complex like a caroussel component. Almost every native html tag is considered as a component itself. Unlike 'normal' (ajax based) web application such componnets have a state on client as well on server side.
 
