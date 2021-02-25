@@ -151,6 +151,8 @@ Impulse is designed to provide programmers the possibility to create their own c
 
 <h5><a id="custom_attributes">Custom attributes</a></h5>
 
+Suppose you want to create a component class, lets call it **_SpecialComponent_**, with a message that shall be displayed at the client. You can simply add a message property along with its getter and setter method.
+
 <div class="code-header">
 	<div class="container-fluid">
 		<div class="row">
