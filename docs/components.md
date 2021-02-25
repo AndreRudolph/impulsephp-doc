@@ -10,11 +10,9 @@
 
 <h4><a id="introduction">Introduction</a></h4>
 
-Components is the key concept behind the Impulse PHP Framework because literally everything is based on that. A component represents an object that itself is rendered as a HTML representation in the browser via the Impulse javascript engine. Components can be either trivial and atomar (e.g. a textbox) or even more complex like a caroussel component. Almost every native html tag is considered as a component itself. Unlike 'normal' (ajax based) web application such componnets have a state on client as well on server side.
+Components are the key concept behind the idea of the Impulse PHP Framework. A component represents an object that is (mostly) stored on both server and client side. At the client side, a component is a rendered HTML representation of the component and all of its descendants. At the server side, the state of the component is stored in the users session in order to reactivate the components state whenever it will be accessed at server side.
 
-Each component (and of course its state) is stored within the user's session. This is required to keep the state of a component alive as long as the component resides in the DOM. Every component should inherit directly or indirectly form the AbstractComponent since it implements the necessary basics to have a working component. Once a component has been created either on server side as well on client side, the component resides in an updatable state. This means that most of the components attributes are synchronized with the client like e.g. width, height (defined in AbstractComponent) or value for textbox components. Whenever you update on of the synchronizable attributes, the changes are directly recorded and part of the response of the server.
-
-Like the html representatives, each component has exactly one parent (except root) and zero to any number of childs. When the session gets persisted or updated, the parent-/child relationships will also be stored.
+Once a component is stored at server side, it remains in an updateable state which tracks changes to the object state and stores them back in the session. The changes are later synchronized to the client. 
 
 <h4><a id="basics">Basics</a></h4>
 
