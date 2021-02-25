@@ -8,6 +8,7 @@
     - [Custom attributes](#custom_attributes)
     - [Client synchronization](#client_synchronization)
     - [Server synchronization](#server_synchronization)
+    - [Sync updates with client](#sync_updates_with_client)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -176,7 +177,6 @@ Impulse is designed to provide programmers the possibility to create their own c
         {
         	return $this->message;
         }
-        
     }</code>
 </pre>
 
@@ -234,6 +234,36 @@ Impulse is designed to provide programmers the possibility to create their own c
         }
     }</code>
 </pre>
+
+<h5><a id="sync_updates_with_client">Sync updates with client</a></h5>
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    
+    class SpecialComponent 
+    {
+
+        // ... 
+        
+        public function setMessage(string $message): void
+        {
+        	$this->message = $message;
+            $this->updateClientAttribue($message, 'message');
+        }
+    }</code>
+</pre>
+
+
+blaaaaaaaaaa
 
 To support you, you can create a skeleton component with the following command.
 
