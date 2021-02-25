@@ -1,4 +1,4 @@
-<h1 class="doc-title">Components</h1>
+<h3 class="doc-title">Components</h3>
 
 - [Introduction](#introduction)
 - [Basics](#basics)
