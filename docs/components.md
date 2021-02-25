@@ -162,9 +162,21 @@ Impulse is designed to provide programmers the possibility to create their own c
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class SpecialComponent {
+    class SpecialComponent 
+    {
 
         private string $message = 'Hello World';
+        
+        public function setMessage(string $message): void
+        {
+        	$this->message = $message;
+        }
+        
+        public function getMessage(): string
+        {
+        	return $this->message;
+        }
+        
     }</code>
 </pre>
 
@@ -186,6 +198,16 @@ Impulse is designed to provide programmers the possibility to create their own c
     class SpecialComponent {
 
         private string $message = 'Hello World';
+        
+        public function getClientData(): array
+        {
+        	$data = parent::getClientData();
+            $data['message'] = $this->message;
+            return $data;
+        }
+        
+        
+        public function
     }</code>
 </pre>
 
