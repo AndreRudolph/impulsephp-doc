@@ -150,9 +150,64 @@ Impulse is designed to provide programmers the possibility to create their own c
 
 <h5><a id="custom_attributes">Custom attributes</a></h5>
 
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    
+    class SpecialComponent {
+
+        private string $message = 'Hello World';
+    }</code>
+</pre>
+
+
 <h5><a id="client_synchronization">Client synchronization</a></h5>
 
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    
+    class SpecialComponent {
+
+        private string $message = 'Hello World';
+    }</code>
+</pre>
+
 <h5><a id="server_synchronization">Server synchronization</a></h5>
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    
+    class SpecialComponent {
+
+        private string $message = 'Hello World';
+    }</code>
+</pre>
 
 To support you, you can create a skeleton component with the following command.
 
