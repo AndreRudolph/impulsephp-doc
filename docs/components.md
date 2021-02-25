@@ -36,7 +36,7 @@ For a complete list of currently registered components you can run the following
   </pre>
 </div>
 
-Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the HtmlBasedComponentContract are registered as components automatically.
+Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the ComponentContract interface are registered as components automatically.
 
 <h5><a id="client_server_synchronization">Client-server-synchronization</a></h5>
 
