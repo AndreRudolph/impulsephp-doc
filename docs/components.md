@@ -185,13 +185,7 @@ The output might look as the following:
   upload                    Impulse\ImpulseBundle\UI\Components\Upload           
   impulse:upload            Impulse\ImpulseBundle\UI\Components\Upload           
   window                    Impulse\ImpulseBundle\UI\Components\Window           
-  impulse:window            Impulse\ImpulseBundle\UI\Components\Window           
-  code                      App\UI\Components\Code                               
-  app:code                  App\UI\Components\Code                               
-  githubpage                App\UI\Components\GithubPage                         
-  app:githubpage            App\UI\Components\GithubPage                         
-  versioncombobox           App\UI\Components\VersionCombobox                    
-  app:versioncombobox       App\UI\Components\VersionCombobox                    
+  impulse:window            Impulse\ImpulseBundle\UI\Components\Window                             
  ------------------------- ----------------------------------------------------- 
 </code>
   </pre>
