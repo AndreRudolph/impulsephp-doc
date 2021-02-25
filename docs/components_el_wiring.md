@@ -71,7 +71,7 @@ Unlike the type function the instanceOf function consideres the full qualified n
 
 This function works the same like PHPs instanceof and also works with inheritance and interfaces.
 
-<a id="componentAttribute">component(Attribute)</a>
+<h5><a id="componentAttribute">component(Attribute)</a></h5>
 
 A more generic function is the component function which has one parameter that retrieves an attribute value of the component for comparison. The following example will look for all components with the id **_specialId_** .
 
@@ -94,7 +94,7 @@ A more generic function is the component function which has one parameter that r
     }</code>
 </pre>
 
-<a id="id">id()</a>
+<h5><a id="id">id()</a></h5>
 
 The example above evaluates and finds components with the id **_specialId_** . However, the Impulse framework provides a shortcut for this syntax with the id function. The following example is equivalent to the above example.
 
@@ -117,6 +117,6 @@ The example above evaluates and finds components with the id **_specialId_** . H
     }</code>
 </pre>
 
-<a id="uid">uid()</a>
+<h5><a id="uid">uid()</a></h5>
 
 Though this functions has no use cases yet, it can be useful in the future when you want to directly retrieve components with a certain uid on a concrete component instance.
