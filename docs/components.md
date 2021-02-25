@@ -36,7 +36,7 @@ For a complete list of currently registered components you can run the following
   </pre>
 </div>
 
-An extract of the output might look as the following:
+A shortened extract of the output might look as the following:
 
 <div>
   <div class="code-header">
