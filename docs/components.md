@@ -134,7 +134,7 @@ will be bound to the app button component class. However, you can also explicitl
 <a name="advanced_topics">Learn more about components</a>
 
 <ul class="unstyled-list">
-  <li><a data-target-menu-item="component_lifecycle">Component lifecycle</a></li>
+  <li><a data-target-menu-item="component_lifecycle" class="text-muted">Component lifecycle</a></li>
   <li><a data-target-menu-item="component_service_wiring">Components Service Wiring</a></li>
   <li><a data-target-menu-item="components_el_wiring">Components Expression Language Based Wiring</a></li>
 </ul>
