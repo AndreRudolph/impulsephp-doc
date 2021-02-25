@@ -4,7 +4,7 @@
 - [Basics](#basics)
 	- [Registered components & discovery](#registered_components)
 	- [Client-server-synchronization](#client_server_synchronization)
-    - [Creating own components](#create_own_components)
+    - [Create custom components](#create_custom_components)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -44,7 +44,7 @@ The main purpose of the components is to store both the component at the client 
 
 To achieve this, most of the setters for attributes (e.g. setHeight, setVisible, etc.) are observed for changes. This means whenever you set the height of the component after it was created and populated in a request before, the internal server side state of the components gets updated and the client receives an update aswell.
 
-<h5><a id="create_own_components">Creating own components</a></h5>
+<h5><a id="create_own_components">Create custom components</a></h5>
 
 You can also extend the framework or your app with your own components. You can also created more complex and customized components. You can create everything from small, atomic components (e.g. span, textarea) to more complex components like a Breadcrumb or wysiwyg editor.
 
