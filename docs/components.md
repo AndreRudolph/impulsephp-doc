@@ -46,9 +46,10 @@ To achieve this, most of the setters for attributes (e.g. setHeight, setVisible,
 
 <h5><a id="create_own_components">Create custom components</a></h5>
 
-You can also extend the framework or your app with your own components. You can also created more complex and customized components. You can create everything from small, atomic components (e.g. span, textarea) to more complex components like a Breadcrumb or wysiwyg editor.
+Impulse is designed to provide programmers the possibility to create their own components for their very specific needs or to even share with other users of the Impulse framework. As previousely mentioned, a component can be either very basic and atomic components like a textbox or a label or can be even more sophisticated like even a wysiwyg editor.  
 
 To support you, you can create a skeleton component with the following command.
+
 <div>
   <div class="code-header">
     <div class="container-fluid">
