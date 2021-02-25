@@ -14,6 +14,8 @@ Components are the key concept behind the idea of the Impulse PHP Framework. A c
 
 Once a component is stored at server side, it remains in an updateable state which tracks changes to the object state and stores them back in the session. The changes are later synchronized with the client to update the appeareance of the HTML representation. 
 
+All of these (and even more) concepts and mechanisms are covered by this documentation and further references at the bottom the page.
+
 <h4><a id="basics">Basics</a></h4>
 
 <h5><a id="registered_components">List available components</a></h5>
