@@ -3,7 +3,6 @@
 - [Introduction](#introduction)
 - [Basics](#basics)
 	- [List available components](#registered_components)
-	- [Client-server-synchronization](#client_server_synchronization)
     - [Create custom components](#create_custom_components)
     - [Component contexts](#component_contexts)
 - [Learn more about components](#advanced_topics)
@@ -76,11 +75,6 @@ You wonder why every component is listed twice? The reason behind this is covere
 
 Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the ComponentContract interface are registered as components automatically.
 
-<h5><a id="client_server_synchronization">Client-server-synchronization</a></h5>
-
-The main purpose of the components is to store both the component at the client and at the server side. The logical conclusion is that server-side changes to a component that would affect its appeareance or behavior must be synchronized with the client (browser).
-
-To achieve this, most of the setters for attributes (e.g. setHeight, setVisible, etc.) are observed for changes. This means whenever you set the height of the component after it was created and populated in a request before, the internal server side state of the components gets updated and the client receives an update aswell.
 
 <h5><a id="create_own_components">Create custom components</a></h5>
 
