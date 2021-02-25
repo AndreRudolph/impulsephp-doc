@@ -3,8 +3,8 @@
 - [Introduction](#introduction)
 - [Basics](#basics)
 	- [List available components](#registered_components)
-    - [Create custom components](#create_custom_components)
     - [Component contexts](#component_contexts)
+- [Create custom components](#create_custom_components)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -75,29 +75,6 @@ You wonder why every component is listed twice? The reason behind this is covere
 
 Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the ComponentContract interface are registered as components automatically.
 
-
-<h5><a id="create_own_components">Create custom components</a></h5>
-
-Impulse is designed to provide programmers the possibility to create their own components for their very specific needs or to even share with other users of the Impulse framework. As previousely mentioned, a component can be either very basic and atomic components like a textbox or a label or can be even more sophisticated like even a wysiwyg editor.  
-
-To support you, you can create a skeleton component with the following command.
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-	<pre class="code-white imp-code line-numbers language-shell">
-		<code class="language-bash">php bin/console make:impulse:component</code>
-	</pre>
-</div>
-
-
 <h5><a id="component_contexts">Component contexts</a></h5>
 
 The ComponentClassRegistry is the lookup class in which all discovered components are registered. Remember the following command to list all available components.
@@ -162,6 +139,29 @@ will be bound to the app button component class. However, you can also explicitl
     &lt;/impulse&gt;</code>
   </pre>
 </div>
+
+
+<h5><a id="create_own_components">Create custom components</a></h5>
+
+Impulse is designed to provide programmers the possibility to create their own components for their very specific needs or to even share with other users of the Impulse framework. As previousely mentioned, a component can be either very basic and atomic components like a textbox or a label or can be even more sophisticated like even a wysiwyg editor.  
+
+To support you, you can create a skeleton component with the following command.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+	<pre class="code-white imp-code line-numbers language-shell">
+		<code class="language-bash">php bin/console make:impulse:component</code>
+	</pre>
+</div>
+
 
 <a name="advanced_topics">Learn more about components</a>
 
