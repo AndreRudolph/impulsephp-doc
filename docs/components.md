@@ -7,8 +7,7 @@
     - [Creating own components](#create_own_components)
 - [Learn more about components](#advanced_topics)
 
-<a name="introduction"></a>
-### Introduction
+<a name="introduction">Introduction</a>
 
 Components is the key concept behind the Impulse PHP Framework because literally everything is based on that. A component represents an object that itself is rendered as a HTML representation in the browser via the Impulse javascript engine. Components can be either trivial and atomar (e.g. a textbox) or even more complex like a caroussel component. Almost every native html tag is considered as a component itself. Unlike 'normal' (ajax based) web application such componnets have a state on client as well on server side.
 
@@ -16,11 +15,9 @@ Each component (and of course its state) is stored within the user's session. Th
 
 Like the html representatives, each component has exactly one parent (except root) and zero to any number of childs. When the session gets persisted or updated, the parent-/child relationships will also be stored.
 
-<a name="basics"></a>
-### Basics
+<a name="basics">Basics</a>
 
-<a name="registered_components"></a>
-<h3>Registered components &amp; discovery</h3>
+<a name="registered_components">Registered components &amp; discovery</a>
 
 For a complete list of currently registered components you can run the following command:
 
@@ -41,15 +38,13 @@ For a complete list of currently registered components you can run the following
 
 Available components are discovered automatically and you don't have to register any component class by yourself as long as you follow the conventions. The convention is that all classes within the UI/Components/ directory which implement the HtmlBasedComponentContract are registered as components automatically.
 
-<a name="client_server_synchronization"></a>
-<h3>Client-server-synchronization</h3>
+<a name="client_server_synchronization">Client-server-synchronization</a>
 
 The main purpose of the components is to store both the component at the client and at the server side. The logical conclusion is that server-side changes to a component that would affect its appeareance or behavior must be synchronized with the client (browser).
 
 To achieve this, most of the setters for attributes (e.g. setHeight, setVisible, etc.) are observed for changes. This means whenever you set the height of the component after it was created and populated in a request before, the internal server side state of the components gets updated and the client receives an update aswell.
 
-<a name="create_own_components"></a>
-<h3>Creating own components</h3>
+<a name="create_own_components">Creating own components</a>
 
 You can also extend the framework or your app with your own components. You can also created more complex and customized components. You can create everything from small, atomic components (e.g. span, textarea) to more complex components like a Breadcrumb or wysiwyg editor.
 
@@ -70,8 +65,7 @@ To support you, you can create a skeleton component with the following command.
 </div>
 
 
-<a name="component_contexts"></a>
-<h3>Component contexts</h3>
+<a name="component_contexts">Component contexts</a>
 
 The ComponentClassRegistry is the lookup class in which all discovered components are registered. Remember the following command to list all available components.
 
@@ -136,8 +130,8 @@ will be bound to the app button component class. However, you can also explicitl
   </pre>
 </div>
 
-<a name="advanced_topics"></a>
-### Learn more about components
+<a name="advanced_topics">Learn more about components</a>
+
 <ul class="unstyled-list">
   <li><a data-target-menu-item="component_lifecycle">Component lifecycle</a></li>
   <li><a data-target-menu-item="component_service_wiring">Components Service Wiring</a></li>
