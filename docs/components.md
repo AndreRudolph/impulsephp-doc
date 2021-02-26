@@ -8,7 +8,6 @@
     - [Custom attributes](#custom_attributes)
     - [Client synchronization](#client_synchronization)
     - [Server synchronization](#server_synchronization)
-    - [Sync updates with client](#sync_updates_with_client)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -214,35 +213,6 @@ The main purpose is to show the message to the client and therefor there is a me
 
 You also need to call the getClientData of the parent class (at least of AbstractComponent) since it contains necessary meta informations for the Impulse client engine.
 
-<h5><a id="server_synchronization">Server synchronization</a></h5>
-
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
-<pre class="code-white line-numbers language-php">
-	<code class="imp-code language-php"><?php
-    
-    class SpecialComponent extends AbstractComponent {
-
-        // ... message property and its getter and setter
-        
-        public function getServerData(): array
-        {
-        	$data = parent::getServerData();
-            $data['message'] = $this->message;
-            return $data;
-        }
-    }</code>
-</pre>
-
-<h5><a id="sync_updates_with_client">Sync updates with client</a></h5>
-
 It might happen that, maybe by some circumstances, changes to the message property should be synchronized with the client component object. For this purpose you have to call the **_updateClientAttribute_** method inside the setter. 
 
 <div class="code-header">
@@ -272,6 +242,32 @@ It might happen that, maybe by some circumstances, changes to the message proper
 
 Basically most components have an internal property called **_info_** which is designed as a tracking container for component changes.
 
+<h5><a id="server_synchronization">Server synchronization</a></h5>
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    
+    class SpecialComponent extends AbstractComponent {
+
+        // ... message property and its getter and setter
+        
+        public function getServerData(): array
+        {
+        	$data = parent::getServerData();
+            $data['message'] = $this->message;
+            return $data;
+        }
+    }</code>
+</pre>
 
 <h4><a name="advanced_topics">Learn more about components</a></h4>
 
