@@ -242,6 +242,8 @@ You also need to call the getClientData of the parent class (at least of Abstrac
 
 <h5><a id="sync_updates_with_client">Sync updates with client</a></h5>
 
+It might happen that, maybe by some circumstances, changes to the message property should be synchronized with the client component object. For this purpose you have to call the **_updateClientAttribute_** method inside the setter. 
+
 <div class="code-header">
 	<div class="container-fluid">
 		<div class="row">
@@ -266,6 +268,8 @@ You also need to call the getClientData of the parent class (at least of Abstrac
         }
     }</code>
 </pre>
+
+Basically most components have an internal property called **_info_** which is designed as a tracking container for component changes.
 
 
 blaaaaaaaaaa
