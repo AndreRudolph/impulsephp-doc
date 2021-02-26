@@ -240,7 +240,7 @@ It might happen that, maybe by some circumstances, changes to the message proper
     }</code>
 </pre>
 
-Basically most components have an internal property called **_info_** which is designed as a tracking container for component changes.
+Basically components have an internal property called **_info_** which is designed as a tracking container for component changes.
 
 <h5><a id="server_synchronization">Server synchronization</a></h5>
 
