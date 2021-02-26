@@ -272,27 +272,7 @@ It might happen that, maybe by some circumstances, changes to the message proper
 Basically most components have an internal property called **_info_** which is designed as a tracking container for component changes.
 
 
-blaaaaaaaaaa
-
-To support you, you can create a skeleton component with the following command.
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-	<pre class="code-white imp-code line-numbers language-shell">
-		<code class="language-bash">php bin/console make:impulse:component</code>
-	</pre>
-</div>
-
-
-<a name="advanced_topics">Learn more about components</a>
+<h4><a name="advanced_topics">Learn more about components</a></h4>
 
 <ul class="unstyled-list">
   <li><a data-target-menu-item="component_lifecycle" class="text-muted">Component lifecycle</a></li>
