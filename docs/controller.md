@@ -12,8 +12,6 @@ published: true
     - [Nested controllers](#nested-controllers)
     - [Listen to events](#listen-to-events)
 - [Advanced topics](#advanced-topics)
-    - [Concept of serialization](#concept-serialization)
-    - [Excluding attributes from serialization]
 
 <a name="introduction"></a>
 
@@ -245,12 +243,8 @@ The controller has been extended by two new attributes and an <span class="highl
 The annotation consists of two parameters. The component parameter requires one component id or a comma separated list of components ids for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
 
 
-<a name="advanced-topics"></a>
-## Advanced topics
+<h4><a id="advanced_topics">Learn more about components</a></h4>
 
-<a name="concept-serialization"></a>
-#### Concept of serialization
-
-Each controller will be serialized to the user session after the execution lifecycle has been completed. This is neccessary because they have to be reactived if required. All of the controllers attributes will be serialized by default.
-
-Component objects will not be directly serialized within the controller. The serialized controller only contains the uuids of the attributes which held component references.
+<ul class="unstyled-list">
+  <li><a data-target-menu-item="controller_serialization" class="text-muted">Serialization</a></li>
+</ul>
