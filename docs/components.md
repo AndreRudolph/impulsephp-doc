@@ -167,7 +167,6 @@ Suppose you want to create a component class, lets call it **_Message_**, with a
     
     class Message extends AbstractComponent 
     {
-
         private string $message = 'Hello World';
         
         public function setMessage(string $message): void
@@ -199,8 +198,8 @@ The main purpose is to show the message to the client and therefor there is a me
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class Message extends AbstractComponent {
-        
+    class Message extends AbstractComponent 
+    {    
         // ... message property and its getter and setter
         
         public function getClientData(): array
@@ -230,7 +229,6 @@ It might happen that, maybe by some circumstances, changes to the message proper
     
     class Message extends AbstractComponent
     {
-
         // ... 
         
         public function setMessage(string $message): void
@@ -257,8 +255,8 @@ Basically components have an internal property called **_info_** which is design
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class Message extends AbstractComponent {
-
+    class Message extends AbstractComponent 
+    {
         // ... message property and its getter and setter
         
         public function getServerData(): array
