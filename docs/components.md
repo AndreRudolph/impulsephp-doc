@@ -151,7 +151,7 @@ Impulse is designed to provide programmers the possibility to create their own c
 
 <h5><a id="custom_attributes">Custom attributes</a></h5>
 
-Suppose you want to create a component class, lets call it **_SpecialComponent_**, with a message that shall be displayed at the client. You can simply add a message property along with its getter and setter method.
+Suppose you want to create a component class, lets call it **_Message_**, with a message that shall be displayed at the client. You can simply add a message property along with its getter and setter method.
 
 <div class="code-header">
 	<div class="container-fluid">
@@ -165,7 +165,7 @@ Suppose you want to create a component class, lets call it **_SpecialComponent_*
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class SpecialComponent extends AbstractComponent 
+    class Message extends AbstractComponent 
     {
 
         private string $message = 'Hello World';
@@ -199,7 +199,7 @@ The main purpose is to show the message to the client and therefor there is a me
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class SpecialComponent extends AbstractComponent {
+    class Message extends AbstractComponent {
         
         // ... message property and its getter and setter
         
@@ -228,7 +228,7 @@ It might happen that, maybe by some circumstances, changes to the message proper
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class SpecialComponent extends AbstractComponent
+    class Message extends AbstractComponent
     {
 
         // ... 
@@ -257,7 +257,7 @@ Basically components have an internal property called **_info_** which is design
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
-    class SpecialComponent extends AbstractComponent {
+    class Message extends AbstractComponent {
 
         // ... message property and its getter and setter
         
