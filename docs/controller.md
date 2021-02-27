@@ -10,8 +10,7 @@ published: true
     - [Controller class](#controller-class)
     - [Wire components](#wire-components)
     - [Nested controllers](#nested-controllers)
-    - [Controllers as event listener](#controller-eventlistener)
-    - [Explicit Controller Event Listener registration](#explicit-controllerEventListener)
+    - [Listen to events](#listen-to-events)
 - [Advanced topics](#advanced-topics)
     - [Concept of serialization](#concept-serialization)
     - [Excluding attributes from serialization]
@@ -179,8 +178,8 @@ Line 13 is the important line. The <span class="highlightText">importView</span>
 
 By default this will remove all childs of the given parent component internally. To append instead of removing all childs, you can set an optional third parameter with <i>true</i> as value.
 
-<a name="controller-eventlistener"></a>
-#### Controllers as event listener
+<h5><a id="#listen-to-events">Listen to events</a></h5>
+
 Just defining a controller is by far not the only supported feature. As you maybe noticed, controllers can also work as event listeners as well. Consider the following example.
 
 <div>
@@ -245,8 +244,6 @@ The controller has been extended by two new attributes and an <span class="highl
 
 The annotation consists of two parameters. The component parameter requires one component id or a comma separated list of components ids for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
 
-<a name="explicit-controllerEventListener"></a>
-#### Explicit Controller Event Listener registration
 
 <a name="advanced-topics"></a>
 ## Advanced topics
