@@ -122,7 +122,7 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
   </pre>
 </div>
 
-After the execution is finished, the value of the textbox should be <span class="highlightText">Hello world!</span>.
+In the example above, once the controller was created, the afterCreate method will be called automatically (see chapter before) and the textbox value will be set to Hello World!.
 
 <h5><a id="load-views">Load views</a></h5>
 
