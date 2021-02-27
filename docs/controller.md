@@ -9,7 +9,7 @@ published: true
 - [Basics](#basics)
     - [Controller class](#controller-class)
     - [Wire components](#wire-components)
-    - [Nested controllers](#nested-controllers)
+    - [Load views](#load-views)
     - [Listen to events](#listen-to-events)
 - [Advanced topics](#advanced-topics)
 
@@ -124,7 +124,7 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
 
 After the execution is finished, the value of the textbox should be <span class="highlightText">Hello world!</span>.
 
-<h5><a id="nested-controllers">Nested controllers</a></h5>
+<h5><a id="load-views">Load views</a></h5>
 
 Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation. This section will only cover controller nesting. This can be achieved by importing a template within the executed controllers method. Below is an example of controller nesting.
 
