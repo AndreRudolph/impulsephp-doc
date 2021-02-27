@@ -17,8 +17,9 @@ published: true
 
 Controllers in Impulse PHP Framework are not exactly the same as you might be used with other frameworks. In most other frameworks among other responsibilites, a controller is that instance that decides which view must be rendered. However, in impulse the exact opposite is the case that a view binds a concrete controller class as you have already explored in the **_Views_** section.
 
-<a name="basics">Basics</a>
-<a name="controller-class">Controller class</a>
+<h4><a id="basics">Basics</a></h4>
+
+<h5><a id="controller-class">Controller class</a></h5>
 
 A minimalistic controller class is an empty class that extends the AbstractController class which is provided by the framework. The base class provides some useful functionalities that will be covered in a later section.
 
@@ -66,8 +67,8 @@ The <span class="highlightText">bind</span> attribute defines which controller w
 
 This example controller above would do nothing. For doing initial tasks you may override the afterCreate method from the AbstractController. The <span class="highlightText">afterCreate</span> represents the entry point of the controller and will be called automatically when the view was rendered.
 
-<a name="wire-components" />
-#### Wire components
+<h5><a name="wire-components">Wire components</a></h5>
+
 Components can be wired directly into the controller by naming conventions. They must be named exactly like their id in the view.
 
 <div>
@@ -123,7 +124,8 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
 
 After the execution is finished, the value of the textbox should be <span class="highlightText">Hello world!</span>.
 
-#### Nested controllers
+<h5><a id="nested-controllers">Nested controllers</a></h5>
+
 Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation. This section will only cover controller nesting. This can be achieved by importing a template within the executed controllers method. Below is an example of controller nesting.
 
 <div>
@@ -176,7 +178,7 @@ Line 13 is the important line. The <span class="highlightText">importView</span>
 
 By default this will remove all childs of the given parent component internally. To append instead of removing all childs, you can set an optional third parameter with <i>true</i> as value.
 
-<h5><a id="#listen-to-events">Listen to events</a></h5>
+<h5><a id="listen-to-events">Listen to events</a></h5>
 
 Just defining a controller is by far not the only supported feature. As you maybe noticed, controllers can also work as event listeners as well. Consider the following example.
 
