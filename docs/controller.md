@@ -65,7 +65,7 @@ The <span class="highlightText">bind</span> attribute defines which controller w
   </pre>
 </div>
 
-This example controller above would do nothing. For doing initial tasks you may override the afterCreate method from the AbstractController. The <span class="highlightText">afterCreate</span> represents the entry point of the controller and will be called automatically when the view was rendered.
+This example controller above would do nothing. For doing initial tasks you may override the afterCreate method from the AbstractController. The <span class="highlightText">afterCreate</span> represents the entry point of the controller and will be called automatically after the view has been rendered.
 
 <h5><a name="wire-components">Wire components</a></h5>
 
