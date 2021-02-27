@@ -8,6 +8,7 @@
     - [Custom attributes](#custom_attributes)
     - [Client synchronization](#client_synchronization)
     - [Server synchronization](#server_synchronization)
+    - [Client component](#client_component)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
