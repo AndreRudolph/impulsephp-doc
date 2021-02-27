@@ -8,7 +8,7 @@ published: true
 - [Introduction](#introduction)
 - [Basics](#basics)
     - [Controller class](#controller-class)
-    - [Wire components](#wire-components)
+    - [Access components](#access-components)
     - [Load views](#load-views)
     - [Listen to events](#listen-to-events)
 - [Advanced topics](#advanced-topics)
@@ -67,7 +67,7 @@ The <span class="highlightText">bind</span> attribute defines which controller w
 
 This example controller above would do nothing. For doing initial tasks you may override the afterCreate method from the AbstractController. The <span class="highlightText">afterCreate</span> represents the entry point of the controller and will be called automatically after the view has been rendered.
 
-<h5><a name="wire-components">Wire components</a></h5>
+<h5><a name="access-components">Access components</a></h5>
 
 The main purpose of controllers in Impulse is that they can directly interact with all components which have been created by views in an object orientated way. There are different strategies how these components can be accessed within a controller. However, one option is by wiring by convention by naming properties with the related component ids.
 
