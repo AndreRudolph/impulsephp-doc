@@ -69,7 +69,7 @@ This example controller above would do nothing. For doing initial tasks you may 
 
 <h5><a name="wire-components">Wire components</a></h5>
 
-Components can be wired directly into the controller by naming conventions. They must be named exactly like their id in the view.
+The main purpose of controllers in Impulse is that they can directly interact with all components which have been created by views in an object orientated way. There are different strategies how these components can be accessed within a controller. However, one option is by wiring by convention by naming properties with the related component ids.
 
 <div>
   <div class="code-header">
@@ -90,7 +90,7 @@ Components can be wired directly into the controller by naming conventions. They
   </pre>
 </div>
 
-We have created a textbox with the id <span class="highlightText">tb</span>. This component is - by naming convention - wireable for a controller.
+We have created a textbox with the id <span class="highlightText">tb</span>. This component is - by convention - wireable for a controller and can be accessed via controller property.
 
 <div>
   <div class="code-header">
