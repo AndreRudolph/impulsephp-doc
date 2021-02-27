@@ -126,7 +126,7 @@ In the example above, once the controller was created, the afterCreate method wi
 
 <h5><a id="load-views">Load views</a></h5>
 
-Another main feature is view and therefor controller nesting. See more for view nesting in the views documentation. This section will only cover controller nesting. This can be achieved by importing a template within the executed controllers method. Below is an example of controller nesting.
+The more complex the application gets the more it should be divided in smaller parts (single responsiblity principle). For exactly this purpose you can easily load views inside your controller. The following example shows how this works.
 
 <div>
   <div class="code-header">
