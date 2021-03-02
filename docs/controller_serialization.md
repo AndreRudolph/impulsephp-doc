@@ -53,6 +53,7 @@ When trying to serialize the controller, all properties annotated with **_Transi
 
 <h5><a id="component-references">Component references</a></h5>
 
+You might face the issue that you need to keep component references in properties of the controller to access them once the event listener will be restored. Properties which reference an object from class ComponentReference will be considered by serialization and only the references to the component objects will be stored since the components are stored separately.
 
 <h5><a id="eventlistener-references">Event listener references</a></h5>
 
