@@ -180,7 +180,7 @@ By default this will remove all childs of the given parent component internally.
 
 <h5><a id="listen-to-events">Event listening</a></h5>
 
-Just defining a controller is by far not the only supported feature. As you maybe noticed, controllers can also work as event listeners as well. Consider the following example.
+Controllers are designed to work as event listeners to listen to events occur at client side. The framework internally maps client events to AJAX requests that will be send to the server and thus delegated to the correct controller instance. How this in detail works is decscribed in the **_Event mapping_** section. However, the example belows demonstrates how event listeners are registered.
 
 <div>
   <div class="code-header">
@@ -203,7 +203,7 @@ Just defining a controller is by far not the only supported feature. As you mayb
   </pre>
 </div>
 
-The controller contains an event listener method.
+The controller contains method that is annotated with the **_Listen_** annotation.
 
 <div>
   <div class="code-header">
