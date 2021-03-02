@@ -10,7 +10,7 @@ published: true
 - [Load views](#load-views)
 - [Bind controllers to views](#bind-controllers)
 
-<h4><a id="introduction">Introduction</a></h5>
+<h4><a id="introduction">Introduction</a></h4>
 
 A view (or template) is different to _normal_ templates in symfony. In impulse every tag must represent a component which will be later converted to HTML. Components will be covered in the next documentation page.
 
