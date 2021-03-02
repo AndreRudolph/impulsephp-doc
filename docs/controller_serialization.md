@@ -57,7 +57,7 @@ You might face the issue that you need to keep component references in propertie
 
 <h5><a id="eventlistener-references">Event listener references</a></h5>
 
-
+In some scenarios you need to execute logic that is placed in another controller (like showing a success notification) and not in your current controller object. However, like component references you can also include event listener references in the serialization by having properties referencing to objects of class EventListenerReference. 
 
 
 
