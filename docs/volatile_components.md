@@ -17,9 +17,6 @@ Assume you would like to have a component that is not stored in the users sessio
 	namespace Impulse\ImpulseBundle\UI\Components;
 	use Impulse\ImpulseBundle\Components\VolatileInterface;
 
-    /**
-     * author André Rudolph <rudolph[at]impulse-php.com>
-     */
     class Notification extends AbstractComponent implements VolatileInterface
 	{
     	// ... properties and methods
