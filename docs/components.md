@@ -274,4 +274,5 @@ Basically components have an internal property called **_info_** which is design
   <li><a data-target-menu-item="component_lifecycle" class="text-muted">Component lifecycle</a></li>
   <li><a data-target-menu-item="component_service_wiring">Components Service Wiring</a></li>
   <li><a data-target-menu-item="components_el_wiring">Components Expression Language Based Wiring</a></li>
+  <li><a data-target-menu-item="components_volatile">Volatile components</a></li>
 </ul>
