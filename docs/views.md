@@ -8,9 +8,9 @@ published: true
 - [Introduction](#introduction)
 - [Custom attributes](#custom-attributes)
 - [Load views](#load-views)
-- [Apply controllers to views](#apply-controllers)
+- [Bind controllers to views](#bind-controllers)
 
-<a name="introduction"></a>
+<h4><a id="introduction">Introduction</a></h5>
 
 A view (or template) is different to _normal_ templates in symfony. In impulse every tag must represent a component which will be later converted to HTML. Components will be covered in the next documentation page.
 
@@ -114,6 +114,6 @@ The framework also provides a possibility to nest views:
   </pre>
 </div>
 
-<a name="apply-controllers"></a>
-## Applying controllers to views
-In the next documentation section for controllers you will learn how to connect a view with a controller.
+<h5><a id="bind-controllers">Bind controllers to views</a></h5>
+
+In the next documentation section for controllers you will learn how to connect bind a controller to a view.
