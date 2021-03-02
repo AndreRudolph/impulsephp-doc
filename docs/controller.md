@@ -248,5 +248,5 @@ The annotation consists of two parameters. The component parameter requires one 
 <h4><a id="advanced_topics">Learn more about components</a></h4>
 
 <ul class="unstyled-list">
-  <li><a data-target-menu-item="controller_serialization" class="text-muted">Serialization</a></li>
+  <li><a data-target-menu-item="controller_serialization" class="text-muted">Serialization of controller</a></li>
 </ul>
