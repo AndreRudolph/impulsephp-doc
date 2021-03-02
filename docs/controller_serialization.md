@@ -5,13 +5,13 @@
 - [Component references](#component-references)
 - [EventListener references](#eventlistener-references)
 
-<h4><a id="introduction">Introduction</a></h4>
+<h5><a id="introduction">Introduction</a></h5>
 
-<h4><a id="excluded-properties">Excluded properties</a></h4>
+<h5><a id="excluded-properties">Excluded properties</a></h5>
 
-<h4><a id="component-references">Component references</a></h4>
+<h5><a id="component-references">Component references</a></h5>
 
-<h4><a id="eventlistener-references">Event listener references</a></h4>
+<h5><a id="eventlistener-references">Event listener references</a></h5>
 
 
 
