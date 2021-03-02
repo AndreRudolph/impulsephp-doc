@@ -47,7 +47,7 @@ It is likely that you have to exclude properties manually from serialization. As
   </pre>
 </div>
 
-When trying to serialize the controller, all properties annotated with **_Transient_** are automatically excluded.
+When trying to serialize the controller, all properties annotated with **_Transient_** will automatically be excluded.
 
 <h5><a id="component-references">Component references</a></h5>
 
