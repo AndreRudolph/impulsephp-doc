@@ -56,7 +56,7 @@ The <span class="highlightText">bind</span> attribute defines which controller w
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
   	namespace App\Controller;
-  	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+  	use Impulse\ImpulseBundle\Controller\AbstractController;
 
   	class AppController extends AbstractController
   	{
@@ -105,8 +105,8 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
   <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
-	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+	use Impulse\ImpulseBundle\Controller\AbstractController;
+	use Impulse\ImpulseBundle\Execution\Events\Event;
 	use Impulse\ImpulseBundle\UI\Components\Textbox;
 
 	class AppController extends AbstractController
@@ -158,9 +158,9 @@ The more complex the application gets the more it should be divided in smaller p
   <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
-	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
-	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-	use Impulse\Bundles\ImpulseBundle\UI\Components\Window;
+	use Impulse\ImpulseBundle\Controller\AbstractController;
+	use Impulse\ImpulseBundle\Execution\Events\Event;
+	use Impulse\ImpulseBundle\UI\Components\Window;
 
 	class AppController extends AbstractController
 	{
@@ -218,7 +218,7 @@ The controller contains method that is annotated with the **_Listen_** annotatio
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
-	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+	use Impulse\ImpulseBundle\Controller\AbstractController;
 	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
     use Impulse\ImpulseBundle\Events\Events;
 	use Impulse\ImpulseBundle\Controller\Annotations\Listen;
