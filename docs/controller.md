@@ -284,7 +284,7 @@ Though this is a clean way to define event listeners, it has one drawback. It ca
   </pre>
 </div>
 
-The functionality of the code above is the same as in the previous example with the Listen annotation. 
+The outcome and functionality of the code above is the same as in the previous example with the Listen annotation. On line 20, the first argument is the event that will be listened to. The second paratmer is the actual controller instance that will be used as event listener while the third paramter declares the method that will be executed once the event is fired.
 
 <h4><a id="advanced_topics">Learn more about components</a></h4>
 
