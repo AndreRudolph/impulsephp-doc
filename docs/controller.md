@@ -284,6 +284,7 @@ Though this is a clean way to define event listeners, it has one drawback. It ca
   </pre>
 </div>
 
+The functionality of the code above is the same as in the previous example with the Listen annotation. 
 
 <h4><a id="advanced_topics">Learn more about components</a></h4>
 
