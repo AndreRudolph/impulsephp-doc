@@ -66,7 +66,7 @@ The above example displays a list with ten items counting up from 0 to 9.
 
 <a name="custom-attributes"></a>
 ## Custom attributes
-Each component within a view can be extended by custom attributes. These attributes may be used to customize special components for e.g. specific processing with the component.
+Each component can be extended by custom attributes. These attributes may be used to parametrize components.
 
 <div>
   <div class="code-header">
@@ -89,7 +89,7 @@ Each component within a view can be extended by custom attributes. These attribu
   </pre>
 </div>
 
-Custom attributes of a component are only accessible on server side. You may access them to handle components with custom attributes in that way that fit your needs.
+Custom attributes of a component are only accessible on server side. You may access the attributes by directly using the methods **_getCustomAttribute_**, **_getCustomAttributes_** of the component instance within the controller.
 
 <a name="import-views"></a>
 ## Import views
