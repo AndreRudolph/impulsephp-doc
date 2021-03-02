@@ -19,7 +19,7 @@ Controllers in Impulse PHP Framework are not exactly the same as you might be us
 
 <h4><a id="basics">Basics</a></h4>
 
-Controllers are in general created by the Symfonys dependency injection container. Thus, you have full autowiring support and can inject any services which you need for your controller.
+Controllers are in general created by the Symfonys dependency injection container. Thus, you have full autowiring support and can inject any services which you need for your controller. 
 
 <h5><a id="controller-class">Controller class</a></h5>
 
