@@ -7,7 +7,7 @@ published: true
 
 - [Introduction](#introduction)
 - [Custom attributes](#custom-attributes)
-- [Import views](#import-views)
+- [Load views](#load-views)
 - [Apply controllers to views](#apply-controllers)
 
 <a name="introduction"></a>
@@ -64,8 +64,8 @@ As impulse seamlessly integrates twig, even more complex templates can be create
 
 The above example displays a list with ten items counting up from 0 to 9. 
 
-<a name="custom-attributes"></a>
-## Custom attributes
+<h5><a id="custom-attributes">Custom attributes</a></h5>
+
 Each component can be extended by custom attributes. These attributes may be used to parametrize components.
 
 <div>
@@ -91,8 +91,7 @@ Each component can be extended by custom attributes. These attributes may be use
 
 Custom attributes of a component are only accessible on server side. You may access the attributes by directly using the methods **_getCustomAttribute_**, **_getCustomAttributes_** of the component instance within the controller.
 
-<a name="import-views"></a>
-## Import views
+<h5><a id="load-views">Load views</a></h5>
 
 The framework also provides a possibility to nest views:
 
