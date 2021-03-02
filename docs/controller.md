@@ -203,7 +203,7 @@ Controllers are designed to work as event listeners to listen to events occur at
   </pre>
 </div>
 
-The controller contains method that is annotated with the **_Listen_** annotation which needs the event it listens to and the component on which the event shall be registered.
+The controller contains a method that is annotated with the **_Listen_** annotation which needs the event it listens to and the component on which the event shall be registered.
 
 <div>
   <div class="code-header">
