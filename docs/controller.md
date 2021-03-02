@@ -203,7 +203,7 @@ Controllers are designed to work as event listeners to listen to events occur at
   </pre>
 </div>
 
-The controller contains method that is annotated with the **_Listen_** annotation.
+The controller contains method that is annotated with the **_Listen_** annotation which needs the event it listens to and the component on which the event shall be registered.
 
 <div>
   <div class="code-header">
@@ -240,9 +240,6 @@ The controller contains method that is annotated with the **_Listen_** annotatio
   </pre>
 </div>
 
-The controller has been extended by two new attributes and an <span class="highlightText">onClick</span> method. The name of the attributes correlate with their id in the view template. Thus, the framework can automatically inject these component objects to the controller. The <span class="highlightText">onClick</span> method is annotated with a <span class="highlightText">@Listen</span> annotation. This is a marker for the framework to automatically register an event listener.
-
-The annotation consists of two parameters. The component parameter requires one component id or a comma separated list of components ids for which the event listener will be registered. The second parameter defines the event type that must be triggered on the client side to fire the execution of the event listener.
 
 
 <h4><a id="advanced_topics">Learn more about components</a></h4>
