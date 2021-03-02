@@ -24,10 +24,7 @@ Assume you would like to have a component that is not stored in the users sessio
   </pre>
 </div>
 
-
-
-
-
+In future there will be native components implemented that marked as volatile to optimize processing speed & memory consumption since they don't need to be managed by the server.
 
 
 
