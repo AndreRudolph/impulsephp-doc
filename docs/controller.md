@@ -180,7 +180,7 @@ By default this will remove all childs of the given parent component internally.
 
 <h5><a id="listen-to-events">Event listening</a></h5>
 
-Controllers are designed to work as event listeners to listen to events occur at client side. The framework internally maps client events to AJAX requests that will be send to the server and thus delegated to the correct controller instance. How this in detail works is decscribed in the **_Event mapping_** section. However, the example belows demonstrates how event listeners are registered.
+Controllers are designed to work as event listeners to listen to events occur at client side. The framework internally maps client events to AJAX requests that will be send to the server and thus delegated to the correct controller instance. How this in detail works is decscribed in the **_Event mapping_** section. However, the example below demonstrates how event listeners are registered.
 
 <div>
   <div class="code-header">
