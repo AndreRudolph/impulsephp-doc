@@ -7,7 +7,9 @@
 
 <h5><a id="introduction">Introduction</a></h5>
 
-Like components, controllers will also be serialized and stored in the users session when they are registered as event listeners. The concept of serialization is to have a string representation of an object that stores its states that must be restored once the serialized object will be deserialized. 
+Like components, controllers will also be serialized and stored in the users session when they are registered as event listeners. The concept of serialization is to have a string representation of an object that stores its states that must be restored once the serialized object will be deserialized.
+
+Once an event listener (controller) will be reactivated (deserialized), values that have been stored in serialized format will be restored. After the request has been processed, the reactivated event listener will be stored back in session with its current state.
 
 In this documentation page we will cover the essentials of controller serialization and how you can customize the serialization with your needs.
 
@@ -50,6 +52,7 @@ It is likely that you have to exclude properties manually from serialization. As
 When trying to serialize the controller, all properties annotated with **_Transient_** will automatically be excluded.
 
 <h5><a id="component-references">Component references</a></h5>
+
 
 <h5><a id="eventlistener-references">Event listener references</a></h5>
 
