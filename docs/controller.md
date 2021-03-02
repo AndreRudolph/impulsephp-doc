@@ -240,6 +240,49 @@ The controller contains method that is annotated with the **_Listen_** annotatio
   </pre>
 </div>
 
+Though this is a clean way to define event listeners, it has one drawback. It can't (currently) be registered dynamically for components which ids are not set or not known. For this purpose you can register event listeners manually to components.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-php">
+  	<code class="imp-code language-php"><?php
+	namespace App\Controller;
+	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
+	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+    use Impulse\ImpulseBundle\Events\Events;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
+	use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+	use Impulse\Bundles\ImpulseBundle\UI\Components\Span;
+	use Impulse\Bundles\ImpulseBundle\UI\Components\Textbox;
+
+	class AppController extends AbstractController
+	{
+		private ?Textbox $tbName = null;
+		private ?Span $lbGreet = null;
+        private ?Button $btnGreet = null;
+        
+        public function afterCreate(Event $event)
+        {
+        	parent::afterCreate($event);
+            $this->btnGreet->addEventListener(Events::CLICK, $this, 'greet');
+        }
+
+		public function greet()
+		{
+			$greeting = $this->tbName->getValue();
+			$this->lbGreet->setValue($greeting);
+		}
+	}</code>
+  </pre>
+</div>
 
 
 <h4><a id="advanced_topics">Learn more about components</a></h4>
