@@ -15,7 +15,7 @@ In this documentation page we will cover the essentials of controller serializat
 
 <h5><a id="exclude-properties">Exclude properties</a></h5>
 
-It is likely that you have to exclude properties manually from serialization. Assuming that you have injected a service that is connected to the database or any other resource that is not serializable. In order to exclude these properties from serialization, you can simply annotate them with the **Transient**__ annotation.
+It is likely that you have to exclude properties manually from serialization. Assuming that you have injected a service that is connected to the database or any other resource that is not serializable. In order to exclude these properties from serialization, you can simply annotate them with the **_Transient_** annotation.
 
 <div>
   <div class="code-header">
