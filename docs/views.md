@@ -91,7 +91,7 @@ Each component can be extended by custom attributes. These attributes may be use
   </pre>
 </div>
 
-Custom attributes of a component are only accessible on server side. You may access the attributes by directly using the methods **_getCustomAttribute_**, **_getCustomAttributes_** of the component instance within the controller.
+Custom attributes of a component are only accessible on server side. You may access the attributes by directly using the methods **_getCustomAttribute(attributeName)_** or **_getCustomAttributes_** of the component instance within the controller.
 
 <h5><a id="load-views">Load views</a></h5>
 
