@@ -39,7 +39,7 @@ A view must start with an opening and must end with a closing impulse tag. The f
 
 <h5><a id="twig-integration">Twig integration</a></h5>
 
-As impulse seamlessly integrates twig, even more complex templates can be created.
+One benefit of impulse is it seamless integration of twig since it is used behind the scenes.
 
 <div>
   <div class="code-header">
