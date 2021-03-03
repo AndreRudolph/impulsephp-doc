@@ -9,7 +9,6 @@ published: true
 - [Twig integration](#twig-integration)
 - [Custom attributes](#custom-attributes)
 - [Load views](#load-views)
-- [Bind controllers to views](#bind-controllers)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -96,7 +95,7 @@ Custom attributes of a component are only accessible on server side. You may acc
 
 <h5><a id="load-views">Load views</a></h5>
 
-It is a common good practice to separate views in smaller pieces to become reusable and more descriptively. Hence it is possible to load (import) other views directly into a view.
+It is a common good practice (separation of concerns) to separate views into smaller pieces to become reusable and more descriptively. Hence it is possible to load (import) views directly into a view.
 
 <div>
   <div class="code-header">
@@ -117,6 +116,4 @@ It is a common good practice to separate views in smaller pieces to become reusa
   </pre>
 </div>
 
-<h5><a id="bind-controllers">Bind controllers to views</a></h5>
-
-In the next documentation section for controllers you will learn how to connect bind a controller to a view.
+With this separation your application becomes more extensible and maintainable when to it comes to controllers in the next documentation page. 
