@@ -39,32 +39,7 @@ A view must start with an opening and must end with a closing impulse tag. The f
 
 <h5><a id="twig-integration">Twig integration</a></h5>
 
-One benefit of impulse is it seamless integration of twig since it is used behind the scenes.
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-  <pre class="code-white line-numbers language-twig">
-      <code class="language-twig">&lt;impulse&gt;
-          &lt;window&gt;
-          	  &lt;ul&gt;{% raw  %}
-          	      {% for i in 0..10 %}
-    		      &lt;li&gt;{{ i }}&lt;/li&gt;
-			      {% endfor %}
-              {% endraw  %}&lt;/ul&gt;
-          &lt;/window&gt;
-      &lt;/impulse&gt;</code>
-  </pre>
-</div>
-
-The above example displays a list with ten items counting up from 0 to 9. 
+One benefit of impulse is it seamless integration of twig since it is used behind the scenes. Hence you will be able to use the full power of the twig template engine for your templates.
 
 <h5><a id="custom-attributes">Custom attributes</a></h5>
 
