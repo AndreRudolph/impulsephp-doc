@@ -96,7 +96,7 @@ Custom attributes of a component are only accessible on server side. You may acc
 
 <h5><a id="load-views">Load views</a></h5>
 
-The framework also provides a possibility to nest views:
+It is a common good practice to separate views in smaller pieces to become reusable and more descriptively. Hence it is possible to load (import) other views directly into a view.
 
 <div>
   <div class="code-header">
