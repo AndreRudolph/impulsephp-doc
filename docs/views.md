@@ -6,13 +6,14 @@ published: true
 <h3 class="doc-title">Views</h3>
 
 - [Introduction](#introduction)
+- [Twig integration](#twig-integration)
 - [Custom attributes](#custom-attributes)
 - [Load views](#load-views)
 - [Bind controllers to views](#bind-controllers)
 
 <h4><a id="introduction">Introduction</a></h4>
 
-A view (or template) is different to _normal_ templates in symfony. In impulse every tag must represent a component which will be later converted to HTML. Components will be covered in the next documentation page.
+A view (or template) is different to _normal_ templates in symfony. In impulse every tag must represent a component (except the impulse tag and custom attributes) which will be later converted to HTML. Components will be covered in a later documentation page.
 
 The following example is a minimum example with just a simple text output.
 
@@ -36,6 +37,8 @@ The following example is a minimum example with just a simple text output.
 </div>
  
 A view must start with an opening and must end with a closing impulse tag. The file extension is the same as it is in symfony: twig.html.
+
+<h5><a id="twig-integration">Twig integration</a></h5>
 
 As impulse seamlessly integrates twig, even more complex templates can be created.
 
