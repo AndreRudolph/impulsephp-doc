@@ -77,7 +77,7 @@ You might face the issue that you need to keep component references in propertie
 	{
     	private Button $btn;
         private Label $lb;
-    	private ComponentList $myComponentList;
+    	private ?ComponentList $myComponentList;
         
         public function __construct()
         {
