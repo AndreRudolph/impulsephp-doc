@@ -176,23 +176,23 @@ class AuthenticationService
     </div>
   </div>
   <pre class="code-white imp-code line-numbers language-markup">
-	<code class="language-markup"><impulse>
-    <modal id="wndAuth" bind="App\Controller\Auth\LoginController">
-        <modalheader>
-            <span>Login</span>
-        </modalheader>
-        <modalbody>
-            <span>Username</span>
-            <feedbacktextbox id="tbUsername" />
-            <span>Password</span>
-            <feedbacktextbox id="tbPassword" inputType="password" />
-        </modalbody>
-        <modalfooter>
-            <button id="btnClose" class="btn btn-secondary">Close</button>
-            <button id="btnLogin" class="btn btn-primary">Login</button>
-        </modalfooter>
-    </modal>
-</impulse></code>
+	<code class="language-markup">&lt;impulse&gt;
+    &lt;modal id="wndAuth" bind="App\Controller\Auth\LoginController"&gt;
+        &lt;modalheader&gt;
+            &lt;span&gt;Login</span&gt;
+        &lt;/modalheader&gt;
+        &lt;modalbody&gt;
+            &lt;span&gt;Username&lt;/span&gt;
+            &lt;feedbacktextbox id="tbUsername" /&gt;
+            &lt;span&gt;Password&lt;/span&gt;
+            &lt;feedbacktextbox id="tbPassword" inputType="password" /&gt;
+        &lt;/modalbody&gt;
+        &lt;modalfooter&gt;
+            &lt;button id="btnClose" class="btn btn-secondary"&gt;Close&lt;/button&gt;
+            &lt;button id="btnLogin" class="btn btn-primary"&gt;Login&lt;/button&gt;
+        &lt;/modalfooter&gt;
+    &lt;/modal&gt;
+&lt;/impulse&gt;</code>
   </pre>
 </div>
 
