@@ -23,7 +23,6 @@
 		&lt;modalheader&gt;Login&lt;/modalheader&gt;
 		&lt;modalbody&gt;
 			&lt;div class="container mt-3"&gt;
-				&lt;div class="row justify-content-center align-items-center" id="errorContainer" /&gt;
 				&lt;div class="row justify-content-center align-items-center"&gt;
 					&lt;div class="col-12"&gt;
 						&lt;div class="form-group"&gt;
