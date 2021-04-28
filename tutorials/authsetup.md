@@ -3,6 +3,7 @@
 - [Security.yaml](#security-yaml)
 - [User entity](#user-entity)
 - [Authentication provider](#authentication-provider)
+- [User service](#user-service)
 
 
 <a name="security-yaml"></a>
@@ -247,6 +248,94 @@ class DatabaseAuthenticationProvider extends UserAuthenticationProvider
                 throw new AuthenticationException('Password is invalid.');
             }
         }
+    }
+}</code>
+  </pre>
+</div>
+
+<a name="user-service"></a>
+<h4>User service</h4>
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Service;
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+class UserService implements UserProviderInterface
+{
+    private $em;
+    private $passwordEncoder;
+
+    public function __construct(EntityManagerInterface $em, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->em = $em;
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
+    public function loadUserByUsername(string $username)
+    {
+        $result = $this->findByAttribute('username', $username);
+        if (!is_array($result) || empty($result)) {
+            return null;
+        }
+
+        return $result[0];
+    }
+
+    public function supportsClass(string $class)
+    {
+        return $class === User::class;
+    }
+
+    public function refreshUser(UserInterface $user)
+    {
+        if (!$user instanceof User) {
+            throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', get_class($user)));
+        }
+
+        return $this->loadUserByUsername($user->getUsername());
+    }
+
+    public function save(User $user)
+    {
+        $passwordHash = $this->passwordEncoder->encodePassword($user, $user->getPassword());
+        $user->setPassword($passwordHash);
+        $this->em->persist($user);
+        $this->em->flush();
+    }
+
+    public function usernameExists(string $username): bool
+    {
+        $users = $this->findByAttribute('username', $username);
+        return $users !== null && !empty($users);
+    }
+
+    public function emailExists(string $email): bool
+    {
+        $users = $this->findByAttribute('email', $email);
+        return $users !== null && !empty($users);
+    }
+
+    public function findByAttribute(string $attribute, $value): ?array
+    {
+        return $this->em->getRepository(User::class)
+            ->findBy([$attribute => $value]);
     }
 }</code>
   </pre>
