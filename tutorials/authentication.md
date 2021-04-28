@@ -2,6 +2,8 @@
 
 - [Authentication provider](#authentication-provider)
 - [Authentication service](#authentication-service)
+- [Login template](#login-template)
+- [Login controller](#login-controller)
 
 
 <a name="authentication-provider"></a>
@@ -155,6 +157,126 @@ class AuthenticationService
         } catch (AuthenticationServiceException $e) {
             return null;
         }
+    }
+}</code>
+  </pre>
+</div>
+
+<a name="login-template"></a>
+<h4>Login template</h4>
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-markup">
+	<code class="language-markup"><impulse>
+    <modal id="wndAuth" bind="App\Controller\Auth\LoginController">
+        <modalheader>
+            <span>Login</span>
+        </modalheader>
+        <modalbody>
+            <span>Username</span>
+            <feedbacktextbox id="tbUsername" />
+            <span>Password</span>
+            <feedbacktextbox id="tbPassword" inputType="password" />
+        </modalbody>
+        <modalfooter>
+            <button id="btnClose" class="btn btn-secondary">Close</button>
+            <button id="btnLogin" class="btn btn-primary">Login</button>
+        </modalfooter>
+    </modal>
+</impulse></code>
+  </pre>
+</div>
+
+<a name="login-controller"></a>
+<h4>Login controller</h4>
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+namespace App\Controller\Auth;
+
+use App\Service\AuthenticationService;
+use Exception;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\Execution\Events\ClickEvent;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class LoginController extends AbstractController
+{
+    private Modal $wndAuth;
+    private FeedbackTextbox $tbUsername;
+    private FeedbackTextbox $tbPassword;
+
+    #[Transient]
+    private AuthenticationService $authenticationService;
+
+    public function __construct(AuthenticationService $authenticationService)
+    {
+        $this->authenticationService = $authenticationService;
+    }
+
+    #[Listen(event: Events::CLICK, component: 'btnLogin')]
+    public function onLogin(ClickEvent $event): void
+    {
+        $username = $this->tbUsername->getValue() ?? '';
+        $password = $this->tbPassword->getValue() ?? '';
+
+        try {
+            $authenticatedToken = $this->authenticationService->authenticate($username, $password);
+
+            if ($authenticatedToken !== null) {
+                $this->notifySuccess()->duration(5000)->message('You have successfully been logged in.')->create();
+                $this->close();
+            } else {
+                $this->handleInvalidCredentials();
+            }
+        } catch (Exception $e) {
+            $this->handleInvalidCredentials();
+        }
+    }
+
+    private function handleInvalidCredentials(): void
+    {
+        $this->tbUsername->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, 'Invalid credentials.');
+        $this->tbPassword->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, 'Invalid credentials.');
+    }
+
+    #[Listen(event: Events::CLICK, component: 'btnClose')]
+    #[Listen(event: Events::CLOSE, component: 'wndAuth')]
+    public function onClose($event): void
+    {
+        $this->close();
+    }
+
+    private function close(): void
+    {
+        $this->wndAuth->close();
     }
 }</code>
   </pre>
