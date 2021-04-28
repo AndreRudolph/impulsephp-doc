@@ -23,7 +23,7 @@
             
     providers:
         database_users:
-            entity: { class: App\Entity\User, property: username }</code>
+            entity: { class: App\Entity\User, property: username }
             
     firewalls:
         # ...
@@ -33,6 +33,7 @@
 
             logout:
                 path: logout
+            </code>
   </pre>
 </div>
 
