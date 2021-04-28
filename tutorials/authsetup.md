@@ -6,7 +6,7 @@
 
 
 <a name="security-yaml">
-<h4>Security.yaml<h4/></a>
+<h4>Security.yaml</h4></a>
   
 <div>
   <div class="code-header">
