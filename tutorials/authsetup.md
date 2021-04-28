@@ -4,6 +4,38 @@
 - [Installation](#Installation)
 - [Authentication example](#authentication-example)
 
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-yaml">
+	<code class="language-yaml">security:
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+            cost: 4
+            
+    providers:
+        database_users:
+            entity: { class: App\Entity\User, property: username }</code>
+            
+    firewalls:
+        # ...
+        main:
+            # ...
+            provider: database_users
+
+            logout:
+                path: logout
+  </pre>
+</div>
+
 <a name="download"></a>
 # Download
 
