@@ -1,18 +1,11 @@
 <h1 class="doc-title">Registration</h1>
 
-- [Download](#download)
-- [Installation](#Installation)
-- [Authentication example](#authentication-example)
+- [Registration template](#registration-template)
+- [Registration controller](#registration-controller)
 
-<a name="download"></a>
-# Download
 
-As long as the package is not public, you have to download the installer manually. You can download the package <a href="downloads/installer.zip" target="_blank">here</a>.
-
-<a name="installation"></a>
-# Installation
-
-For a simple installation you can unpack the downloaded zip, rename the directory (if you want) and afterwards you have to run the following command.
+<a name="registration-template"></a>
+<h4>Registration template</h4>
 
 <div>
   <div class="code-header">
@@ -24,106 +17,175 @@ For a simple installation you can unpack the downloaded zip, rename the director
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">composer install</code>
+  <pre class="code-white imp-code line-numbers language-markup">
+	<code class="language-markup">&lt;impulse&gt;
+    &lt;modal id="wndRegistration" bind="App\Controller\Auth\RegistrationController"&gt;
+        &lt;modalheader&gt;
+            Login
+        &lt;/modalheader&gt;
+        &lt;modalbody&gt;
+            &lt;div class="container mt-3"&gt;
+                &lt;div class="row justify-content-center align-items-center" id="errorContainer" /&gt;
+                &lt;div class="row justify-content-center align-items-center"&gt;
+                    &lt;div class="col-12"&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;span&gt;Username&lt;/span&gt;
+                            &lt;feedbacktextbox id="tbUsername" /&gt;
+                        &lt;/div>
+                        &lt;div class="form-group"&gt;
+                            &lt;span&gt;Password&lt;/span&gt;
+                            &lt;feedbacktextbox id="tbPassword" inputType="password" /&gt;
+                        &lt;/div>
+                        &lt;div class="form-group"&gt;
+                            &lt;span&gt;Password repeat&lt;/span&gt;
+                            &lt;feedbacktextbox id="tbPasswordRepeat" inputType="password" /&gt;
+                        &lt;/div&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;span&gt;E-Mail&lt;/span&gt;
+                            &lt;feedbacktextbox id="tbEmail" /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/modalbody&gt;
+        &lt;modalfooter&gt;
+            &lt;button id="btnClose" class="btn btn-secondary"&gt;Close&lt;/button&gt;
+            &lt;button id="btnRegister" class="btn btn-primary"&gt;Register&lt;/button&gt;
+        &lt;/modalfooter&gt;
+    &lt;/modal&gt;
+&lt;/impulse&gt;</code>
   </pre>
 </div>
 
-The procedure will ask you for the symfony apache pack if you want to use, type n. After a successful installation you have to run the following command in order to make impulse work.
+<a name="registration-controller"></a>
+<h4>Registration controller</h4>
 
 <div>
   <div class="code-header">
     <div class="container-fluid">
         <div class="row">
-            <div class="button red"></div>
+          <div class="button red"></div>
           	<div class="button yellow"></div>
           	<div class="button green"></div>
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">php bin/console impulse:setup</code>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\Execution\Events\Event;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    private Modal $wndRegistration;
+    private FeedbackTextbox $tbUsername;
+    private FeedbackTextbox $tbPassword;
+    private FeedbackTextbox $tbPasswordRepeat;
+    private FeedbackTextbox $tbEmail;
+
+    #[Transient] private UserService $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
+    public function afterCreate(Event $event)
+    {
+        parent::afterCreate($event);
+        if ($this->isGranted('IS_AUTHENTICATED_FULLY')) {
+            return $this->redirectTo('_impulse_index');
+        }
+    }
+
+    #[Listen(event: Events::CLICK, component: 'btnRegister')]
+    public function onRegister(): void
+    {
+        $this->resetErrors();
+
+        if ($this->validate()) {
+            $this->doRegistration();
+        }
+    }
+
+    #[Listen(event: Events::CLICK, component: 'btnClose')]
+    #[Listen(event: Events::CLOSE, component: 'wndRegistration')]
+    public function onClose($event): void
+    {
+        $this->wndRegistration->close();
+    }
+
+    private function doRegistration(): void
+    {
+        $username = $this->tbUsername->getValue();
+        $password = $this->tbPassword->getValue();
+        $email = $this->tbEmail->getValue();
+
+        $user = (new User())
+            ->setUsername($username)
+            ->setPassword($password)
+            ->setEmail($email);
+
+        $this->userService->save($user);
+
+        $this->notifySuccess()
+            ->header('User registered')
+            ->message(sprintf('User %s has been registered.', $username))
+            ->create();
+
+        $this->wndRegistration->close();
+    }
+
+    private function validate(): bool
+    {
+        $valid = true;
+
+        // username
+        $valid &= $this->validateTextbox($this->tbUsername, static fn($value) => $value !== null && $value !== '', 'Username must not be empty!');
+        $valid &= $this->validateTextbox($this->tbUsername, function($value) {
+            return !$this->userService->usernameExists($value);
+        }, 'User already taken!');
+
+        // password
+        $valid &= $this->validateTextbox($this->tbPassword, static fn($value) => $value !== null && $value !== '', 'Password must not be empty!');
+        $valid &= $this->validateTextbox($this->tbPasswordRepeat, function($value) {
+            return $value === $this->tbPassword->getValue();
+        },'Passwords must be equal!');
+
+        // email
+        $valid &= $this->validateTextbox($this->tbEmail, fn($value) => filter_var($value, FILTER_VALIDATE_EMAIL), 'No valid email.');
+        $valid &= $this->validateTextbox($this->tbEmail, function($value) {
+            return !$this->userService->emailExists($value);
+        }, 'Email is already taken.');
+
+        return $valid;
+    }
+
+    private function validateTextbox(FeedbackTextbox $textbox, callable $validator, string $message): bool
+    {
+        if (!$validator($textbox->getValue() ?? '')) {
+            $textbox->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, $message);
+            return false;
+        }
+
+        return true;
+    }
+
+    private function resetErrors(): void
+    {
+        $this->tbUsername->resetFeedback();
+        $this->tbPassword->resetFeedback();
+        $this->tbPasswordRepeat->resetFeedback();
+        $this->tbEmail->resetFeedback();
+    }
+}</code>
   </pre>
 </div>
-
-
-Once the procedure is finished, you can open the web application via browser (e.g. http://localhost/project/public/). You should see the example entry page.
-
-<a name="authentication-example"></a>
-# Authentication example
-
-You can generate a very basic authentication example. First of all, you have to adjust the doctrine.yaml file with the following configurations.
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-  <pre class="code-white imp-code line-numbers language-yaml">
-	<code class="language-yaml">parameters:
-		env(DATABASE_URL): ''
-    doctrine:
-		dbal:
-			# configure these for your database server
-			driver: 'pdo_mysql'
-			server_version: '5.7'
-			charset: utf8mb4
-            default_table_options:
-				charset: utf8mb4
-				collate: utf8mb4_unicode_ci
-			url: '%env(resolve:DATABASE_URL)%'
-		orm:
-			auto_generate_proxy_classes: true
-			naming_strategy: doctrine.orm.naming_strategy.underscore
-			auto_mapping: true
-			mappings:
-			App:
-				is_bundle: false
-				type: annotation
-				dir: '%kernel.project_dir%/src/Entity'
-				prefix: 'App\Entity'
-				alias: App
-</code>
-	</pre>
-</div>
-
-An empty sqlite database is already provided in the var/ directory. The next step is adjusting the database connection settings in the .env file.
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-  <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db</code>
-  </pre>
-</div>
-
-The last step is just generating the authentication example with the following command.
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-  <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">php bin/console make:impulse:auth</code>
-  </pre>
-</div>
-
-After that, refresh the main page and you will see that "Login" and "Registration" menu entries have been added automatically.
