@@ -16,24 +16,23 @@
   </div>
   <pre class="code-white imp-code line-numbers language-yaml">
 	<code class="language-yaml">security:
-    encoders:
-        App\Entity\User:
-            algorithm: bcrypt
-            cost: 4
+		encoders:
+			App\Entity\User:
+				algorithm: bcrypt
+				cost: 4
             
-    providers:
-        database_users:
-            entity: { class: App\Entity\User, property: username }
+		providers:
+			database_users:
+				entity: { class: App\Entity\User, property: username }
             
-    firewalls:
-        # ...
-        main:
-            # ...
-            provider: database_users
+		firewalls:
+		# ...
+			main:
+				# ...
+				provider: database_users
 
-            logout:
-                path: logout
-            </code>
+				logout:
+					path: logout</code>
   </pre>
 </div>
 
