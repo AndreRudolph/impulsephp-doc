@@ -5,8 +5,8 @@
 - [Authentication example](#authentication-example)
 
 
-<a name="security-yaml">
-<h4>Security.yaml</h4></a>
+<a name="security-yaml"></a>
+<h4>Security.yaml</h4>
   
 <div>
   <div class="code-header">
