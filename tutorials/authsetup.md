@@ -1,9 +1,13 @@
 <h1 class="doc-title">Setup</h1>
 
-- [Download](#download)
+- [Security.yaml](#security-yaml)
 - [Installation](#Installation)
 - [Authentication example](#authentication-example)
 
+
+<a name="security-yaml"></a>
+<h4>Security.yaml<h4/>
+  
 <div>
   <div class="code-header">
     <div class="container-fluid">
@@ -35,9 +39,6 @@
 					path: logout</code>
   </pre>
 </div>
-
-<a name="download"></a>
-# Download
 
 As long as the package is not public, you have to download the installer manually. You can download the package <a href="downloads/installer.zip" target="_blank">here</a>.
 
