@@ -175,6 +175,8 @@ class User implements UserInterface
 <a name="user-service"></a>
 <h4>User service</h4>
 
+The user service is the central access point to the user entities of the database.
+
 <div>
   <div class="code-header">
     <div class="container-fluid">
