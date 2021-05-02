@@ -198,6 +198,47 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 
 class UserService implements UserProviderInterface
 {
+    public function loadUserByUsername(string $username)
+    {
+        
+    }
+
+    public function supportsClass(string $class)
+    {
+        
+    }
+
+    public function refreshUser(UserInterface $user)
+    {
+        
+    }
+}</code>
+  </pre>
+</div>
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Service;
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+class UserService implements UserProviderInterface
+{
     private $em;
     private $passwordEncoder;
 
