@@ -52,10 +52,10 @@ Lastly the main firewall will be adjusted by using the previously defined provid
   </pre>
 </div>
 
-As long as the package is not public, you have to download the installer manually. You can download the package <a href="downloads/installer.zip" target="_blank">here</a>.
-
 <a name="user-entity"></a>
 <h4>User entity</h4>
+
+The user entity is the main model that represents a user within your application. The class must implement the UserInterface and must implement the required methods. In this example we do not add complexity of user roles since this tutorial will be kept simple and we just return the admin role hard coded.
 
 <div>
   <div class="code-header">
