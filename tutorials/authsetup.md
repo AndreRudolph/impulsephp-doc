@@ -231,26 +231,6 @@ class UserService implements UserProviderInterface
         return $this->loadUserByUsername($user->getUsername());
     }
 
-    public function save(User $user)
-    {
-        $passwordHash = $this->passwordEncoder->encodePassword($user, $user->getPassword());
-        $user->setPassword($passwordHash);
-        $this->em->persist($user);
-        $this->em->flush();
-    }
-
-    public function usernameExists(string $username): bool
-    {
-        $users = $this->findByAttribute('username', $username);
-        return $users !== null && !empty($users);
-    }
-
-    public function emailExists(string $email): bool
-    {
-        $users = $this->findByAttribute('email', $email);
-        return $users !== null && !empty($users);
-    }
-
     public function findByAttribute(string $attribute, $value): ?array
     {
         return $this->em->getRepository(User::class)
