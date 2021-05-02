@@ -13,6 +13,12 @@ Before we dig into these tutorials the following setup steps are required.
 
 <a name="security-yaml"></a>
 <h4>Security.yaml</h4>
+
+The security.yaml file is provided automatically by Symfony by installing the SecurityBundle. However, in your security.yaml you need to specify the encoder configuration for the later added user entity. We use bcrypt with a cost of 4.
+
+Additionally we need to specify a provider for the users and call it database_users. It references the full qualified namespace of the user entity aswell as the property which uniquely identifies an user.
+
+Lastly the main firewall will be adjusted by using the previously defined provider and defining the logout path.
   
 <div>
   <div class="code-header">
