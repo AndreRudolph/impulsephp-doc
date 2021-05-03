@@ -225,7 +225,7 @@ This class will be extended by several methods in the upcoming chapters.
 
 <h5><a id="user-service">User service</a></h5>
 
-The user service should contain all business relevant logic to users. As of now we create an empty class.
+The user service should contain all business relevant logic to users. As of now the service only has the UserRepository class as dependency.
 
 <div>
   <div class="code-header">
@@ -243,7 +243,12 @@ namespace App\Service;
 
 class UserService implements UserProviderInterface
 {
-    
+    private UserRepository $userRepository;
+
+    public function __construct(UserRepository $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
 }</code>
   </pre>
 </div>
