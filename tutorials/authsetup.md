@@ -310,7 +310,7 @@ The registration form is placed inside a modal window but this is just optional.
 
 <h5><a id="user-repository-registration">User repository</a></h5>
 
-Now it's time to create some new methods for our user repository which will be used during the registration process.
+Now it's time to create some new methods for our user repository which will be used during the registration process. 
 
 <div>
   <div class="code-header">
@@ -387,6 +387,78 @@ class UserRepository
     {
         return $this->em->getRepository(User::class);
     }
+}</code>
+  </pre>
+</div>
+
+In the next step both methods usernameExists and emailExists uses the ObjectRepository returned from the getRepository method.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class UserRepository
+{
+    // ...
+    public function usernameExists(string $username): bool
+    {
+        return $this->getRepository()->findOneBy(['username' => $username]) !== null;
+    }
+
+    public function emailExists(string $email): bool
+    {
+        return $this->getRepository()->findOneBy(['email' => $email]) !== null;
+    }
+    // ...
+}</code>
+  </pre>
+</div>
+
+Lastly we need to be able to persist a user by persisting the entity within the doctrine entity manager.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class UserRepository
+{
+    // ...
+        public function save(User $user): void
+    {
+        $this->em->persist($user);
+        $this->em->flush();
+    }
+    // ...
 }</code>
   </pre>
 </div>
