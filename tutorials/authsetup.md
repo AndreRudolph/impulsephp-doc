@@ -552,7 +552,7 @@ The registration actually comprises three steps:
 
 1. Reset former validation messages
 2. Format validation of the input values, checking if the password matches with its repetition aswell as checking if the username and / or email are already in use
-3. Process the registration
+3. If validation was successful, the registration can be proceeded
 
 In the first instance we create a controller that gets the user services injected and further properties that references the necessary components of the registration formular.
 
