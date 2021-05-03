@@ -550,5 +550,45 @@ class UserService
 
 The registration actually comprises two steps:
 
-1. Formal validation of the input values and checking if the password matches with its repetition aswell as checking if the username and / or email are already in use
+1. Format validation of the input values, checking if the password matches with its repetition aswell as checking if the username and / or email are already in use
 2. Process the registration
+
+In the first instance we create a controller that gets the user services injected and further properties that references the necessary components of the registration formular.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    private Modal $wndRegistration;
+    private FeedbackTextbox $tbUsername;
+    private FeedbackTextbox $tbPassword;
+    private FeedbackTextbox $tbPasswordRepeat;
+    private FeedbackTextbox $tbEmail;
+
+    #[Transient] private UserService $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+}</code>
+  </pre>
+</div>
