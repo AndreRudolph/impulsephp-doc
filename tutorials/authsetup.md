@@ -12,9 +12,10 @@
     - [User service](#user-service-registration)
     - [Registration controller](#registration-controller)
 - [Authentication](#authentication)
-	- [Login template](#login-template)
     - [Authentication provider](#authentication-provider)
 	- [Authentication service](#authentication-service)
+    - [Services.yaml](#services-yaml)
+    - [Login template](#login-template)
 	- [Login controller](#login-controller)
     
  
