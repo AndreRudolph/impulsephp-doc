@@ -70,7 +70,7 @@ Lastly the main firewall will be adjusted by using the previously defined provid
 
 <h5><a id="user-entity">User entity</a></h5>
 
-The user entity is the main model that represents a user within your application. The class must implement the UserInterface and must implement the required methods. In this example we do not add complexity of user roles since this tutorial will be kept simple and we just return the admin role hard coded.
+The user entity is the main model that represents a user within your application. The class must implement the UserInterface. In this example we do not add complexity of user roles since this tutorial will be kept simple and we just return the admin role hard coded.
 
 <div>
   <div class="code-header">
