@@ -207,9 +207,6 @@ namespace App\Repository;
 
 use Doctrine\ORM\EntityManagerInterface;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class UserRepository
 {
     private EntityManagerInterface $em;
@@ -331,9 +328,6 @@ namespace App\Repository;
 
 use Doctrine\ORM\EntityManagerInterface;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class UserRepository
 {
     // ...
