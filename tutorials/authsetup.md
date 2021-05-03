@@ -241,6 +241,8 @@ The user service should contain all business relevant logic to users. As of now 
 	<code class="language-php"><?php
 namespace App\Service;
 
+use App\Repository\UserRepository;
+
 class UserService implements UserProviderInterface
 {
     private UserRepository $userRepository;
