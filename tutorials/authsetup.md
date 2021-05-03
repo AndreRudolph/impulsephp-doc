@@ -774,6 +774,7 @@ class RegistrationController extends AbstractController
         $valid &= $this->validateTextbox($this->tbEmail, $notNullNotEmpty, 'Email must not be empty.');
         $valid &= $this->validateTextbox($this->tbEmail, fn($value) => filter_var($value, FILTER_VALIDATE_EMAIL), 'No valid email.');
         $valid &= $this->validateTextbox($this->tbEmail, fn($value) => !$this->userService->emailExists($value), 'Email is already taken.');
+        
         return $valid;
     }
 }</code>
