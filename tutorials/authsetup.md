@@ -458,7 +458,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class UserRepository
 {
     // ...
-        public function save(User $user): void
+    public function save(User $user): void
     {
         $this->em->persist($user);
         $this->em->flush();
@@ -718,7 +718,7 @@ class RegistrationController extends AbstractController
 {
     // ...
     
-        private function validateTextbox(FeedbackTextbox $textbox, callable $validator, string $message): bool
+    private function validateTextbox(FeedbackTextbox $textbox, callable $validator, string $message): bool
     {
         if (!$validator($textbox->getValue() ?? '')) {
             $textbox->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, $message);
