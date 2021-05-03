@@ -13,6 +13,9 @@
     - [Registration controller](#registration-controller)
 - [Authentication](#authentication)
 	- [Login template](#login-template)
+    - [Authentication provider](#authentication-provider)
+	- [Authentication service](#authentication-service)
+	- [Login controller](#login-controller)
 
 <h4><a id="#introduction">Introduction</a></h4>
 
