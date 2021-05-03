@@ -630,6 +630,13 @@ class RegistrationController extends AbstractController
         }
     }
     
+    #[Listen(event: Events::CLICK, component: 'btnClose')]
+    #[Listen(event: Events::CLOSE, component: 'wndRegistration')]
+    public function onClose($event): void
+    {
+        $this->wndRegistration->close();
+    }
+    
     private function validate(): bool
     {
     
