@@ -7,7 +7,12 @@
     - [User repository](#user-repository)
     - [User service](#user-service)
 - [Registration](#registration)
+	- [Registration template](#registration-template)
+    - [User repository](#user-repository-registration)
+    - [User service](#user-service-registration)
+    - [Registration controller](#registration-controller)
 - [Authentication](#authentication)
+	- [Login template](#login-template)
 
 <h4><a id="#introduction">Introduction</a></h4>
 
