@@ -654,3 +654,79 @@ class RegistrationController extends AbstractController
 }</code>
   </pre>
 </div>
+
+The simplest part is resetting the error by calling resetFeedback method on each FeedbackTextbox. This is required since the registration thus its validation must be reprocessible.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+    private function resetErrors(): void
+    {
+        $this->tbUsername->resetFeedback();
+        $this->tbPassword->resetFeedback();
+        $this->tbPasswordRepeat->resetFeedback();
+        $this->tbEmail->resetFeedback();
+    }
+}</code>
+  </pre>
+</div>
+
+The validation itself is a bit more complex since there a lot of restrictions to consider but we create a helper method that can call different callbacks to validate the value of a FeedbackTextbox and labels it with an error message in case of validation failure.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+        private function validateTextbox(FeedbackTextbox $textbox, callable $validator, string $message): bool
+    {
+        if (!$validator($textbox->getValue() ?? '')) {
+            $textbox->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, $message);
+            return false;
+        }
+
+        return true;
+    }
+}</code>
+  </pre>
+</div>
