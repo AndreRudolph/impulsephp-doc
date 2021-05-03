@@ -329,12 +329,13 @@ namespace App\Repository;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class UserRepository
 {
     // ...
     
-    public function save(User $user)
+    public function save(User $user): void
     {
         
     }
@@ -351,10 +352,41 @@ class UserRepository
 
     protected function getRepository(): ObjectRepository
     {
-        return $this->em->getRepository(User::class);
+        
     }
 }</code>
   </pre>
 </div>
 
-First, we will implement the fineOneByAttribute 
+First, we will implement the getRepository method. This is useful to have access to very basic ORM access.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class UserRepository
+{
+    // ...
+
+    protected function getRepository(): ObjectRepository
+    {
+        return $this->em->getRepository(User::class);
+    }
+}</code>
+  </pre>
+</div>
