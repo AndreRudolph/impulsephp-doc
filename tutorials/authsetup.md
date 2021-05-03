@@ -548,10 +548,11 @@ class UserService
 
 <h5><a id="registration-controller">Registration controller</a></h5>
 
-The registration actually comprises two steps:
+The registration actually comprises three steps:
 
-1. Format validation of the input values, checking if the password matches with its repetition aswell as checking if the username and / or email are already in use
-2. Process the registration
+1. Reset former validation messages
+2. Format validation of the input values, checking if the password matches with its repetition aswell as checking if the username and / or email are already in use
+3. Process the registration
 
 In the first instance we create a controller that gets the user services injected and further properties that references the necessary components of the registration formular.
 
@@ -593,7 +594,7 @@ class RegistrationController extends AbstractController
   </pre>
 </div>
 
-Now we can map the two steps mentioned above to the controllers implementation.
+Now we can map the three steps mentioned above to the controllers implementation.
 
 <div>
   <div class="code-header">
