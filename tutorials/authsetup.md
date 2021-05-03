@@ -592,3 +592,57 @@ class RegistrationController extends AbstractController
 }</code>
   </pre>
 </div>
+
+Now we can map the two steps mentioned above to the controllers implementation.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+     #[Listen(event: Events::CLICK, component: 'btnRegister')]
+    public function onRegister(): void
+    {
+        $this->resetErrors();
+
+        if ($this->validate()) {
+            $this->doRegistration();
+        }
+    }
+    
+    private function validate(): bool
+    {
+    
+    }
+    
+    private function doRegistration(): void
+    {
+    
+    }
+    
+    private function resetErrors(): void
+    {
+    
+    }
+}</code>
+  </pre>
+</div>
