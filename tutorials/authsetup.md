@@ -545,3 +545,10 @@ class UserService
 }</code>
   </pre>
 </div>
+
+<h5><a id="registration-controller">Registration controller</a></h5>
+
+The registration actually comprises two steps:
+
+1. Formal validation of the input values and checking if the password matches with its repetition aswell as checking if the username and / or email are already in use
+2. Process the registration
