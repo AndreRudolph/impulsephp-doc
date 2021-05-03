@@ -760,28 +760,20 @@ class RegistrationController extends AbstractController
     private function validate(): bool
     {
         $valid = true;
-
-        $notNullNotEmpty = static fn($value) => $value !== null && $value !== '';
+        $notNullNotEmpty = fn($value) => $value !== null && $value !== '';
 
         // username
         $valid &= $this->validateTextbox($this->tbUsername, $notNullNotEmpty, 'Username must not be empty.');
-        $valid &= $this->validateTextbox($this->tbUsername, function($value) {
-            return !$this->userService->usernameExists($value);
-        }, 'User already taken.');
+        $valid &= $this->validateTextbox($this->tbUsername, fn ($value) => !$this->userService->usernameExists($value), 'User already taken.');
 
         // password
         $valid &= $this->validateTextbox($this->tbPassword, $notNullNotEmpty, 'Password must not be empty!');
-        $valid &= $this->validateTextbox($this->tbPasswordRepeat, function($value) {
-            return $value === $this->tbPassword->getValue();
-        },'Passwords must be equal.');
+        $valid &= $this->validateTextbox($this->tbPasswordRepeat, fn($value) => $value === $this->tbPassword->getValue(),'Passwords must be equal.');
 
         // email
         $valid &= $this->validateTextbox($this->tbEmail, $notNullNotEmpty, 'Email must not be empty.');
         $valid &= $this->validateTextbox($this->tbEmail, fn($value) => filter_var($value, FILTER_VALIDATE_EMAIL), 'No valid email.');
-        $valid &= $this->validateTextbox($this->tbEmail, function($value) {
-            return !$this->userService->emailExists($value);
-        }, 'Email is already taken.');
-
+        $valid &= $this->validateTextbox($this->tbEmail, fn($value) => !$this->userService->emailExists($value), 'Email is already taken.');
         return $valid;
     }
 }</code>
