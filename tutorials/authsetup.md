@@ -467,3 +467,5 @@ class UserRepository
 }</code>
   </pre>
 </div>
+
+<h5><a id="user-service-registration">User service</a></h5>
