@@ -686,8 +686,7 @@ class RegistrationController extends AbstractController
         $this->tbPasswordRepeat->resetFeedback();
         $this->tbEmail->resetFeedback();
     }
-}</code>
-  </pre>
+}</code></pre>
 </div>
 
 The validation itself is a bit more complex since there a lot of restrictions to consider but we create a helper method that can call different callbacks to validate the value of a FeedbackTextbox and labels it with an error message in case of validation failure.
