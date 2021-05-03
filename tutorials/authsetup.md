@@ -469,3 +469,5 @@ class UserRepository
 </div>
 
 <h5><a id="user-service-registration">User service</a></h5>
+
+Normally, services encapsulates the database access by using a repository and provides more business logic to retrieve and work with business entities. In our case there is no much business logic required but it's always good practice to follow the SOLID principles.
