@@ -1,9 +1,13 @@
-<h1 class="doc-title">Setup</h1>
+<h1 class="doc-title">Authentication & registration</h1>
 
 - [Introduction](#introduction)
-- [Security.yaml](#security-yaml)
-- [User entity](#user-entity)
-- [User service](#user-service)
+- [Setup](#setup)
+	- [Security.yaml](#security-yaml)
+    - [User entity](#user-entity)
+    - [User repository](#user-repository)
+    - [User service](#user-service)
+- [Registration](#registration)
+- [Authentication](#authentication)
 
 <h4><a id="#introduction">Introduction</a></h4>
 
