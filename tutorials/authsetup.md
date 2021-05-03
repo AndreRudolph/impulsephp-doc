@@ -24,7 +24,7 @@ Both the tutorials for registration and authentication are based on the followin
 
 Before we dig into these tutorials the following setup steps are required.
 
-<h4><a id="setup">Setup</h4>
+<h4><a id="setup">Setup</a></h4>
 
 <a name="security-yaml"></a>
 <h5>Security.yaml</h5>
