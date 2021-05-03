@@ -186,9 +186,46 @@ class User implements UserInterface
   </pre>
 </div>
 
+<h5><a id="user-repository">User repository</a></h5>
+
+The repository is the class directly coupled to the entity manager and thus should contain the data access logic. 
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use Doctrine\ORM\EntityManagerInterface;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class UserRepository
+{
+    private EntityManagerInterface $em;
+
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+}</code>
+  </pre>
+</div>
+
+This class will be extended by several methods in the upcoming chapters.
+
 <h5><a id="user-service">User service</a></h5>
 
-The user service is the central access point to the user entities of the database.
+The user service should contain all business relevant logic to users. As of now we create an empty class.
 
 <div>
   <div class="code-header">
@@ -203,33 +240,15 @@ The user service is the central access point to the user entities of the databas
   <pre class="code-white imp-code line-numbers language-php">
 	<code class="language-php"><?php
 namespace App\Service;
-use App\Entity\User;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
-use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Core\User\UserProviderInterface;
 
 class UserService implements UserProviderInterface
 {
-    public function loadUserByUsername(string $username)
-    {
-        
-    }
-
-    public function supportsClass(string $class)
-    {
-        
-    }
-
-    public function refreshUser(UserInterface $user)
-    {
-        
-    }
+    
 }</code>
   </pre>
 </div>
+
+This class will be extended by several methods in the upcoming chapters.
 
 <div>
   <div class="code-header">
