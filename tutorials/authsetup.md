@@ -326,7 +326,9 @@ Now it's time to create some new methods for our user repository which will be u
 	<code class="language-php"><?php
 namespace App\Repository;
 
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
 
 class UserRepository
 {
@@ -347,10 +349,12 @@ class UserRepository
         
     }
 
-    public function findOneByAttribute(string $attribute, $value): ?User
+    protected function getRepository(): ObjectRepository
     {
-        
+        return $this->em->getRepository(User::class);
     }
 }</code>
   </pre>
 </div>
+
+First, we will implement the fineOneByAttribute 
