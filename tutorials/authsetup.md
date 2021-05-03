@@ -730,3 +730,58 @@ class RegistrationController extends AbstractController
 }</code>
   </pre>
 </div>
+
+By having our helper method we can now implement the validate method by applying callbacks to each of the textfields.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+    private function validate(): bool
+    {
+        $valid = true;
+
+        // username
+        $valid &= $this->validateTextbox($this->tbUsername, static fn($value) => $value !== null && $value !== '', 'Username must not be empty!');
+        $valid &= $this->validateTextbox($this->tbUsername, function($value) {
+            return !$this->userService->usernameExists($value);
+        }, 'User already taken!');
+
+        // password
+        $valid &= $this->validateTextbox($this->tbPassword, static fn($value) => $value !== null && $value !== '', 'Password must not be empty!');
+        $valid &= $this->validateTextbox($this->tbPasswordRepeat, function($value) {
+            return $value === $this->tbPassword->getValue();
+        },'Passwords must be equal!');
+
+        // email
+        $valid &= $this->validateTextbox($this->tbEmail, fn($value) => filter_var($value, FILTER_VALIDATE_EMAIL), 'No valid email.');
+        $valid &= $this->validateTextbox($this->tbEmail, function($value) {
+            return !$this->userService->emailExists($value);
+        }, 'Email is already taken.');
+
+        return $valid;
+    }return true;
+    }
+}</code>
+  </pre>
+</div>
