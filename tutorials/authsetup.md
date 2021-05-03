@@ -223,7 +223,7 @@ This class will be extended by several methods in the upcoming chapters.
 
 <h5><a id="user-service">User service</a></h5>
 
-The user service should contain all business relevant logic to users. As of now the service only has the UserRepository class as dependency.
+The user service should contain all business relevant logic to users. In order to be able to delegate database access to the repository we need the UserRepository as a dependency aswell as the default user password encoder provided by Symfony.
 
 <div>
   <div class="code-header">
@@ -241,13 +241,18 @@ namespace App\Service;
 
 use App\Repository\UserRepository;
 
-class UserService implements UserProviderInterface
+use App\Repository\UserRepository;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
+class UserService
 {
+    private UserPasswordEncoderInterface $passwordEncoder;
     private UserRepository $userRepository;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepository $userRepository, UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->userRepository = $userRepository;
+        $this->passwordEncoder = $passwordEncoder;
     }
 }</code>
   </pre>
