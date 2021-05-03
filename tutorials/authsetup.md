@@ -471,3 +471,77 @@ class UserRepository
 <h5><a id="user-service-registration">User service</a></h5>
 
 Normally, services encapsulates the database access by using a repository and provides more business logic to retrieve and work with business entities. In our case there is no much business logic required but it's always good practice to follow the SOLID principles.
+
+First, we need methods that checks whether there is already an user with a certain name or email. Luckily we can just delegate the calls to our repository.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Service;
+
+use App\Repository\UserRepository;
+
+use App\Repository\UserRepository;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
+class UserService
+{
+    // ...
+    
+    public function usernameExists(string $username): bool
+    {
+        return $this->userRepository->usernameExists($username);
+    }
+
+    public function emailExists(string $email): bool
+    {
+        return $this->userRepository->emailExists($email);
+    }
+}</code>
+  </pre>
+</div>
+
+The last change regarding the registration int the UserService is to persist the user entity. Before we delegate the call to the repository, the user's password must be converted from plain text to a hash value by using the password encoder.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Service;
+
+use App\Repository\UserRepository;
+
+use App\Repository\UserRepository;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
+class UserService
+{
+    // ...
+    
+    public function save(User $user)
+    {
+        $user->setPassword($this->passwordEncoder->encodePassword($user, $user->getPassword()));
+        $this->userRepository->save($user);
+    }
+    
+    // ...
+}</code>
+  </pre>
+</div>
