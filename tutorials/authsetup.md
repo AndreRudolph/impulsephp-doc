@@ -67,8 +67,7 @@ Lastly the main firewall will be adjusted by using the previously defined provid
   </pre>
 </div>
 
-<a name="user-entity"></a>
-<h4>User entity</h4>
+<h5><a id="user-entity">User entity</a></h5>
 
 The user entity is the main model that represents a user within your application. The class must implement the UserInterface and must implement the required methods. In this example we do not add complexity of user roles since this tutorial will be kept simple and we just return the admin role hard coded.
 
@@ -187,8 +186,7 @@ class User implements UserInterface
   </pre>
 </div>
 
-<a name="user-service"></a>
-<h4>User service</h4>
+<h5><a id="user-service">User service</a></h5>
 
 The user service is the central access point to the user entities of the database.
 
