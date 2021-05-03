@@ -524,25 +524,23 @@ The last change regarding the registration int the UserService is to persist the
   </div>
   <pre class="code-white imp-code line-numbers language-php">
 	<code class="language-php"><?php
-namespace App\Service;
+    namespace App\Service;
 
-use App\Repository\UserRepository;
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-use App\Repository\UserRepository;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-
-class UserService
-{
-    // ...
-    
-    public function save(User $user)
+    class UserService
     {
-        $user->setPassword($this->passwordEncoder->encodePassword($user, $user->getPassword()));
-        $this->userRepository->save($user);
-    }
+        // ...
     
-    // ...
-}</code>
+        public function save(User $user)
+        {
+            $user->setPassword($this->passwordEncoder->encodePassword($user, $user->getPassword()));
+            $this->userRepository->save($user);
+        }
+   
+        // ...
+     }</code>
   </pre>
 </div>
 
