@@ -16,15 +16,18 @@
     - [Authentication provider](#authentication-provider)
 	- [Authentication service](#authentication-service)
 	- [Login controller](#login-controller)
-
-<h4><a id="#introduction">Introduction</a></h4>
+    
+ 
+<h4><a id="introduction">Introduction</a></h4>
 
 Both the tutorials for registration and authentication are based on the following setup steps which define a simple but yet working base for an authentication system with registration, login and logout functionality. 
 
 Before we dig into these tutorials the following setup steps are required.
 
+<h4><a id="setup">Setup</h4>
+
 <a name="security-yaml"></a>
-<h4>Security.yaml</h4>
+<h5>Security.yaml</h5>
 
 The security.yaml file is provided automatically by Symfony by installing the SecurityBundle. However, in your security.yaml you need to specify the encoder configuration for the later added user entity. We use bcrypt with a cost of 4.
 
