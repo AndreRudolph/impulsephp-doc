@@ -310,3 +310,53 @@ The registration form is placed inside a modal window but this is just optional.
 &lt;/impulse&gt;</code>
   </pre>
 </div>
+
+<h5><a id="user-repository-registration">User repository</a></h5>
+
+Now it's time to create some new methods for our user repository which will be used during the registration process.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use Doctrine\ORM\EntityManagerInterface;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class UserRepository
+{
+    // ...
+    
+    public function save(User $user)
+    {
+        
+    }
+
+    public function usernameExists(string $username): bool
+    {
+        
+    }
+
+    public function emailExists(string $email): bool
+    {
+        
+    }
+
+    public function findOneByAttribute(string $attribute, $value): ?User
+    {
+        
+    }
+}</code>
+  </pre>
+</div>
