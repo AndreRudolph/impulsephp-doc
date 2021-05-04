@@ -1438,3 +1438,45 @@ class LoginController extends AbstractController
 }</code>
   </pre>
 </div>
+
+To make this modal closeable when we either click on the "x" or the close button, we need to implement an event listener that closes the modal window.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+namespace App\Controller\Auth;
+
+use App\Security\AuthenticationService;
+use Exception;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class LoginController extends AbstractController
+{
+    // ...
+    
+    #[Listen(event: Events::CLICK, component: 'btnClose')]
+    #[Listen(event: Events::CLOSE, component: 'wndAuth')]
+    public function onClose($event): void
+    {
+        $this->wndAuth->close();
+    }
+}</code>
+  </pre>
+</div>
