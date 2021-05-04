@@ -1067,3 +1067,71 @@ The final change to the UserService is a method to check if a plain password tha
 That's all about the UserService class. Let's move on to the Authentication service implementation.
 
 <h5><a id="authentication-service">Authentication service</a></h5>
+
+The authentication service is the component that is just used for the authentication process itself which will later be triggered in the LoginController class. This class must extend the UserAuthenticationProvider class and we are implementing three different methods.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Security;
+
+use App\Service\UserService;
+use Exception;
+use Symfony\Component\Security\Core\Authentication\Provider\UserAuthenticationProvider;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class AuthenticationService extends UserAuthenticationProvider
+{
+    protected string $firewallName = 'main';
+    private TokenStorageInterface$tokenStorage;
+    private UserService $userService;
+
+    public function __construct(TokenStorageInterface $tokenStorage, UserService $userService, UserCheckerInterface $userChecker, string $firewallName, bool $hideUserNotFoundExceptions = true)
+    {
+        parent::__construct($userChecker, $firewallName, $hideUserNotFoundExceptions);
+        $this->tokenStorage = $tokenStorage;
+        $this->userService = $userService;
+        $this->firewallName = $firewallName;
+    }
+
+    /**
+     * @param string $identity
+     * @param string $password
+     * @return TokenInterface|null
+     */
+    public function authenticateByIdentityAndPassword(string $identity, string $password): ?TokenInterface
+    {
+        
+    }
+
+    protected function retrieveUser(string $username, UsernamePasswordToken $token): UserInterface
+    {
+        
+    }
+
+    protected function checkAuthentication(UserInterface $user, UsernamePasswordToken $token): void
+    {
+        
+    }
+}</code>
+  </pre>
+</div>
