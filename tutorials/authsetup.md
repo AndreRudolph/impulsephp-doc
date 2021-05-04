@@ -1395,6 +1395,8 @@ Similar to the registration template we will also use a modal window for the log
 
 The LoginController class verifies the login credentials by using the AuthenticationService instance and redirects to the start page after successful login. Otherwise an error message appears that the login credentials are invalid.
 
+We will create the Login class with its dependencies and component references.
+
 <div>
   <div class="code-header">
     <div class="container-fluid">
@@ -1413,11 +1415,7 @@ namespace App\Controller\Auth;
 use App\Security\AuthenticationService;
 use Exception;
 use Impulse\ImpulseBundle\Controller\AbstractController;
-use Impulse\ImpulseBundle\Controller\Annotations\Listen;
 use Impulse\ImpulseBundle\Controller\Annotations\Transient;
-use Impulse\ImpulseBundle\Events\Events;
-use Impulse\ImpulseBundle\Execution\Events\ClickEvent;
-use Impulse\ImpulseBundle\Execution\Interrupts\Redirect;
 use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
 use Impulse\ImpulseBundle\UI\Components\Modal;
 
@@ -1436,42 +1434,6 @@ class LoginController extends AbstractController
     public function __construct(AuthenticationService $authenticationService)
     {
         $this->authenticationService = $authenticationService;
-    }
-
-    #[Listen(event: Events::CLICK, component: 'btnLogin')]
-    public function onLogin(ClickEvent $event)
-    {
-        $username = $this->tbUsername->getValue() ?? '';
-        $password = $this->tbPassword->getValue() ?? '';
-
-        try {
-            $authenticatedToken = $this->authenticationService->authenticateByIdentityAndPassword($username, $password);
-            if ($authenticatedToken !== null) {
-                return new Redirect('_impulse_index', false);
-            }
-
-            $this->handleInvalidCredentials();
-        } catch (Exception) {
-            $this->handleInvalidCredentials();
-        }
-    }
-
-    private function handleInvalidCredentials(): void
-    {
-        $this->tbUsername->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, 'Invalid credentials.');
-        $this->tbPassword->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, 'Invalid credentials.');
-    }
-
-    #[Listen(event: Events::CLICK, component: 'btnClose')]
-    #[Listen(event: Events::CLOSE, component: 'wndAuth')]
-    public function onClose($event): void
-    {
-        $this->close();
-    }
-
-    private function close(): void
-    {
-        $this->wndAuth->close();
     }
 }</code>
   </pre>
