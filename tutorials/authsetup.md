@@ -777,3 +777,55 @@ class RegistrationController extends AbstractController
 }</code>
   </pre>
 </div>
+
+Finally, we can implement the doRegistration method now to complete the RegistrationController. It just needs to create the user entity, pass it the service to persist and send a notification to the user that the registration was successful.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+    private function doRegistration(): void
+    {
+        $username = $this->tbUsername->getValue();
+        $password = $this->tbPassword->getValue();
+        $email = $this->tbEmail->getValue();
+
+        $user = (new User())
+            ->setUsername($username)
+            ->setPassword($password)
+            ->setEmail($email);
+
+        $this->userService->save($user);
+
+        $this->notifySuccess()
+            ->header('User registered')
+            ->message(sprintf('User %s has been registered.', $username))
+            ->create();
+
+        $this->wndRegistration->close();
+    }
+    
+    // ...
+}</code>
+  </pre>
+</div>
