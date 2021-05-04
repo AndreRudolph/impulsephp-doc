@@ -1097,9 +1097,6 @@ use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class AuthenticationService extends UserAuthenticationProvider
 {
     protected string $firewallName = 'main';
@@ -1160,9 +1157,6 @@ use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class AuthenticationService extends UserAuthenticationProvider
 {
     // ...
@@ -1226,9 +1220,6 @@ use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class AuthenticationService extends UserAuthenticationProvider
 {
     // ...
@@ -1287,9 +1278,6 @@ use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class AuthenticationService extends UserAuthenticationProvider
 {
     // ...
@@ -1464,9 +1452,6 @@ use Impulse\ImpulseBundle\Events\Events;
 use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
 use Impulse\ImpulseBundle\UI\Components\Modal;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class LoginController extends AbstractController
 {
     // ...
@@ -1508,9 +1493,6 @@ use Impulse\ImpulseBundle\Events\Events;
 use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
 use Impulse\ImpulseBundle\UI\Components\Modal;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class LoginController extends AbstractController
 {
     // ...
@@ -1563,9 +1545,6 @@ use Impulse\ImpulseBundle\Events\Events;
 use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
 use Impulse\ImpulseBundle\UI\Components\Modal;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class LoginController extends AbstractController
 {
     // ...
@@ -1603,9 +1582,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
 class LogoutController extends AbstractController
 {
     /**
