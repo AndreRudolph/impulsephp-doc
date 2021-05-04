@@ -1372,37 +1372,21 @@ Similar to the registration template we will also use a modal window for the log
   </div>
   <pre class="code-white imp-code line-numbers language-markup">
 	<code class="language-markup">&lt;impulse&gt;
-	&lt;modal id="wndRegistration" bind="App\Controller\Auth\RegistrationController"&gt;
-		&lt;modalheader&gt;Login&lt;/modalheader&gt;
-		&lt;modalbody&gt;
-			&lt;div class="container mt-3"&gt;
-				&lt;div class="row justify-content-center align-items-center"&gt;
-					&lt;div class="col-12"&gt;
-						&lt;div class="form-group"&gt;
-							&lt;span&gt;Username&lt;/span&gt;
-							&lt;feedbacktextbox id="tbUsername" /&gt;
-						&lt;/div>
-                        &lt;div class="form-group"&gt;
-							&lt;span&gt;Password&lt;/span&gt;
-							&lt;feedbacktextbox id="tbPassword" inputType="password" /&gt;
-						&lt;/div>
-						&lt;div class="form-group"&gt;
-							&lt;span&gt;Password repeat&lt;/span&gt;
-							&lt;feedbacktextbox id="tbPasswordRepeat" inputType="password" /&gt;
-						&lt;/div&gt;
-						&lt;div class="form-group"&gt;
-							&lt;span&gt;E-Mail&lt;/span&gt;
-							&lt;feedbacktextbox id="tbEmail" /&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-		&lt;/modalbody&gt;
-		&lt;modalfooter&gt;
-			&lt;button id="btnClose" class="btn btn-secondary"&gt;Close&lt;/button&gt;
-			&lt;button id="btnRegister" class="btn btn-primary"&gt;Register&lt;/button&gt;
-		&lt;/modalfooter&gt;
-	&lt;/modal&gt;
+    &lt;modal id="wndAuth" bind="App\Controller\Auth\LoginController"&gt;
+        &lt;modalheader&gt;
+            &lt;span&gt;Login&lt;/span&gt;
+        &lt;/modalheader&gt;
+        &lt;modalbody&gt;
+            &lt;span>Username&lt;/span&gt;
+            &lt;feedbacktextbox id="tbUsername" /&gt;
+            &lt;span&gt;Password&lt;/span&gt;
+            &lt;feedbacktextbox id="tbPassword" inputType="password" /&gt;
+        &lt;/modalbody&gt;
+        &lt;modalfooter&gt;
+            &lt;button id="btnClose" class="btn btn-secondary"&gt;Close&lt;/button&gt;
+            &lt;button id="btnLogin" class="btn btn-primary"&gt;Login&lt;/button&gt;
+        &lt;/modalfooter&gt;
+    &lt;/modal&gt;
 &lt;/impulse&gt;</code>
   </pre>
 </div>
