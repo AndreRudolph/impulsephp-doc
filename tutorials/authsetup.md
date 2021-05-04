@@ -1439,7 +1439,7 @@ class LoginController extends AbstractController
   </pre>
 </div>
 
-To make this modal closeable when we either click on the "x" or the close button, we need to implement an event listener that closes the modal window.
+To make this modal closeable when we either click on the "x" or the close button, we need to implement an event listener method that closes the modal window.
 
 <div>
   <div class="code-header">
@@ -1477,6 +1477,106 @@ class LoginController extends AbstractController
     {
         $this->wndAuth->close();
     }
+    
+    // ...
+}</code>
+  </pre>
+</div>
+
+Next, we will create an event listener method for submitting the login button that redirects the user after successful login.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+namespace App\Controller\Auth;
+
+use App\Security\AuthenticationService;
+use Exception;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class LoginController extends AbstractController
+{
+    // ...
+    
+    #[Listen(event: Events::CLICK, component: 'btnLogin')]
+    public function onLogin(ClickEvent $event)
+    {
+        $username = $this->tbUsername->getValue() ?? '';
+        $password = $this->tbPassword->getValue() ?? '';
+
+        try {
+            $authenticatedToken = $this->authenticationService->authenticateByIdentityAndPassword($username, $password);
+            if ($authenticatedToken !== null) {
+                return new Redirect('_impulse_index', false);
+            }
+
+            $this->handleInvalidCredentials();
+        } catch (Exception) {
+            $this->handleInvalidCredentials();
+        }
+    }
+    
+    // ...
+}</code>
+  </pre>
+</div>
+
+Simple, isn't it? The last change for the LoginController is to implement the handleInvalidCredentials method which is called either in case of invalid credentials or in case of any exception. 
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+namespace App\Controller\Auth;
+
+use App\Security\AuthenticationService;
+use Exception;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class LoginController extends AbstractController
+{
+    // ...
+    
+    private function handleInvalidCredentials(): void
+    {
+        $this->tbUsername->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, 'Invalid credentials.');
+        $this->tbPassword->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, 'Invalid credentials.');
+    }
+    
+    // ...
 }</code>
   </pre>
 </div>
