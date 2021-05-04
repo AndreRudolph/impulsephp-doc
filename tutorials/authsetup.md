@@ -840,7 +840,18 @@ The registration process should now be fully implemented and can be tested. In t
 
 Regarding to the UserRepository class there is just one additonal method required that can obtain an user by its username.
 
-<?php
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
 namespace App\Repository;
 
 use App\Entity\User;
