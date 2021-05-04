@@ -991,4 +991,43 @@ The supportsClass method must just check whether its argument matches the full q
   </pre>
 </div>
 
+The purpose of the refreshUser method is to reload the user instance for every request to keep it up to date. For this we will check if the passed object is an instance of our User entity class and if not, an exception should be thrown. Otherwise the user can be reloaded.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function refreshUser(UserInterface $user)
+        {
+            if (!$user instanceof User) {
+                throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', get_class($user)));
+            }
+
+            return $this->loadUserByUsername($user->getUsername());
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
 <h5><a id="authentication-provider">Authentication provider</a></h5>
