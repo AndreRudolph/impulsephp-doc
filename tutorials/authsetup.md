@@ -12,6 +12,8 @@
     - [User service](#user-service-registration)
     - [Registration controller](#registration-controller)
 - [Authentication](#authentication)
+	- [User repository](#user-repository-authentication)
+    - [User service](#user-service-authentication)
     - [Authentication provider](#authentication-provider)
 	- [Authentication service](#authentication-service)
     - [Services.yaml](#services-yaml)
@@ -833,5 +835,9 @@ class RegistrationController extends AbstractController
 The registration process should now be fully implemented and can be tested. In the next tutorial we will cover and implement the authentication process.
 
 <h4><a id="authentication">Authentication</a></h4>
+
+<h5><a id="user-repository-authentication">User repository</a></h5>
+
+<h5><a id="user-service-authentication">User service</a></h5>
 
 <h5><a id="authentication-provider">Authentication provider</a></h5>
