@@ -831,3 +831,7 @@ class RegistrationController extends AbstractController
 </div>
 
 The registration process should now be fully implemented and can be tested. In the next tutorial we will cover and implement the authentication process.
+
+<h4><a id="authentication">Authentication</a></h4>
+
+<h5><a id="authentication-provider">Authentication provider</a></h5>
