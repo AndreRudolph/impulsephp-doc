@@ -1325,8 +1325,7 @@ We can now put the services together in the services.yaml and create two service
     </div>
   </div>
   <pre class="code-white imp-code line-numbers language-yaml">
-	<code class="language-yaml">security:
-		# This file is the entry point to configure your own services.
+	<code class="language-yaml"># This file is the entry point to configure your own services.
 # Files in the packages/ subdirectory configure your dependencies.
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -1362,5 +1361,11 @@ services:
     App\Security\AuthenticationService:
         class: App\Security\AuthenticationService
         arguments: ['@security.token_storage', '@App\Service\UserService', '@security.user_checker', 'main' ]
+
+    #session storage in db
+    impulse.session_handler:
+        class: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
+        arguments:
+            - '%env(resolve:DATABASE_URL)%'
   </pre>
 </div>
