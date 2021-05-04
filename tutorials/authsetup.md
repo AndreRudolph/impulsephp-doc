@@ -1313,3 +1313,54 @@ class AuthenticationService extends UserAuthenticationProvider
 <h5><a name="services-yaml"></a>Services.yaml</h5>
 
 We can now put the services together in the services.yaml and create two service definitions.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-yaml">
+	<code class="language-yaml">security:
+		# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    # authentication related services
+    Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager:
+        class: Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager
+        arguments: [ [ '@App\Security\AuthenticationService' ] ]
+
+    App\Security\AuthenticationService:
+        class: App\Security\AuthenticationService
+        arguments: ['@security.token_storage', '@App\Service\UserService', '@security.user_checker', 'main' ]
+  </pre>
+</div>
