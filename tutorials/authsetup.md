@@ -921,4 +921,74 @@ For the UserService class there are more changes required. First, the class need
   </pre>
 </div>
 
+The loadUserByUsername method can be simply implemented by delegating the call to the UserRepository instance.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function loadUserByUsername(string $username): ?UserInterface
+        {
+            return $this->userRepository->getUserByUsername($username);
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
+The supportsClass method must just check whether its argument matches the full qualified class name of the parameter.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function supportsClass(string $class): bool
+        {
+            return $class === User::class;
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
 <h5><a id="authentication-provider">Authentication provider</a></h5>
