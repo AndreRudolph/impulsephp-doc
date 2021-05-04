@@ -1353,7 +1353,7 @@ services:
         class: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
         arguments:
             - '%env(resolve:DATABASE_URL)%'
-  </pre>
+  </code></pre>
 </div>
 
 <h5><a name="login-template">Login template</a></h5>
