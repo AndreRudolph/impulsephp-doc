@@ -1257,3 +1257,55 @@ class AuthenticationService extends UserAuthenticationProvider
 }</code>
   </pre>
 </div>
+
+Lastly we can implement the authenticateByIdentityAndPassword method. This will be called directly by the LoginController and receives the identity - username in this example - and the password. It will create a UsernamePasswordToken instance, tries to authenticates this internally and, if succeeded, stores the token in the users session.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Security;
+
+use App\Service\UserService;
+use Exception;
+use Symfony\Component\Security\Core\Authentication\Provider\UserAuthenticationProvider;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class AuthenticationService extends UserAuthenticationProvider
+{
+    // ...
+
+	public function authenticateByIdentityAndPassword(string $identity, string $password): ?TokenInterface
+    {
+        try {
+            $unauthenticatedToken = new UsernamePasswordToken($identity, $password, $this->firewallName);
+            $authenticatedToken = $this->authenticate($unauthenticatedToken);
+            $this->tokenStorage->setToken($authenticatedToken);
+            return $authenticatedToken;
+        } catch (AuthenticationServiceException $e) {
+            return null;
+        }
+    }
+
+    // ...
+}</code>
+  </pre>
+</div>
