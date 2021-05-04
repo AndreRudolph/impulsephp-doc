@@ -1562,7 +1562,7 @@ class LoginController extends AbstractController
 
 <h4><a name="logout">Logout</a></h4>
 
-The logout is very simple. We just need another controller which is bound to the "login" URI by a "logout" route which redirects back to the start page.
+The logout is very simple. We just need another controller which is bound to the "login" URI by a "logout" route which redirects back to the start page. Symfony will logout the user internally as we defined the logout route in the security.yaml in the first instance.
 
 <div>
   <div class="code-header">
