@@ -1309,3 +1309,7 @@ class AuthenticationService extends UserAuthenticationProvider
 }</code>
   </pre>
 </div>
+
+<h5><a name="services-yaml"></a>Services.yaml</h5>
+
+We can now put the services together in the services.yaml and create two service definitions.
