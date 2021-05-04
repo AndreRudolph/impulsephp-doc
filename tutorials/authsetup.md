@@ -1113,11 +1113,6 @@ class AuthenticationService extends UserAuthenticationProvider
         $this->firewallName = $firewallName;
     }
 
-    /**
-     * @param string $identity
-     * @param string $password
-     * @return TokenInterface|null
-     */
     public function authenticateByIdentityAndPassword(string $identity, string $password): ?TokenInterface
     {
         
@@ -1132,6 +1127,133 @@ class AuthenticationService extends UserAuthenticationProvider
     {
         
     }
+}</code>
+  </pre>
+</div>
+
+Both the retrieveUser and the checkAuthentication methods are called by the super class UserAuthenticationProvider. Let's start implementing the retrieveUser method. 
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Security;
+
+use App\Service\UserService;
+use Exception;
+use Symfony\Component\Security\Core\Authentication\Provider\UserAuthenticationProvider;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class AuthenticationService extends UserAuthenticationProvider
+{
+    // ...
+
+    protected function retrieveUser(string $username, UsernamePasswordToken $token): UserInterface
+    {
+        $user = $token->getUser();
+        if ($user instanceof UserInterface) {
+            return $user;
+        }
+
+        try {
+            $user = $this->userService->loadUserByUsername($username);
+            if (!$user instanceof UserInterface) {
+                throw new AuthenticationServiceException('The user provider must return a UserInterface object.');
+            }
+
+            return $user;
+        } catch (UsernameNotFoundException $e) {
+            $e->setUsername($username);
+            throw $e;
+        } catch (Exception $e) {
+            $e = new AuthenticationServiceException($e->getMessage(), 0, $e);
+            $e->setToken($token);
+            throw $e;
+        }
+    }
+
+    // ...
+}</code>
+  </pre>
+</div>
+
+The implementation will check first if the token already contains a user instance which means that the user is already available and doesn't need to be reloaded. If that is not the case, the user will be reloaded and be surrounded by several checks. 
+
+The next one is the checkAuthentication method. It will also execute some integrity checks and will then check the passwords validity.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Security;
+
+use App\Service\UserService;
+use Exception;
+use Symfony\Component\Security\Core\Authentication\Provider\UserAuthenticationProvider;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class AuthenticationService extends UserAuthenticationProvider
+{
+    // ...
+
+    protected function checkAuthentication(UserInterface $user, UsernamePasswordToken $token): void
+    {
+        $currentUser = $token->getUser();
+        if ($currentUser instanceof UserInterface) {
+            if ($currentUser->getPassword() !== $user->getPassword()) {
+                throw new AuthenticationException('Credentials were changed from another session.');
+            }
+
+            return;
+        }
+
+        $password = $token->getCredentials();
+        if (empty($password)) {
+            throw new AuthenticationException('Password can not be empty.');
+        }
+
+        if (!$this->userService->isPasswordValid($user, $password)) {
+            throw new AuthenticationException('Password is invalid.');
+        }
+    }
+
+    // ...
 }</code>
   </pre>
 </div>
