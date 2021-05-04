@@ -1065,4 +1065,6 @@ The final change to the UserService is a method to check if a plain password tha
   </pre>
 </div>
 
+That's all about the UserService class. Let's move on to the Authentication provider implementation.
+
 <h5><a id="authentication-provider">Authentication provider</a></h5>
