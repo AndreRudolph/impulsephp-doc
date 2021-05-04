@@ -18,6 +18,7 @@
     - [Services.yaml](#services-yaml)
     - [Login template](#login-template)
 	- [Login controller](#login-controller)
+    - [Logout](#logout)
     
  
 <h4><a id="introduction">Introduction</a></h4>
@@ -1310,7 +1311,7 @@ class AuthenticationService extends UserAuthenticationProvider
   </pre>
 </div>
 
-<h5><a name="services-yaml"></a>Services.yaml</h5>
+<h5><a name="services-yaml">Services.yaml</a></h5>
 
 We can now put the services together in the services.yaml and create two service definitions.
 
@@ -1352,5 +1353,56 @@ services:
         class: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
         arguments:
             - '%env(resolve:DATABASE_URL)%'
+  </pre>
+</div>
+
+<h5><a name="login-template">Login template</a></h5>
+
+Similar to the registration template we will also use a modal window for the login page. 
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-markup">
+	<code class="language-markup">&lt;impulse&gt;
+	&lt;modal id="wndRegistration" bind="App\Controller\Auth\RegistrationController"&gt;
+		&lt;modalheader&gt;Login&lt;/modalheader&gt;
+		&lt;modalbody&gt;
+			&lt;div class="container mt-3"&gt;
+				&lt;div class="row justify-content-center align-items-center"&gt;
+					&lt;div class="col-12"&gt;
+						&lt;div class="form-group"&gt;
+							&lt;span&gt;Username&lt;/span&gt;
+							&lt;feedbacktextbox id="tbUsername" /&gt;
+						&lt;/div>
+                        &lt;div class="form-group"&gt;
+							&lt;span&gt;Password&lt;/span&gt;
+							&lt;feedbacktextbox id="tbPassword" inputType="password" /&gt;
+						&lt;/div>
+						&lt;div class="form-group"&gt;
+							&lt;span&gt;Password repeat&lt;/span&gt;
+							&lt;feedbacktextbox id="tbPasswordRepeat" inputType="password" /&gt;
+						&lt;/div&gt;
+						&lt;div class="form-group"&gt;
+							&lt;span&gt;E-Mail&lt;/span&gt;
+							&lt;feedbacktextbox id="tbEmail" /&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/modalbody&gt;
+		&lt;modalfooter&gt;
+			&lt;button id="btnClose" class="btn btn-secondary"&gt;Close&lt;/button&gt;
+			&lt;button id="btnRegister" class="btn btn-primary"&gt;Register&lt;/button&gt;
+		&lt;/modalfooter&gt;
+	&lt;/modal&gt;
+&lt;/impulse&gt;</code>
   </pre>
 </div>
