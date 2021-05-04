@@ -1582,3 +1582,39 @@ class LoginController extends AbstractController
 </div>
 
 <h4><a name="logout">Logout</a></h4>
+
+The logout is very simple. We just need another controller which is bound to the "login" URI by a "logout" route which redirects back to the start page.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+/**
+ * author André Rudolph <rudolph[at]impulse-php.com>
+ */
+class LogoutController extends AbstractController
+{
+    /**
+    * @Route("logout", name="logout")
+    */
+    public function logout(): Response
+    {
+        return $this->redirectToRoute('_impulse_index');
+    }
+}</code>
+  </pre>
+</div>
