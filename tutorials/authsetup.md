@@ -838,6 +838,31 @@ The registration process should now be fully implemented and can be tested. In t
 
 <h5><a id="user-repository-authentication">User repository</a></h5>
 
+Regarding to the UserRepository class there is just one additonal method required that can obtain an user by its username.
+
+<?php
+namespace App\Repository;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class UserRepository
+{
+    // ...
+    
+    public function getUserByUsername(string $username): ?UserInterface
+    {
+        return $this->getRepository()->findOneBy(['username' => $username]);
+    }
+    
+    // ...
+}</code>
+  </pre>
+</div>
+
+
 <h5><a id="user-service-authentication">User service</a></h5>
 
 <h5><a id="authentication-provider">Authentication provider</a></h5>
