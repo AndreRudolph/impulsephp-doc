@@ -1030,4 +1030,39 @@ The purpose of the refreshUser method is to reload the user instance for every r
   </pre>
 </div>
 
+The final change to the UserService is a method to check if a plain password that will be hashed will match the hash of a User object.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function isPasswordValid(UserInterface $user, string $password): bool
+        {
+            return $this->passwordEncoder->isPasswordValid($user, $password);
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
 <h5><a id="authentication-provider">Authentication provider</a></h5>
