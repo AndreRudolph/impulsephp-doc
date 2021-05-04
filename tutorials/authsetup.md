@@ -876,4 +876,49 @@ class UserRepository
 
 <h5><a id="user-service-authentication">User service</a></h5>
 
+For the UserService class there are more changes required. First, the class needs to implement the UserProviderInterface and its methods.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function loadUserByUsername(string $username): ?UserInterface
+        {
+            
+        }
+
+        public function supportsClass(string $class): bool
+        {
+            
+        }
+
+        public function refreshUser(UserInterface $user)
+        {
+            
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
 <h5><a id="authentication-provider">Authentication provider</a></h5>
