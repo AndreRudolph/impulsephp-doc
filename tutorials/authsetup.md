@@ -18,7 +18,7 @@
     - [Services.yaml](#services-yaml)
     - [Login template](#login-template)
 	- [Login controller](#login-controller)
-    - [Logout](#logout)
+- [Logout](#logout)
     
  
 <h4><a id="introduction">Introduction</a></h4>
@@ -1580,3 +1580,5 @@ class LoginController extends AbstractController
 }</code>
   </pre>
 </div>
+
+<h4><a name="logout">Logout</a></h4>
