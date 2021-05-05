@@ -54,5 +54,22 @@ After that, we can execute the installation command to install the modules defin
   </pre>
 </div>
 
+Furthermore you need to install the jquery and the sass-loader libraries by using the following command.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-bash">npm install --save jquery && npm install sass-loader@^9.0.1 --save-dev</code>
+  </pre>
+</div>
+
 
 Once the procedure is finished, you can open the web application via browser (e.g. http://localhost/project/public/). You should see the example entry page.
