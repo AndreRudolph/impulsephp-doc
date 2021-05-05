@@ -80,56 +80,16 @@ use Impulse\ImpulseBundle\Execution\Events\ClickEvent;
 use Impulse\ImpulseBundle\Execution\Events\Event;
 use Impulse\ImpulseBundle\Execution\Interrupts\Redirect;
 use Impulse\ImpulseBundle\Response\RedirectResponse;
-use Impulse\ImpulseBundle\UI\Components\Div;
-use Impulse\ImpulseBundle\UI\Components\Header;
-use Impulse\ImpulseBundle\UI\Components\Modal;
 use Impulse\ImpulseBundle\UI\Components\Window;
 
 class IndexController extends AbstractController
 {
-    private Header $header;
-
-    private Div $landingHeader;
-    private Div $contentContainer;
-
-    private Window $wndNavigation;
-
-    #[Listen(event: Events::CLICK, components: ['navHome', 'navDocs', 'navDemos', 'navExampleApplications'])]
-    public function onMenuEvent(Event $event)
-    {
-        $this->sendMenu($event->getTarget()->getTarget());
-    }
-
-    public function sendMenu(string $destination)
-    {
-        $this->landingHeader->removeChilds();
-        switch ($destination) {
-            case 'app/docs/docs.html.twig':
-                $this->importView('app/docs/header.html.twig', $this->landingHeader);
-                $this->header->addClass('bordered');
-                break;
-            case 'app/demos/demos.html.twig':
-                $this->importView('app/demos/header.html.twig', $this->landingHeader);
-                $this->header->addClass('bordered');
-                break;
-            case 'app/demos/apps/apps.html.twig':
-                $this->importView('app/demos/apps/header.html.twig', $this->landingHeader);
-                $this->header->addClass('bordered');
-                break;
-            case 'app/landing/landing.html.twig':
-            default:
-                $this->header->removeClass('bordered');
-                $this->importView('app/landing/header.html.twig', $this->landingHeader);
-                break;
-        }
-
-        $this->importView($destination, $this->contentContainer);
-    }
+	private Window $wndNavigation;
 
     #[Listen(event: Events::CLICK, component: 'btnLogin')]
-    public function openAuth(ClickEvent $event)
+    public function openLogin(ClickEvent $event)
     {
-        $this->importView('app/auth.html.twig', $this->wndNavigation, true);
+        $this->importView('app/login.html.twig', $this->wndNavigation, true);
     }
 
     #[Listen(event: Events::CLICK, component: 'btnRegister')]
