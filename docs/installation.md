@@ -88,4 +88,21 @@ After that, you should erase everything from the assets directory since the Impu
   </pre>
 </div>
 
+The next step is installing the Impulse PHP Framework bundle itself.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-bash">composer require impulsephp/impulsebundle:dev-master@dev</code>
+  </pre>
+</div>
+
 Once the procedure is finished, you can open the web application via browser (e.g. http://localhost/project/public/). You should see the example entry page.
