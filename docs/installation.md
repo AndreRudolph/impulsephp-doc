@@ -105,7 +105,9 @@ The next step is installing the Impulse PHP Framework bundle itself.
   </pre>
 </div>
 
-Lastly there are some changes to the webpack.config.js required. 
+Lastly you can remove the webpack.config.js and rename the webpack_impulse.config.js to webpack.config.js. 
+
+After that, you should be able to successfully run 
 
 <div>
   <div class="code-header">
@@ -117,15 +119,9 @@ Lastly there are some changes to the webpack.config.js required.
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-js">
-	<code class="language-js">// .enableStimulusBridge()
-    .autoProvidejQuery()
-    .addEntry('app', './assets/js/app.js')
-    .setPublicPath('/build')
-    </code>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-bash">npm run dev</code>
   </pre>
 </div>
 
-
-
-Once the procedure is finished, you can open the web application via browser (e.g. http://localhost/project/public/). You should see the example entry page.
+You can now open the web application via browser (e.g. http://localhost/project/public/). You should see the example entry page.
