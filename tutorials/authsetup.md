@@ -56,6 +56,38 @@ In order to keep this tutorial simple, we just have a simple index template whic
   </pre>
 </div>
 
+<h5><a id="index-controller">Index controller</a></h5>
+
+The IndexController class is very simple and just provides event listener methods for each of the buttons.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use Doctrine\ORM\EntityManagerInterface;
+
+class UserRepository
+{
+    private EntityManagerInterface $em;
+
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+}</code>
+  </pre>
+</div>
+
 <a name="security-yaml"></a>
 <h5>Security.yaml</h5>
 
