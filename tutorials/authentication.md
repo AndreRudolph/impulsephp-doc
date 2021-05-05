@@ -1,13 +1,64 @@
-<h1 class="doc-title">Authentication</h1>
+<h1 class="doc-title">Authentication & registration</h1>
 
-- [Authentication provider](#authentication-provider)
-- [Authentication service](#authentication-service)
-- [Login template](#login-template)
-- [Login controller](#login-controller)
+- [Introduction](#introduction)
+- [Setup](#setup)
+	- [Index template](#index-template)
+    - [Index controller](#index-controller)
+	- [Security.yaml](#security-yaml)
+    - [User entity](#user-entity)
+    - [User repository](#user-repository)
+    - [User service](#user-service)
+- [Registration](#registration)
+	- [Registration template](#registration-template)
+    - [User repository](#user-repository-registration)
+    - [User service](#user-service-registration)
+    - [Registration controller](#registration-controller)
+- [Authentication](#authentication)
+	- [User repository](#user-repository-authentication)
+    - [User service](#user-service-authentication)
+	- [Authentication service](#authentication-service)
+    - [Services.yaml](#services-yaml)
+    - [Login template](#login-template)
+	- [Login controller](#login-controller)
+- [Logout](#logout)
+    
+ 
+<h4><a id="introduction">Introduction</a></h4>
 
+Both the tutorials for registration and authentication are based on the following setup steps which define a simple but yet working base for an authentication system with registration, login and logout functionality. 
 
-<a name="authentication-provider"></a>
-<h4>Authentication provider</h4>
+Before we dig into these tutorials the following setup steps are required.
+
+<h4><a id="setup">Setup</a></h4>
+
+<h5><a id="index-template">Index template</a></h5>
+
+In order to keep this tutorial simple, we just have a simple index template which offers just buttons for login, logout and registration.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-markup">
+	<code class="language-markup">&lt;impulse&gt;
+    &lt;window bind="App\Controller\IndexController"&gt;
+        &lt;button id="btnLogin" value="Login" /&gt;
+        &lt;button id="btnLogout" value="Logout" /&gt;
+        &lt;button id="btnRegister" value="Register" /&gt;
+    &lt;/window&gt;
+&lt;/impulse&gt;</code>
+  </pre>
+</div>
+
+<h5><a id="index-controller">Index controller</a></h5>
+
+The IndexController class is very simple and just provides event listener methods for each of the buttons.
 
 <div>
   <div class="code-header">
@@ -21,85 +72,238 @@
   </div>
   <pre class="code-white imp-code line-numbers language-php">
 	<code class="language-php"><?php
-namespace App\Security;
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\Execution\Events\ClickEvent;
+use Impulse\ImpulseBundle\Execution\Events\Event;
+use Impulse\ImpulseBundle\Execution\Interrupts\Redirect;
+use Impulse\ImpulseBundle\Response\RedirectResponse;
+use Impulse\ImpulseBundle\UI\Components\Window;
 
-use Symfony\Component\Security\Core\Authentication\Provider\UserAuthenticationProvider;
-use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Core\Exception\AuthenticationException;
-use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
-use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
-use Symfony\Component\Security\Core\User\UserCheckerInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Core\User\UserProviderInterface;
-
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
-class DatabaseAuthenticationProvider extends UserAuthenticationProvider
+class IndexController extends AbstractController
 {
-    private UserPasswordEncoderInterface $passwordEncoder;
-    private UserProviderInterface $userProvider;
+	private Window $wndNavigation;
 
-    public function __construct(UserPasswordEncoderInterface $passwordEncoder, UserProviderInterface $userProvider, UserCheckerInterface $userChecker, string $providerKey, bool $hideUserNotFoundExceptions = true)
+    #[Listen(event: Events::CLICK, component: 'btnLogin')]
+    public function openLogin(ClickEvent $event)
     {
-        parent::__construct($userChecker, $providerKey, $hideUserNotFoundExceptions);
-        $this->userProvider = $userProvider;
-        $this->passwordEncoder = $passwordEncoder;
+        $this->importView('app/login.html.twig', $this->wndNavigation, true);
     }
 
-    protected function retrieveUser(string $username, UsernamePasswordToken $token): UserInterface
+    #[Listen(event: Events::CLICK, component: 'btnRegister')]
+    public function openRegistration(ClickEvent $event)
     {
-        $user = $token->getUser();
-
-        if ($user instanceof UserInterface) {
-            return $user;
-        }
-
-        try {
-            $user = $this->userProvider->loadUserByUsername($username);
-
-            if (!$user instanceof UserInterface) {
-                throw new AuthenticationServiceException('The user provider must return a UserInterface object.');
-            }
-
-            return $user;
-        } catch (UsernameNotFoundException $e) {
-            $e->setUsername($username);
-            throw $e;
-        } catch (\Exception $e) {
-            $e = new AuthenticationServiceException($e->getMessage(), 0, $e);
-            $e->setToken($token);
-            throw $e;
-        }
+        $this->importView('app/registration.html.twig', $this->wndNavigation, true);
     }
 
-    protected function checkAuthentication(UserInterface $user, UsernamePasswordToken $token): void
+    #[Listen(event: Events::CLICK, component: 'btnLogout')]
+    public function onLogout()
     {
-        $currentUser = $token->getUser();
-
-        if ($currentUser instanceof UserInterface) {
-            if ($currentUser->getPassword() !== $user->getPassword()) {
-                throw new AuthenticationException('Credentials were changed from another session.');
-            }
-        } else {
-            $password = $token->getCredentials();
-
-            if (empty($password)) {
-                throw new AuthenticationException('Password can not be empty.');
-            }
-
-            if (!$this->passwordEncoder->isPasswordValid($user, $password)) {
-                throw new AuthenticationException('Password is invalid.');
-            }
-        }
+        return new Redirect('logout', false);
     }
 }</code>
   </pre>
 </div>
 
-<a name="authentication-service"></a>
-<h4>Authentication service</h4>
+<a name="security-yaml"></a>
+<h5>Security.yaml</h5>
+
+The security.yaml file is provided automatically by Symfony by installing the SecurityBundle. However, in your security.yaml you need to specify the encoder configuration for the later added user entity. We use bcrypt with a cost of 4.
+
+Additionally we need to specify a provider for the users and call it database_users. It references the full qualified namespace of the user entity aswell as the property which uniquely identifies an user.
+
+Lastly the main firewall will be adjusted by using the previously defined provider and defining the logout path.
+  
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-yaml">
+	<code class="language-yaml">security:
+		encoders:
+			App\Entity\User:
+				algorithm: bcrypt
+				cost: 4
+            
+		providers:
+			database_users:
+				entity: { class: App\Entity\User, property: username }
+            
+		firewalls:
+		# ...
+			main:
+				# ...
+				provider: database_users
+
+				logout:
+					path: logout</code>
+  </pre>
+</div>
+
+<h5><a id="user-entity">User entity</a></h5>
+
+The user entity is the main model that represents a user within your application. The class must implement the UserInterface. In this example we do not add complexity of user roles since this tutorial will be kept simple and we just return the admin role hard coded.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Entity;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+* @ORM\Entity()
+* @ORM\Table(name="user")
+*/
+class User implements UserInterface
+{
+    /**
+    * @ORM\Id()
+    * @ORM\Column(type="integer")
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    private $id;
+
+    /**
+    * @ORM\Column(type="string", nullable=false)
+    */
+    private $username;
+
+    /**
+    * @ORM\Column(type="string")
+    */
+    private $password;
+
+    /**
+    * @ORM\Column(type="string")
+    */
+    private $email;
+
+    /**
+    * @return mixed
+    */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+    * @param string $username
+    */
+    public function setUsername(string $username): User
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+    * @param mixed $email
+    */
+    public function setEmail(string $email): User
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    public function getSalt()
+    {
+        return '';
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+    * @param string $password
+    */
+    public function setPassword(string $password): User
+    {
+        $this->password = $password;
+        return $this;
+    }
+
+    public function getRoles()
+    {
+        return ['admin'];
+    }
+}</code>
+  </pre>
+</div>
+
+<h5><a id="user-repository">User repository</a></h5>
+
+The repository is the class directly coupled to the entity manager and thus should contain the data access logic. 
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use Doctrine\ORM\EntityManagerInterface;
+
+class UserRepository
+{
+    private EntityManagerInterface $em;
+
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+}</code>
+  </pre>
+</div>
+
+This class will be extended by several methods in the upcoming chapters.
+
+<h5><a id="user-service">User service</a></h5>
+
+The user service should contain all business relevant logic to users. In order to be able to delegate database access to the repository we need the UserRepository as a dependency aswell as the default user password encoder provided by Symfony.
 
 <div>
   <div class="code-header">
@@ -115,55 +319,1112 @@ class DatabaseAuthenticationProvider extends UserAuthenticationProvider
 	<code class="language-php"><?php
 namespace App\Service;
 
-use Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\UsageTrackingTokenStorage;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
-use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
+use App\Repository\UserRepository;
 
-/**
- * author André Rudolph <rudolph[at]impulse-php.com>
- */
-class AuthenticationService
+use App\Repository\UserRepository;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
+class UserService
 {
-    /**
-     * The firewall to which the service will authenticate.
-     *
-     * @var string
-     */
-    protected string $firewallName = 'main';
+    private UserPasswordEncoderInterface $passwordEncoder;
+    private UserRepository $userRepository;
 
-    private AuthenticationProviderManager $authenticationProviderManager;
-    private UsageTrackingTokenStorage $tokenStorage;
-
-    public function __construct(UsageTrackingTokenStorage $tokenStorage, AuthenticationProviderManager $authenticationProviderManager)
+    public function __construct(UserRepository $userRepository, UserPasswordEncoderInterface $passwordEncoder)
     {
-        $this->authenticationProviderManager = $authenticationProviderManager;
-        $this->tokenStorage = $tokenStorage;
+        $this->userRepository = $userRepository;
+        $this->passwordEncoder = $passwordEncoder;
+    }
+}</code>
+  </pre>
+</div>
+
+This class will be extended by several methods in the upcoming chapters.
+
+<h4><a id="registration">Registration</a></h4>
+
+<h5><a id="registration-template">Registration template</a></h5>
+
+The registration form is placed inside a modal window but this is just optional. It contains input fields for username, password and its repetition and for the users email.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-markup">
+	<code class="language-markup">&lt;impulse&gt;
+	&lt;modal id="wndRegistration" bind="App\Controller\Auth\RegistrationController"&gt;
+		&lt;modalheader&gt;Login&lt;/modalheader&gt;
+		&lt;modalbody&gt;
+			&lt;div class="container mt-3"&gt;
+				&lt;div class="row justify-content-center align-items-center"&gt;
+					&lt;div class="col-12"&gt;
+						&lt;div class="form-group"&gt;
+							&lt;span&gt;Username&lt;/span&gt;
+							&lt;feedbacktextbox id="tbUsername" /&gt;
+						&lt;/div>
+                        &lt;div class="form-group"&gt;
+							&lt;span&gt;Password&lt;/span&gt;
+							&lt;feedbacktextbox id="tbPassword" inputType="password" /&gt;
+						&lt;/div>
+						&lt;div class="form-group"&gt;
+							&lt;span&gt;Password repeat&lt;/span&gt;
+							&lt;feedbacktextbox id="tbPasswordRepeat" inputType="password" /&gt;
+						&lt;/div&gt;
+						&lt;div class="form-group"&gt;
+							&lt;span&gt;E-Mail&lt;/span&gt;
+							&lt;feedbacktextbox id="tbEmail" /&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/modalbody&gt;
+		&lt;modalfooter&gt;
+			&lt;button id="btnClose" class="btn btn-secondary"&gt;Close&lt;/button&gt;
+			&lt;button id="btnRegister" class="btn btn-primary"&gt;Register&lt;/button&gt;
+		&lt;/modalfooter&gt;
+	&lt;/modal&gt;
+&lt;/impulse&gt;</code>
+  </pre>
+</div>
+
+<h5><a id="user-repository-registration">User repository</a></h5>
+
+Now it's time to create some new methods for our user repository which will be used during the registration process. 
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class UserRepository
+{
+    // ...
+    
+    public function save(User $user): void
+    {
+        
     }
 
-    /**
-     * @param string $identity
-     * @param string $password
-     * @return TokenInterface|null
-     */
-    public function authenticate(string $identity, string $password): ?TokenInterface
+    public function usernameExists(string $username): bool
+    {
+        
+    }
+
+    public function emailExists(string $email): bool
+    {
+        
+    }
+
+    protected function getRepository(): ObjectRepository
+    {
+        
+    }
+}</code>
+  </pre>
+</div>
+
+First, we will implement the getRepository method. This is useful to have access to very basic ORM access.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class UserRepository
+{
+    // ...
+
+    protected function getRepository(): ObjectRepository
+    {
+        return $this->em->getRepository(User::class);
+    }
+}</code>
+  </pre>
+</div>
+
+In the next step both methods usernameExists and emailExists uses the ObjectRepository returned from the getRepository method.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class UserRepository
+{
+    // ...
+    public function usernameExists(string $username): bool
+    {
+        return $this->getRepository()->findOneBy(['username' => $username]) !== null;
+    }
+
+    public function emailExists(string $email): bool
+    {
+        return $this->getRepository()->findOneBy(['email' => $email]) !== null;
+    }
+    // ...
+}</code>
+  </pre>
+</div>
+
+Lastly we need to be able to persist a user by persisting the entity within the doctrine entity manager.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class UserRepository
+{
+    // ...
+    public function save(User $user): void
+    {
+        $this->em->persist($user);
+        $this->em->flush();
+    }
+    // ...
+}</code>
+  </pre>
+</div>
+
+<h5><a id="user-service-registration">User service</a></h5>
+
+Normally, services encapsulates the database access by using a repository and provides more business logic to retrieve and work with business entities. In our case there is no much business logic required but it's always good practice to follow the SOLID principles.
+
+First, we need methods that checks whether there is already an user with a certain name or email. Luckily we can just delegate the calls to our repository.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Service;
+
+use App\Repository\UserRepository;
+
+use App\Repository\UserRepository;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
+class UserService
+{
+    // ...
+    
+    public function usernameExists(string $username): bool
+    {
+        return $this->userRepository->usernameExists($username);
+    }
+
+    public function emailExists(string $email): bool
+    {
+        return $this->userRepository->emailExists($email);
+    }
+}</code>
+  </pre>
+</div>
+
+The last change regarding the registration int the UserService is to persist the user entity. Before we delegate the call to the repository, the user's password must be converted from plain text to a hash value by using the password encoder.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
+    class UserService
+    {
+        // ...
+    
+        public function save(User $user)
+        {
+            $user->setPassword($this->passwordEncoder->encodePassword($user, $user->getPassword()));
+            $this->userRepository->save($user);
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
+<h5><a id="registration-controller">Registration controller</a></h5>
+
+The registration actually comprises three steps:
+
+1. Reset former validation messages
+2. Format validation of the input values, checking if the password matches with its repetition aswell as checking if the username and / or email are already in use
+3. If validation was successful, the registration can be proceeded
+
+In the first instance we create a controller that gets the user services injected and further properties that references the necessary components of the registration formular.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    private Modal $wndRegistration;
+    private FeedbackTextbox $tbUsername;
+    private FeedbackTextbox $tbPassword;
+    private FeedbackTextbox $tbPasswordRepeat;
+    private FeedbackTextbox $tbEmail;
+
+    #[Transient] private UserService $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+}</code>
+  </pre>
+</div>
+
+Now we can map the three steps mentioned above to the controllers implementation.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+     #[Listen(event: Events::CLICK, component: 'btnRegister')]
+    public function onRegister(): void
+    {
+        $this->resetErrors();
+
+        if ($this->validate()) {
+            $this->doRegistration();
+        }
+    }
+    
+    #[Listen(event: Events::CLICK, component: 'btnClose')]
+    #[Listen(event: Events::CLOSE, component: 'wndRegistration')]
+    public function onClose($event): void
+    {
+        $this->wndRegistration->close();
+    }
+    
+    private function validate(): bool
+    {
+    
+    }
+    
+    private function doRegistration(): void
+    {
+    
+    }
+    
+    private function resetErrors(): void
+    {
+    
+    }
+}</code>
+  </pre>
+</div>
+
+The simplest part is resetting the error by calling resetFeedback method on each FeedbackTextbox. This is required since the registration thus its validation must be reprocessible.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+    private function resetErrors(): void
+    {
+        $this->tbUsername->resetFeedback();
+        $this->tbPassword->resetFeedback();
+        $this->tbPasswordRepeat->resetFeedback();
+        $this->tbEmail->resetFeedback();
+    }
+}</code></pre>
+</div>
+
+The validation itself is a bit more complex since there a lot of restrictions to consider but we create a helper method that can call different callbacks to validate the value of a FeedbackTextbox and labels it with an error message in case of validation failure.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+    private function validateTextbox(FeedbackTextbox $textbox, callable $validator, string $message): bool
+    {
+        if (!$validator($textbox->getValue() ?? '')) {
+            $textbox->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, $message);
+            return false;
+        }
+
+        return true;
+    }
+}</code>
+  </pre>
+</div>
+
+By having our helper method we can now implement the validate method by applying callbacks to each of the textfields.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+    private function validate(): bool
+    {
+        $valid = true;
+        $notNullNotEmpty = fn($value) => $value !== null && $value !== '';
+
+        // username
+        $valid &= $this->validateTextbox($this->tbUsername, $notNullNotEmpty, 'Username must not be empty.');
+        $valid &= $this->validateTextbox($this->tbUsername, fn ($value) => !$this->userService->usernameExists($value), 'User already taken.');
+
+        // password
+        $valid &= $this->validateTextbox($this->tbPassword, $notNullNotEmpty, 'Password must not be empty!');
+        $valid &= $this->validateTextbox($this->tbPasswordRepeat, fn($value) => $value === $this->tbPassword->getValue(),'Passwords must be equal.');
+
+        // email
+        $valid &= $this->validateTextbox($this->tbEmail, $notNullNotEmpty, 'Email must not be empty.');
+        $valid &= $this->validateTextbox($this->tbEmail, fn($value) => filter_var($value, FILTER_VALIDATE_EMAIL), 'No valid email.');
+        $valid &= $this->validateTextbox($this->tbEmail, fn($value) => !$this->userService->emailExists($value), 'Email is already taken.');
+        
+        return $valid;
+    }
+}</code>
+  </pre>
+</div>
+
+Finally, we can implement the doRegistration method now to complete the RegistrationController. It just needs to create the user entity, pass it the service to persist and send a notification to the user that the registration was successful.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+use App\Entity\User;
+use App\Service\UserService;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class RegistrationController extends AbstractController
+{
+    // ...
+    
+    private function doRegistration(): void
+    {
+        $username = $this->tbUsername->getValue();
+        $password = $this->tbPassword->getValue();
+        $email = $this->tbEmail->getValue();
+
+        $user = (new User())
+            ->setUsername($username)
+            ->setPassword($password)
+            ->setEmail($email);
+
+        $this->userService->save($user);
+
+        $this->notifySuccess()
+            ->header('User registered')
+            ->message(sprintf('User %s has been registered.', $username))
+            ->create();
+
+        $this->wndRegistration->close();
+    }
+    
+    // ...
+}</code>
+  </pre>
+</div>
+
+The registration process should now be fully implemented and can be tested. In the next tutorial we will cover and implement the authentication process.
+
+<h4><a id="authentication">Authentication</a></h4>
+
+<h5><a id="user-repository-authentication">User repository</a></h5>
+
+Regarding to the UserRepository class there is just one additonal method required that can obtain an user by its username.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Repository;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class UserRepository
+{
+    // ...
+    
+    public function getUserByUsername(string $username): ?UserInterface
+    {
+        return $this->getRepository()->findOneBy(['username' => $username]);
+    }
+    
+    // ...
+}</code>
+  </pre>
+</div>
+
+
+<h5><a id="user-service-authentication">User service</a></h5>
+
+For the UserService class there are more changes required. First, the class needs to implement the UserProviderInterface and its methods.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function loadUserByUsername(string $username): ?UserInterface
+        {
+            
+        }
+
+        public function supportsClass(string $class): bool
+        {
+            
+        }
+
+        public function refreshUser(UserInterface $user)
+        {
+            
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
+The loadUserByUsername method can be simply implemented by delegating the call to the UserRepository instance.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function loadUserByUsername(string $username): ?UserInterface
+        {
+            return $this->userRepository->getUserByUsername($username);
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
+The supportsClass method must just check whether its argument matches the full qualified class name of the parameter.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function supportsClass(string $class): bool
+        {
+            return $class === User::class;
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
+The purpose of the refreshUser method is to reload the user instance for every request to keep it up to date. For this we will check if the passed object is an instance of our User entity class and if not, an exception should be thrown. Otherwise the user can be reloaded.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function refreshUser(UserInterface $user)
+        {
+            if (!$user instanceof User) {
+                throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', get_class($user)));
+            }
+
+            return $this->loadUserByUsername($user->getUsername());
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
+The final change to the UserService is a method to check if a plain password that will be hashed will match the hash of a User object.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+    namespace App\Service;
+
+    use App\Repository\UserRepository;
+    use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+    use Symfony\Component\Security\Core\User\UserInterface;
+	use Symfony\Component\Security\Core\User\UserProviderInterface;
+
+    class UserService implements UserProviderInterface
+    {
+        // ...
+    
+        public function isPasswordValid(UserInterface $user, string $password): bool
+        {
+            return $this->passwordEncoder->isPasswordValid($user, $password);
+        }
+   
+        // ...
+     }</code>
+  </pre>
+</div>
+
+That's all about the UserService class. Let's move on to the Authentication service implementation.
+
+<h5><a id="authentication-service">Authentication service</a></h5>
+
+The authentication service is the component that is just used for the authentication process itself which will later be triggered in the LoginController class. This class must extend the UserAuthenticationProvider class and we are implementing three different methods.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Security;
+
+use App\Service\UserService;
+use Exception;
+use Symfony\Component\Security\Core\Authentication\Provider\UserAuthenticationProvider;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class AuthenticationService extends UserAuthenticationProvider
+{
+    protected string $firewallName = 'main';
+    private TokenStorageInterface$tokenStorage;
+    private UserService $userService;
+
+    public function __construct(TokenStorageInterface $tokenStorage, UserService $userService, UserCheckerInterface $userChecker, string $firewallName, bool $hideUserNotFoundExceptions = true)
+    {
+        parent::__construct($userChecker, $firewallName, $hideUserNotFoundExceptions);
+        $this->tokenStorage = $tokenStorage;
+        $this->userService = $userService;
+        $this->firewallName = $firewallName;
+    }
+
+    public function authenticateByIdentityAndPassword(string $identity, string $password): ?TokenInterface
+    {
+        
+    }
+
+    protected function retrieveUser(string $username, UsernamePasswordToken $token): UserInterface
+    {
+        
+    }
+
+    protected function checkAuthentication(UserInterface $user, UsernamePasswordToken $token): void
+    {
+        
+    }
+}</code>
+  </pre>
+</div>
+
+Both the retrieveUser and the checkAuthentication methods are called by the super class UserAuthenticationProvider. Let's start implementing the retrieveUser method. 
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Security;
+
+use App\Service\UserService;
+use Exception;
+use Symfony\Component\Security\Core\Authentication\Provider\UserAuthenticationProvider;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class AuthenticationService extends UserAuthenticationProvider
+{
+    // ...
+
+    protected function retrieveUser(string $username, UsernamePasswordToken $token): UserInterface
+    {
+        $user = $token->getUser();
+        if ($user instanceof UserInterface) {
+            return $user;
+        }
+
+        try {
+            $user = $this->userService->loadUserByUsername($username);
+            if (!$user instanceof UserInterface) {
+                throw new AuthenticationServiceException('The user provider must return a UserInterface object.');
+            }
+
+            return $user;
+        } catch (UsernameNotFoundException $e) {
+            $e->setUsername($username);
+            throw $e;
+        } catch (Exception $e) {
+            $e = new AuthenticationServiceException($e->getMessage(), 0, $e);
+            $e->setToken($token);
+            throw $e;
+        }
+    }
+
+    // ...
+}</code>
+  </pre>
+</div>
+
+The implementation will check first if the token already contains a user instance which means that the user is already available and doesn't need to be reloaded. If that is not the case, the user will be reloaded and be surrounded by several checks. 
+
+The next one is the checkAuthentication method. It will also execute some integrity checks and will then check the passwords validity.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Security;
+
+use App\Service\UserService;
+use Exception;
+use Symfony\Component\Security\Core\Authentication\Provider\UserAuthenticationProvider;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class AuthenticationService extends UserAuthenticationProvider
+{
+    // ...
+
+    protected function checkAuthentication(UserInterface $user, UsernamePasswordToken $token): void
+    {
+        $currentUser = $token->getUser();
+        if ($currentUser instanceof UserInterface) {
+            if ($currentUser->getPassword() !== $user->getPassword()) {
+                throw new AuthenticationException('Credentials were changed from another session.');
+            }
+
+            return;
+        }
+
+        $password = $token->getCredentials();
+        if (empty($password)) {
+            throw new AuthenticationException('Password can not be empty.');
+        }
+
+        if (!$this->userService->isPasswordValid($user, $password)) {
+            throw new AuthenticationException('Password is invalid.');
+        }
+    }
+
+    // ...
+}</code>
+  </pre>
+</div>
+
+Lastly we can implement the authenticateByIdentityAndPassword method. This will be called directly by the LoginController and receives the identity - username in this example - and the password. It will create a UsernamePasswordToken instance, tries to authenticates this internally and, if succeeded, stores the token in the users session.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Security;
+
+use App\Service\UserService;
+use Exception;
+use Symfony\Component\Security\Core\Authentication\Provider\UserAuthenticationProvider;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\AuthenticationServiceException;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class AuthenticationService extends UserAuthenticationProvider
+{
+    // ...
+
+	public function authenticateByIdentityAndPassword(string $identity, string $password): ?TokenInterface
     {
         try {
             $unauthenticatedToken = new UsernamePasswordToken($identity, $password, $this->firewallName);
-            $authenticatedToken = $this->authenticationProviderManager->authenticate($unauthenticatedToken);
+            $authenticatedToken = $this->authenticate($unauthenticatedToken);
             $this->tokenStorage->setToken($authenticatedToken);
             return $authenticatedToken;
         } catch (AuthenticationServiceException $e) {
             return null;
         }
     }
+
+    // ...
 }</code>
   </pre>
 </div>
 
-<a name="login-template"></a>
-<h4>Login template</h4>
+<h5><a name="services-yaml">Services.yaml</a></h5>
+
+We can now put the services together in the services.yaml and create two service definitions.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-yaml">
+	<code class="language-yaml"># This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+
+services:
+    #  ... default defintions
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    # authentication related services
+    Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager:
+        class: Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager
+        arguments: [ [ '@App\Security\AuthenticationService' ] ]
+
+    App\Security\AuthenticationService:
+        class: App\Security\AuthenticationService
+        arguments: ['@security.token_storage', '@App\Service\UserService', '@security.user_checker', 'main' ]
+
+    #session storage in db
+    impulse.session_handler:
+        class: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
+        arguments:
+            - '%env(resolve:DATABASE_URL)%'
+  </code></pre>
+</div>
+
+<h5><a name="login-template">Login template</a></h5>
+
+Similar to the registration template we will also use a modal window for the login page. 
 
 <div>
   <div class="code-header">
@@ -179,10 +1440,10 @@ class AuthenticationService
 	<code class="language-markup">&lt;impulse&gt;
     &lt;modal id="wndAuth" bind="App\Controller\Auth\LoginController"&gt;
         &lt;modalheader&gt;
-            &lt;span&gt;Login</span&gt;
+            &lt;span&gt;Login&lt;/span&gt;
         &lt;/modalheader&gt;
         &lt;modalbody&gt;
-            &lt;span&gt;Username&lt;/span&gt;
+            &lt;span>Username&lt;/span&gt;
             &lt;feedbacktextbox id="tbUsername" /&gt;
             &lt;span&gt;Password&lt;/span&gt;
             &lt;feedbacktextbox id="tbPassword" inputType="password" /&gt;
@@ -196,8 +1457,11 @@ class AuthenticationService
   </pre>
 </div>
 
-<a name="login-controller"></a>
-<h4>Login controller</h4>
+<h5><a name="login-controller">Login controller</a></h5>
+
+The LoginController class verifies the login credentials by using the AuthenticationService instance and redirects to the start page after successful login. Otherwise an error message appears that the login credentials are invalid.
+
+We will create the Login class with its dependencies and component references.
 
 <div>
   <div class="code-header">
@@ -214,13 +1478,10 @@ class AuthenticationService
 
 namespace App\Controller\Auth;
 
-use App\Service\AuthenticationService;
+use App\Security\AuthenticationService;
 use Exception;
 use Impulse\ImpulseBundle\Controller\AbstractController;
-use Impulse\ImpulseBundle\Controller\Annotations\Listen;
 use Impulse\ImpulseBundle\Controller\Annotations\Transient;
-use Impulse\ImpulseBundle\Events\Events;
-use Impulse\ImpulseBundle\Execution\Events\ClickEvent;
 use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
 use Impulse\ImpulseBundle\UI\Components\Modal;
 
@@ -240,43 +1501,173 @@ class LoginController extends AbstractController
     {
         $this->authenticationService = $authenticationService;
     }
+}</code>
+  </pre>
+</div>
 
+To make this modal closeable when we either click on the "x" or the close button, we need to implement an event listener method that closes the modal window.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+namespace App\Controller\Auth;
+
+use App\Security\AuthenticationService;
+use Exception;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class LoginController extends AbstractController
+{
+    // ...
+    
+    #[Listen(event: Events::CLICK, component: 'btnClose')]
+    #[Listen(event: Events::CLOSE, component: 'wndAuth')]
+    public function onClose($event): void
+    {
+        $this->wndAuth->close();
+    }
+    
+    // ...
+}</code>
+  </pre>
+</div>
+
+Next, we will create an event listener method for submitting the login button that redirects the user after successful login.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+namespace App\Controller\Auth;
+
+use App\Security\AuthenticationService;
+use Exception;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class LoginController extends AbstractController
+{
+    // ...
+    
     #[Listen(event: Events::CLICK, component: 'btnLogin')]
-    public function onLogin(ClickEvent $event): void
+    public function onLogin(ClickEvent $event)
     {
         $username = $this->tbUsername->getValue() ?? '';
         $password = $this->tbPassword->getValue() ?? '';
 
         try {
-            $authenticatedToken = $this->authenticationService->authenticate($username, $password);
-
+            $authenticatedToken = $this->authenticationService->authenticateByIdentityAndPassword($username, $password);
             if ($authenticatedToken !== null) {
-                $this->notifySuccess()->duration(5000)->message('You have successfully been logged in.')->create();
-                $this->close();
-            } else {
-                $this->handleInvalidCredentials();
+                return new Redirect('_impulse_index', false);
             }
-        } catch (Exception $e) {
+
+            $this->handleInvalidCredentials();
+        } catch (Exception) {
             $this->handleInvalidCredentials();
         }
     }
+    
+    // ...
+}</code>
+  </pre>
+</div>
 
+Simple, isn't it? The last change for the LoginController is to implement the handleInvalidCredentials method which is called either in case of invalid credentials or in case of any exception. 
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+namespace App\Controller\Auth;
+
+use App\Security\AuthenticationService;
+use Exception;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\UI\Components\FeedbackTextbox;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+
+class LoginController extends AbstractController
+{
+    // ...
+    
     private function handleInvalidCredentials(): void
     {
         $this->tbUsername->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, 'Invalid credentials.');
         $this->tbPassword->setFeedback(FeedbackTextbox::FEEDBACK_INVALID, 'Invalid credentials.');
     }
+    
+    // ...
+}</code>
+  </pre>
+</div>
 
-    #[Listen(event: Events::CLICK, component: 'btnClose')]
-    #[Listen(event: Events::CLOSE, component: 'wndAuth')]
-    public function onClose($event): void
-    {
-        $this->close();
-    }
+<h4><a name="logout">Logout</a></h4>
 
-    private function close(): void
+The logout is very simple. We just need another controller which is bound to the "login" URI by a "logout" route which redirects back to the start page. Symfony will logout the user internally as we defined the logout route in the security.yaml in the very beginning of this tutorial.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+namespace App\Controller\Auth;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class LogoutController extends AbstractController
+{
+    /**
+    * @Route("logout", name="logout")
+    */
+    public function logout(): Response
     {
-        $this->wndAuth->close();
+        return $this->redirectToRoute('_impulse_index');
     }
 }</code>
   </pre>
