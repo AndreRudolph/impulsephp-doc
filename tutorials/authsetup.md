@@ -72,17 +72,76 @@ The IndexController class is very simple and just provides event listener method
   </div>
   <pre class="code-white imp-code line-numbers language-php">
 	<code class="language-php"><?php
-namespace App\Repository;
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\Execution\Events\ClickEvent;
+use Impulse\ImpulseBundle\Execution\Events\Event;
+use Impulse\ImpulseBundle\Execution\Interrupts\Redirect;
+use Impulse\ImpulseBundle\Response\RedirectResponse;
+use Impulse\ImpulseBundle\UI\Components\Div;
+use Impulse\ImpulseBundle\UI\Components\Header;
+use Impulse\ImpulseBundle\UI\Components\Modal;
+use Impulse\ImpulseBundle\UI\Components\Window;
 
-use Doctrine\ORM\EntityManagerInterface;
-
-class UserRepository
+class IndexController extends AbstractController
 {
-    private EntityManagerInterface $em;
+    private Header $header;
 
-    public function __construct(EntityManagerInterface $em)
+    private Div $landingHeader;
+    private Div $contentContainer;
+
+    private Window $wndNavigation;
+
+    #[Listen(event: Events::CLICK, components: ['navHome', 'navDocs', 'navDemos', 'navExampleApplications'])]
+    public function onMenuEvent(Event $event)
     {
-        $this->em = $em;
+        $this->sendMenu($event->getTarget()->getTarget());
+    }
+
+    public function sendMenu(string $destination)
+    {
+        $this->landingHeader->removeChilds();
+        switch ($destination) {
+            case 'app/docs/docs.html.twig':
+                $this->importView('app/docs/header.html.twig', $this->landingHeader);
+                $this->header->addClass('bordered');
+                break;
+            case 'app/demos/demos.html.twig':
+                $this->importView('app/demos/header.html.twig', $this->landingHeader);
+                $this->header->addClass('bordered');
+                break;
+            case 'app/demos/apps/apps.html.twig':
+                $this->importView('app/demos/apps/header.html.twig', $this->landingHeader);
+                $this->header->addClass('bordered');
+                break;
+            case 'app/landing/landing.html.twig':
+            default:
+                $this->header->removeClass('bordered');
+                $this->importView('app/landing/header.html.twig', $this->landingHeader);
+                break;
+        }
+
+        $this->importView($destination, $this->contentContainer);
+    }
+
+    #[Listen(event: Events::CLICK, component: 'btnLogin')]
+    public function openAuth(ClickEvent $event)
+    {
+        $this->importView('app/auth.html.twig', $this->wndNavigation, true);
+    }
+
+    #[Listen(event: Events::CLICK, component: 'btnRegister')]
+    public function openRegistration(ClickEvent $event)
+    {
+        $this->importView('app/registration.html.twig', $this->wndNavigation, true);
+    }
+
+    #[Listen(event: Events::CLICK, component: 'btnLogout')]
+    public function onLogout()
+    {
+        return new Redirect('logout', false);
     }
 }</code>
   </pre>
