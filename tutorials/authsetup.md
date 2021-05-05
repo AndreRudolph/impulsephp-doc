@@ -35,6 +35,25 @@ Before we dig into these tutorials the following setup steps are required.
 
 In order to keep this tutorial simple, we just have a simple index template which offers an anchor to log in, register and logout.
 
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-markup">
+	<code class="language-markup">&lt;impulse&gt;
+    &lt;window bind="App\Controller\IndexController"&gt;
+        
+    &lt;/window&gt;
+&lt;/impulse&gt;</code>
+  </pre>
+</div>
+
 <a name="security-yaml"></a>
 <h5>Security.yaml</h5>
 
