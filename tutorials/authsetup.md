@@ -33,7 +33,7 @@ Before we dig into these tutorials the following setup steps are required.
 
 <h5><a id="index-template">Index template</a></h5>
 
-In order to keep this tutorial simple, we just have a simple index template which offers an anchor to log in, register and logout.
+In order to keep this tutorial simple, we just have a simple index template which offers just buttons for login, logout and registration.
 
 <div>
   <div class="code-header">
@@ -48,7 +48,9 @@ In order to keep this tutorial simple, we just have a simple index template whic
   <pre class="code-white imp-code line-numbers language-markup">
 	<code class="language-markup">&lt;impulse&gt;
     &lt;window bind="App\Controller\IndexController"&gt;
-        
+        &lt;button id="btnLogin" value="Login" /&gt;
+        &lt;button id="btnLogout" value="Logout" /&gt;
+        &lt;button id="btnRegister" value="Register" /&gt;
     &lt;/window&gt;
 &lt;/impulse&gt;</code>
   </pre>
