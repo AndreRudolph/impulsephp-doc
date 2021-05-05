@@ -2,7 +2,8 @@
 
 - [Introduction](#introduction)
 - [Setup](#setup)
-	- [Index template](#main-template)
+	- [Index template](#index-template)
+    - [Index controller](#index-controller)
 	- [Security.yaml](#security-yaml)
     - [User entity](#user-entity)
     - [User repository](#user-repository)
@@ -31,6 +32,8 @@ Before we dig into these tutorials the following setup steps are required.
 <h4><a id="setup">Setup</a></h4>
 
 <h5><a id="index-template">Index template</a></h5>
+
+In order to keep this tutorial simple, we just have a simple index template which offers an anchor to log in, register and logout.
 
 <a name="security-yaml"></a>
 <h5>Security.yaml</h5>
