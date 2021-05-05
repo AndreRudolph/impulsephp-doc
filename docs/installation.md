@@ -16,7 +16,7 @@ As long as the package is not public, you have to download the installer manuall
 <a name="installation"></a>
 # Installation
 
-For a simple installation you can unpack the downloaded zip, rename the directory (if you want) and afterwards you have to run the following command.
+For an installation you can unpack the downloaded zip, rename the directory and afterwards you have to run the following command inside the project directory.
 
 <div>
   <div class="code-header">
