@@ -8,12 +8,12 @@ published: true
 - [Download](#download)
 - [Installation](#Installation)
 
-<a name="download"></a>
+<h4><a id="download"></a></h4>
 # Download
 
 As long as the package is not public, you have to download the installer manually. You can download the package <a href="downloads/installer.zip" target="_blank">here</a>.
 
-<a name="installation"></a>
+<h4><a id="installation"></a></h4>
 # Installation
 
 For an installation you can unpack the downloaded zip, rename the directory and afterwards you have to run the following command inside the project directory.
