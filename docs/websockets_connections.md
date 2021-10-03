@@ -1,8 +1,9 @@
 <h3 class="doc-title">Websockets connections</h3>
 
 - [Connection handling](#connection-handling)
-- [Retrieve all connections](#retrieve-all-connections)
-- [Retrieve own connection](#retrieve-own-connection)
+	- [Retrieve all connections](#retrieve-all-connections)
+	- [Retrieve own connection](#retrieve-own-connection)
+- [WebsocketPageService](#websocket-page-service)
 
 <a name="connection-handling">Connection handling</a>
 
