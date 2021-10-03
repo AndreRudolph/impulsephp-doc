@@ -49,10 +49,10 @@ If not provided automatically, you need to create the config file impulse_websoc
   </div>
   <pre class="code-white imp-code line-numbers language-yaml">
 	<code class="language-yaml">impulse_websockets:
-    enabled: true
-    protocol: 'ws'
-    host: 'localhost'
-    port: 7777</code>
+		enabled: true
+		protocol: 'ws'
+		host: 'localhost'
+		port: 7777</code>
   </pre>
 </div>
 
