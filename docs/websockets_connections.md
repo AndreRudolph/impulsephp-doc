@@ -136,7 +136,42 @@ Often you don't want to update your own client but instead just inform all the o
 
 The WebsocketPageServiceInterface provides the most convenient methods that are required to interact with a page of a specific connection. The following sub chapters explains these methods more in detail.
 
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+    namespace App\Controller\Websocket;
+
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseWebsocketBundle\Websockets\Connection;
+    use Impulse\ImpulseWebsocketBundle\Websockets\ConnectionHandler;
+    use Impulse\ImpulseWebsocketBundle\Websockets\WebsocketPageServiceInterface;
+
+    class TestController extends AbstractController
+    {
+        #[Transient] private ConnectionHandler $connectionHandler;
+        #[Transient] private WebsocketPageServiceInterface $wsPageService;
+
+        public function __construct(ConnectionHandler $connectionHandler, WebsocketPageServiceInterface $wsPageService)
+        {
+            $this->connectionHandler = $connectionHandler;
+            $this->wsPageService = $wsPageService;
+        }
+    }</code>
+  </pre>
+</div>
+
 <h5><a id="getComponentById">Get component by id</a></h5>
+
 <h5><a id="getComponentByUid">Get component by uid</a></h5>
 <h5><a id="importView">Import view</a></h5>
 <h5><a id="sendUpdates">sendUpdates</a></h5>
