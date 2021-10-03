@@ -35,6 +35,26 @@ Installation of the ImpulseWebsocketBundle is pretty easy by adding it to compos
   </pre>
 </div>
 
+If not provided automatically, you need to create the config file impulse_websockets.yaml inside the config/packages directory for the websocket settings. The file contains the following default settings:
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-yaml">
+	<code class="language-yaml">impulse_websockets:
+    enabled: true
+    protocol: 'ws'
+    host: 'localhost'
+    port: 7777</code>
+  </pre>
+</div>
 
 
 ------------
