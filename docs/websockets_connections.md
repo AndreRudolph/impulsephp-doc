@@ -128,3 +128,5 @@ Often you don't want to update your own client but instead just inform all the o
 </div>
 
 <h4><a name="websocket-page-service">WebsocketPageService</a></h4>
+
+The WebsocketPageServiceInterface provides the most convenient methods that are required to interact with a page of a specific connection. The following sub chapters explains these methods more in detail.
