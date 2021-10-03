@@ -191,10 +191,7 @@ You can retrieve a component by a specific id from a specific connection by usin
 
     namespace App\Controller\Websocket;
 
-    use Impulse\ImpulseBundle\Controller\AbstractController;
-    use Impulse\ImpulseWebsocketBundle\Websockets\Connection;
-    use Impulse\ImpulseWebsocketBundle\Websockets\ConnectionHandler;
-    use Impulse\ImpulseWebsocketBundle\Websockets\WebsocketPageServiceInterface;
+    // imports
 
     class TestController extends AbstractController
     {
@@ -237,10 +234,7 @@ You can retrieve a component by a specific id from a specific connection by usin
 
     namespace App\Controller\Websocket;
 
-    use Impulse\ImpulseBundle\Controller\AbstractController;
-    use Impulse\ImpulseWebsocketBundle\Websockets\Connection;
-    use Impulse\ImpulseWebsocketBundle\Websockets\ConnectionHandler;
-    use Impulse\ImpulseWebsocketBundle\Websockets\WebsocketPageServiceInterface;
+    // imports
 
     class TestController extends AbstractController
     {
