@@ -126,3 +126,5 @@ Often you don't want to update your own client but instead just inform all the o
     }</code>
   </pre>
 </div>
+
+<h4><a name="websocket-page-service">WebsocketPageService</a></h4>
