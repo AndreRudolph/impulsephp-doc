@@ -161,7 +161,9 @@ The WebsocketPageServiceInterface provides the most convenient methods that are 
         #[Transient] private ConnectionHandler $connectionHandler;
         #[Transient] private WebsocketPageServiceInterface $wsPageService;
 
-        public function __construct(ConnectionHandler $connectionHandler, WebsocketPageServiceInterface $wsPageService)
+        public function __construct(
+        	ConnectionHandler $connectionHandler, 
+        	WebsocketPageServiceInterface $wsPageService)
         {
             $this->connectionHandler = $connectionHandler;
             $this->wsPageService = $wsPageService;
