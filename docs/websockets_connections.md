@@ -174,6 +174,50 @@ The WebsocketPageServiceInterface provides the most convenient methods that are 
 
 <h5><a id="getComponentById">Get component by id</a></h5>
 
+You can retrieve a component by a specific id from a specific connection by using the **_getComponentById_** method.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+    namespace App\Controller\Websocket;
+
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseWebsocketBundle\Websockets\Connection;
+    use Impulse\ImpulseWebsocketBundle\Websockets\ConnectionHandler;
+    use Impulse\ImpulseWebsocketBundle\Websockets\WebsocketPageServiceInterface;
+
+    class TestController extends AbstractController
+    {
+        // ...
+        
+        #[Listen(event: Events::CLICK, component: 'btnWebsocketMessage')]
+        public function onWebsocketMsg(ClickEvent $event)
+        {
+            $connections = $this->connectionHandler->getConnections();
+            foreach ($connections as $connection) {
+                if ($connection === $event->getPage()->getConnection()) {
+                    continue;
+                }
+
+    			$wndRoot = $this->wsPageService->getComponentById($connection, 'wndRoot');
+                // do further stuff
+            }
+        }
+    }</code>
+  </pre>
+</div>
+
+
 <h5><a id="getComponentByUid">Get component by uid</a></h5>
 <h5><a id="importView">Import view</a></h5>
 <h5><a id="sendUpdates">sendUpdates</a></h5>
