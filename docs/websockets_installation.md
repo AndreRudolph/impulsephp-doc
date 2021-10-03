@@ -102,3 +102,5 @@ The last step is to include the js ImpulseWebsocketBundle by copying it from the
   </pre>
   
   <h4><a id="server-startup">Server startup</a></h4>
+  
+  Once you enabled the websocket communication, the Impulse framework automatically tries to establish a websocket connection after the initial request has been processed and rendered by the client.
