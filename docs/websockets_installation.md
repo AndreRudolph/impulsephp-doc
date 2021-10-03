@@ -56,6 +56,28 @@ If not provided automatically, you need to create the config file impulse_websoc
   </pre>
 </div>
 
+After that, you need to extend the App's ImpulseController by the one provided by the ImpulseWebsocketBundle.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-php">
+  	<code class="imp-code language-php"><?php
+	namespace App\Controller;
+
+	class ImpulseController extends \Impulse\ImpulseWebsocketBundle\Controller\ImpulseController
+	{
+
+	}</code>
+  </pre>
+</div>
 
 ------------
 
