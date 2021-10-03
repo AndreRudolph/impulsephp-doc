@@ -79,6 +79,34 @@ After that, you need to extend the App's ImpulseController by the one provided b
   </pre>
 </div>
 
+The last step is to include the js ImpulseWebsocketBundle by copying it from the Bundle and place it inside the assets/js directory and import it in the app.js
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-js">
+  	<code class="imp-code language-js">import './app/homepage/prism';
+import './impulse-bundle/ImpulseCore';
+import './impulse-bundle/ImpulseComponents';
+import './impulse-websocket-bundle/ImpulseWebsocketBundleEntry';
+
+import './app/homepage/AppComponents';
+
+import './../scss/app.scss';
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    let app = new App();
+    app.run();
+});</code>
+  </pre>
+
 ------------
 
 <h5><a id="controller-class">Controller class</a></h5>
