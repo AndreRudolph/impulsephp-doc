@@ -1,14 +1,12 @@
-<h3 class="doc-title">WebsocketBundle installation</h3>
+<h3 class="doc-title">Websockets connections</h3>
 
-- [Introduction](#introduction)
-- [Installation](#installation)
-- [Server startup](#server-startup)
+- [Connection handling](#connection-handling)
+- [Retrieve connections](#retrieve-connections)
+- [Retrieve own connection](#retrieve-own-connection)
 
-<a name="introduction"></a>
+<a name="connection-handling">Connection handling</a>
 
-Websockets is basically a network protocol allowing bidirectional communication between client and server. Once connected, the connection is usually kept open until the client manually closes the connection by refreshing or closing the browser tab. The main difference between conventional HTTP communication is, that the client does not need to request for an update or a notification. Instead, the server is able to continousely send updates to the client. 
-
-With that being sad, by processing a client request (such as sending a message in a chat room) other available clients can be informed about that message too and display it **_without explicitly_** requesting it.
+In websocket context the websocket server needs to keep track of all registeres connections and provides convenient methods to access a specific set of connections. For this purpose, you can use an instance of the ConnectionHandler class.
 
 
 <h4><a id="installation">Installation</a></h4>
