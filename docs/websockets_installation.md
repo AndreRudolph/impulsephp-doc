@@ -16,7 +16,23 @@ Websockets is basically a network protocol allowing bidirectional communication 
 With that being sad, by processing a client request (such as sending a message in a chat room) other available clients can be informed about that message too and display it **_without explicitly_** requesting it.
 
 
-<h4><a id="basics">Basics</a></h4>
+<h4><a id="basics">Installation</a></h4>
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-bash">composer require impulsephp/impulsewebsocketbundle</code>
+  </pre>
+</div>
+
 
 Controllers are in general created by the Symfonys dependency injection container. Thus, you have full autowiring support and can inject any services which you need for your controller. Some pitfalls when it comes to e.g. autowiring database related services, you will need to have a look in the <a data-target-menu-item="controller_serialization" class="text-muted">Serialization of controller chapter.</a>
 
