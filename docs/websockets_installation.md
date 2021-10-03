@@ -1,6 +1,7 @@
-<h3 class="doc-title">Controllers</h3>
+<h3 class="doc-title">WebsocketBundle installation</h3>
 
 - [Introduction](#introduction)
+- [Installation](#installation)
 - [Basics](#basics)
     - [Controller class](#controller-class)
     - [Access components](#access-components)
@@ -10,7 +11,10 @@
 
 <a name="introduction"></a>
 
-Controllers in Impulse PHP Framework are not exactly the same as you might be used with other frameworks. In most other frameworks among other responsibilites, a controller is that instance that decides which view must be rendered. However, in impulse the exact opposite is the case that a view binds a concrete controller class as you have already explored in the **_Views_** section.
+Websockets is basically a network protocol allowing bidirectional communication between client and server. Once connected, the connection is usually kept open until the client manually closes the connection by refreshing or closing the browser tab. The main difference between conventional HTTP communication is, that the client does not need to request for an update or a notification. Instead, the server is able to continousely send updates to the client. 
+
+With that being sad, by processing a client request (such as sending a message in a chat room) other available clients can be informed about that message too and display it **_without explicitly_** requesting it.
+
 
 <h4><a id="basics">Basics</a></h4>
 
