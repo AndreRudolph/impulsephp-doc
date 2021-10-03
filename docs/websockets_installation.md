@@ -11,7 +11,7 @@ Websockets is basically a network protocol allowing bidirectional communication 
 With that being sad, by processing a client request (such as sending a message in a chat room) other available clients can be informed about that message too and display it **_without explicitly_** requesting it.
 
 
-<h4><a id="basics">Installation</a></h4>
+<h4><a id="installation">Installation</a></h4>
 
 Installation of the ImpulseWebsocketBundle is pretty easy by adding it to composer require command.
 
@@ -100,3 +100,5 @@ The last step is to include the js ImpulseWebsocketBundle by copying it from the
         app.run();
     });</code>
   </pre>
+  
+  <h4><a id="server-startup">Server startup</a></h4>
