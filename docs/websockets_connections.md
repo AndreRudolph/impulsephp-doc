@@ -21,21 +21,21 @@ In websocket context the websocket server needs to keep track of all registeres 
   <pre class="code-white imp-code line-numbers language-php">
 	<code class="language-php"><?php
 
-namespace App\Controller\Websocket;
+    namespace App\Controller\Websocket;
 
-use Impulse\ImpulseBundle\Controller\AbstractController;
-use Impulse\ImpulseWebsocketBundle\Websockets\Connection;
-use Impulse\ImpulseWebsocketBundle\Websockets\ConnectionHandler;
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseWebsocketBundle\Websockets\Connection;
+    use Impulse\ImpulseWebsocketBundle\Websockets\ConnectionHandler;
 
-class TestController extends AbstractController
-{
-    #[Transient] private ConnectionHandler $connectionHandler;
-
-    public function __construct(ConnectionHandler $connectionHandler)
+    class TestController extends AbstractController
     {
-        $this->connectionHandler = $connectionHandler;
-    }
-}</code>
+        #[Transient] private ConnectionHandler $connectionHandler;
+
+        public function __construct(ConnectionHandler $connectionHandler)
+        {
+            $this->connectionHandler = $connectionHandler;
+        }
+    }</code>
   </pre>
 </div>
 
