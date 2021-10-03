@@ -5,7 +5,7 @@
 	- [Retrieve own connection](#retrieve-own-connection)
 - [WebsocketPageService](#websocket-page-service)
 
-<a name="connection-handling">Connection handling</a>
+<h4><a name="connection-handling">Connection handling</a></h4>
 
 In websocket context the websocket server needs to keep track of all registeres connections and provides convenient methods to access a specific set of connections. For this purpose, you can use an instance of the ConnectionHandler class.
 
@@ -40,7 +40,7 @@ In websocket context the websocket server needs to keep track of all registeres 
   </pre>
 </div>
 
-<h4><a id="retrieve-all-connections">Retrieve all connections</a></h4>
+<h5><a id="retrieve-all-connections">Retrieve all connections</a></h5>
 
 As previousely mentioned, the ConnectionHandler class provides a method to retrieve all connections that are registered in the websocket server.
 
@@ -84,7 +84,7 @@ As previousely mentioned, the ConnectionHandler class provides a method to retri
   </pre>
 </div>
 
-<h4><a id="retrieve-own-connection">Retrieve own connection</a></h4>
+<h5><a id="retrieve-own-connection">Retrieve own connection</a></h5>
 
 Often you don't want to update your own client but instead just inform all the other clients. For that purpose, **_every_** event object passed to an Impulse controller contains a page object and keeps a reference to the connection object which triggered the event.
 
