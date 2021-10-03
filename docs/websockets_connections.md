@@ -4,6 +4,11 @@
 	- [Retrieve all connections](#retrieve-all-connections)
 	- [Retrieve own connection](#retrieve-own-connection)
 - [WebsocketPageService](#websocket-page-service)
+	- [Get component by id](#getComponentById)
+    - [Get component by uid](#getComponentByUid)
+    - [Import view](#importView)
+    - [Send updates](#sendUpdates)
+    - [Send native](#sendNative)
 
 <h4><a name="connection-handling">Connection handling</a></h4>
 
