@@ -8,6 +8,36 @@
 
 In websocket context the websocket server needs to keep track of all registeres connections and provides convenient methods to access a specific set of connections. For this purpose, you can use an instance of the ConnectionHandler class.
 
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-php">
+	<code class="language-php"><?php
+
+namespace App\Controller\Websocket;
+
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseWebsocketBundle\Websockets\Connection;
+use Impulse\ImpulseWebsocketBundle\Websockets\ConnectionHandler;
+
+class TestController extends AbstractController
+{
+    #[Transient] private ConnectionHandler $connectionHandler;
+
+    public function __construct(ConnectionHandler $connectionHandler)
+    {
+        $this->connectionHandler = $connectionHandler;
+    }
+}</code>
+  </pre>
+</div>
 
 <h4><a id="installation">Installation</a></h4>
 
