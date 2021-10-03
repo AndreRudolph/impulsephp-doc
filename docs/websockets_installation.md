@@ -103,4 +103,19 @@ The last step is to include the js ImpulseWebsocketBundle by copying it from the
   
   <h4><a id="server-startup">Server startup</a></h4>
   
-  Once you enabled the websocket communication, the Impulse framework automatically tries to establish a websocket connection after the initial request has been processed and rendered by the client.
+  Once you enabled the websocket communication, the Impulse framework automatically tries to establish a websocket connection after the initial request has been processed and rendered by the client. If the server is not started, the client proceeds as usual without websockets and works instead with AJAX requests. You can start the websocket server by executing the following command.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-bash">php bin/console impulse_websocket:wsserver</code>
+  </pre>
+</div>
