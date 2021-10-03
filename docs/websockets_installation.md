@@ -92,19 +92,18 @@ The last step is to include the js ImpulseWebsocketBundle by copying it from the
     </div>
   </div>
   <pre class="code-white line-numbers language-js">
-  	<code class="imp-code language-js">import './app/homepage/prism';
-import './impulse-bundle/ImpulseCore';
-import './impulse-bundle/ImpulseComponents';
-import './impulse-websocket-bundle/ImpulseWebsocketBundleEntry';
+  	<code class="imp-code language-js">import './impulse-bundle/ImpulseCore';
+	import './impulse-bundle/ImpulseComponents';
+	import './impulse-websocket-bundle/ImpulseWebsocketBundleEntry';
 
-import './app/homepage/AppComponents';
+	import './app/homepage/AppComponents';
 
-import './../scss/app.scss';
+	import './../scss/app.scss';
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    let app = new App();
-    app.run();
-});</code>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        let app = new App();
+        app.run();
+    });</code>
   </pre>
 
 ------------
