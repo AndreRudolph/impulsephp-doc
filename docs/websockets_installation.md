@@ -18,6 +18,8 @@ With that being sad, by processing a client request (such as sending a message i
 
 <h4><a id="basics">Installation</a></h4>
 
+Installation of the ImpulseWebsocketBundle is pretty easy by adding it to composer require command.
+
 <div>
   <div class="code-header">
     <div class="container-fluid">
@@ -34,7 +36,8 @@ With that being sad, by processing a client request (such as sending a message i
 </div>
 
 
-Controllers are in general created by the Symfonys dependency injection container. Thus, you have full autowiring support and can inject any services which you need for your controller. Some pitfalls when it comes to e.g. autowiring database related services, you will need to have a look in the <a data-target-menu-item="controller_serialization" class="text-muted">Serialization of controller chapter.</a>
+
+------------
 
 <h5><a id="controller-class">Controller class</a></h5>
 
