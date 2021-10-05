@@ -119,3 +119,5 @@ The last step is to include the js ImpulseWebsocketBundle by copying it from the
 	<code class="language-bash">php bin/console impulse_websocket:wsserver</code>
   </pre>
 </div>
+
+Please note that the websocket server must have the same domain name like your webserver has in order to receive the session cookie.
