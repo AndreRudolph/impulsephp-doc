@@ -5,8 +5,8 @@
 	- [Available components](#registered_components)
 - [Create custom components](#create_custom_components)
     - [Custom attributes](#custom_attributes)
-    - [Client synchronization](#client_synchronization)
-    - [Server synchronization](#server_synchronization)
+    - [Client managed attributes](#client_synchronization)
+    - [Server managed attributes](#server_synchronization)
     - [Client component](#client_component)
 - [Learn more about components](#advanced_topics)
 
@@ -115,7 +115,7 @@ Suppose you want to create a component class, lets call it **_Message_**, with a
 </pre>
 
 
-<h5><a id="client_synchronization">Client synchronization</a></h5>
+<h5><a id="client_synchronization">Client managed attributes</a></h5>
 
 The main purpose is to show the message to the client and therefor there is a method called **_getClientData_** which returns an array with all contain informations of the component that are relevant for the client.
 
@@ -174,7 +174,7 @@ It might happen that, maybe by some circumstances, changes to the message proper
 
 Basically components have an internal property called **_info_** which is designed as a tracking container for component changes.
 
-<h5><a id="server_synchronization">Server synchronization</a></h5>
+<h5><a id="server_synchronization">Server managed attributes</a></h5>
 
 <div class="code-header">
 	<div class="container-fluid">
