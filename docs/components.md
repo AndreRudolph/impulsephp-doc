@@ -2,8 +2,7 @@
 
 - [Introduction](#introduction)
 - [Basics](#basics)
-	- [List available components](#registered_components)
-    - [Component contexts](#component_contexts)
+	- [Available components](#registered_components)
 - [Create custom components](#create_custom_components)
     - [Custom attributes](#custom_attributes)
     - [Client synchronization](#client_synchronization)
@@ -21,7 +20,7 @@ All of these (and even more) concepts and mechanisms are covered by this documen
 
 <h4><a id="basics">Basics</a></h4>
 
-<h5><a id="registered_components">List available components</a></h5>
+<h5><a id="registered_components">Available components</a></h5>
 
 For a complete list of currently registered components you can run the following command in your projects root directory:
 
