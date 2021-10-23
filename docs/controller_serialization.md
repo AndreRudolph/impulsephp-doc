@@ -51,7 +51,7 @@ It is likely that you have to exclude properties manually from serialization. As
 
 When trying to serialize the controller, all properties annotated with **_Transient_** will automatically be excluded.
 
-Please note that transient properties will not be rewired once the Controller will be reactivated unless they will be wired by a dependency injection container.
+Please note that transient properties will not be rewired once the Controller will be reactivated unless they will be wired by the dependency injection container.
 
 <h5><a id="component-references">Component references</a></h5>
 
