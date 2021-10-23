@@ -11,7 +11,7 @@ Like components, controllers will also be serialized and stored in the users ses
 
 Once an event listener (controller) will be reactivated (deserialized), values that have been stored in serialized format will be restored. After the request has been processed, the reactivated event listener will be stored back in session with its current state.
 
-In this documentation page we will cover the essentials of controller serialization and how you can customize the serialization with your needs.
+In this documentation page we will cover the essentials of controller serialization and how you can customize the serialization for your needs.
 
 <h5><a id="exclude-properties">Exclude properties</a></h5>
 
