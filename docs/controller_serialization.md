@@ -51,6 +51,8 @@ It is likely that you have to exclude properties manually from serialization. As
 
 When trying to serialize the controller, all properties annotated with **_Transient_** will automatically be excluded.
 
+Note that transient properties will not be rewired once the Controller will be reactivated.
+
 <h5><a id="component-references">Component references</a></h5>
 
 You might face the issue that you need to keep component references in properties of the controller to access them once the event listener will be restored. In general, component objects in properties are correctly stored and referenced automatically. You can bypass this by declaring it transient as explained above. However, if you need to store a list of component references, you need to have a property with type ComponentList. 
