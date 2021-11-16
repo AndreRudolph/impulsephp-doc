@@ -5,18 +5,12 @@ published: true
 ---
 <h1 class="doc-title">Installation and setup</h1>
 
-- [Download](#download)
 - [Installation](#Installation)
-
-<h4><a id="download"></a></h4>
-# Download
-
-As long as the package is not public, you have to download the installer manually. You can download the package <a href="downloads/installer.zip" target="_blank">here</a>.
 
 <h4><a id="installation"></a></h4>
 # Installation
 
-For an installation you can unpack the downloaded zip, rename the directory and afterwards you have to run the following command inside the project directory.
+Though most of the installation is done automatically, it requires some manual steps in order to fully initiate the Impulse PHP Framework. The first step is to create a symfony project by using the following command on command line:
 
 <div>
   <div class="code-header">
@@ -29,11 +23,55 @@ For an installation you can unpack the downloaded zip, rename the directory and 
     </div>
   </div>
   <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">composer install</code>
+	<code class="language-bash">composer create-project symfony/website-skeleton project_name && cd project_name</code>
   </pre>
 </div>
 
-The procedure will ask you for the symfony apache pack if you want to use, type n. 
+After the symfony project has been created, you need to install the WebpackEncoreBundle.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-bash">composer require symfony/webpack-encore-bundle</code>
+  </pre>
+</div>
+
+Since the ImpulseBundle is still a private repository and not available via packagist, the bundle must point to its repostory by adding the following segments to the composer json:
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-json">
+	<code class="language-json">    "repositories": {
+        "impulsebundle": {
+            "type": "path",
+            "url": "/Users/rudolph/Sites/localhost/impulseproject/impulsebundle"
+        }
+    },
+    
+    "require": {
+        "impulsephp/impulsebundle": "dev-FbWebsockets@dev",
+    }</code>
+  </pre>
+</div>
+
+
+yooooooooooo
 
 Once this procedure is finished, you need to install node.js (if you haven't already). If you haven't installed it, you can follow these instructions: https://nodejs.org/en/download/package-manager/. 
 
