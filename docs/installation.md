@@ -70,12 +70,7 @@ Since the ImpulseBundle is still a private repository and not available via pack
   </pre>
 </div>
 
-
-yooooooooooo
-
-Once this procedure is finished, you need to install node.js (if you haven't already). If you haven't installed it, you can follow these instructions: https://nodejs.org/en/download/package-manager/. 
-
-After that, we can execute the installation command to install the modules defined in the package.json file. 
+Now it's time to let composer install that package by running the update command.
 
 <div>
   <div class="code-header">
@@ -88,11 +83,12 @@ After that, we can execute the installation command to install the modules defin
     </div>
   </div>
   <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">npm install</code>
+	<code class="language-bash">composer update</code>
   </pre>
 </div>
 
-Furthermore you need to install the jquery and the sass-loader libraries by using the following command.
+The ImpulseBundle is now available. To finally initialize it, you can execute the provided init command and 
+following the instructions once the command has been finished.
 
 <div>
   <div class="code-header">
@@ -105,60 +101,7 @@ Furthermore you need to install the jquery and the sass-loader libraries by usin
     </div>
   </div>
   <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">npm install --save jquery && npm install sass-loader@^9.0.1 --save-dev</code>
-  </pre>
-</div>
-
-After that, you should erase everything from the assets directory since the Impulse flex receipe will place all required files within that directory.
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-  <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">rm -rf ./assets/*</code>
-  </pre>
-</div>
-
-The next step is installing the Impulse PHP Framework bundle itself.
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-  <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">composer require impulsephp/impulsebundle:dev-master@dev</code>
-  </pre>
-</div>
-
-Lastly you can remove the webpack.config.js and rename the webpack_impulse.config.js to webpack.config.js. 
-
-After that, you should be able to successfully run 
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-  <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">npm run dev</code>
+	<code class="language-bash">php bin/console impulse:init</code>
   </pre>
 </div>
 
