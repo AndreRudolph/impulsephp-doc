@@ -1,6 +1,7 @@
 <h1 class="doc-title">Authentication & registration</h1>
 
 - [Introduction](#introduction)
+- [Auth command](#auth-command)
 - [Setup](#setup)
 	- [Index template](#index-template)
     - [Index controller](#index-controller)
@@ -25,9 +26,24 @@
  
 <h4><a id="introduction">Introduction</a></h4>
 
-Both the tutorials for registration and authentication are based on the following setup steps which define a simple but yet working base for an authentication system with registration, login and logout functionality. 
+The required changes for authentication can either be done automatically be executing a simple command (see auth command chapter below) or by applying the changes manually). If you want to apply them manually, you can start with the Setup chapter.
 
-Before we dig into these tutorials the following setup steps are required.
+<h4><a id="setup">Auth command</a></h4>
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-shell">
+	<code class="language-shell">php bin/console impulse:auth:create</code>
+  </pre>
+</div>
 
 <h4><a id="setup">Setup</a></h4>
 
