@@ -130,6 +130,12 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
 
 In the example above, once the controller was created, the afterCreate method will be called automatically (see chapter before) and the textbox value will be set to Hello World!.
 
+Important note: A property of a Controller that is expected to be wired up by id with a component only works if the component has already been created previousely.
+
+<h6>Page Handler</h6>
+
+You can also 
+
 <h5><a id="load-views">Load views</a></h5>
 
 The more complex the application gets the more it should be divided in smaller parts (single responsiblity principle). For exactly this purpose you can easily load views inside your controller. The following example shows how this works.
