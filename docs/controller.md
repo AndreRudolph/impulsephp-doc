@@ -9,6 +9,7 @@ published: true
 - [Basics](#basics)
     - [Controller class](#controller-class)
     - [Access components](#access-components)
+    	- [Via annotations](#via-annotations)
     - [Load views](#load-views)
     - [Event listening](#listen-to-events)
 - [Advanced topics](#advanced-topics)
