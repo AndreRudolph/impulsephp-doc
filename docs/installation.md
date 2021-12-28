@@ -65,7 +65,7 @@ Since the ImpulseBundle is still a private repository and not available via pack
     },
     
     "require": {
-        "impulsephp/impulsebundle": "dev-FbWebsockets@dev",
+        "impulsephp/impulsebundle": "dev-master@dev",
     }</code>
   </pre>
 </div>
