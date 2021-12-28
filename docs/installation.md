@@ -59,8 +59,8 @@ Since the ImpulseBundle is still a private repository and not available via pack
   <pre class="code-white imp-code line-numbers language-json">
 	<code class="language-json">    "repositories": {
         "impulsebundle": {
-            "type": "path",
-            "url": "/Users/rudolph/Sites/localhost/impulseproject/impulsebundle"
+            "type": "vcs",
+            "url": "https://Atomtastic@bitbucket.org/Atomtastic/impulsebundle.git"
         }
     },
     
