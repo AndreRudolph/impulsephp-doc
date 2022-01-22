@@ -1,16 +1,17 @@
-<h1 class="doc-title">Component service wiring</h1>
+<h1 class="doc-title">Controller as page listener</h1>
 
 - [Introduction](#introduction)
-- [Wire services](#wire-services)
+- [Register as page listener](#register-page-listener)
 
 <h4><a id="#introduction">Introduction</a></h4>
 
-The concept of components is that a component can literally be anything, a simple div or a textbox or can be even more complex like a combobox which provides items stored in a database.
-However, whenever your component requires a service your component must implement the **_WiringAware_** interface.
+Aswell as controller can be registered as an event listener to several events that a component triggers, Controller might also register themselfes as so called global page listener. The intention behind global page listener is provide a mechanism to broadcast the result of an event (e.g. a record was updated) to all other existing of controller the same page that have been subscribed to that event.
 
-<h4><a id="#wire-services">Wire services</a></h4>
+Consider you have a list of user records and each of them can be changed within a modal window. When the user saves the changes, the list Controller might need to be notified from the modal window controller to refresh the list by updating the users data in the list.
 
-Marked with that interface, the Impulse framework will delegate the component object construction to the symfony dependency injection container. Thus you can inject services as usual via constructor for required or setter for optional dependencies.
+<h4><a id="#register-page-listener">Register as page listener</a></h4>
+
+A controller can be easily registered as a global page listener by calling the subscribe method of the page object.
 
 <div class="code-header">
 	<div class="container-fluid">
@@ -23,16 +24,22 @@ Marked with that interface, the Impulse framework will delegate the component ob
 </div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
-	namespace App\UI\Components;
-    use Impulse\ImpulseBundle\UI\Components\AbstractComponent;
-    use Impulse\ImpulseBundle\Components\WiringAware;
-    use App\Services\MyService;
+	namespace App\Controller;
+    use Impulse\ImpulseBundle\Controller\AbstractController;
 
     class SpecialComponent extends AbstractComponent implements WiringAware
     {
-        public function __construct(MyService $service) 
+    	public function afterCreate(Event $event): void
+    	{
+        	parent::afterCreate($event);
+        	$this->createList();
+
+        	$event->getPage()->subscribe('UserChanged', $this, 'onUserChanged');
+    	}
+        
+        private function createList(): void
         {
-            // initialization
+        	// creates the list of user records
         }
 	}</code>
 </pre>
