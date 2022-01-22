@@ -9,6 +9,7 @@ published: true
 - [Basics](#basics)
     - [Controller class](#controller-class)
     - [Access components](#access-components)
+    	- [By id](#wiring-by-id)
     - [Load views](#load-views)
     - [Event listening](#listen-to-events)
 - [Advanced topics](#advanced-topics)
@@ -73,7 +74,7 @@ This example controller above would do nothing. For doing initial tasks you may 
 
 The main purpose of controllers in Impulse is that they can directly interact with all components which have been created by views in an object orientated way. There are different strategies how these components can be accessed within a controller. 
 
-<h6>Property Injection by ids</h6>
+<h6><a name="wiring-by-id">Wiring by id</a></h6>
 
 One option is by wiring by convention by naming properties with the related component ids.
 
