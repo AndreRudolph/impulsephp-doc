@@ -3,6 +3,7 @@
 - [Introduction](#introduction)
 - [Register as page listener](#register-page-listener)
 - [Broadcast event to subscribers](#broadcast-event)
+- [Unsubscribe page listener](#unsubscribe-page-listener)
 
 <h4><a id="#introduction">Introduction</a></h4>
 
@@ -27,16 +28,22 @@ A controller can be easily registered as a global page listener by calling the s
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
     use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
 
-    class SpecialComponent extends AbstractComponent implements WiringAware
+    class UserListController extends AbstractController
     {
     	public function afterCreate(Event $event): void
     	{
         	parent::afterCreate($event);
         	$this->createList();
 
-        	$event->getPage()->subscribe('UserChanged', $this, 'onUserChanged');
+        	$event->getPage()->subscribe('UserSaved', $this, 'onUserSave');
     	}
+        
+        public function onUserSave(): void
+        {
+        	$this->createList();
+        }
         
         private function createList(): void
         {
@@ -48,3 +55,32 @@ A controller can be easily registered as a global page listener by calling the s
 A controller can serve as a global page listener for different events.
 
 <h4><a id="#broadcast-event">Broadcast event to subscribers</a></h4>
+
+As previousely mentioned, a global page event can be triggerd by any controller. Let's follow the example above and have a UserDetailsController that broadcasts the event of a saved user.
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+	namespace App\Controller;
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
+
+    class UserDetailsController extends AbstractController
+    {       
+    	#[Listen(event: Events::CLICK, component: 'btnSaveUser')]
+        public function onUserSave(ClickEvent $event): void
+        {
+        	// ... validation and save logic before
+            
+        	$event->getPage()->sendEvent('UserSaved');
+        }
+	}</code>
+</pre>
