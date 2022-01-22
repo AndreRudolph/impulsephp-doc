@@ -10,7 +10,7 @@ published: true
     - [Controller class](#controller-class)
     - [Access components](#access-components)
     	- [By id](#wiring-by-id)
-        - [Using page handler](#wiring-by-pagehandler)
+        - [getComponent method](#get-component-method)
     - [Load views](#load-views)
     - [Event listening](#listen-to-events)
 - [Advanced topics](#advanced-topics)
@@ -134,9 +134,9 @@ In the example above, once the controller was created, the afterCreate method wi
 
 Important note: A property of a Controller that is expected to be wired up by id with a component only works if the component has already been created previousely.
 
-<h6><a name="wiring-by-pagehandler">Using page handler</a></h6>
+<h6><a name="get-component-method">getComponent method</a></h6>
 
-If you do not want to have components injected into properties automatically and rather instead prefer to retrieve them explicitly, you might want to checkout the page
+If you do not want to have components injected into properties automatically and rather instead prefer to retrieve them explicitly. For this purpose, the AbstractController class provides a convenient method to retrieve a component by it's id. 
 
 <h5><a id="load-views">Load views</a></h5>
 
