@@ -7,7 +7,7 @@
 
 <h4><a id="#introduction">Introduction</a></h4>
 
-Aswell as controller can be registered as an event listener to several events that a component triggers, Controller might also register themselfes as so called global page listener. The intention behind global page listener is provide a mechanism to broadcast the result of an event (e.g. a record was updated) to all other existing of controller the same page that have been subscribed to that event.
+Aswell as controller can be registered as an event listener to several events that a component can trigger, controller might also register themselfes as so called global page listener. The intention behind global page listener is provide a mechanism to broadcast the result of an event (e.g. a record was updated) to all other existing of controller the same page that have been subscribed to that event.
 
 Consider you have a list of user records and each of them can be changed within a modal window. When the user saves the changes, the list Controller might need to be notified from the modal window controller to refresh the list by updating the users data in the list.
 
