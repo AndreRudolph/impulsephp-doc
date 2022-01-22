@@ -10,6 +10,7 @@ published: true
     - [Controller class](#controller-class)
     - [Access components](#access-components)
     	- [By id](#wiring-by-id)
+        - [Using page handler](#wiring-by-pagehandler)
     - [Load views](#load-views)
     - [Event listening](#listen-to-events)
 - [Advanced topics](#advanced-topics)
@@ -133,7 +134,7 @@ In the example above, once the controller was created, the afterCreate method wi
 
 Important note: A property of a Controller that is expected to be wired up by id with a component only works if the component has already been created previousely.
 
-<h6>Page Handler</h6>
+<h6><a name="wiring-by-pagehandler">Using page handler</a></h6>
 
 You can also 
 
