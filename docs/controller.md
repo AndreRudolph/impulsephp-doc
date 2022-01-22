@@ -151,7 +151,7 @@ The signature of this method is the following:
     </div>
   </div>
   <pre class="code-white line-numbers language-php">
-	<code class="imp-code language-php"><?php
+	<code class="imp-code language-php">
 	protected function getComponentById(PageContract $page, string $id): ?ComponentContract;</code>
   </pre>
 </div>
