@@ -94,7 +94,7 @@ You may also pass an array of parameters to the sendEvent method. An instance of
 
 When a global page listener is no longer referenced from any component and thus be removed from the page, the controller will be automatically unsubscribed as a global page listener. 
 
-However, when you want or need to unsubscribe the controller manually beforehand, then you can use the unsubscribe method of the page object.
+However, when you want or need to unsubscribe the controller manually beforehand, then you can use the unsubscribe method of the page object. Let's take as an example that you want to remove the subscription once the UserListController has been broadcasted in the first place. 
 
 <div class="code-header">
 	<div class="container-fluid">
