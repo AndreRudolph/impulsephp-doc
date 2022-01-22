@@ -73,7 +73,7 @@ This example controller above would do nothing. For doing initial tasks you may 
 
 The main purpose of controllers in Impulse is that they can directly interact with all components which have been created by views in an object orientated way. There are different strategies how these components can be accessed within a controller. 
 
-<h5><a name="wiring-by-id">Wiring by id</a></h6>
+<h5><a name="wiring-by-id">Wiring by id</a></h5>
 
 One option is by wiring by convention by naming properties with the related component ids.
 
@@ -132,7 +132,7 @@ In the example above, once the controller was created, the afterCreate method wi
 
 Important note: A property of a Controller that is expected to be wired up by id with a component only works if the component has already been created previousely.
 
-<h5><a name="get-component-method">getComponent method</a></h6>
+<h5><a name="get-component-method">getComponent method</a></h5>
 
 If you do not want to have components injected into properties automatically and rather instead prefer to retrieve them explicitly. For this purpose, the AbstractController class provides the convenient method getComponentById to retrieve a component by it's id. 
 
