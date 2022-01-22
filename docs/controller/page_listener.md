@@ -120,14 +120,12 @@ However, when you want or need to unsubscribe the controller manually beforehand
     	{
         	parent::afterCreate($event);
         	$this->createList();
-
         	$event->getPage()->subscribe('UserSaved', $this, 'onUserSave');
     	}
         
         public function onUserSave(): void
         {
         	$this->wndUserList->getPage()->unsubscribe('UserSaved', $this, 'onUserSave');
-        
         	$this->createList();
         }
         
