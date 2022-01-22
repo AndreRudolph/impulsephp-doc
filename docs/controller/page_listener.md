@@ -88,6 +88,8 @@ As previousely mentioned, a global page event can be triggerd by any controller.
 	}</code>
 </pre>
 
+You may also pass an array of parameters to the sendEvent method. An instance of the class PageListenerEvent will be automatically be passed to every subscribed page listener. It provides a getter method to retrieved the previousely passed arguments.
+
 <h4><a id="#unsubscribe-page-listener">Unsubscribe page listener</a></h4>
 
 When a global page listener is no longer referenced from any component and thus be removed from the page, the controller will be automatically unsubscribed as a global page listener. 
