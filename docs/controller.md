@@ -136,7 +136,7 @@ Important note: A property of a Controller that is expected to be wired up by id
 
 <h6><a name="wiring-by-pagehandler">Using page handler</a></h6>
 
-You can also 
+If you do not want to have components injected into properties automatically and rather instead prefer to retrieve them explicitly, you might want to checkout the page
 
 <h5><a id="load-views">Load views</a></h5>
 
