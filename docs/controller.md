@@ -156,6 +156,8 @@ The signature of this method is the following:
   </pre>
 </div>
 
+Important note: As of now this method does not consider the scope of the id. It is currently not possible to have a page with two identical ids in different scopes.
+
 <h5><a id="load-views">Load views</a></h5>
 
 The more complex the application gets the more it should be divided in smaller parts (single responsiblity principle). For exactly this purpose you can easily load views inside your controller. The following example shows how this works.
