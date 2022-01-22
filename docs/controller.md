@@ -137,7 +137,25 @@ Important note: A property of a Controller that is expected to be wired up by id
 
 <h6><a name="get-component-method">getComponent method</a></h6>
 
-If you do not want to have components injected into properties automatically and rather instead prefer to retrieve them explicitly. For this purpose, the AbstractController class provides a convenient method to retrieve a component by it's id. 
+If you do not want to have components injected into properties automatically and rather instead prefer to retrieve them explicitly. For this purpose, the AbstractController class provides the convenient method getComponentById to retrieve a component by it's id. 
+
+The signature of this method is the following:
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+	protected function getComponentById(PageContract $page, string $id): ?ComponentContract;</code>
+  </pre>
+</div>
 
 <h5><a id="load-views">Load views</a></h5>
 
