@@ -29,9 +29,12 @@ A controller can be easily registered as a global page listener by calling the s
 	namespace App\Controller;
     use Impulse\ImpulseBundle\Controller\AbstractController;
     use Impulse\ImpulseBundle\Execution\Events\Event;
+    use Impulse\ImpulseBundle\UI\Components\Window;
 
     class UserListController extends AbstractController
     {
+    	private ?Window $wndUserList = null;
+    
     	public function afterCreate(Event $event): void
     	{
         	parent::afterCreate($event);
@@ -86,3 +89,49 @@ As previousely mentioned, a global page event can be triggerd by any controller.
 </pre>
 
 <h4><a id="#unsubscribe-page-listener">Unsubscribe page listener</a></h4>
+
+When a global page listener is no longer referenced from any component and thus be removed from the page, the controller will be automatically unsubscribed as a global page listener. 
+
+However, when you want or need to unsubscribe the controller manually beforehand, then you can use the unsubscribe method of the page object.
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+	namespace App\Controller;
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
+    use Impulse\ImpulseBundle\UI\Components\Window;
+
+    class UserListController extends AbstractController
+    {
+    	private ?Window $wndUserList = null;
+    
+    	public function afterCreate(Event $event): void
+    	{
+        	parent::afterCreate($event);
+        	$this->createList();
+
+        	$event->getPage()->subscribe('UserSaved', $this, 'onUserSave');
+    	}
+        
+        public function onUserSave(): void
+        {
+        	$this->wndUserList->getPage()->unsubscribe('UserSaved', $this, 'onUserSave');
+        
+        	$this->createList();
+        }
+        
+        private function createList(): void
+        {
+        	// creates the list of user records
+        }
+	}</code>
+</pre>
