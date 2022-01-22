@@ -9,6 +9,7 @@ published: true
 - [Basics](#basics)
     - [Controller class](#controller-class)
     - [Access components](#access-components)
+    
     	- [By id](#wiring-by-id)
         - [getComponent method](#get-component-method)
     - [Load views](#load-views)
