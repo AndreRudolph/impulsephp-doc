@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Register as page listener](#register-page-listener)
+- [Broadcast event to subscribers](#broadcast-event)
 
 <h4><a id="#introduction">Introduction</a></h4>
 
@@ -43,3 +44,7 @@ A controller can be easily registered as a global page listener by calling the s
         }
 	}</code>
 </pre>
+
+A controller can serve as a global page listener for different events.
+
+<h4><a id="#broadcast-event">Broadcast event to subscribers</a></h4>
