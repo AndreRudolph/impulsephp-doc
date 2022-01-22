@@ -84,3 +84,5 @@ As previousely mentioned, a global page event can be triggerd by any controller.
         }
 	}</code>
 </pre>
+
+<h4><a id="#unsubscribe-page-listener">Unsubscribe page listener</a></h4>
