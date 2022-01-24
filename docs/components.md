@@ -61,7 +61,9 @@ Basically the implementation of the Image class retrieves the server data from i
 
 Analogous to the server state, the client (browser) will also have a stateful representation of the component handled by the Impulse Javascript Client engine. Since the component objects will stay alive as long as the browser tab is not destroyed, there is no need for serialization there. 
 
-However, since the client needs the data from the server of all components aswell to create the DOM, there is another method called getClientData.
+However, since the client needs the data from the server of all components aswell to create the DOM, there is another method called getClientData. It creates the data the same way as the getServerData method but only contains the data needed for the client component.
+
+Imporant note: Please consider that getClientData might differ from the getServerData implementation since not all properties need to be populated to client to avoid disclosure of internals and sensitive data.
 
 <h4><a id="basics">Basics</a></h4>
 
