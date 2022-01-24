@@ -228,7 +228,7 @@ The main purpose is to show the message to the client and therefor there is a me
 
 You also need to call the getClientData of the parent class (at least of AbstractComponent) since it contains necessary meta informations for the Impulse client engine.
 
-It might happen that, maybe by some circumstances, changes to the message property should be synchronized with the client component object. For this purpose you have to call the **_updateClientAttribute_** method inside the setter. 
+If the client should also be informed about changes of the message property, we can use the updateClientAttribute method as mentioned in the introduction.
 
 <div class="code-header">
 	<div class="container-fluid">
@@ -253,8 +253,6 @@ It might happen that, maybe by some circumstances, changes to the message proper
         }
     }</code>
 </pre>
-
-Basically components have an internal property called **_info_** which is designed as a tracking container for component changes.
 
 <h5><a id="server_synchronization">Server state</a></h5>
 
