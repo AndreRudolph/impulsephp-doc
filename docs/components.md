@@ -323,5 +323,7 @@ Since the main focus of this article is the server side documentation, we will j
             
             parentComponent.getParentWrapper(childIndex).append(messageNode);
         }
-    }</code>
+    }
+    
+    window.Message = Message;</code>
 </pre>
