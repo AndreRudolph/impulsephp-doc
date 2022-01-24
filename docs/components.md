@@ -318,7 +318,7 @@ Since the main focus of this article is the server side documentation, we will j
             	this.client.renderTemplate(`<div><%= message %></div>`, { 
                 	message: this.message
                 }),
-                this.getCreationalAttributes()
+                this.getAttributes()
             );
             
             parentComponent.getParentWrapper(childIndex).append(messageNode);
