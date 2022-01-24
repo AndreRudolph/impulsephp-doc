@@ -3,6 +3,7 @@
 - [Introduction](#introduction)
     - [Server state](#server-state)
     - [Client state](#client-state)
+    - [Reactivation](#reactivation)
 - [Basics](#basics)
 	- [Available components](#registered_components)
 - [Create custom components](#create_custom_components)
@@ -64,6 +65,43 @@ Analogous to the server state, the client (browser) will also have a stateful re
 However, since the client needs the data from the server of all components aswell to create the DOM, there is another method called getClientData. It creates the data the same way as the getServerData method but only contains the data needed for the client component.
 
 Imporant note: Please consider that getClientData might differ from the getServerData implementation since not all properties need to be populated to client to avoid disclosure of internals and sensitive data.
+
+<h5><a id="reactivation">Reactivation</a></h5>
+
+Components state are stored by the server and thus can later be reactivated to access them again in a subsequent request. The component will be reactivated will all their serialized properties and will reside
+in tracking mode afterwards. The tracking mode means that it can record changes to the component objects that
+can a) be send to the client to update the UI and b) consider the changes in the serialization process again after a request.
+
+To record a change that is intended for the client, the updateClientAttribute method is used for. In the Image component again there is a setter for the src attribute that records changes that will later be populated to the client.
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    
+    class Image extends AbstractComponent 
+    {
+        protected string $src = '';
+        // other attributes
+        
+        // other methods
+        
+        public function setSrc($src)
+        {
+            $this->src = $src;
+            $this->updateClientAttribute($src, 'src');
+        }
+    }</code>
+</pre>
+
+The reactivation process of a component will be covered in a "Learn more" section at the bottom of this article. 
 
 <h4><a id="basics">Basics</a></h4>
 
