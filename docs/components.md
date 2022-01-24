@@ -22,6 +22,8 @@ All of these (and even more) concepts and mechanisms are covered by this documen
 
 <h5><a id="server-state">Server state</a></h5>
 
+A component is basically an object of a certain class with a load of properties and values. Since the Impulse PHP Framework will keep the state of each component after a request, the component will be serialized. This allows the framework to re-create all the states of the component in a subsequent request.
+
 <h5><a id="client-state">Client state</a></h5>
 
 <h4><a id="basics">Basics</a></h4>
