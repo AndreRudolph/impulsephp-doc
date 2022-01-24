@@ -314,10 +314,8 @@ Since the main focus of this article is the server side documentation, we will j
         
         create(parentComponent, childrenCount, childIndex)
         {
-        	let template = _.template(`<div><%= message %></div>`);
-            let templateArguments = { message: this.message };
             let messageNode = this.client.createElementsFromString(
-            	template(templateArguments),
+            	this.client.renderTemplate(`<div><%= message %></div>`, { message: this.message}),
                 this.getCreationalAttributes()
             );
             
