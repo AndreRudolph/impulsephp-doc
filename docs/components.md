@@ -24,7 +24,7 @@ All of these (and even more) concepts and mechanisms are covered by this documen
 
 A component is basically an object of a certain class with a load of properties and values. Since the Impulse PHP Framework will keep the state of each component after a request, the component will be serialized. This allows the framework to re-create all the states of the component in a subsequent request.
 
-Since the basic serialization mechanism of PHP is not suitable for our needs, the components instead have a method called getServerData that creates an array of attributes and their values that will be used for later serialization. The following example is the getServerData method of the Image component class.
+Since the basic serialization mechanism of PHP is not suitable for our needs, the components instead have a method called <span class="code-hint">getServerData</span> that creates an array of attributes and their values that will be used for later serialization. The following example is taken from the <span class="code-hint">Image</span> component class.
 
 <div class="code-header">
 	<div class="container-fluid">
@@ -61,9 +61,9 @@ Basically the implementation of the Image class retrieves the server data from i
 
 Analogous to the server state, the client (browser) will also have a stateful representation of the component handled by the Impulse Javascript Client engine. Since the component objects will stay alive as long as the browser tab is not destroyed, there is no need for serialization there. 
 
-However, since the client needs the data from the server of all components aswell to create the DOM, there is another method called getClientData. It creates the data the same way as the getServerData method but only contains the data needed for the client component.
+However, since the client needs the data from the server of all components aswell to create the DOM, there is another method called <span class="code-hint">getClientData</span>. It creates the data the same way as the <span class="code-hint">getServerData</span> method but only contains the data needed for the client component.
 
-Imporant note: Please consider that getClientData might differ from the getServerData implementation since not all properties need to be populated to client to avoid disclosure of internals and sensitive data.
+Imporant note: Please consider that getClientData might differ from the <span class="code-hint">getServerData</span> implementation since not all properties need to be populated to client to avoid disclosure of internals and sensitive data.
 
 <h5><a id="reactivation">Reactivation</a></h5>
 
@@ -71,7 +71,7 @@ Components state are stored by the server and thus can later be reactivated to a
 in tracking mode afterwards. The tracking mode means that it can record changes to the component objects that
 can a) be send to the client to update the UI and b) consider the changes in the serialization process again after a request.
 
-To record a change that is intended for the client, the updateClientAttribute method is used for. In the Image component again there is a setter for the src attribute that records changes that will later be populated to the client.
+To record a change that is intended for the client, the <span class="code-hint">updateClientAttribute</span> method is used for. In the Image component again there is a setter for the src attribute that records changes that will later be populated to the client.
 
 <div class="code-header">
 	<div class="container-fluid">
@@ -199,7 +199,7 @@ Suppose you want to create a component class, lets call it **_Message_**, with a
 
 <h5><a id="client_synchronization">Client state</a></h5>
 
-The main purpose is to show the message to the client and therefor there is a method called **_getClientData_** which returns an array with all contain informations of the component that are relevant for the client.
+The main purpose is to show the message to the client and therefor there is a method called <span class="code-hint">getClientData</span> which returns an array with all contain informations of the component that are relevant for the client.
 
 <div class="code-header">
 	<div class="container-fluid">
@@ -226,9 +226,9 @@ The main purpose is to show the message to the client and therefor there is a me
     }</code>
 </pre>
 
-You also need to call the getClientData of the parent class (at least of AbstractComponent) since it contains necessary meta informations for the Impulse client engine.
+You also need to call the <span class="code-hint">getClientData</span> of the parent class (at least of AbstractComponent) since it contains necessary meta informations for the Impulse client engine.
 
-If the client should also be informed about changes of the message property, we can use the updateClientAttribute method as mentioned in the introduction.
+If the client should also be informed about changes of the message property, we can use the <span class="code-hint">updateClientAttribute</span> method as mentioned in the introduction.
 
 <div class="code-header">
 	<div class="container-fluid">
