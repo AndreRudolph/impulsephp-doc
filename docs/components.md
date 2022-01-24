@@ -282,3 +282,46 @@ Basically components have an internal property called **_info_** which is design
         }
     }</code>
 </pre>
+
+<h5><a id="client_component">Client component</a></h5>
+
+Since the main focus of this article is the server side documentation, we will just provide a quick start component snippet for the client component. Please check out the component client documentation for more details.
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-js">
+	<code class="imp-code language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
+    
+    export default class Message extends AbstractComponent 
+    {
+        constructor()
+        {
+        	super();
+            this.message = '';
+        }
+        
+        setMessage(message)
+        {
+        	this.message = message;
+        }
+        
+        create(parentComponent, childrenCount, childIndex)
+        {
+        	let template = _.template(`<div><%= message %></div>`);
+            let templateArguments = { message: this.message };
+            let messageNode = this.client.createElementsFromString(
+            	template(templateArguments),
+                this.getCreationalAttributes()
+            );
+            
+            parentComponent.getParentWrapper(childIndex).append(messageNode);
+        }
+    }</code>
+</pre>
