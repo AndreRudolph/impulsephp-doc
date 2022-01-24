@@ -20,6 +20,10 @@ Once a component is stored at server side, it remains in an updateable state whi
 
 All of these (and even more) concepts and mechanisms are covered by this documentation and further references at the bottom the page.
 
+<h5><a id="server-state">Server state</a></h5>
+
+<h5><a id="client-state">Client state</a></h5>
+
 <h4><a id="basics">Basics</a></h4>
 
 <h5><a id="registered_components">Available components</a></h5>
