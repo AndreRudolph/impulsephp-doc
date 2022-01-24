@@ -256,6 +256,8 @@ If the client should also be informed about changes of the message property, we 
 
 <h5><a id="server_synchronization">Server state</a></h5>
 
+Applying the server state is straight forward and we need to just implement the getServerData method.
+
 <div class="code-header">
 	<div class="container-fluid">
 		<div class="row">
