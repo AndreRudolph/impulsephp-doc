@@ -24,6 +24,35 @@ All of these (and even more) concepts and mechanisms are covered by this documen
 
 A component is basically an object of a certain class with a load of properties and values. Since the Impulse PHP Framework will keep the state of each component after a request, the component will be serialized. This allows the framework to re-create all the states of the component in a subsequent request.
 
+Since the basic serialization mechanism of PHP is not suitable for our needs, the components instead have a method called getServerData that creates an array of attributes and their values that will be used for later serialization. The following example is the getServerData method of the Image component class.
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    
+    class Image extends AbstractComponent 
+    {
+        protected string $src = '';
+        protected ?string $alt = null;
+        
+        public function getServerData(): array
+        {
+            $data = parent::getServerData();
+            $data['src'] = $this->src;
+            $data['alt'] = $this->alt;
+            return $data;
+        }
+    }</code>
+</pre>
+
 <h5><a id="client-state">Client state</a></h5>
 
 <h4><a id="basics">Basics</a></h4>
