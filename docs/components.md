@@ -310,6 +310,9 @@ Since the main focus of this article is the server side documentation, we will j
         setMessage(message)
         {
         	this.message = message;
+            if (this.isAttached()) {
+            	this.getHtmlComponent().innerHTML = this.message;
+        	}
         }
         
         create(parentComponent, childrenCount, childIndex)
