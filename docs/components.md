@@ -1,6 +1,8 @@
 <h3 class="doc-title">Components</h3>
 
 - [Introduction](#introduction)
+    - [Server state](#server-state)
+    - [Client state](#client-state)
 - [Basics](#basics)
 	- [Available components](#registered_components)
 - [Create custom components](#create_custom_components)
