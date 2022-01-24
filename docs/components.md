@@ -4,7 +4,6 @@
     - [Server state](#server-state)
     - [Client state](#client-state)
     - [Reactivation](#reactivation)
-- [Basics](#basics)
 	- [Available components](#registered_components)
 - [Create custom components](#create_custom_components)
     - [Custom attributes](#custom_attributes)
@@ -102,8 +101,6 @@ To record a change that is intended for the client, the updateClientAttribute me
 </pre>
 
 The reactivation process of a component will be covered in a "Learn more" section at the bottom of this article. 
-
-<h4><a id="basics">Basics</a></h4>
 
 <h5><a id="registered_components">Available components</a></h5>
 
