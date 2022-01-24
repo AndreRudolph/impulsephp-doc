@@ -43,6 +43,8 @@ Since the basic serialization mechanism of PHP is not suitable for our needs, th
         protected string $src = '';
         protected ?string $alt = null;
         
+        // other methods
+        
         public function getServerData(): array
         {
             $data = parent::getServerData();
@@ -52,6 +54,8 @@ Since the basic serialization mechanism of PHP is not suitable for our needs, th
         }
     }</code>
 </pre>
+
+Basically the implementation of the Image class retrieves the server data from its parent class and adding both the src and the alt attribute and their values to the array.
 
 <h5><a id="client-state">Client state</a></h5>
 
