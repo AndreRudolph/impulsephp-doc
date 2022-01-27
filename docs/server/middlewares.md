@@ -17,11 +17,10 @@
 
 <h4><a id="introduction">Introduction</a></h4>
 
-Components are the key concept behind the idea of the Impulse PHP Framework. A component represents an object that is (mostly) stored on both server and client side. At the client side, a component is a rendered HTML representation of the component and all of its descendants. At the server side, the state of the component is stored in the users session in order to reactivate the components state whenever it will be accessed at server side again.
+Impulse middlewares are a great concept that are highly inspired by the Laravel Framework. Since the workflow 
+of an application using the Impulse PHP Framework is different from classic frameworks, the concept is not identical.
 
-Once a component is stored at server side, it remains in an updateable state which tracks changes to the object state and stores them back in the session. The changes are later synchronized with the client to update the appeareance of the HTML representation. 
-
-All of these (and even more) concepts and mechanisms are covered by this documentation and further references at the bottom the page.
+Middlewares are a piece of code encapsulated in a class that can be executed either before a controller method will be executed (pre middleware) or after the methods exection (post middleware). Pre middlewares are mostly used for securing access to a controller. Post middlewares although have more use cases e.g. updating database records, clean up tasks, etc. that must take place right after a controllers execution cycle.
 
 <h5><a id="server-state">Server state</a></h5>
 
