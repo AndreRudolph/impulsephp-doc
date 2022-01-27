@@ -317,9 +317,9 @@ Since the main focus of this article is the server side documentation, we will j
         
         create(parentComponent, childrenCount, childIndex)
         {
-            let messageNode = this.client.createElementsFromString(
+            let messageNode = this.client.createElementsFromStringWithUid(
             	this.client.renderTemplate(`<div><%= message %></div>`, { message: this.message }),
-                this.getAttributes()
+                this.getUid()
             );
             
             parentComponent.getParentWrapper(childIndex).append(messageNode);
