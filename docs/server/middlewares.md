@@ -1,6 +1,9 @@
 <h3 class="doc-title">Middlewares</h3>
 
 - [Introduction](#introduction)
+- [Pre action middleware](#pre-action-middleware)
+- [Post action middleware](#post-action-middleware)
+- [Middleware context](#middleware-context)
     - [Server state](#server-state)
     - [Client state](#client-state)
     - [Reactivation](#reactivation)
