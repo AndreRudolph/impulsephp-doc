@@ -22,7 +22,7 @@ of an application using the Impulse PHP Framework is different from classic fram
 
 Middlewares are a piece of code encapsulated in a class that can be executed either before a controller method will be executed (pre middleware) or after the methods exection (post middleware). Pre middlewares are mostly used for securing access to a controller. Post middlewares although have more use cases e.g. updating database records, clean up tasks, etc. that must take place right after a controllers execution cycle.
 
-<h5><a id="server-state">Server state</a></h5>
+<h5><a id="pre-action-middleware">Pre action middleware</a></h5>
 
 A component is basically an object of a certain class with a load of properties and values. Since the Impulse PHP Framework will keep the state of each component after a request, the component will be serialized. This allows the framework to re-create all the states of the component in a subsequent request.
 
