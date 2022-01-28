@@ -147,4 +147,4 @@ The interface <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware
     }</code>
 </pre>
 
-Note: In future the context parameters will be enriched by view arguments.
+<div class="info-box info">In future the context parameters will be enriched by view arguments.</div>
