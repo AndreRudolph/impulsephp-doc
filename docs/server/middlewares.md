@@ -41,7 +41,7 @@ A middleware that just does nothing looks like the following.
     }</code>
 </pre>
 
-So basically a middlware is identified by implementing the <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware</span> interface.
+So basically a middlware is identified by implementing the <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware</span> interface. How a middleware will be applied to a specific controller method is captured in the next chapter.
 
 <h5><a id="pre-action-middleware">Pre action middleware</a></h5>
 
