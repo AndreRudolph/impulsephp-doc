@@ -91,7 +91,7 @@ Let's take this middleware and register it for a specific controller method.
 </div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
-    namespace App\Controller\MyController;
+    namespace App\Controller;
 
     use App\Controller\Middleware\AuthenticationRequiredMiddleware;
     use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -99,7 +99,7 @@ Let's take this middleware and register it for a specific controller method.
     use Impulse\ImpulseBundle\Execution\Events\Event;
 
 
-    class UploadController extends AbstractController
+    class MyController extends AbstractController
     {
         #[PreMiddleware(AuthenticationRequiredMiddleware::class)]
         public function afterCreate(Event $event): void
@@ -128,16 +128,7 @@ The interface <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware
     </div>
 </div>
 <pre class="code-white line-numbers language-php">
-	<code class="imp-code language-php"><?php
-    namespace App\Controller\MyController;
-
-    use App\Controller\Middleware\LoggingMiddlware;
-    use Impulse\ImpulseBundle\Controller\AbstractController;
-    use Impulse\ImpulseBundle\Controller\Annotations\PreMiddleware;
-    use Impulse\ImpulseBundle\Execution\Events\Event;
-
-
-    class UploadController extends AbstractController
+	<code class="imp-code language-php">class MyController extends AbstractController
     {
         #[PreMiddleware(LoggingMiddleware::class, context: ['method' => 'afterCreate']])]
         public function afterCreate(Event $event): void
