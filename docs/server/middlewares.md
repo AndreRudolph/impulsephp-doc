@@ -81,3 +81,34 @@ of the same controller or even for different controllers.
         }
     }</code>
 </pre>
+
+Let's take this middleware and register it for a specific controller method.
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    namespace App\Controller\MyController;
+
+    use App\Controller\Middleware\AuthenticationRequiredMiddleware;
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\Controller\Annotations\PreMiddleware;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
+
+
+    class UploadController extends AbstractController
+    {
+        #[PreMiddleware(AuthenticationRequiredMiddleware::class)]
+        public function afterCreate(Event $event): void
+        {
+            parent::afterCreate($event);
+        }
+    }</code>
+</pre>
