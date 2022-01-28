@@ -4,10 +4,6 @@
 - [Pre action middleware](#pre-action-middleware)
 - [Post action middleware](#post-action-middleware)
 - [Middleware context](#middleware-context)
-    - [Server state](#server-state)
-    - [Client state](#client-state)
-    - [Reactivation](#reactivation)
-	- [Available components](#registered_components)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -117,3 +113,38 @@ As you can see, the middleware is registered by a <span class="code-hint">Impuls
 
 <h5><a id="post-action-middleware">Post action middleware</a></h5>
 Post action middlewares must implement the interace <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware</span> aswell like pre middlewares but are registered with a <span class="code-hint">Impulse\ImpulseBundle\Controller\Annotations\PreMiddleware</span> property (annotation). 
+
+<h5><a id="middlware-context">Middleware context</a></h5>
+
+The interface <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware</span> requires an implementation of the method execute along with an array parameter <span class="code-hint">$context</span>. This context array can have values that have been set to a middleware registration.
+
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    namespace App\Controller\MyController;
+
+    use App\Controller\Middleware\LoggingMiddlware;
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\Controller\Annotations\PreMiddleware;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
+
+
+    class UploadController extends AbstractController
+    {
+        #[PreMiddleware(LoggingMiddleware::class, context: ['method' => 'afterCreate']])]
+        public function afterCreate(Event $event): void
+        {
+            parent::afterCreate($event);
+        }
+    }</code>
+</pre>
+
+Note: In future the context parameters will be enriched by view arguments.
