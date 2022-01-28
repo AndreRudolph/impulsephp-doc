@@ -32,7 +32,7 @@ A middleware that just does nothing looks like the following.
 	namespace App\Controller\Middleware;
 	use Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware;
 
-    class AuthenticationRequiredMiddleware implements EventListenerMiddleware
+    class MySpecialMiddleware implements EventListenerMiddleware
     {
         public function execute(array $context): bool
         {
