@@ -112,3 +112,5 @@ Let's take this middleware and register it for a specific controller method.
         }
     }</code>
 </pre>
+
+As you can see, the middleware is registered by a <span class="code-hint">PreMiddleware</span> property (annotation) and thus will be executed before the controller method itself will be executed. Since the middleware will return false in case of no authentication, the controller method will not be executed in that case.
