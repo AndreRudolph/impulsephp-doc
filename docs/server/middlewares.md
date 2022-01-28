@@ -114,3 +114,6 @@ Let's take this middleware and register it for a specific controller method.
 </pre>
 
 As you can see, the middleware is registered by a <span class="code-hint">Impulse\ImpulseBundle\Controller\Annotations\PreMiddleware</span> property (annotation) and thus will be executed before the controller method itself will be executed. Since the middleware will return false in case of no authentication, the controller method will not be executed in that case.
+
+<h5><a id="post-action-middleware">Post action middleware</a></h5>
+Post action middlewares must implement the interace <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware</span> aswell like pre middlewares but are registered with a <span class="code-hint">Impulse\ImpulseBundle\Controller\Annotations\PreMiddleware</span> property (annotation). 
