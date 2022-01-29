@@ -3,6 +3,7 @@
 - [Introduction](#introduction)
 - [Create components](#create-components)
 - [Component lifecycle](#component-lifecycle)
+- [Updates from server](#updates-from-server)
 - [Attribute renderer](#attribute-renderer)
 - [Event listener](#event-listener)
 - [Learn more about components](#advanced_topics)
