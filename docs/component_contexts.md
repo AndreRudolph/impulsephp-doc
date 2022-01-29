@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Contextual use](#contextual-use)
+- [Changing priorities](#changing-priorities)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -52,5 +53,7 @@ Let's consider you have your own implementation of a button and the classes is p
 </div>
 
 So whenever you use <span class="code-hint">button</span> then the app's button is used.
+
+<h4><a id="changing-priorities">Changing priorities</a></h4>
 
 Thanks to Symfony, you can switch the behavior so that the usage of the tag <span class="code-hint">button</span> uses the impulse button rather than the app button. This is useful if you just want to replace the button only for some occurences and not all of them!
