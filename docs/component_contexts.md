@@ -44,9 +44,9 @@ Let's consider you have your own implementation of a button and the classes is p
   </div>
   <pre class="code-white imp-code line-numbers language-markup">
   	<code class="language-markup">&lt;impulse&gt;
-    	&lt;button /&gt; &lt;!-- uses app's button --&gt;
-        &lt;app:button /&gt; &lt;!-- uses app's button --&gt;
-        &lt;impulse:button /&gt; &lt;!-- uses impulse's button --&gt;
+    	&lt;button /&gt; &lt;!-- uses App\UI\Components\Button class --&gt;
+        &lt;app:button /&gt; &lt;!-- uses App\UI\Components\Button class --&gt;
+        &lt;impulse:button /&gt; &lt;!-- uses Impulse\ImpulseBundle\UI\Components\Button class --&gt;
     &lt;/impulse&gt;</code>
   </pre>
 </div>
