@@ -16,6 +16,8 @@ Note that everything related to client needs to have a complete working npm envi
 
 <h5><a id="create-components">Create custom component</a></h5>
 
+As a foreword, every client implementation of components should extend the <span class="code-hint">AbstractComponent</span> class. This ensures a correct setup and lifecycle for that component. Please only do not extend the class if you absolutely know what you need to do.
+
 <h6>Using getTemplate method</h6>
 
 Creating the client side of components is quite easy. Let's take again that javascript example (Message component) from the server side documentation of components. It's only purpose is to wrap a text inside a simple div container.
