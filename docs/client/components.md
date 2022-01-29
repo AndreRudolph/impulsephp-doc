@@ -82,3 +82,5 @@ So let's take again the Message component example and use the <span class="code-
     
     window.Message = Message;</code>
 </pre>
+
+Based on that implementation way you have the free flexibility of javascript code to create more complex components easily. 
