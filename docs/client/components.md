@@ -22,6 +22,48 @@ Note that everything related to client needs to have a complete working npm envi
 
 Creating the client side of components is quite easy. Let's take again that javascript example from the server side documentation of components:
 
+<div class="code-header">
+	<div class="container-fluid">
+		<div class="row">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+    </div>
+</div>
+<pre class="code-white line-numbers language-js">
+	<code class="imp-code language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
+    
+    export default class Message extends AbstractComponent 
+    {
+        constructor()
+        {
+        	super();
+            this.message = '';
+        }
+        
+        setMessage(message)
+        {
+        	this.message = message;
+            if (this.isAttached()) {
+            	this.getHtmlComponent().innerHTML = this.message;
+        	}
+        }
+        
+        create(parentComponent, childrenCount, childIndex)
+        {
+            let messageNode = this.client.createElementsFromStringWithUid(
+            	this.client.renderTemplate(`<div><%= message %></div>`, { message: this.message }),
+                this.getUid()
+            );
+            
+            parentComponent.getParentWrapper(childIndex).append(messageNode);
+        }
+    }
+    
+    window.Message = Message;</code>
+</pre>
+
 A component is basically an object of a certain class with a load of properties and values. Since the Impulse PHP Framework will keep the state of each component after a request, the component will be serialized. This allows the framework to re-create all the states of the component in a subsequent request.
 
 Since the basic serialization mechanism of PHP is not suitable for our needs, the components instead have a method called <span class="code-hint">getServerData</span> that creates an array of attributes and their values that will be used for later serialization. The following example is taken from the <span class="code-hint">Image</span> component class.
