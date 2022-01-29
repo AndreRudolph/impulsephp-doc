@@ -13,8 +13,8 @@ published: true
 Though most of the installation is done automatically, it requires some manual steps in order to fully initiate the Impulse PHP Framework. The first step is to create a symfony project by using the following command on command line:
 
 <div class="code-toolbar">
-  <pre class="code-white imp-code line-numbers language-shell">
-	<code class="language-bash">composer create-project symfony/website-skeleton project_name && cd project_name</code>
+  <pre class="code-white imp-code language-shell">
+	<code class="language-shell">composer create-project symfony/website-skeleton project_name && cd project_name</code>
   </pre>
 </div>
 
