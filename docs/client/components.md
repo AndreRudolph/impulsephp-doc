@@ -15,7 +15,7 @@ Note that everything related to client needs to have a complete working npm envi
 
 <h5><a id="create-components">Create custom component</a></h5>
 
-Creating the client side of components is quite easy. Let's take again that javascript example from the server side documentation of components:
+Creating the client side of components is quite easy. Let's take again that javascript example (Message component) from the server side documentation of components. It's only purpose is to wrap a text inside a simple div container.
 
 <pre class="imp-code code-white line-numbers language-js">
 	<code class="language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
@@ -41,4 +41,4 @@ Creating the client side of components is quite easy. Let's take again that java
     window.Message = Message;</code>
 </pre>
 
-Above is the definition of a Message component that shall print a text inside a div container. 
+For very simple components the <span class="code-hint">getTemplate</spam> method was introduced. It is used by the base <span class="code-hint">create</span> method implementation of AbstractComponent class that will be covered later in this article.
