@@ -84,4 +84,4 @@ So let's take again the Message component example and use the <span class="code-
 
 The code snippet <span class="code-hint">parentComponent.getParentWrapper(childIndex).append(node);</span> is required in order to retrieve the insertion point from the parent component where the message component should be appended to.
 
-Based on that implementation way you have the free flexibility of javascript code to create more complex components with ease.
+This approach has some advantages since it allows to create more complex components with ease. You are free in pass any template arguments you and or to not even use the template engine and rather create the components by manually with the javascript API.
