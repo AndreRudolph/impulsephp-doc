@@ -38,10 +38,12 @@ Let's consider you have your own implementation of a button and the classes is p
   <pre class="code-white imp-code line-numbers language-markup">
   	<code class="language-markup">&lt;impulse&gt;
     	&lt;button /&gt; &lt;!-- uses app's button --&gt;
-        &lt;app:button &lt;!-- uses app's button --&gt /&gt;
-        &lt;impulse:button &lt;!-- uses impulse's button --&gt /&gt;
+        &lt;app:button /&gt; &lt;!-- uses app's button --&gt;
+        &lt;impulse:button /&gt; &lt;!-- uses impulse's button --&gt;
     &lt;/impulse&gt;</code>
   </pre>
 </div>
 
 By having that, you have replaced all impulse provided buttons by the app button class when using the button tag without the context.
+
+Thanks to Symfony, you can switch the behavior so that the usage of the tag <span class="code-hint">button</span> uses the impulse button rather than the app button. This is useful if you just want to replace the button only for some occurences and not all of them!
