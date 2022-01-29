@@ -14,13 +14,9 @@ Though most of the installation is done automatically, it requires some manual s
 
 <div>
   <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
+    <div class="button red"></div>
+    <div class="button yellow"></div>
+    <div class="button green"></div>
   </div>
   <pre class="code-white imp-code line-numbers language-shell">
 	<code class="language-bash">composer create-project symfony/website-skeleton project_name && cd project_name</code>
