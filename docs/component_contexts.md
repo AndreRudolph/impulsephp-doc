@@ -70,7 +70,7 @@ There might be cases where you do not want to have any automatic overwrites and 
   </div>
   <pre class="code-white imp-code line-numbers language-yaml">
   	<code class="language-yaml">services:
-    	App\UI\Components:
+    	App\UI\Components\:
         	resource: '../src/UI/Components'
             tags:
             	- { name: 'impulse.components', priority: 500 }</code>
