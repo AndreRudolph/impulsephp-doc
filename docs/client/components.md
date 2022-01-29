@@ -69,6 +69,8 @@ So let's take again the Message component example and use the <span class="code-
                 this.client.renderTemplate('<div><%= component.message %></div>', { component: this }),
                 this.getUid()
             );
+            
+            // ... other code related to rendering the component
         
         	parentComponent.getParentWrapper(childIndex).append(node);
             return node;
