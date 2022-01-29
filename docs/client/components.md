@@ -49,4 +49,4 @@ However, it returns a string based template that under the hood makes use of und
 
 <h6>Using create method</h6>
 
-Another and yet more powerful way to create the markup for the components representation is by using the <span class="code-hint">create</span> method.
+Another and yet more powerful way to create the markup for the components representation is by using the <span class="code-hint">create</span> method. It provides three different parameters: The parent component object reference, the children count of the parent component and the child index of the current component.
