@@ -38,7 +38,7 @@ There are three ways to use buttons now
   </div>
   <pre class="code-white imp-code line-numbers language-markup">
   	<code class="language-markup">&lt;impulse&gt;
-    	&lt;button /&gt;
+    	&lt;button /&gt; &lt;!-- uses app's button --&gt;
         &lt;app:button /&gt;
         &lt;impulse:button /&gt;
     &lt;/impulse&gt;</code>
