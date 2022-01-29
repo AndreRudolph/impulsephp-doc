@@ -1,5 +1,10 @@
 <h3 class="doc-title">Component contexts</h3>
 
+- [Introduction](#introduction)
+- [Contextual use](#contextual-use)
+
+<h4><a id="introduction">Introduction</a></h4>
+
 All available components are automatically registered within the class <span class="code-hint">ComponentClassRegistry</span>. Remember the following command to list all available components.
 
 <div>
@@ -18,6 +23,8 @@ All available components are automatically registered within the class <span cla
 </div>
 
 As you maybe noticed each component is registered at least twice. For example the button component is registered as 'button' and 'impulse:button'. This means you can use both <span class="code-hint">button</span> and <span class="code-hint">impulse:button</span> within your template files and in both cases the same button component is used.
+
+<h4><a id="contextual-use">Contextual use</a></h4>
 
 By default all component names without the context (e.g. impulse:) are automatically mapped to the components that are provided by the framework (impulse context). 
 
