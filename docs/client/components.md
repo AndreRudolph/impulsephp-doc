@@ -27,28 +27,23 @@ Creating the client side of components is quite easy. Let's take again that java
     
     export default class Message extends AbstractComponent {
         constructor() {
-        	super();
+            super();
             this.message = '';
         }
-        
+
         setMessage(message) {
-        	this.message = message;
+            this.message = message;
             if (this.isAttached()) {
-            	this.getHtmlComponent().innerHTML = this.message;
-        	}
+                this.getHtmlComponent().innerHTML = this.message;
+            }
         }
-        
-        create(parentComponent, childrenCount, childIndex) {
-            let messageNode = this.client.createElementsFromStringWithUid(
-            	this.client.renderTemplate(`<div><%= message %></div>`, { message: this.message }),
-                this.getUid()
-            );
-            
-            parentComponent.getParentWrapper(childIndex).append(messageNode);
+
+        getTemplate() {
+            return '<div><%= component.message %></div>';
         }
     }
-    
-    window.Message = Message;</code>
+
+window.Message = Message;</code>
 </pre>
 
 A component is basically an object of a certain class with a load of properties and values. Since the Impulse PHP Framework will keep the state of each component after a request, the component will be serialized. This allows the framework to re-create all the states of the component in a subsequent request.
