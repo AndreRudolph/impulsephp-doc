@@ -42,8 +42,8 @@ Creating the client side of components is quite easy. Let's take again that java
             return '<div><%= component.message %></div>';
         }
     }
-
-window.Message = Message;</code>
+    
+    window.Message = Message;</code>
 </pre>
 
 As you can see
