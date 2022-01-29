@@ -16,7 +16,11 @@
 
 This article covers the basics of client implementation of components. In the "Learn about more components" section you will find further advanced topics related to components.
 
-<h5><a id="server-state">Server state</a></h5>
+Note that everything related to client needs to have a complete working npm environment as described in the installation manual.
+
+<h5><a id="server-state">Create custom component</a></h5>
+
+Creating the client side of components is quite easy. Let's take again that javascript example from the server side documentation of components:
 
 A component is basically an object of a certain class with a load of properties and values. Since the Impulse PHP Framework will keep the state of each component after a request, the component will be serialized. This allows the framework to re-create all the states of the component in a subsequent request.
 
