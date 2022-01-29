@@ -73,7 +73,7 @@ There might be cases where you do not want to have any automatic overwrites and 
     	App\UI\Components\:
         	resource: '../src/UI/Components'
             tags:
-            	- { name: 'impulse.components', priority: 500 }</code>
+            	- { name: 'impulse.components', label: 'app', priority: 500 }</code>
   </pre>
 </div>
 
