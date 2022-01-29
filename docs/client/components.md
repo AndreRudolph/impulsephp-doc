@@ -15,6 +15,8 @@ Note that everything related to client needs to have a complete working npm envi
 
 <h5><a id="create-components">Create custom component</a></h5>
 
+<h6>Using getTemplate method</h6>
+
 Creating the client side of components is quite easy. Let's take again that javascript example (Message component) from the server side documentation of components. It's only purpose is to wrap a text inside a simple div container.
 
 <pre class="imp-code code-white line-numbers language-js">
@@ -44,3 +46,5 @@ Creating the client side of components is quite easy. Let's take again that java
 For very simple components the <span class="code-hint">getTemplate</span> method was introduced. It is used by the base <span class="code-hint">create</span> method implementation of AbstractComponent class that will be covered later in this article.
 
 However, it returns a string based template that under the hood makes use of underscore.js template engine. Thus you have free flexibility of the template engine by using placeholders, if controls and for loops. The component object itself is by default available as placeholder. So you may directly access all of the components properties and methods.
+
+<h6>Using create method</h6>
