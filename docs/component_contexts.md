@@ -1,6 +1,6 @@
 <h3 class="doc-title">Component contexts</h3>
 
-The ComponentClassRegistry is the lookup class in which all discovered components are registered. Remember the following command to list all available components.
+All available components are automatically registered within the class <span class="code-hint">ComponentClassRegistry</span>. Remember the following command to list all available components.
 
 <div>
   <div class="code-header">
