@@ -30,9 +30,6 @@ Creating the client side of components is quite easy. Let's take again that java
 
         setMessage(message) {
             this.message = message;
-            if (this.isAttached()) {
-                this.getHtmlComponent().innerHTML = this.message;
-            }
         }
 
         getTemplate() {
@@ -64,9 +61,6 @@ So let's take again the Message component example and use the <span class="code-
 
         setMessage(message) {
             this.message = message;
-            if (this.isAttached()) {
-                this.getHtmlComponent().innerHTML = this.message;
-            }
         }
 
         create(parentComponent, childrenCount, childIndex) {
