@@ -40,6 +40,7 @@ There are three ways to use buttons now
   	<code class="language-markup">&lt;impulse&gt;
     	&lt;button /&gt;
         &lt;app:button /&gt;
-        &lt;impulse:button /&gt;</code>
+        &lt;impulse:button /&gt;
+    &lt;/impulse&gt;</code>
   </pre>
 </div>
