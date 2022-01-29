@@ -48,3 +48,5 @@ For very simple components the <span class="code-hint">getTemplate</span> method
 However, it returns a string based template that under the hood makes use of underscore.js template engine. Thus you have free flexibility of the template engine by using placeholders, if controls and for loops. The component object itself is by default available as placeholder. So you may directly access all of the components properties and methods.
 
 <h6>Using create method</h6>
+
+Another and yet more powerful way to create the markup for the components representation is by using the <span class="code-hint">create</span> method.
