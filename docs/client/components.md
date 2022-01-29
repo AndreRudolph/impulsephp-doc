@@ -46,7 +46,7 @@ Creating the client side of components is quite easy. Let's take again that java
     window.Message = Message;</code>
 </pre>
 
-As you can see
+Above is the definition of a Message component that shall print a text inside a div container. 
 
 A component is basically an object of a certain class with a load of properties and values. Since the Impulse PHP Framework will keep the state of each component after a request, the component will be serialized. This allows the framework to re-create all the states of the component in a subsequent request.
 
