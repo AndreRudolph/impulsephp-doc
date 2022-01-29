@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Create custom components](#create_custom_components)
+- [Lifecycle](#lifecycle)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -10,7 +11,7 @@ This article covers the basics of client implementation of components. In the "L
 
 Note that everything related to client needs to have a complete working npm environment as described in the installation manual.
 
-<h5><a id="server-state">Create custom component</a></h5>
+<h5><a id="custom-components">Create custom component</a></h5>
 
 Creating the client side of components is quite easy. Let's take again that javascript example from the server side documentation of components:
 
