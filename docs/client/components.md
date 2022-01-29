@@ -50,3 +50,35 @@ However, it returns a string based template that under the hood makes use of und
 <h6>Using create method</h6>
 
 Another and yet more powerful way to create the markup for the components representation is by using the <span class="code-hint">create</span> method. It provides three different parameters: The parent component object reference, the children count of the parent component and the child index of the current component.
+
+So let's take again the Message component example and use the <span class="code-hint">create</span> rather than the <span class="code-hint">getTemplate</span> method.
+
+<pre class="imp-code code-white line-numbers language-js">
+	<code class="language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
+    
+    export default class Message extends AbstractComponent {
+        constructor() {
+            super();
+            this.message = '';
+        }
+
+        setMessage(message) {
+            this.message = message;
+            if (this.isAttached()) {
+                this.getHtmlComponent().innerHTML = this.message;
+            }
+        }
+
+        create(parentComponent, childrenCount, childIndex) {
+        	let node = this.client.createElementsFromStringWithUid(
+                this.client.renderTemplate('<div><%= component.message %></div>', { component: this }),
+                this.getUid()
+            );
+        
+        	parentComponent.getParentWrapper(childIndex).append(node);
+            return node;
+        }
+    }
+    
+    window.Message = Message;</code>
+</pre>
