@@ -2,9 +2,9 @@
 
 - [Introduction](#introduction)
 - [Create components](#create-components)
+- [Component lifecycle](#component-lifecycle)
 - [Attribute renderer](#attribute-renderer)
 - [Event listener](#event-listener)
-- [Component lifecycle](#component-lifecycle)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
