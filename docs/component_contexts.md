@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [Contextual use](#contextual-use)
-- [Changing priorities](#changing-priorities)
+- [Customize registration order](#customize-registration-order)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -52,8 +52,8 @@ Let's consider you have your own implementation of a button and the classes is p
   </pre>
 </div>
 
-So whenever you use <span class="code-hint">button</span> then the app's button is used.
+So whenever you use <span class="code-hint">button</span> then the app's button is used. This default behavior is used when you globally want to replace default components with your own components or bundled components.
 
-<h4><a id="changing-priorities">Changing priorities</a></h4>
+<h4><a id="customize-registration-order">Customize registration order</a></h4>
 
 Thanks to Symfony, you can switch the behavior so that the usage of the tag <span class="code-hint">button</span> uses the impulse button rather than the app button. This is useful if you just want to replace the button only for some occurences and not all of them!
