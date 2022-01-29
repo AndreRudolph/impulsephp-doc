@@ -26,28 +26,9 @@ App/
     	Components/
         	Button.php
             
-If there would be no feature like contextual components, every use of <span class="code-hint">button</span> in your templates would use the latest registered Button component - in this case: the app's Button class. 
+If there would be no feature like contextual components, every use of <span class="code-hint">button</span> in your templates would use the latest registered Button component - in this case: the app's Button class. But what if you just want to use this button implementation on a few occasions and apart from that the Impulse Button component should be used? For this very reason you can prefix the components with a context:
 
 In the example above in the App is another button component. The component scan discovery overwrites non contextual aliases with the last find. According to this, the following button
-
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-    <pre class="code-white line-numbers language-markup">
-    <code class="imp-code language-markup">&lt;impulse&gt;
-        &lt;button /&gt;
-    &lt;/impulse&gt;</code>
-    </pre>
-</div>
-
-will be bound to the app button component class. However, you can also explicitly use the button implementation that is provided by the Impulse framework with a contextual prefix.
 
 <div>
   <div class="code-header">
