@@ -23,6 +23,9 @@ By default all component names without the context (e.g. impulse:) are automatic
 
 Since each bundle (app is also considered as bundle in this context) can registers it's own components, the following question might raise up: If the app (or any other bundle) provides a custom implementation of a button (same class name as the standard button), how can the Impulse framework distinguish between the app's button and the impulse's button? The answer in short is contexts.
 
+Let's consider you have your own implementation of a button and the classes is placed in App/UI/Components.
+There are three ways to use buttons now
+
 <div>
   <div class="code-header">
     <div class="container-fluid">
@@ -34,6 +37,9 @@ Since each bundle (app is also considered as bundle in this context) can registe
     </div>
   </div>
   <pre class="code-white imp-code line-numbers language-markup">
-  	<code class="language-markup">fooo</code>
+  	<code class="language-markup">&lt;impulse&gt;
+    	&lt;button /&gt;
+        &lt;app:button /&gt;
+        &lt;impulse:button /&gt;</code>
   </pre>
 </div>
