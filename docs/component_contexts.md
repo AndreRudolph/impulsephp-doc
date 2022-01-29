@@ -56,4 +56,25 @@ So whenever you use <span class="code-hint">button</span> then the app's button 
 
 <h4><a id="customize-registration-order">Customize registration order</a></h4>
 
+There might be cases where you do not want to have any automatic overwrites and instead want to keep the components without contexts using the Impulse components rather than your app components. To achieve this, you can change the tag priority in the services.yaml file.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white imp-code line-numbers language-yaml">
+  	<code class="language-yaml">services:
+    	App\UI\Components:
+        	resource: '../src/UI/Components'
+            tags:
+            	- { name: 'impulse.components', priority: 500 }</code>
+  </pre>
+</div>
+
 Thanks to Symfony, you can switch the behavior so that the usage of the tag <span class="code-hint">button</span> uses the impulse button rather than the app button. This is useful if you just want to replace the button only for some occurences and not all of them!
