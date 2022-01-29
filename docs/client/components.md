@@ -1,15 +1,7 @@
 <h3 class="doc-title">Components</h3>
 
 - [Introduction](#introduction)
-    - [Server state](#server-state)
-    - [Client state](#client-state)
-    - [Reactivation](#reactivation)
-	- [Available components](#registered_components)
 - [Create custom components](#create_custom_components)
-    - [Custom attributes](#custom_attributes)
-    - [Client state](#client_synchronization)
-    - [Server state](#server_synchronization)
-    - [Client component](#client_component)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
