@@ -25,24 +25,20 @@ Creating the client side of components is quite easy. Let's take again that java
 <pre class="code-white line-numbers language-js">
 	<code class="imp-code language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
     
-    export default class Message extends AbstractComponent 
-    {
-        constructor()
-        {
+    export default class Message extends AbstractComponent {
+        constructor() {
         	super();
             this.message = '';
         }
         
-        setMessage(message)
-        {
+        setMessage(message) {
         	this.message = message;
             if (this.isAttached()) {
             	this.getHtmlComponent().innerHTML = this.message;
         	}
         }
         
-        create(parentComponent, childrenCount, childIndex)
-        {
+        create(parentComponent, childrenCount, childIndex) {
             let messageNode = this.client.createElementsFromStringWithUid(
             	this.client.renderTemplate(`<div><%= message %></div>`, { message: this.message }),
                 this.getUid()
