@@ -287,44 +287,26 @@ Applying the server state is straight forward and we need to just implement the 
 
 Since the main focus of this article is the server side documentation, we will just provide a quick start component snippet for the client component. Please check out the component client documentation for more details.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
-<pre class="code-white line-numbers language-js">
-	<code class="imp-code language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
+<pre class="imp-code code-white line-numbers language-js">
+	<code class="language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
     
-    export default class Message extends AbstractComponent 
-    {
-        constructor()
-        {
-        	super();
+    export default class Message extends AbstractComponent {
+        constructor() {
+            super();
             this.message = '';
         }
-        
-        setMessage(message)
-        {
-        	this.message = message;
+
+        setMessage(message) {
+            this.message = message;
             if (this.isAttached()) {
-            	this.getHtmlComponent().innerHTML = this.message;
-        	}
+                this.getHtmlComponent().innerHTML = this.message;
+            }
         }
-        
-        create(parentComponent, childrenCount, childIndex)
-        {
-            let messageNode = this.client.createElementsFromStringWithUid(
-            	this.client.renderTemplate(`<div><%= message %></div>`, { message: this.message }),
-                this.getUid()
-            );
-            
-            parentComponent.getParentWrapper(childIndex).append(messageNode);
+
+        getTemplate() {
+            return '<div><%= component.message %></div>';
         }
     }
-    
-    window.Message = Message;</code>
+
+window.Message = Message;</code>
 </pre>
