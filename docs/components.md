@@ -307,6 +307,6 @@ Since the main focus of this article is the server side documentation, we will j
             return '<div><%= component.message %></div>';
         }
     }
-
-window.Message = Message;</code>
+    
+    window.Message = Message;</code>
 </pre>
