@@ -22,15 +22,6 @@ Note that everything related to client needs to have a complete working npm envi
 
 Creating the client side of components is quite easy. Let's take again that javascript example from the server side documentation of components:
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white line-numbers language-js">
 	<code class="imp-code language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
     
