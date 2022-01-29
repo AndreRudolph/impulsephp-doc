@@ -82,4 +82,6 @@ So let's take again the Message component example and use the <span class="code-
     window.Message = Message;</code>
 </pre>
 
+The code snippet <span class="code-hint">parentComponent.getParentWrapper(childIndex).append(node);</span> is required in order to retrieve the insertion point from the parent component where the message component should be appended to.
+
 Based on that implementation way you have the free flexibility of javascript code to create more complex components with ease.
