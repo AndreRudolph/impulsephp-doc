@@ -19,11 +19,14 @@ The ComponentClassRegistry is the lookup class in which all discovered component
 
 As you maybe noticed each component is registered at least twice. For example the button component is registered as 'button' and 'impulse:button'. The reason behind this is that the Impulse framework offers you the opportunity to have multiple button components registered.
 
-Consider the following scenario:
+Consider the following scenario in which you have a custom Button component impelementation in your app project:
+
 App/
 	UI/
     	Components/
         	Button.php
+            
+If there would be no feature like contextual components, every use of <span class="code-hint">button</span> in your templates would use the latest registered Button component - in this case: the app's Button class. 
 
 In the example above in the App is another button component. The component scan discovery overwrites non contextual aliases with the last find. According to this, the following button
 
