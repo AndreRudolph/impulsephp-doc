@@ -4,7 +4,6 @@
 - [Create components](#create-components)
 - [Updates from server](#updates-from-server)
 - [Component lifecycle](#component-lifecycle)
-- [Attribute renderer](#attribute-renderer)
 - [Event listener](#event-listener)
 - [Learn more about components](#advanced_topics)
 
