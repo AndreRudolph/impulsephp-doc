@@ -56,7 +56,7 @@ So whenever you use <span class="code-hint">button</span> then the app's button 
 
 <h4><a id="customize-registration-order">Customize registration order</a></h4>
 
-There might be cases where you do not want to have any automatic overwrites and instead want to keep the components without contexts using the Impulse components rather than your app components. To achieve this, you can change the tag priority in the services.yaml file.
+There might be cases where you do not want to have any automatic overwrites and instead want to keep the components without contexts using the Impulse components rather than your app components. To achieve this, you can change the tag to higher priority (0 is priority of impulse components). in the services.yaml file.
 
 <div>
   <div class="code-header">
@@ -75,7 +75,7 @@ There might be cases where you do not want to have any automatic overwrites and 
             shared: false
             public: true
             tags:
-            	- { name: 'impulse.components', label: 'app', priority: 500 }</code>
+            	- { name: 'impulse.components', label: 'app', priority: 100 }</code>
   </pre>
 </div>
 
