@@ -91,3 +91,20 @@ This approach has some advantages since it allows to create more complex compone
 Usually non static components like buttons, tabboxes, etc. can be updated on server side and the changes are later populated to the client. When a property change is populated from the server, the client component implementation requires a setter method to store the updated value inside the component and further to update its appeareance if needed.
 
 As a simple example we can again use the message component as an example and change the <span class="code-hint">setMessage</span> method to also recognize updates.
+
+<pre class="imp-code code-white line-numbers language-js">
+	<code class="language-js">export default class Message extends AbstractComponent {
+        // ... constructor
+
+        setMessage(message) {
+            this.message = message;
+            if (this.isAttached()) {
+            	this.getHtmlComponent().innerHTML = message;
+            }
+        }
+
+        // ... create method
+    }
+    
+    window.Message = Message;</code>
+</pre>
