@@ -72,6 +72,8 @@ There might be cases where you do not want to have any automatic overwrites and 
   	<code class="language-yaml">services:
     	App\UI\Components\:
         	resource: '../src/UI/Components'
+            shared: false
+            public: true
             tags:
             	- { name: 'impulse.components', label: 'app', priority: 500 }</code>
   </pre>
