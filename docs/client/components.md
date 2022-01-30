@@ -43,7 +43,7 @@ Creating the client side of components is quite easy. Let's take again that java
     window.Message = Message;</code>
 </pre>
 
-For very simple components the <span class="code-hint">getTemplate</span> method was introduced. It is used by the base <span class="code-hint">create</span> method implementation of AbstractComponent class that will be covered later in this article.
+For very simple components the <span class="code-hint">getTemplate</span> method was introduced. It is used by the base <span class="code-hint">create</span> method implementation of <span class="code-hint">AbstractComponent</span> class that automatically knows where in the DOM your component must be placed. A custom implementation of <span class="code-hint">create</span> method will be covered in the next chapter.
 
 However, it returns a string based template that under the hood makes use of underscore.js template engine. Thus you have free flexibility of the template engine by using placeholders, if controls and for loops. The component object itself is by default available as placeholder. So you may directly access all of the components properties and methods.
 
