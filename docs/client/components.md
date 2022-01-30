@@ -108,4 +108,4 @@ As a simple example we can again use the message component as an example and cha
     window.Message = Message;</code>
 </pre>
 
-The setter was changed that is checks whether the component has already been rendered (isAttached) and updates the inner html text with the new message value.
+The setter was changed that is checks whether the component has already been rendered (isAttached) and updates the inner html text with the new message value. The <span class="code-hint">getHtmlComponent</span> usually returns the HTML node that is the root tag of the components DOM.
