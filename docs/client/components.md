@@ -9,9 +9,7 @@
 
 <h4><a id="introduction">Introduction</a></h4>
 
-This article covers the basics of client implementation of components. In the "Learn about more components" section you will find further advanced topics related to components.
-
-Note that everything related to client needs to have a complete working npm environment as described in the installation manual.
+Every server component is mapped to a client side component. This article covers the basics for rendering and updating components aswell as creating and handling event listeners.
 
 <h5><a id="create-components">Create custom component</a></h5>
 
