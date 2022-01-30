@@ -2,8 +2,8 @@
 
 - [Introduction](#introduction)
 - [Create components](#create-components)
-- [Component lifecycle](#component-lifecycle)
 - [Updates from server](#updates-from-server)
+- [Component lifecycle](#component-lifecycle)
 - [Attribute renderer](#attribute-renderer)
 - [Event listener](#event-listener)
 - [Learn more about components](#advanced_topics)
@@ -85,3 +85,9 @@ So let's take again the Message component example and use the <span class="code-
 The code snippet <span class="code-hint">parentComponent.getParentWrapper(childIndex).append(node);</span> is required in order to retrieve the insertion point from the parent component where the message component should be appended to.
 
 This approach has some advantages since it allows to create more complex components with ease. You are free in pass any template arguments you and or to not even use the template engine and rather create the components by manually with the javascript API.
+
+<h5><a id="updates-from-server">Updates from server</a></h5>
+
+Usually non static components like buttons, tabboxes, etc. can be updated on server side and the changes are later populated to the client. When a property change is populated from the server, the client component implementation requires a setter method to store the updated value inside the component and further to update its appeareance if needed.
+
+As a simple example we can again use the message component as an example and change the <span class="code-hint">setMessage</span> method to also recognize updates.
