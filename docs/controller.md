@@ -212,6 +212,41 @@ By default this will remove all childs of the given parent component internally.
 
 <h5><a id="inline-views">Inline views</a></h5>
 
+Sometimes it becomes handy to create component objects on the fly by using inline views rather than real views. Inline views can be created and renderer within the controller. To achieve this, the <span class="code-hint">AbstractController</span> class offers a method called <span>createComponents</span>. A simple example could be creating a list based on array.
+
+<div>
+  <div class="code-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="button red"></div>
+          	<div class="button yellow"></div>
+          	<div class="button green"></div>
+        </div>
+    </div>
+  </div>
+  <pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+	namespace App\Controller;
+	use Impulse\ImpulseBundle\Controller\AbstractController;
+	use Impulse\ImpulseBundle\Execution\Events\Event;
+	use Impulse\ImpulseBundle\UI\Components\Div;
+
+	class AppController extends AbstractController
+	{
+		private ?Div $container = null;
+
+		public function handleEvent(Event $event)
+		{
+			$this->createComponents('<ul>
+            	{% for value in values %}
+                	<li>{{ value }}</li>
+                {% endfor %}
+            </ul>', $this->container, compact('values'));
+		}
+	}</code>
+  </pre>
+</div>
+
 <h5><a id="listen-to-events">Event listening</a></h5>
 
 Controllers are designed to work as event listeners to listen to events occur at client side. The framework internally maps client events to AJAX requests that will be send to the server and thus delegated to the correct controller instance. How this in detail works is decscribed in the **_Event mapping_** section. However, the example below demonstrates how event listeners can registered by annotation.
