@@ -35,7 +35,7 @@ The following example is a minimum example with just a simple text output.
   </pre>
 </div>
  
-A view must start with an opening and must end with a closing impulse tag. The file extension is the same as it is in symfony: twig.html.
+Using impulse opening and closing tags is totally optional. The file extension is the same as it is in symfony: twig.html.
 
 <h5><a id="twig-integration">Twig integration</a></h5>
 
@@ -91,4 +91,4 @@ It is a common good practice (separation of concerns) to separate views into sma
   </pre>
 </div>
 
-With this separation your application becomes more extensible and maintainable when to it comes to controllers in the next documentation page. 
+With this separation your application becomes more extensible and maintainable when to it comes to controllers in the next documentation page.
