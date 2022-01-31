@@ -67,7 +67,7 @@ Imporant note: Please consider that getClientData might differ from the <span cl
 
 <h5><a id="reactivation">Reactivation</a></h5>
 
-Components state are stored by the server and thus can later be reactivated to access them again in a subsequent request. The component will be reactivated will all their serialized properties and will reside
+Components state are stored by the server and thus can later be reactivated to access them again in a subsequent request. The component will be reactivated with all their serialized properties and will reside
 in tracking mode afterwards. The tracking mode means that it can record changes to the component objects that
 can a) be send to the client to update the UI and b) consider the changes in the serialization process again after a request.
 
