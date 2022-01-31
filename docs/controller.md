@@ -237,6 +237,7 @@ Sometimes it becomes handy to create component objects on the fly by using inlin
 
 		public function handleEvent(Event $event)
 		{
+        	$values = range('A', 'Z');
 			$this->createComponents('<ul>
             	{% for value in values %}
                 	<li>{{ value }}</li>
