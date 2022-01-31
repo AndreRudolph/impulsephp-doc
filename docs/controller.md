@@ -240,8 +240,8 @@ Sometimes it becomes handy to create component objects on the fly by using inlin
         	$values = range('A', 'Z');
 			$this->createComponents('&lt;ul&gt;
             	&#123;% for value in values %}
-                	&lt;li&gt;&#123;&#123; value &#123;&#123;&lt;/li&gt;
-                &#123;% endfor %&#123;
+                	&lt;li&gt;&#123;&#123; value }}&lt;/li&gt;
+                &#123;% endfor %};
             &lt;/ul&gt;', $this->container, compact('values'));
 		}
 	}</code>
