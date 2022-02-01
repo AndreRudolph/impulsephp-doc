@@ -212,7 +212,7 @@ By default this will remove all childs of the given parent component internally.
 
 <h5><a id="inline-views">Inline views</a></h5>
 
-Sometimes it becomes handy to create component objects on the fly by using inline views rather than real views. Inline views can be created and renderer within the controller. To achieve this, the <span class="code-hint">AbstractController</span> class offers a method called <span>createComponents</span>. A simple example could be creating a list based on array.
+Though you can create complex component trees by creating them manually, sometimes it becomes more handy to create component objects on the fly by using inline views rather than real views. Inline views can be created and renderer within the controller. To achieve this, the <span class="code-hint">AbstractController</span> class offers a method called <span>createComponents</span>. A simple example could be creating a list based on array.
 
 <div>
   <div class="code-header">
