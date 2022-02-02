@@ -7,7 +7,7 @@ published: true
 
 - [Introduction](#introduction)
 - [Basics](#basics)
-    - [Controller class](#controller-class)
+    - [Controller creation and binding](#controller-class)
     - [Access components](#access-components)
     - [Load views](#load-views)
     - [Inline views](#inline-views)
@@ -22,7 +22,7 @@ Controllers in Impulse PHP Framework are not exactly the same as you might be us
 
 Controllers are in general created by the Symfonys dependency injection container. Thus, you have full autowiring support and can inject any services which you need for your controller. Some pitfalls when it comes to e.g. autowiring database related services, you will need to have a look in the <a data-target-menu-item="controller_serialization" class="text-muted">Serialization of controller chapter.</a>
 
-<h5><a id="controller-class">Controller class</a></h5>
+<h5><a id="controller-class">Controller creation and binding</a></h5>
 
 A minimalistic controller class is an empty class that extends the AbstractController class which is provided by the framework. The base class provides some useful functionalities that will be covered in a later section.
 
