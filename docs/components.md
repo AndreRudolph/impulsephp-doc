@@ -165,6 +165,7 @@ Suppose you want to create a component class, lets call it **_Message_**, with a
     }</code>
 </pre>
 
+The property <span class="code-hint">uiClass</span> later indicates which javascript class will be associated with that component.
 
 <h5><a id="client_synchronization">Client state</a></h5>
 
