@@ -29,7 +29,7 @@ A minimalistic controller class is an empty class that extends the AbstractContr
 As previousely mentioned, a controller will be rarely called directly from the frameworks user. 
 
 <!--<pre class="code-white line-numbers language-markup">-->
-<div class="code-header">
+<!--<div class="code-header">
 	<div class="container-fluid">
 		<div class="row">
           <div class="button red"></div>
@@ -37,7 +37,7 @@ As previousely mentioned, a controller will be rarely called directly from the f
           <div class="button green"></div>
         </div>
     </div>
-</div>
+</div>-->
 <pre class="code-white line-numbers language-markup">
 	<code class="imp-code language-markup">&lt;impulse&gt;
 		&lt;window bind="App\Controller\AppController" /&gt;
@@ -81,16 +81,6 @@ One option is by wiring by convention by naming properties with the related comp
 
 We have created a textbox with the id <span class="highlightText">tb</span>. This component is - by convention - wireable for a controller and can be accessed via controller property.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
@@ -109,8 +99,7 @@ We have created a textbox with the id <span class="highlightText">tb</span>. Thi
 		}
 	}</code>
   </pre>
-</div>
-
+  
 In the example above, once the controller was created, the afterCreate method will be called automatically (see chapter before) and the textbox value will be set to Hello World!.
 
 Important note: A property of a Controller that is expected to be wired up by id with a component only works if the component has already been created previousely.
@@ -121,20 +110,9 @@ If you do not want to have components injected into properties automatically and
 
 The signature of this method is the following:
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php">protected function getComponentById(PageContract $page, string $id): ?ComponentContract;</code>
   </pre>
-</div>
 
 Important note: As of now this method does not consider the scope of the id. It is currently not possible to have a page with two identical ids in different scopes.
 
@@ -142,33 +120,12 @@ Important note: As of now this method does not consider the scope of the id. It 
 
 The more complex the application gets the more it should be divided in smaller parts (single responsiblity principle). For exactly this purpose you can easily load views inside your controller. The following example shows how this works.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-markup">
   	<code class="imp-code language-markup">&lt;impulse&gt;
 		&lt;window id="wndMain" bind="App\Controller\AppController" /&gt;
 	&lt;/impulse&gt;</code>
   </pre>
-</div>
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
@@ -186,8 +143,7 @@ The more complex the application gets the more it should be divided in smaller p
 		}
 	}</code>
   </pre>
-</div>
-
+  
 Line 13 is the important line. The <span class="highlightText">importView</span> method is called and takes two arguments. The first one is the view that will be imported and the second argument is the component that will be the direct parent of the root component of the imported view.
 
 By default this will remove all childs of the given parent component internally. To append instead of removing all childs, you can set an optional third parameter with <i>true</i> as value.
@@ -196,16 +152,6 @@ By default this will remove all childs of the given parent component internally.
 
 Though you can create complex component trees by creating them manually, sometimes it becomes more handy to create component objects on the fly by using inline views rather than real views. Inline views can be created and renderer within the controller. To achieve this, the <span class="code-hint">AbstractController</span> class offers a method called <span>createComponents</span>. A simple example could be creating a list based on array.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
@@ -228,7 +174,6 @@ Though you can create complex component trees by creating them manually, sometim
 		}
 	}</code>
   </pre>
-</div>
 
 Like in real twig template you can also use the twig functionalities in inline views as well.
 
@@ -236,16 +181,6 @@ Like in real twig template you can also use the twig functionalities in inline v
 
 Controllers are designed to work as event listeners to listen to events occur at client side. The framework internally maps client events to AJAX requests that will be send to the server and thus delegated to the correct controller instance. How this in detail works is decscribed in the **_Event mapping_** section. However, the example below demonstrates how event listeners can registered by annotation.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-markup">
   	<code class="imp-code language-markup">&lt;impulse&gt;
 		&lt;window bind="App\Controller\AppController"&gt;
@@ -255,20 +190,9 @@ Controllers are designed to work as event listeners to listen to events occur at
 		&lt;/window&gt;
 	&lt;/impulse&gt;</code>
   </pre>
-</div>
 
 The controller contains a method that is annotated with the **_Listen_** annotation which needs the event it listens to and the component on which the event shall be registered. For registering the same event listener to multiple components, you can use the **_components_** parameter of the Listen annotation instead.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
@@ -292,20 +216,9 @@ The controller contains a method that is annotated with the **_Listen_** annotat
 		}
 	}</code>
   </pre>
-</div>
 
 Though this is a clean way to define event listeners, it has one drawback. It can't (currently) be registered dynamically for components which ids are not set or not known. For this purpose you can register event listeners manually to components.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
@@ -336,6 +249,5 @@ Though this is a clean way to define event listeners, it has one drawback. It ca
 		}
 	}</code>
   </pre>
-</div>
 
 The outcome and functionality of the code above is the same as in the previous example with the Listen annotation. On line 20, the first argument is the event that will be listened to. The second paratmer is the actual controller instance that will be used as event listener while the third paramter declares the method that will be executed once the event is fired.
