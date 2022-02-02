@@ -54,21 +54,20 @@ Single component references will be handled automatically by the framework and w
 	{
     	private Button $btn;
         private Label $lb;
-    	private ?ComponentList $myComponentList;
+    	private ComponentList $myComponentList;
         
         public function __construct()
         {
         	super::__construct();
+            $this->myComponentList = new ComponentList();
         }
         
         public function afterCreate()
         {
         	parent::afterCreate();
-            $this->myComponentList = new ComponentList($button);
+            $this->myComponentList->add($button);
             $this->myComponentList->add($lb);
         }
-
-        // other methods
 	}</code>
   </pre>
 
