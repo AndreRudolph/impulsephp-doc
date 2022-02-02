@@ -52,7 +52,7 @@ Let's consider you have your own implementation of a button and the classes is p
   </pre>
 </div>
 
-So whenever you use <span class="code-hint">button</span> then the app's button is used. This default behavior is used when you globally want to replace default components with your own components or bundled components.
+So whenever you use <span class="code-hint">button</span> in your templates,the app's button is used over the one provided by Impulse.
 
 <h4><a id="customize-registration-order">Customize registration order</a></h4>
 
