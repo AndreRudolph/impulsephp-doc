@@ -20,7 +20,8 @@ As a foreword, every client implementation of components should extend the <span
 Creating the client side of components is quite easy. Let's take again that javascript example (Message component) from the server side documentation of components. It's only purpose is to wrap a text inside a simple div container.
 
 <pre class="imp-code code-white line-numbers language-js">
-	<code class="language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
+	<code class="language-js">import AbstractComponent 
+    from 'path/to/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
     
     export default class Message extends AbstractComponent {
         constructor() {
@@ -51,9 +52,7 @@ Another and yet more powerful way to create the markup for the components repres
 So let's take again the Message component example and use the <span class="code-hint">create</span> rather than the <span class="code-hint">getTemplate</span> method.
 
 <pre class="imp-code code-white line-numbers language-js">
-	<code class="language-js">import AbstractComponent from '../../../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
-    
-    export default class Message extends AbstractComponent {
+	<code class="language-js">export default class Message extends AbstractComponent {
         constructor() {
             super();
             this.message = '';
