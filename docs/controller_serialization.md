@@ -36,7 +36,7 @@ To exclude these properties from the serialization process you can simply annota
 	}</code>
   </pre>
   
-In conclusion the excluded properties will not be wired again after reactivation unless they will be wired automatically by Symfony's dependency injection container.
+In conclusion, the excluded properties will not be wired again after reactivation unless they will be wired automatically by Symfony's dependency injection container.
 
 <h5><a id="component-references">Component references</a></h5>
 
