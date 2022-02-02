@@ -44,7 +44,7 @@ As previousely mentioned, a controller will be rarely called directly from the f
     &lt;/impulse&gt;</code>
 </pre>
 
-The <span class="highlightText">bind</span> attribute defines which controller will be executed by the framework. The following controller example is the bare minimum.  
+The <span class="highlightText">bind</span> attribute defines which controller will be executed by the framework. The following controller is a minimal example. 
 
 <div>
   <div class="code-header">
@@ -60,15 +60,19 @@ The <span class="highlightText">bind</span> attribute defines which controller w
   	<code class="imp-code language-php"><?php
   	namespace App\Controller;
   	use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
 
   	class AppController extends AbstractController
   	{
-
+		public function afterCreate(Event $event)
+		{
+        	parent::afterCreate($event);
+        }
   	}</code>
   </pre>
 </div>
 
-This example controller above would do nothing. For doing initial tasks you may override the afterCreate method from the AbstractController. The <span class="highlightText">afterCreate</span> represents the entry point of the controller and will be called automatically after the view has been rendered.
+For doing initial tasks you can override the <span class="code-hint">afterCreate</span> method from the <span class="code-hint">AbstractController</span> or you can leave it out. The method will be called by the framework automativally once the view has been rendered and its components been created.
 
 <h5><a name="access-components">Access components</a></h5>
 
