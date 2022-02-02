@@ -224,8 +224,8 @@ Applying the server state is straight forward and we need to just implement the 
 Since the main focus of this article is the server side documentation, we will just provide a quick start component snippet for the client component. Please check out the component client documentation for more details.
 
 <pre class="imp-code code-white line-numbers language-js">
-	<code class="language-js">import AbstractComponent from 
-    'path/to/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
+	<code class="language-js">import AbstractComponent 
+from 'path/to/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
     
     export default class Message extends AbstractComponent {
         constructor() {
