@@ -17,16 +17,6 @@ Typically values containing resources like database connections or file handles 
 
 To exclude these properties from the serialization process you can simply annotate them with <span class="code-hint">#[Transient]</span> attribute.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
@@ -47,8 +37,7 @@ To exclude these properties from the serialization process you can simply annota
         // other methods
 	}</code>
   </pre>
-</div>
-
+  
 Please note that transient properties will not be rewired once the Controller will be reactivated unless they will be wired by the dependency injection container.
 
 <h5><a id="component-references">Component references</a></h5>
@@ -56,16 +45,6 @@ Please note that transient properties will not be rewired once the Controller wi
 You might face the issue that you need to keep component references in properties of the controller to access them once the event listener will be restored. In general, component objects are stored outside the scope of
 the controller. However, if you need to store a list of component references, you need to have a property with type ComponentList.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
@@ -95,7 +74,6 @@ the controller. However, if you need to store a list of component references, yo
         // other methods
 	}</code>
   </pre>
-</div>
 
 <h5><a id="eventlistener-references">Event listener references</a></h5>
 
