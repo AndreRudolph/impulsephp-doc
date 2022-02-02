@@ -248,7 +248,7 @@ Though you can create complex component trees by creating them manually, sometim
   </pre>
 </div>
 
-Luckily you can also benefit from using twig template language for inline views.
+Like in real twig template you can also use the twig functionalities in inline views as well.
 
 <h5><a id="listen-to-events">Event listening</a></h5>
 
