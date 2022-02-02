@@ -40,7 +40,7 @@ In conclusion, the excluded properties will not be wired again after reactivatio
 
 <h5><a id="component-references">Component references</a></h5>
 
-Single component references will be handled automatically by the framework and will be rewired once the controller will be reactivated. Sometimes you might also need to have a property list of component references for handling a dynamic and generated form for example. To achieve this you have to wrap them in <span class="code-hint">ComponentList</span>.
+Single component references will be handled automatically by the framework and will be rewired once the controller will be reactivated. Sometimes you might also need to have a property list of component references for handling a dynamic and generated form for example. To achieve this you have to wrap them in a <span class="code-hint">ComponentList</span>.
 
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
