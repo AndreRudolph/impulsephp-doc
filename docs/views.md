@@ -16,22 +16,11 @@ A view (or template) is different to _normal_ templates in symfony. In impulse e
 
 The following example is a minimum example with just a simple text output.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;Hello world&lt;/window&gt;
       &lt;/impulse&gt;</code>
   </pre>
-</div>
  
 Using impulse opening and closing tags is totally optional. The file extension is the same as it is in symfony: twig.html.
 
@@ -43,16 +32,6 @@ One benefit of impulse is it seamless integration of twig since it is used behin
 
 Each component can be extended by custom attributes. These attributes may be used to parametrize components.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
@@ -62,24 +41,13 @@ Each component can be extended by custom attributes. These attributes may be use
           &lt;/window&gt;
       &lt;/impulse&gt;</code>
   </pre>
-</div>
-
+  
 Custom attributes of a component are only accessible on server side. You may access the attributes by directly using the methods **_getCustomAttribute(attributeName)_** or **_getCustomAttributes_** of the component instance within the controller.
 
 <h5><a id="load-views">Load views</a></h5>
 
 It is a common good practice (separation of concerns) to separate views into smaller pieces to become reusable and more descriptively. Hence it is possible to load (import) views directly into a view.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
@@ -87,6 +55,5 @@ It is a common good practice (separation of concerns) to separate views into sma
           &lt;/window&gt;
       &lt;/impulse&gt;</code>
   </pre>
-</div>
 
 With this separation your application becomes more extensible and maintainable when to it comes to controllers in the next documentation page.
