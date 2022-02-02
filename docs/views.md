@@ -28,9 +28,7 @@ The following example is a minimum example with just a simple text output.
   </div>
   <pre class="code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
-          &lt;window&gt;
-              Hello world
-          &lt;/window&gt;
+          &lt;window&gt;Hello world&lt;/window&gt;
       &lt;/impulse&gt;</code>
   </pre>
 </div>
