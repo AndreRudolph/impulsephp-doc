@@ -147,6 +147,12 @@ Suppose you want to create a component class, lets call it **_Message_**, with a
     {
         private string $message = 'Hello World';
         
+        public function __construct() 
+        {
+        	parent::__construct();
+            $this->uiClass = 'Message';
+        }
+        
         public function setMessage(string $message): void
         {
         	$this->message = $message;
