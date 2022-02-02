@@ -27,15 +27,6 @@ A component is basically an object of a certain class with a load of properties 
 
 Since the basic serialization mechanism of PHP is not suitable for our needs, the components instead have a method called <span class="code-hint">getServerData</span> that creates an array of attributes and their values that will be used for later serialization. The following example is taken from the <span class="code-hint">Image</span> component class.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
@@ -74,15 +65,6 @@ can a) be send to the client to update the UI and b) consider the changes in the
 
 To record a change that is intended for the client, the <span class="code-hint">updateClientAttribute</span> method is used for. In the Image component again there is a setter for the src attribute that records changes that will later be populated to the client.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
@@ -107,20 +89,9 @@ The reactivation process of a component will be covered in a "Learn more" sectio
 
 For a complete list of currently registered components you can run the following command in your projects root directory:
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white imp-code line-numbers language-shell">
   	<code class="language-bash">php bin/console debug:impulse:components</code>
   </pre>
-</div>
 
 A shortened extract of the output might look as the following:
 
@@ -169,15 +140,6 @@ Impulse is designed to provide programmers the possibility to create their own c
 
 Suppose you want to create a component class, lets call it **_Message_**, with a message that shall be displayed at the client. You can simply add a message property along with its getter and setter method.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
@@ -202,15 +164,6 @@ Suppose you want to create a component class, lets call it **_Message_**, with a
 
 The main purpose is to show the message to the client and therefor there is a method called <span class="code-hint">getClientData</span> which returns an array with all contain informations of the component that are relevant for the client.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
@@ -231,15 +184,6 @@ You also need to call the <span class="code-hint">getClientData</span> of the pa
 
 If the client should also be informed about changes of the message property, we can use the <span class="code-hint">updateClientAttribute</span> method as mentioned in the introduction.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
@@ -259,15 +203,6 @@ If the client should also be informed about changes of the message property, we 
 
 Applying the server state is straight forward and we need to just implement the <span class="code-hint">getServerData</span> method.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     
