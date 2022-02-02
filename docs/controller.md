@@ -46,16 +46,6 @@ As previousely mentioned, a controller will be rarely called directly from the f
 
 The <span class="highlightText">bind</span> attribute defines which controller will be executed by the framework. The following controller is a minimal example. 
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
   	namespace App\Controller;
@@ -70,7 +60,6 @@ The <span class="highlightText">bind</span> attribute defines which controller w
         }
   	}</code>
   </pre>
-</div>
 
 For doing initial tasks you can override the <span class="code-hint">afterCreate</span> method from the <span class="code-hint">AbstractController</span> or you can leave it out. The method will be called by the framework automativally once the view has been rendered and its components been created.
 
@@ -82,16 +71,6 @@ The main purpose of controllers in Impulse is that they can directly interact wi
 
 One option is by wiring by convention by naming properties with the related component ids.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-markup">
 	<code class="imp-code language-markup">&lt;impulse&gt;
     	&lt;window&gt;
@@ -99,7 +78,6 @@ One option is by wiring by convention by naming properties with the related comp
 		&lt;/window&gt;
 	&lt;/impulse&gt;</code>
   </pre>
-</div>
 
 We have created a textbox with the id <span class="highlightText">tb</span>. This component is - by convention - wireable for a controller and can be accessed via controller property.
 
