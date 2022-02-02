@@ -13,7 +13,9 @@ Once a controller will be reactivated in a subsequent request, it will be deseri
 
 <h5><a id="exclude-properties">Exclude properties</a></h5>
 
-It is likely that you have to exclude properties manually from serialization. Assuming that you have injected a service that is connected to the database or any other resource that is not serializable. In order to exclude these properties from serialization, you can simply annotate them with the **_Transient_** annotation.
+Typically values containing resources like database connections or file handles can not be serialized and every attempt to serialize them will lead to an error. It is likely that you need services inside your controllers that either have explicit or implicit access to a database or filesystem. 
+
+To exclude these properties from the serialization process you can simply annotate them with <span class="code-hint">#[Transient]</span> attribute.
 
 <div>
   <div class="code-header">
@@ -46,8 +48,6 @@ It is likely that you have to exclude properties manually from serialization. As
 	}</code>
   </pre>
 </div>
-
-When trying to serialize the controller, all properties annotated with **_Transient_** will automatically be excluded.
 
 Please note that transient properties will not be rewired once the Controller will be reactivated unless they will be wired by the dependency injection container.
 
