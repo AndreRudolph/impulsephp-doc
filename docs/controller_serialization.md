@@ -3,7 +3,7 @@
 - [Introduction](#introduction)
 - [Exclude properties](#exclude-properties)
 - [Component references](#component-references)
-- [EventListener references](#eventlistener-references)
+- [Controller references](#controller-references)
 
 <h5><a id="introduction">Introduction</a></h5>
 
@@ -71,6 +71,8 @@ Single component references will be handled automatically by the framework and w
 	}</code>
   </pre>
 
-<h5><a id="eventlistener-references">Event listener references</a></h5>
+<h5><a id="controller-references">Controller references</a></h5>
 
-In some scenarios you need to execute logic that is placed in another controller (like showing a success notification) and not in your current controller object. However, like component references you can also include event listener references in the serialization by having properties referencing to objects of class EventListenerReference.
+You may also have object references of one or more controllers inside another controller. Consider having a list controller for database records and an edit / create controller for a single record. Once you create a new or update an existing record the list controller should then refresh its list.
+
+Controller references are handled in the same way as component references. However, this approach is only useful for a very limited and known number of controllers. For having more flexibility, you can check out the 
