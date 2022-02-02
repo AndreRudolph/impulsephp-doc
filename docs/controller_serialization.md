@@ -7,7 +7,7 @@
 
 <h5><a id="introduction">Introduction</a></h5>
 
-<a href="https://en.wikipedia.org/wiki/Serialization" target="_blank">Serialization</a> is a process of converting an object into a string based representation of that object that can later be restored to its original state (object) if needed. Like components, controllers registered as event listeners will also be serialized once the request will be finished.
+<a href="https://en.wikipedia.org/wiki/Serialization" target="_blank">Serialization</a> is a process of converting an object into a string based representation that can later be restored to its original state (object) if needed. Like components, controllers registered as event listeners will also be serialized once the request will be finished.
 
 Once an event listener (controller) will be reactivated (deserialized), values that have been stored in serialized format will be restored. After the request has been processed, the reactivated event listener will be stored back in session with its current state.
 
