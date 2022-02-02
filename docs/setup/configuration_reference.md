@@ -12,16 +12,6 @@ In this chapter all available configuration parameters of the Impulse bundle wil
 
 The following configuration is a complete example.
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
   <pre class="code-white line-numbers language-yaml">
   	<code class="language-yaml">impulse:
     client:
@@ -32,14 +22,6 @@ The following configuration is a complete example.
     #   integrity_check_enabled: true (default: false)
     #
     #
-
-    components:
-
-        # The lookups defines a set of lookup paths and namespaces in which the impulse framework automatically tags
-        # all available component classes. Please note that this does not automatically searches in subdirectories. You
-        # have to specify them manually.
-        lookups:
-            - { path: '%kernel.project_dir%/src/UI/Components', namespace: 'App\UI\Components\', label: 'app', priority: 0 }
 
     encryption:
 
@@ -79,4 +61,3 @@ The following configuration is a complete example.
         # Be aware that a higher number will result in more reserved bytes for both session and request / response data.
         component_uid_length: 5</code>
   </pre>
-</div> 
