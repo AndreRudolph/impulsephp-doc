@@ -238,7 +238,6 @@ Though this is a clean way to define event listeners, it has one drawback. It ca
         
         public function afterCreate(Event $event)
         {
-        	parent::afterCreate($event);
             $this->btnGreet->addEventListener(Events::CLICK, $this, 'greet');
         }
 
