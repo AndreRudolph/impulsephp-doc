@@ -33,8 +33,6 @@ To exclude these properties from the serialization process you can simply annota
         {
         	$this->em = $em;
         }
-
-        // other methods
 	}</code>
   </pre>
   
