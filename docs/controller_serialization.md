@@ -42,8 +42,7 @@ In conclusion the excluded properties will not be wired again after reactivation
 
 <h5><a id="component-references">Component references</a></h5>
 
-You might face the issue that you need to keep component references in properties of the controller to access them once the event listener will be restored. In general, component objects are stored outside the scope of
-the controller. However, if you need to store a list of component references, you need to have a property with type ComponentList.
+Simple component references (one component per property) will be handled automatically by the framework and will be rewired once the controller will be reactivated. Sometimes you might also need to have a property list of component references for handling a dynamic and generated form for example. To achieve this you have to wrap them in <span class="code-hint">ComponentList</span>.
 
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
