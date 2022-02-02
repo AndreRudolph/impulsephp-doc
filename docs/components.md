@@ -10,6 +10,7 @@
     - [Client state](#client_synchronization)
     - [Server state](#server_synchronization)
     - [Client component](#client_component)
+- [Custom attributes](#custom-attributes)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
