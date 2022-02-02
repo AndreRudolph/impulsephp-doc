@@ -75,4 +75,4 @@ Single component references will be handled automatically by the framework and w
 
 You may also have object references of one or more controllers inside another controller. Consider having a list controller for database records and an edit / create controller for a single record. Once you create a new or update an existing record the list controller should then refresh its list.
 
-Controller references are handled in the same way as component references. However, this approach is only useful for a very limited and known number of controllers. For having more flexibility, you can check out the 
+Controller references are handled in the same way as component references. However, this approach is only useful for a very limited and known number of controllers. For having more flexibility, you should go for the page listener approach.
