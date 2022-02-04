@@ -6,7 +6,6 @@
     - [Reactivation](#reactivation)
 	- [Available components](#registered_components)
 - [Create custom components](#create_custom_components)
-    - [Custom attributes](#custom_attributes)
     - [Client state](#client_synchronization)
     - [Server state](#server_synchronization)
     - [Client component](#client_component)
@@ -135,8 +134,6 @@ Available components are discovered automatically and you don't have to register
 <h5><a id="create_own_components">Create custom components</a></h5>
 
 Impulse is designed to provide programmers the possibility to create their own components for their very specific needs or to even share with other users of the Impulse framework. As previousely mentioned, a component can be either very basic and atomic components like a textbox or a label or can be even more sophisticated like even a wysiwyg editor. In this overall documentation part we will create a full working component together.
-
-<h5><a id="custom_attributes">Custom attributes</a></h5>
 
 Suppose you want to create a component class, lets call it **_Message_**, with a message that shall be displayed at the client. You can simply add a message property along with its getter and setter method.
 
