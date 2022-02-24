@@ -250,3 +250,17 @@ Since the main focus of this article is the server side documentation, we will j
 </pre>
 
 <h5><a id="custom-attributes">Custom attributes</a></h5>
+
+Custom attributes are usefuly whenever you want to enrich a component with very specific informations for later work with these attributes. Consider you want to associate a button with an entity id of a database record. You can simply achieve this by calling the <span class="code-hin">setCustomAttribute</span> method of that component.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+
+class MainController extends AbstractController
+{
+
+}</code>
+</pre>
