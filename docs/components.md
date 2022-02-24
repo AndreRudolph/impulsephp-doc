@@ -259,8 +259,19 @@ Custom attributes are usefuly whenever you want to enrich a component with very 
 namespace App\Controller;
 use Impulse\ImpulseBundle\Controller\AbstractController;
 
-class MainController extends AbstractController
+class AppController extends AbstractController
 {
-
+	private Button $btnDeleteUser;
+    
+    public function afterCreate() 
+    {
+    	$this->btnDeleteUser->setCustomAttribute('userId', 1);
+    }
+    
+    #[Listen(event: 'click', component: 'btnDeleteUser')]
+    public function onDeleteUser(Event $event)
+    {
+    	$userId = $event->getTarget()->getCustomAttribute('userId'); // => will be 1
+    }
 }</code>
 </pre>
