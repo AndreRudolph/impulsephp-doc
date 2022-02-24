@@ -248,3 +248,5 @@ Since the main focus of this article is the server side documentation, we will j
     
     window.Message = Message;</code>
 </pre>
+
+<h5><a id="custom-attributes">Custom attributes</a></h5>
