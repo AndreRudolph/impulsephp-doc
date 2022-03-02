@@ -293,3 +293,9 @@ The example below shows how template components work with a greeting example.
     }</code>
 </pre>
 
+<pre class="code-white imp-code line-numbers language-markup">
+	<code class="language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
+		&lt;textbox /&gt;
+		&lt;button /&gt;
+    &lt;/div&gt;</code>
+</pre>
