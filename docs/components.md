@@ -287,16 +287,27 @@ The example below shows how template components work with a greeting example.
 	<code class="imp-code language-php"><?php
     
     #[Template('app/components/greeting.html.twig')]
-    class Greeting extends Div 
+    class Greeting extends Div implements AfterCreateChilds
     {
-
+		private Textbox $tbName;
+        private Button $btnGreet;
+        
+        public function afterCreateChilds(): void
+        {
+        	$this->btnGreet->addEventListener(Events::CLICK, $this, 'onGreet');
+        }
+        
+        public function onGreet(): void
+        {
+        		
+        }
     }</code>
 </pre>
 
 <pre class="code-white imp-code line-numbers language-markup">
 	<code class="language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
 		&lt;textbox id="tbName" placeholder="Enter your name here" /&gt;
-		&lt;button label="Greet" /&gt;
+		&lt;button id="btnGreet" label="Greet" /&gt;
     &lt;/div&gt;</code>
 </pre>
 
