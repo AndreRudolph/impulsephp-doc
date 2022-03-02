@@ -299,3 +299,5 @@ The example below shows how template components work with a greeting example.
 		&lt;button label="Greet" /&gt;
     &lt;/div&gt;</code>
 </pre>
+
+This approach is a good way to encapsulate view based logic in components rather than in controllers.
