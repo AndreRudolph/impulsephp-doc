@@ -280,5 +280,3 @@ class AppController extends AbstractController
 <h5><a id="template-components">Template components</a></h5>
 
 Another great approach of creating complex and reusable components are template components. A template component is basically a component class which structure is defined by a template (view). The template that is used for building up the component is defined by the attribute (annotation) <span class="code-hint">#[Template()]</span>. As an argument it contains a path to the template file. 
-
-The example below should demonstrate the usage.
