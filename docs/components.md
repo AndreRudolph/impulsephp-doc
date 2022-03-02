@@ -10,6 +10,7 @@
     - [Server state](#server_synchronization)
     - [Client component](#client_component)
 - [Custom attributes](#custom-attributes)
+- [Template components](#template-components)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -275,3 +276,5 @@ class AppController extends AbstractController
     }
 }</code>
 </pre>
+
+<h5><a id="template-components">Template components</a></h5>
