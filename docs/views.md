@@ -12,6 +12,8 @@ published: true
 
 <h4><a id="introduction">Introduction</a></h4>
 
+The Impulse PHP Framework is based on the awesome Symfony framework and is profiting of its powerful template engine Twig. If you have already been working with Twig you can simply go on with this documentation. In case you haven't, we highly recommend you to have a look at the <a href="https://twig.symfony.com/">Twig documentation</a>.
+
 A view (or template) is different to _normal_ templates in symfony. In impulse every tag must represent a component (except the impulse tag and custom attributes) which will be later converted to HTML. Components will be covered in a later documentation page.
 
 The following example is a minimum example with just a simple text output.
