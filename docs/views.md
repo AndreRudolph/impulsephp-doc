@@ -7,7 +7,7 @@ published: true
 
 - [Introduction](#introduction)
 - [Load views](#load-views)
-- [Template inheritance](#template-inheritance)
+- [View inheritance](#view-inheritance)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -45,3 +45,4 @@ It is a common good practice (separation of concerns) to separate views into sma
       &lt;/impulse&gt;</code>
   </pre>
 
+<h5><a id="view-inheritance">View inheritance</a></h5>
