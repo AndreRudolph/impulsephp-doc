@@ -25,4 +25,4 @@ Providing dynamically generated one time files like reports or statistics for do
   	}</code>
   </pre>
   
-  Note that the third parameter is the content type of the file and is optional. If no content type is declared, application/octet-stream is used by default.
+  Note that the third parameter is the content type of the file and is optional. If no content type is declared, <span class="code-hint">application/octet-stream</span> is used by default.
