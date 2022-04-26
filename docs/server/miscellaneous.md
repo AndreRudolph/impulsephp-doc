@@ -1,9 +1,6 @@
-<h3 class="doc-title">Middlewares</h3>
+<h3 class="doc-title">Miscellaneous</h3>
 
-- [Introduction](#introduction)
 - [File downloads](#file-downloads)
-
-<h4><a id="introduction">Introduction</a></h4>
 
 <h5><a id="pre-action-middleware">File downloads</a></h5>
 
