@@ -6,7 +6,6 @@ published: true
 <h3 class="doc-title">Views</h3>
 
 - [Introduction](#introduction)
-- [Twig integration](#twig-integration)
 - [Custom attributes](#custom-attributes)
 - [Load views](#load-views)
 
@@ -14,21 +13,17 @@ published: true
 
 The Impulse PHP Framework is based on the awesome Symfony framework and is profiting of its powerful template engine Twig. If you have already been working with Twig you can simply go on with this documentation. In case you haven't, we highly recommend you to have a look at the <a href="https://twig.symfony.com/">Twig documentation</a>.
 
-A view (or template) is different to _normal_ templates in symfony. In impulse every tag must represent a component (except the impulse tag and custom attributes) which will be later converted to HTML. Components will be covered in a later documentation page.
+Views (templates) work quite a bit different than you are used to with Symfony. In a traditional Symfony application a controller is responsible for rendering required views. With the Impulse framework is the other way around as you will see in the controllers documentation.
 
-The following example is a minimum example with just a simple text output.
+The following example is a minimal example with just a simple text output.
 
   <pre class="code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;Hello world&lt;/window&gt;
       &lt;/impulse&gt;</code>
   </pre>
- 
-Using impulse opening and closing tags is totally optional. The file extension is the same as it is in symfony: twig.html.
-
-<h5><a id="twig-integration">Twig integration</a></h5>
-
-One benefit of impulse is it seamless integration of twig since it is used behind the scenes. Hence you will be able to use the full power of the twig template engine for your templates.
+  
+Encapsulating the content in impulse tags is purely optional and the file extension is the same as it is in traditional Symfony applications: twig.html.
 
 <h5><a id="custom-attributes">Custom attributes</a></h5>
 
