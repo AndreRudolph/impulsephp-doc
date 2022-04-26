@@ -7,7 +7,7 @@ published: true
 
 - [Introduction](#introduction)
 - [Load views](#load-views)
-- [Custom attributes](#custom-attributes)
+- [Template inheritance](#template-inheritance)
 
 <h4><a id="introduction">Introduction</a></h4>
 
