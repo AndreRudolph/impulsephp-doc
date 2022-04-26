@@ -1,4 +1,4 @@
-<h1 class="doc-title">Controller as page listener</h1>
+<h1 class="doc-title">Page listener</h1>
 
 - [Introduction](#introduction)
 - [Register as page listener](#register-page-listener)
