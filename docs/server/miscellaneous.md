@@ -7,8 +7,9 @@
 
 <h5><a id="pre-action-middleware">File downloads</a></h5>
 
-Let's consider you want to have an often used action like checking if a user is authenticated and do not grant access if the user is not. That's a perfect example for a middleware that can be re-used for different methods
-of the same controller or even for different controllers. 
+Providing files is a common task that an application might has to provide. For providing static files, an anchor can be used. For providing dynamic files like current statistics or reports, the Impulse PHP Framework provides a convenient method to provide a file download.
+
+For this purpose you can simply call the <span class="code-hint">provideDownload</span> method inherited from the <span class="code-hint">AbstractController</span>. 
 
 <div class="code-header">
 	<div class="container-fluid">
