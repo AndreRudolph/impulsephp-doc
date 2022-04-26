@@ -36,21 +36,12 @@ It is a common good practice (separation of concerns) to separate views into sma
           &lt;/window&gt;
       &lt;/impulse&gt;</code>
   </pre>
-
-<h5><a id="custom-attributes">Custom attributes</a></h5>
-
-Each component can be extended by custom attributes. These attributes may be used to parametrize components.
-
+  
   <pre class="code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
-              &lt;button&gt;
-                  &lt;custom-attributes attr1="val1" attr2="val2" /&gt;
-              &lt;/button&gt;
+              &lt;window&gt;Hello world&lt;/window&gt;
           &lt;/window&gt;
       &lt;/impulse&gt;</code>
   </pre>
-  
-Custom attributes of a component are only accessible on server side. You may access the attributes by directly using the methods **_getCustomAttribute(attributeName)_** or **_getCustomAttributes_** of the component instance within the controller.
-
 
