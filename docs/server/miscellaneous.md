@@ -7,9 +7,7 @@
 
 <h5><a id="pre-action-middleware">File downloads</a></h5>
 
-Providing files is a common task that an application might has to provide. For providing static files, an anchor can be used. For providing dynamic files like current statistics or reports, the Impulse PHP Framework provides a convenient method to provide a file download.
-
-For this purpose you can simply call the <span class="code-hint">provideDownload</span> method inherited from the <span class="code-hint">AbstractController</span>. 
+Providing dynamically generated one time files like reports or statistics for download is a common task for web applications. Hence the <span class="code-hint">AbstractController</span> implements a convenient method called <span class="code-hint">provideDownload</span>. 
 
 <div class="code-header">
 	<div class="container-fluid">
