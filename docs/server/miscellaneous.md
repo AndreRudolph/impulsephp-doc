@@ -13,6 +13,8 @@ Providing dynamically generated one time files like reports or statistics for do
   	<code class="imp-code language-php"><?php
   	namespace App\Controller;
   	use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+    use Impulse\ImpulseBundle\Events\Events;
     use Impulse\ImpulseBundle\Execution\Events\Event;
 
   	class AppController extends AbstractController
