@@ -1,8 +1,8 @@
 <h3 class="doc-title">Miscellaneous</h3>
 
-- [File downloads](#file-downloads)
+- [Dynamic file downloads](#dynamic-file-downloads)
 
-<h5><a id="pre-action-middleware">File downloads</a></h5>
+<h5><a id="dynamic-file-downloads">Dynamic file downloads</a></h5>
 
 Providing dynamically generated one time files like reports or statistics for download is a common task for web applications. Hence the <span class="code-hint">AbstractController</span> implements a convenient method called <span class="code-hint">provideDownload</span>. 
 
