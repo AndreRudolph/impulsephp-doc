@@ -4,7 +4,7 @@
 
 <h5><a id="dynamic-file-downloads">Dynamic file downloads</a></h5>
 
-Providing dynamically generated one time files like reports or statistics for download is a common task for web applications. Hence the <span class="code-hint">AbstractController</span> implements a convenient method called <span class="code-hint">provideDownload</span>. 
+Providing dynamically generated one time files like reports or statistics for download is a common task for web applications. Hence the <span class="code-hint">AbstractController</span> implements a convenient method called <span class="code-hint">downloadRaw</span>. 
 
   <pre class="code-white line-numbers language-php">
   	<code class="imp-code language-php"><?php
@@ -20,7 +20,7 @@ Providing dynamically generated one time files like reports or statistics for do
         public function createReport(Event $event)
         {
         	$payload = 'This is going to be the content of the file';
-            $this->provideDownload('generaredFile.txt', $payload, 'text/plain');
+            $this->downloadRaw('generaredFile.txt', $payload, 'text/plain');
         }
   	}</code>
   </pre>
