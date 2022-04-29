@@ -11,9 +11,9 @@ published: true
 
 <h4><a id="introduction">Introduction</a></h4>
 
-The Impulse PHP Framework is based on the awesome Symfony framework and is profiting of its powerful template engine Twig. If you have already been working with Twig you can simply go on with this documentation. In case you haven't, we highly recommend you to have a look at the <a href="https://twig.symfony.com/">Twig documentation</a>.
+The Impulse PHP Framework is based on the awesome Symfony framework and is profiting of its powerful template engine Twig. If you have already been working with Twig you can simply go on with this documentation. In case you haven't, we highly recommend you to have a look at the <a href="https://twig.symfony.com/" target="_blank">Twig documentation</a>.
 
-Views (templates) work quite a bit different than you are used to with Symfony. In a traditional Symfony application a controller is responsible for rendering required views. With the Impulse framework is the other way around as you will see in the controllers documentation.
+Views (templates) work quite a bit different than you are used to with Symfony. In a traditional Symfony application a controller is responsible for rendering required views. With the Impulse framework it is the other way around as you will see in the controllers documentation.
 
 The following example is a minimal example with just a simple text output.
 
