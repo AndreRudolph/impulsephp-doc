@@ -52,3 +52,5 @@ It is a common good practice (separation of concerns) to separate views into sma
 Yet another great feature of Twig is called template inheritance. By having that, you can define common templates with so called blocks that can be overriden by a derived template.
 
 <h5><a id="scopes">Scopes</a></h5>
+
+Every view will have it's own scope in place. A scope is a technical and organizational concept for a scoped set of components. Each scope has an unique identifier (scope id) that uniquely identifies the scope and all of its descendant components.
