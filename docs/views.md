@@ -8,6 +8,7 @@ published: true
 - [Introduction](#introduction)
 - [Load views](#load-views)
 - [View inheritance](#view-inheritance)
+- [Scopes](#scopes)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -49,3 +50,5 @@ It is a common good practice (separation of concerns) to separate views into sma
 <h5><a id="view-inheritance">View inheritance</a></h5>
 
 Yet another great feature of Twig is called template inheritance. By having that, you can define common templates with so called blocks that can be overriden by a derived template.
+
+<h5><a id="scopes">Scopes</a></h5>
