@@ -23,7 +23,8 @@ The following example is a minimal example with just a simple text output.
       &lt;/impulse&gt;</code>
   </pre>
   
-Encapsulating the content in impulse tags is purely optional and the file extension is the same as it is in traditional Symfony applications: twig.html.
+The impulse tags are optional but are used for all examples here for sake of completeness. However, 
+every template must not have more than one root tag. The file extension is the same as it is in traditional Symfony applications: twig.html.
 
 <h5><a id="load-views">Load views</a></h5>
 
