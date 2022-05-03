@@ -54,3 +54,5 @@ Yet another great feature of Twig is called template inheritance. By having that
 <h5><a id="scopes">Scopes</a></h5>
 
 Every view will have it's own scope in place. A scope is a technical and organizational concept for a scoped set of components. Each scope has an unique identifier (scope id) that uniquely identifies the scope and all of its descendant components.
+
+test
