@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Javascript](#javascript)
+	- [config.js](#config-js)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -10,6 +11,9 @@ For dealing with assets, the Impulse PHP Framework advises the usage of webpack.
 Every server component is mapped to a client side component. This article covers the basics for rendering and updating components aswell as creating and handling event listeners.
 
 <h5><a id="javascript">Javascript</a></h5>
+
+Once the framework has been successfully initialized, 
+
 
 As a foreword, every client implementation of components should extend the <span class="code-hint">AbstractComponent</span> class. This ensures a correct setup and lifecycle for that component. Please only do not extend the class if you absolutely know what you need to do.
 
