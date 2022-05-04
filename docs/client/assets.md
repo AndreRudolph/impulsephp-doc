@@ -9,6 +9,8 @@
 
 <h4><a id="introduction">Introduction</a></h4>
 
+For dealing with assets, the Impulse PHP Framework advises the usage of webpack. Webpack is a module bundler that compiles, minifies and collects all required web assets like javascript, scss and static resources such as images altogether.  
+
 Every server component is mapped to a client side component. This article covers the basics for rendering and updating components aswell as creating and handling event listeners.
 
 <h5><a id="create-components">Create custom component</a></h5>
