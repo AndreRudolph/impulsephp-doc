@@ -1,9 +1,8 @@
 <h3 class="doc-title">App & Configuration</h3>
 
 - [Introduction](#introduction)
-- [Javascript](#javascript)
-	- [app.js](#app-js)
-	- [config.js](#config-js)
+- [app.js](#app-js)
+- [config.js](#config-js)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -13,9 +12,7 @@ Every server component is mapped to a client side component. This article covers
 
 However, once the framework has been successfully intiailized, all required assets are placed in the assets/ directory.
 
-<h5><a id="javascript">Javascript</a></h5>
-
-<h6><a id="app-js">app.js</a></h6>
+<h4><a id="app-js">app.js</a></h4>
 
 The app.js is the entry point of the complete javascript application. Its purpose is to create the Impulse App instance, sets the configuration (see section below) and to run it. 
 
