@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Javascript](#javascript)
+	- [app.js](#app-js)
 	- [config.js](#config-js)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -12,7 +13,9 @@ Every server component is mapped to a client side component. This article covers
 
 <h5><a id="javascript">Javascript</a></h5>
 
-Once the framework has been successfully initialized, 
+Once the framework has been successfully initialized, a couple of javascript files have been automatically generated in the assets/ directory. 
+
+<h6><a id="app-js">app.js</a></h6>
 
 
 As a foreword, every client implementation of components should extend the <span class="code-hint">AbstractComponent</span> class. This ensures a correct setup and lifecycle for that component. Please only do not extend the class if you absolutely know what you need to do.
