@@ -18,18 +18,18 @@ The app.js is the entry point of the Impulse javascript application. Its purpose
 
 <pre class="imp-code code-white line-numbers language-js">
 	<code class="language-js">import './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/ImpulseCore';
-import './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/ImpulseComponents';
-import './app/AppComponents';
-import './../scss/app.scss';
+	import './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/ImpulseComponents';
+	import './app/AppComponents';
+	import './../scss/app.scss';
 
-import App from './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/Kernel/App';
-import ImpulseRuntime from './config';
+    import App from './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/Kernel/App';
+    import ImpulseRuntime from './config';
 
-document.addEventListener("DOMContentLoaded", (event) => {
-    let app = new App();
-    app.setConfig(ImpulseRuntime);
-    app.run();
-});</code>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        let app = new App();
+        app.setConfig(ImpulseRuntime);
+        app.run();
+    });</code>
 </pre>
 
 As you might have noticed, the sources are not copied to the assets/ directory and rather being imported from the ImpulseBundle. The main reason is that the user of the framework does not need to manually copy the source files by hand with every framework update and thus to minimize compatibility issues with newer versions.
