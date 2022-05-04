@@ -36,7 +36,9 @@ As you might have noticed, the sources are not copied to the assets/ directory a
 
 <h6><a id="config-js">config.js</a></h6>
 
-The config.js file follows a similar approach like the webpack.config.js. It defines some configurations by using a fluent interface with convenient methods. The very basics are provided by default and can be configured by using the configuration API.
+The previous mentioned WebpackEncoreBundle provides an awesome configuration facade for webpack configuration. We decided to use the same approach for configuring the Impulse client engine by providing a fluent interface API.
+
+The example below is the default configuration file.
 
 <pre class="imp-code code-white line-numbers language-js">
 	<code class="language-js">import Impulse from './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/Kernel/Impulse';
