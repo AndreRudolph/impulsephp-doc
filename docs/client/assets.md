@@ -1,4 +1,4 @@
-<h3 class="doc-title">Components</h3>
+<h3 class="doc-title">Assets</h3>
 
 - [Introduction](#introduction)
 - [Create components](#create-components)
