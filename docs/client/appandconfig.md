@@ -69,4 +69,4 @@ export default ImpulseRuntime;</code>
 
 <h6><a id="appcomponents-js">AppComponents.js</a></h6>
 
-This file is automatically imported in the app.js file and its purpose is to bundle all js component files of the app.
+This file is automatically imported in the app.js file and its purpose is to bundle all custom js component files together. Whenever you create a component javascript class you have to import it here.
