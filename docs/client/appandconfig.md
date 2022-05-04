@@ -44,27 +44,27 @@ The example below is the default configuration file.
 <pre class="imp-code code-white line-numbers language-js">
 	<code class="language-js">import Impulse from './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/Kernel/Impulse';
 
-let ImpulseRuntime = Impulse.new();
+    let ImpulseRuntime = Impulse.new();
 
-ImpulseRuntime
+    ImpulseRuntime
 
-    // enables the page main busy indicator. Otherwise no busy indicator will take effect for a server request. The
-    // default indicator itself can be exchanged by calling registerBusyIndicator.
-    .enableBusyIndicator()
+        // enables the page main busy indicator. Otherwise no busy indicator will take effect for a server request. The
+        // default indicator itself can be exchanged by calling registerBusyIndicator.
+        .enableBusyIndicator()
 
-    // overwrites the default page busy indicator implementation.
-    // .registerBusyIndicator(new MyBusyIndicatorClass())
+        // overwrites the default page busy indicator implementation.
+        // .registerBusyIndicator(new MyBusyIndicatorClass())
 
-    // registers a new request listener.
-    // .registerRequestListener(new MyRequestListener())
+        // registers a new request listener.
+        // .registerRequestListener(new MyRequestListener())
 
-    // registers a new response listener.
-    // .registerResponseListener(new MyResponseListener())
+        // registers a new response listener.
+        // .registerResponseListener(new MyResponseListener())
 
-    // sets the timeout for each server request for the underlying axios library. The value 0 means that there is no timeout.
-    .setRequestTimeout(0);
+        // sets the timeout for each server request for the underlying axios library. The value 0 means that there is no timeout.
+        .setRequestTimeout(0);
 
-export default ImpulseRuntime;</code>
+    export default ImpulseRuntime;</code>
 </pre>
 
 <h4><a id="appcomponents-js">AppComponents.js</a></h4>
