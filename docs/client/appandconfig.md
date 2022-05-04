@@ -8,7 +8,7 @@
 
 Managing complex applications becomes tricky when dealing with assets like javascript, sass / scss and static resources like images or media in general. To reduce this complexity, the Impulse PHP Framework takes advantage of using webpack as a module builder to compile, minify and collect all required assets together. 
 
-Luckily the Symfony framework already provides the WebpackEncoreBundle that wraps webpack by providing a handy facade for its configuration.
+Luckily the Symfony framework already provides the awesome WebpackEncoreBundle that wraps webpack by providing a handy facade for its configuration.
 
 Once the Impulse framework has been initialized, the original webpack.config.js had been replaced and all files in the assets/ directory had been removed.
 
