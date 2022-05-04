@@ -58,3 +58,5 @@ Though scopes are not relevant for implementing views it is good to at least kno
 Every view will have it's own scope in place. A scope is a technical and organizational concept for a scoped set of components. Each scope has an unique identifier (scope id) that identifies the scope and all of its descendant components. Below you will find a picture with an example view structure and its scope ids.
 
 <img src="build/static/scopes.png" />
+
+As you can see, each view has a scope id and every root component of a view serves as their respective scope owner. Thus, every scope has a root component and references to the parent and children scopes. These references are managed automatically by the framework.
