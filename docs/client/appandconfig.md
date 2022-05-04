@@ -14,7 +14,7 @@ Once the Impulse framework has been initialized, the original webpack.config.js 
 
 <h4><a id="app-js">app.js</a></h4>
 
-The app.js is the entry point of the complete javascript application. Its purpose is to create the Impulse App instance, sets the configuration (see section below) and to run it. 
+The app.js is the entry point of the Impulse javascript application. Its purpose is to create the Impulse App instance, sets the configuration (see section below) and to run it. 
 
 <h6><a id="config-js">config.js</a></h6>
 
