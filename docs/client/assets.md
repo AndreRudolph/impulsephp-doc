@@ -1,4 +1,4 @@
-<h3 class="doc-title">Assets</h3>
+<h3 class="doc-title">App & Configuration</h3>
 
 - [Introduction](#introduction)
 - [Javascript](#javascript)
