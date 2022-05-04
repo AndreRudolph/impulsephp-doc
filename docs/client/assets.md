@@ -11,9 +11,9 @@ For dealing with assets, the Impulse PHP Framework advises the usage of webpack.
 
 Every server component is mapped to a client side component. This article covers the basics for rendering and updating components aswell as creating and handling event listeners.
 
-<h5><a id="javascript">Javascript</a></h5>
+However, once the framework has been successfully intiailized, all required assets are placed in the assets/ directory.
 
-Once the framework has been successfully initialized, a couple of javascript files have been automatically generated in the assets/ directory. 
+<h5><a id="javascript">Javascript</a></h5>
 
 <h6><a id="app-js">app.js</a></h6>
 
