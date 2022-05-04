@@ -17,6 +17,7 @@ Once the framework has been successfully initialized, a couple of javascript fil
 
 <h6><a id="app-js">app.js</a></h6>
 
+The app.js is the entry point of the complete javascript application. Its purpose is to create the Impulse App instance, sets the configuration (see section below) and to run it. 
 
 As a foreword, every client implementation of components should extend the <span class="code-hint">AbstractComponent</span> class. This ensures a correct setup and lifecycle for that component. Please only do not extend the class if you absolutely know what you need to do.
 
