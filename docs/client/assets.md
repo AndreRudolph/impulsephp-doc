@@ -1,11 +1,7 @@
 <h3 class="doc-title">Assets</h3>
 
 - [Introduction](#introduction)
-- [Create components](#create-components)
-- [Updates from server](#updates-from-server)
-- [Component lifecycle](#component-lifecycle)
-- [Event listener](#event-listener)
-- [Learn more about components](#advanced_topics)
+- [Javascript files](#javascript-files)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -13,7 +9,7 @@ For dealing with assets, the Impulse PHP Framework advises the usage of webpack.
 
 Every server component is mapped to a client side component. This article covers the basics for rendering and updating components aswell as creating and handling event listeners.
 
-<h5><a id="create-components">Create custom component</a></h5>
+<h5><a id="javascript">Javascript</a></h5>
 
 As a foreword, every client implementation of components should extend the <span class="code-hint">AbstractComponent</span> class. This ensures a correct setup and lifecycle for that component. Please only do not extend the class if you absolutely know what you need to do.
 
