@@ -3,6 +3,7 @@
 - [Introduction](#introduction)
 - [app.js](#app-js)
 - [config.js](#config-js)
+- [AppComponents.js](#appcomponents-js)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -65,3 +66,7 @@ ImpulseRuntime
 
 export default ImpulseRuntime;</code>
 </pre>
+
+<h6><a id="appcomponents-js">AppComponents.js</a></h6>
+
+This file is automatically imported in the app.js file and its purpose is to bundle all js component files of the app.
