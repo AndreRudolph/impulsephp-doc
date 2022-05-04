@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });</code>
 </pre>
 
-The app.js imports the Impulse app sources that are placed in the ImpulseBundle in the vendor directory. The reason is that the user of the framework does not need to manually copy the source files by hand with every framework update. If you do not want this, feel free to copy them and import them manually.
+The app.js imports the Impulse app sources that are placed in the ImpulseBundle in the vendor directory. The reason is that the user of the framework does not need to manually copy the source files by hand with every framework update. This is a good practice to minimize compatibility issues with newer versions.
 
 <h6><a id="config-js">config.js</a></h6>
 
