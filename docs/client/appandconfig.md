@@ -6,11 +6,11 @@
 
 <h4><a id="introduction">Introduction</a></h4>
 
-For dealing with assets, the Impulse PHP Framework advises the usage of webpack. Webpack is a module bundler that compiles, minifies and collects all required web assets like javascript, scss and static resources such as images altogether.  
+Managing complex applications becomes tricky when dealing with assets like javascript, sass / scss and static resources like images or media in general. To reduce this complexity, the Impulse PHP Framework takes advantage of using webpack as a module builder to compile, minify and collect all required assets together. 
 
-Every server component is mapped to a client side component. This article covers the basics for rendering and updating components aswell as creating and handling event listeners.
+Luckily the Symfony framework already provides the WebpackEncoreBundle that wraps webpack by providing a handy facade for its configuration.
 
-However, once the framework has been successfully intiailized, all required assets are placed in the assets/ directory.
+Once the Impulse framework has been initialized, the original webpack.config.js had been replaced and all files in the assets/ directory had been removed.
 
 <h4><a id="app-js">app.js</a></h4>
 
