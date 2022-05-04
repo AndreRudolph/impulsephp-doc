@@ -35,7 +35,7 @@ The app.js is the entry point of the Impulse javascript application. Its purpose
 
 As you might have noticed, the sources are not copied to the assets/ directory and rather being imported from the ImpulseBundle. The main reason is that the user of the framework does not need to manually copy the source files by hand with every framework update and thus to minimize compatibility issues with newer versions.
 
-<h6><a id="config-js">config.js</a></h6>
+<h4><a id="config-js">config.js</a></h4>
 
 The previous mentioned WebpackEncoreBundle provides an awesome configuration facade for webpack configuration. We decided to use the same approach for configuring the Impulse client engine by providing a fluent interface API.
 
@@ -67,6 +67,6 @@ ImpulseRuntime
 export default ImpulseRuntime;</code>
 </pre>
 
-<h6><a id="appcomponents-js">AppComponents.js</a></h6>
+<h4><a id="appcomponents-js">AppComponents.js</a></h4>
 
 This file is automatically imported in the app.js file and its purpose is to bundle all custom js component files together. Whenever you create a component javascript class you have to import it here.
