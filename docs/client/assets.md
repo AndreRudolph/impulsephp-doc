@@ -1,7 +1,7 @@
 <h3 class="doc-title">Assets</h3>
 
 - [Introduction](#introduction)
-- [Javascript files](#javascript-files)
+- [Javascript](#javascript)
 
 <h4><a id="introduction">Introduction</a></h4>
 
