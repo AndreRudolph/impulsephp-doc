@@ -16,6 +16,25 @@ Once the Impulse framework has been initialized, the original webpack.config.js 
 
 The app.js is the entry point of the Impulse javascript application. Its purpose is to create the Impulse App instance, sets the configuration (see section below) and to run it. 
 
+<pre class="imp-code code-white line-numbers language-js">
+	<code class="language-js">import './app/libs/prism';
+import './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/ImpulseCore';
+import './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/ImpulseComponents';
+import './app/AppComponents';
+import './../scss/app.scss';
+
+import App from './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/Kernel/App';
+import ImpulseRuntime from './config';
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    let app = new App();
+    app.setConfig(ImpulseRuntime);
+    app.run();
+});</code>
+</pre>
+
+The app.js imports the Impulse app sources that are placed in the ImpulseBundle in the vendor directory. The reason is that the user of the framework does not need to manually copy the source files by hand with every framework update. If you do not want this, feel free to copy them and import them manually.
+
 <h6><a id="config-js">config.js</a></h6>
 
 The config.js file follows a similar approach like the webpack.config.js. It defines some configurations by using a fluent interface with convenient methods. The very basics are provided by default and can be configured by using the configuration API.
