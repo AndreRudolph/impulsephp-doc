@@ -18,7 +18,7 @@ Views (templates) work quite a bit different than you are used to with Symfony. 
 
 The following example is a minimal example with just a simple text output.
 
-  <pre class="code-white line-numbers language-twig">
+  <pre class="imp-code code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;Hello world&lt;/window&gt;
       &lt;/impulse&gt;</code>
