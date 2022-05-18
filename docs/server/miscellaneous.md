@@ -19,7 +19,6 @@ In web applications it is a common use case to provide static file downloads suc
 		#[Listen(event: Events::CLICK, component: 'btnCreateReport')]   
         public function createReport(Event $event)
         {
-        	$payload = 'This is going to be the content of the file';
             $this->downloadFile('path/to/file.ext', 'fileName.ext');
         }
   	}</code>
