@@ -63,26 +63,9 @@ For using the validator, the components that need to be validated must have set 
 
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
-    namespace App\Controller;
-
-    use Impulse\ImpulseBundle\Controller\AbstractController;
-    use Impulse\ImpulseBundle\UI\Components\Textbox;
-    use Impulse\ImpulseBundle\UI\Components\ComponentInterface;
-    use Impulse\ImpulseBundle\Execution\Events\Event;
-
-
-    class MyController extends AbstractController
-    {
-        private ?Textbox $tb = null;
-        
-        public function afterCreate(Event $event): void
-        {
-            parent::afterCreate($event);
-            $this->tb->setValidationRules([
-            	'value' => 'required|min:20'
-            ]);
-        }
-    }</code>
+    
+    $this->tb->setValidationRules(['value' => 'required|min:20']);
+    </code>
 </pre>
 
 You may also set the rules within a template file. Since the arguments of the attributes are interpreted as a string, you have to use a different notation so that the <span class="code-hint">setValidationRules</span> setter can explode it to an array.
