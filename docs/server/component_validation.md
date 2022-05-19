@@ -72,3 +72,25 @@ You may also set the rules within a template file. Since the arguments of the at
           &lt;textbox id="tb" validationRules="value@required|min:20" /&gt;
       &lt;/impulse&gt;</code>
   </pre>
+
+The validator can then be used to validate components.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    namespace App\Controller;
+
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\UI\Components\Textbox;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
+
+    class MyController extends AbstractController
+    {
+        private ?Textbox $tb = null;
+        
+        public function afterCreate(Event $event): void
+        {
+            parent::afterCreate($event);
+            $this->getValidator()->validate($this->tb);
+        }
+    }</code>
+</pre>
