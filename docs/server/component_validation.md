@@ -3,6 +3,8 @@
 - [Introduction](#introduction)
 - [Component state](#component-state)
 - [Validation](#validation)
+    - [Validator and rules](#validator-and-rules)
+    - [Manual validation](#manual-validation)
 
 <h4><a id="introduction">Introduction</a></h4>
 Validation is a key requirement of any application when it comes to user's input. The Impulse framework offers some good mechanics to have a comfortable and yet flexible way of validating forms. 
@@ -51,7 +53,4 @@ All components extending the InputComponent have a default implementation of sta
 
 <h4><a id="component-state">Validation</a></h4>
 
-With the Impulse PHP Framework you basically have two approaches for validation:
-
-- Manual validation
-- Usage of the validation API
+While you can use validation without the previous described state feature, it is highly recommended to use both of them together. 
