@@ -11,7 +11,7 @@ Validation is a key requirement of any application when it comes to user's input
 
 <h4><a id="component-state">Component state</a></h4>
 
-Every component that extends from <span class="code-hint">AbstractComponent</span> provides a built-in solution for a component state. In detail, the state comprises of three different attributes.
+Every component that extends from <span class="code-hint">AbstractComponent</span> provides a built-in solution for a component state. In detail, the state comprises of three different attributes: state, state message and state type.
 
 The state itself can be any name you need to have. By default there are four different states. 
 
