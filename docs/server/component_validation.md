@@ -53,4 +53,6 @@ All components extending the InputComponent have a default implementation of sta
 
 <h4><a id="component-state">Validation</a></h4>
 
-While you can use validation without the previous described state feature, it is highly recommended to use both of them together. This chapter will focus on using both of them but you are free to implement your own validation handling.
+While you can use validation without the previous described state feature, it is highly recommended to use both of them together. This chapter will focus on using both of them but you are free to implement your own validation handling. 
+
+Basically you have two different approaches for doing validations. One is the usage of the provided validator and its rules or by validtating inputs by hand. The validor uses the awesome <a href="https://github.com/floriankraemer/validation" target="_blank">Somnambulist Validation library</a>.
