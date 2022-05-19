@@ -45,6 +45,10 @@ Secondly the message that shall appear to the user can be set by calling the <sp
     }</code>
 </pre>
 
+There is another property called <span class="code-hint">stateType</span> that can be set by calling <span class="code-hint">stateType</span>. The type declares the way of visualization. The default value is "default."
+
+All components extending the InputComponent have a default implementation of state handling and visualization. With default value the input element of the component is extended with a css class and the message appears on bottom of it. By changing the type to "tooltip", the message will instead appear as a tooltip.
+
 <h4><a id="introduction">Introduction</a></h4>
 
 Impulse middlewares are a great concept that are highly inspired by the Laravel Framework. Since the workflow 
