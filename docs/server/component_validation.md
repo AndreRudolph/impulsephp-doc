@@ -1,7 +1,22 @@
 <h3 class="doc-title">Validation & states</h3>
 
+- [Introduction](#introduction)
 - [Component state](#component-state)
 - [Validation](#validation)
+
+<h4><a id="introduction">Introduction</a></h4>
+Validation is a key requirement of any application when it comes to user's input. The Impulse framework offers some good mechanics to have a comfortable and yet flexible way of validating forms. 
+
+<h4><a id="component-state">Component state</a></h4>
+
+Every component that extends from <span class="code-hint">AbstractComponent</span> provides a built-in solution for a component state. In detail, the state comprises of three different attributes.
+
+The state itself can be any name you need to have. By default there are four different states. 
+
+- <span class="code-hint">true</span> which indicates that the component might have a state in the future and enables the state handling. The DOMs structure will be prepared for having a state and a state message but nothing is yet visualized. 
+- <span class="code-hint">ok</span> which indicates that everything is fine
+- <span class="code-hint">warning</span> which indicates that the input in general will be accepted but the user will be warned about potential side effects
+- <span class="code-hint">error</span> which indicates an error that prevents further processing
 
 <h4><a id="introduction">Introduction</a></h4>
 
