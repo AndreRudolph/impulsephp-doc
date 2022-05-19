@@ -20,6 +20,8 @@ The state itself can be any name you need to have. By default there are four dif
 
 The state can be set by calling the <span class="code-hint">setState</span> method of the component.
 
+Secondly the message that shall appear to the user can be set by calling the <span class="code-hint">setState</span> method.
+
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     namespace App\Controller;
@@ -38,6 +40,7 @@ The state can be set by calling the <span class="code-hint">setState</span> meth
         {
             parent::afterCreate($event);
             $this->tb->setState(ComponentInterface::STATE_ERROR);
+            $this->tb->setStateMessage('Something is wrong with the input.');
         }
     }</code>
 </pre>
