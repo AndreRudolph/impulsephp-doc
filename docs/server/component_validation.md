@@ -53,5 +53,5 @@ All components extending the InputComponent have a default implementation of sta
 
 With the Impulse PHP Framework you basically have two approaches for validation:
 
-- Manual validations
+- Manual validation
 - Usage of the validation API
