@@ -85,7 +85,7 @@ For using the validator, the components that need to be validated must have set 
     }</code>
 </pre>
 
-You may also set the rules within a template file. Since the arguments of the attributes are interpreted as a string, you have to use a different notation to declare the rules as an array.
+You may also set the rules within a template file. Since the arguments of the attributes are interpreted as a string, you have to use a different notation so that the <span class="code-hint">setValidationRules</span> setter can explode it to an array.
 
   <pre class="code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
