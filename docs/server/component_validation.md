@@ -18,6 +18,30 @@ The state itself can be any name you need to have. By default there are four dif
 - <span class="code-hint">warning</span> which indicates that the input in general will be accepted but the user will be warned about potential side effects
 - <span class="code-hint">error</span> which indicates an error that prevents further processing
 
+The state can be set by calling the <span class="code-hint">setState</span> method of the component.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+    namespace App\Controller;
+
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\UI\Components\Textbox;
+    use Impulse\ImpulseBundle\UI\Components\ComponentInterface;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
+
+
+    class MyController extends AbstractController
+    {
+        private ?Textbox $tb = null;
+        
+        public function afterCreate(Event $event): void
+        {
+            parent::afterCreate($event);
+            $this->tb->setState(ComponentInterface::STATE_ERROR);
+        }
+    }</code>
+</pre>
+
 <h4><a id="introduction">Introduction</a></h4>
 
 Impulse middlewares are a great concept that are highly inspired by the Laravel Framework. Since the workflow 
