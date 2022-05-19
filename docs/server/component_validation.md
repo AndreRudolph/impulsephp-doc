@@ -62,10 +62,7 @@ Basically you have two different approaches for doing validations. One is the us
 For using the validator, the components that need to be validated must have set the validation rules. The validation rules are an associative array that defines the properties to validate as keys and the rules as their respective values:
 
 <pre class="code-white line-numbers language-php">
-	<code class="imp-code language-php"><?php
-    
-    $this->tb->setValidationRules(['value' => 'required|min:20']);
-    </code>
+	<code class="imp-code language-php">$this->tb->setValidationRules(['value' => 'required|min:20']);</code>
 </pre>
 
 You may also set the rules within a template file. Since the arguments of the attributes are interpreted as a string, you have to use a different notation so that the <span class="code-hint">setValidationRules</span> setter can explode it to an array.
