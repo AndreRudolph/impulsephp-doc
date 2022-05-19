@@ -90,7 +90,10 @@ The validator can then be used to validate components.
         public function afterCreate(Event $event): void
         {
             parent::afterCreate($event);
-            $this->getValidator()->validate($this->tb);
+            
+            if ($this->getValidator()->validate($this->tb)->passes()) {
+            	// everything is fine, do further processing 
+            }
         }
     }</code>
 </pre>
