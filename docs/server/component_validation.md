@@ -73,7 +73,9 @@ You may also set the rules within a template file. Since the arguments of the at
       &lt;/impulse&gt;</code>
   </pre>
 
-The validator can then be used to validate components.
+The validator can then be retrieved from the <span class="code-hint">AbstractController</span> with the <span class="code-hint">getValidator</span> method. You can simply call <span class="code-hint">validate</span> and pass a variadric list of components or callables (they will be covered later on).
+
+The return value of the validation is a <span class="code-hint">Impulse\ImpulseBundle\Components\Validation\ValidationResult</span> object.
 
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
