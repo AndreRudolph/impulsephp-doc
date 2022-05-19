@@ -72,8 +72,6 @@ You may also set the rules within a template file. Since the arguments of the at
 
   <pre class="code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
-          &lt;window&gt;
-              &lt;textbox id="tb" validationRules="value@required|min:20" /&gt;
-          &lt;/window&gt;
+          &lt;textbox id="tb" validationRules="value@required|min:20" /&gt;
       &lt;/impulse&gt;</code>
   </pre>
