@@ -50,3 +50,8 @@ There is another property called <span class="code-hint">stateType</span> that c
 All components extending the InputComponent have a default implementation of state handling and visualization. With default value the input element of the component is extended with a css class and the message appears on bottom of it. By changing the type to "tooltip", the message will instead appear as a tooltip.
 
 <h4><a id="component-state">Validation</a></h4>
+
+With the Impulse PHP Framework you basically have two approaches for validation:
+
+- Manual validations
+- Usage of the validation API
