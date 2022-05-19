@@ -99,3 +99,5 @@ The validator can then be retrieved from the <span class="code-hint">AbstractCon
 </pre>
 
 The return value of the validation is a <span class="code-hint">Impulse\ImpulseBundle\Components\Validation\ValidationResult</span> object and offers convenient methods for further validation handling. However, in the example above the validator has automatic handling enabled. This means, that the validation result will be flattened and for each failed component the state will be set to error state and the validation message will be set to the state message.
+
+<h5><a id="custom-handling">Custom handling</a></h5>
