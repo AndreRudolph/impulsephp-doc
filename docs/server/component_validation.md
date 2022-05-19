@@ -1,4 +1,4 @@
-<h3 class="doc-title">Middlewares</h3>
+<h3 class="doc-title">Validation & states</h3>
 
 - [Introduction](#introduction)
 - [Pre action middleware](#pre-action-middleware)
