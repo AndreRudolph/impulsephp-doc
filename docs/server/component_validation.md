@@ -84,3 +84,5 @@ For using the validator, the components that need to be validated must have set 
         }
     }</code>
 </pre>
+
+You may also set the rules within a template file. Since the arguments of the attributes are interpreted as a string, you have to use a different notation to declare the rules as an array.
