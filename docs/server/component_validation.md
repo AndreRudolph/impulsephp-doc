@@ -75,8 +75,6 @@ You may also set the rules within a template file. Since the arguments of the at
 
 The validator can then be retrieved from the <span class="code-hint">AbstractController</span> with the <span class="code-hint">getValidator</span> method. You can simply call <span class="code-hint">validate</span> and pass a variadric list of components or callables (they will be covered later on).
 
-The return value of the validation is a <span class="code-hint">Impulse\ImpulseBundle\Components\Validation\ValidationResult</span> object.
-
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
     namespace App\Controller;
@@ -99,3 +97,5 @@ The return value of the validation is a <span class="code-hint">Impulse\ImpulseB
         }
     }</code>
 </pre>
+
+The return value of the validation is a <span class="code-hint">Impulse\ImpulseBundle\Components\Validation\ValidationResult</span> object and offers convenient methods for further validation handling. However, in the example above the validator has automatic handling enabled. This means, that the validation result will be flattened and for each failed component the state will be set to error state and the validation message will be set to the state message.
