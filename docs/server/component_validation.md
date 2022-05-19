@@ -13,10 +13,10 @@ Every component that extends from <span class="code-hint">AbstractComponent</spa
 
 The state itself can be any name you need to have. By default there are four different states. 
 
-- <span class="code-hint">true</span> which indicates that the component might have a state in the future and enables the state handling. The DOMs structure will be prepared for having a state and a state message but nothing is yet visualized. 
-- <span class="code-hint">ok</span> which indicates that everything is fine
-- <span class="code-hint">warning</span> which indicates that the input in general will be accepted but the user will be warned about potential side effects
-- <span class="code-hint">error</span> which indicates an error that prevents further processing
+- <span class="code-hint">true</span> indicates that the component might have a state in the future and enables the state handling. The DOMs structure will be prepared for having a state and a state message but nothing is yet visualized. 
+- <span class="code-hint">ok</span> indicates that everything is fine
+- <span class="code-hint">warning</span> indicates that the input in general will be accepted but the user will be warned about potential side effects
+- <span class="code-hint">error</span> indicates an error that prevents further processing
 
 The state can be set by calling the <span class="code-hint">setState</span> method of the component.
 
