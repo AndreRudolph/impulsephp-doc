@@ -4,7 +4,6 @@
 - [Component state](#component-state)
 - [Validation](#validation)
     - [Validator and rules](#validator-and-rules)
-    - [Manual validation](#manual-validation)
 
 <h4><a id="introduction">Introduction</a></h4>
 Validation is a key requirement of any application when it comes to user's input. The Impulse framework offers some good mechanics to have a comfortable and yet flexible way of validating forms. 
