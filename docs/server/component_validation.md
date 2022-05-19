@@ -53,4 +53,4 @@ All components extending the InputComponent have a default implementation of sta
 
 <h4><a id="component-state">Validation</a></h4>
 
-While you can use validation without the previous described state feature, it is highly recommended to use both of them together. 
+While you can use validation without the previous described state feature, it is highly recommended to use both of them together. This chapter will focus on using both of them but you are free to implement your own validation handling.
