@@ -101,3 +101,9 @@ The validator can then be retrieved from the <span class="code-hint">AbstractCon
 The return value of the validation is a <span class="code-hint">Impulse\ImpulseBundle\Components\Validation\ValidationResult</span> object and offers convenient methods for further validation handling. However, in the example above the validator has automatic handling enabled. This means, that the validation result will be flattened and for each failed component the state will be set to error state and the validation message will be set to the state message.
 
 <h5><a id="custom-handling">Custom handling</a></h5>
+
+You might want to take full control of the validation result handling. For this purpose you can call <span class="code-hint">disableAutoHandling</span>.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php">$result = $this->getValidator()->disableAutoHandling()->validate($this->tb);</code>
+</pre>
