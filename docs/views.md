@@ -42,7 +42,7 @@ It is a common good practice (separation of concerns) to separate views into sma
   <pre class="code-white line-numbers language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
-              &lt;window&gt;Hello world&lt;/window&gt;
+              &lt;div&gt;Hello world&lt;/div&gt;
           &lt;/window&gt;
       &lt;/impulse&gt;</code>
   </pre>
