@@ -112,7 +112,7 @@ The result object offers different methods for working with the validation resul
 
 <h5><a id="custom-handling">Custom handling</a></h5>
 
-You might want to take full control of the validation result handling. For this purpose you can call <span class="code-hint">disableAutoHandling</span>.
+In the previous section you learned how to use the validator to validate against components with no manual handling of the error visualization. However, you might need to take full control of the validation result handling. For this purpose you can call <span class="code-hint">disableAutoHandling</span>.
 
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php">$result = $this->getValidator()->disableAutoHandling()->validate($this->tb);</code>
