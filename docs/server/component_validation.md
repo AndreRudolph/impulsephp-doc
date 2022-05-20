@@ -90,8 +90,9 @@ The validator can then be retrieved from the <span class="code-hint">AbstractCon
         public function afterCreate(Event $event): void
         {
             parent::afterCreate($event);
+            $result = $this->getValidator()->validate($this->tb);
             
-            if ($this->getValidator()->validate($this->tb)->passes()) {
+            if ($result->passes()) {
             	// everything is fine, do further processing 
             }
         }
@@ -99,6 +100,15 @@ The validator can then be retrieved from the <span class="code-hint">AbstractCon
 </pre>
 
 The return value of the validation is a <span class="code-hint">Impulse\ImpulseBundle\Components\Validation\ValidationResult</span> object and offers convenient methods for further validation handling. However, in the example above the validator has automatic handling enabled. This means, that the validation result will be flattened and for each failed component the state will be set to error state and the validation message will be set to the state message.
+
+The result object offers different methods for working with the validation results:
+
+- <span class="code-hint">passes()</span> returns true if the validation was successful and false if not
+- <span class="code-hint">fails()span> returns true if the validation failed and true if validation passed
+- <span class="code-hint">getFailedValidationsCount()</span> returns the number of failed validations
+- <span class="code-hint">getResult()</span> returns a map with all failed validation results for all components. You will most likely need this if you need multiple validation messages per input.
+- <span class="code-hint">getFlatResult()</span> returns a map with exactly one failed validation per component. You will most likely need this if you need only one validation message per input.
+
 
 <h5><a id="custom-handling">Custom handling</a></h5>
 
@@ -108,10 +118,4 @@ You might want to take full control of the validation result handling. For this 
 	<code class="imp-code language-php">$result = $this->getValidator()->disableAutoHandling()->validate($this->tb);</code>
 </pre>
 
-The result object offers different methods for working with the validation results:
-
-- <span class="code-hint">passes()</span> returns true if the validation was successful and false if not
-- <span class="code-hint">fails()span> returns true if the validation failed and true if validation passed
-- <span class="code-hint">getFailedValidationsCount()</span> returns the number of failed validations
-- <span class="code-hint">getResult()</span> returns a map with all failed validation results for all components. You will most likely need this if you need multiple validation messages per input.
-- <span class="code-hint">getFlatResult()</span> returns a map with exactly one failed validation per component. You will most likely need this if you need only one validation message per input.
+With the methods of the result object you will have maximum flexibility to build your own way of validation handling and visualization.
