@@ -5,6 +5,7 @@
 - [Validation with validator](#validation)
     - [Validator and rules](#validator-and-rules)
     - [Custom handling](#custom-handling)
+    - [Available rules](#available-rules)
 
 <h4><a id="introduction">Introduction</a></h4>
 Validation is a key requirement of any application when it comes to user's input. The Impulse framework offers some good mechanics to have a comfortable and yet flexible way of validating forms. 
@@ -119,3 +120,5 @@ In the previous section you learned how to use the validator to validate against
 </pre>
 
 With the methods of the result object you will have maximum flexibility to build your own way of validation handling and visualization.
+
+<h5><a id="available-rules">Available rules</a></h5>
