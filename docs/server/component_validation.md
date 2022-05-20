@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [Component state](#component-state)
-- [Validation](#validation)
+- [Validation with validator](#validation)
     - [Validator and rules](#validator-and-rules)
     - [Custom handling](#custom-handling)
 
@@ -51,7 +51,7 @@ There is another property called <span class="code-hint">stateType</span> that c
 
 All components extending the InputComponent have a default implementation of state handling and visualization. With default value the input element of the component is extended with a css class and the message appears on bottom of it. By changing the type to "tooltip", the message will instead appear as a tooltip.
 
-<h4><a id="component-state">Validation</a></h4>
+<h4><a id="component-state">Validation with validator</a></h4>
 
 While you can use validation without the previous described state feature, it is highly recommended to use both of them together. This chapter will focus on using both of them but you are free to implement your own validation handling. 
 
