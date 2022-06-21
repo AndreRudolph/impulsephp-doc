@@ -52,7 +52,7 @@ The example below shows the skeleton for any functional test that requires a cli
 
 There are no recordings defined yet that can be executed. In the next we'll explain recordings in depth.
 
-<h5><a id="records">records</a></h5>
+<h5><a id="records">Records</a></h5>
 
 A record is basically a collection of three different parts. 
 
