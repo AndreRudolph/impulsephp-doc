@@ -49,6 +49,8 @@ The example below shows the skeleton for any functional test that requires a cli
 	}</code>
 </pre>
 
+There are no recordings defined yet. In the next chapter you'll see how recordings will be created.
+
 
 Every component that extends from <span class="code-hint">AbstractComponent</span> provides a built-in solution for a component state. In detail, the state comprises of three different attributes: state, state message and state type.
 
