@@ -95,7 +95,38 @@ The first part of any record is the request that will be send to the server. The
 	}</code>
 </pre>
 
-Creating and defining more complex requests is covered later in this article.
+Every request after the first request should be an AJAX request. For this purpose, the RequestBuilder offers an ajax method.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+
+	namespace App\Tests;
+
+	// other imports
+    use Impulse\ImpulseBundle\Tester\Record;
+    use Impulse\ImpulseBundle\Tester\Request\RequestBuilder;
+
+	class CounterWebTest extends WebTestCase
+	{
+        public function testCounter()
+        {
+            $client = static::createClient();
+            $tester = new Tester($client);
+			$tester->record();
+            $tester->run();
+            self::assertResponseIsSuccessful();
+        }
+        
+        public function initialRequest(): Record
+        {
+        	$request = RequestBuilder::ajax('POST', '/_impulse/event/')
+            	->create();
+            
+           
+            return new Record($request, null, null);
+        }
+	}</code>
+</pre>
 
 <h5><a id="response-verificator">Response verificator</a></h5>
 A response verificator is a closure function with two arguments: The current response object and (if not the first request) the previous response object. You may use common PHPUnit assertions to verify the response. See the example below for a simple status code verification.
