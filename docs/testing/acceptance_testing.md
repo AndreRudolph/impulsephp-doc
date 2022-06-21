@@ -82,7 +82,7 @@ The first part of any record is the request that will be send to the server. The
         {
             $client = static::createClient();
             $tester = new Tester($client);
-			$tester->record();
+			$tester->record($this->initialRequest());
             $tester->run();
             self::assertResponseIsSuccessful();
         }
@@ -112,16 +112,16 @@ Every request after the first request should be an AJAX request. For this purpos
         {
             $client = static::createClient();
             $tester = new Tester($client);
-			$tester->record();
+			$tester->record($this->initialRequest());
+            $tester->record($this->ajaxRequest());
             $tester->run();
             self::assertResponseIsSuccessful();
         }
         
-        public function initialRequest(): Record
+        public function ajaxRequest(): Record
         {
         	$request = RequestBuilder::ajax('POST', '/_impulse/event/')
             	->create();
-            
            
             return new Record($request, null, null);
         }
