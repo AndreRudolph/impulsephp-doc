@@ -147,3 +147,5 @@ A page model verificator is like the response verificator a closure function wit
         }
 	}</code>
 </pre>
+
+For sure you can do more complex verifications. For a full list of available methods of the response and the page model object, you can have a look into the class.
