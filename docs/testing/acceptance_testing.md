@@ -119,6 +119,8 @@ A response verificator is a closure function with two arguments: The current res
 	}</code>
 </pre>
 
+Please note that the initial response will return a html document (since its the entry point of the application) whereas consequtive requests will only return json response.
+
 <h5><a id="page-model-verificator">Page model verificator</a></h5>
 A page model verificator is like the response verificator a closure function with the exact same parameters. You could use one verificator for both types of verifications but it is a good practice to separate concerns.
 
