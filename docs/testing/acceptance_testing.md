@@ -5,6 +5,7 @@
 - [Create a test](#create-tests)
     - [Records](#records)
     - [Requests](#requests)
+    - [Sending events through requests](#sending-events-through-requests)
     - [Response verificator](#response-verificator)
     - [Page model verificator](#page-model-verificator)
 
@@ -127,6 +128,8 @@ Every request after the first request should be an AJAX request. For this purpos
         }
 	}</code>
 </pre>
+
+<h5><a id="sending-events-through-requests">Sending events through requests</a></h5>
 
 <h5><a id="response-verificator">Response verificator</a></h5>
 A response verificator is a closure function with two arguments: The current response object and (if not the first request) the previous response object. You may use common PHPUnit assertions to verify the response. See the example below for a simple status code verification.
