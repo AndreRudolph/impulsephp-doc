@@ -34,7 +34,16 @@ A functional test is very simple to create. The example below shows a skeleton o
 
 	class CounterWebTest extends WebTestCase
 	{
+        public function testCounter()
+        {
+            $client = static::createClient();
+            $tester = new Tester($client);
 
+            // add recordings here
+
+            $tester->run();
+            self::assertResponseIsSuccessful();
+        }
 	}</code>
 </pre>
 
