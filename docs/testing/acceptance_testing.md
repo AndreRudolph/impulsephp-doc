@@ -16,6 +16,28 @@ The Impulse framework provides a testing framework that has been especially desi
 
 <h4><a id="create-tests">Create tests</a></h4>
 
+A functional test is very simple to create. The example below shows a skeleton of a functional test.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+
+	namespace App\Tests;
+
+	use Impulse\ImpulseBundle\Components\UidHelperTrait;
+	use Impulse\ImpulseBundle\Events\Events;
+	use Impulse\ImpulseBundle\Tester\Record;
+	use Impulse\ImpulseBundle\Tester\Request\Command;
+	use Impulse\ImpulseBundle\Tester\Request\RequestBuilder;
+	use Impulse\ImpulseBundle\Tester\Response\Response;
+	use Impulse\ImpulseBundle\Tester\Tester;
+	use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+
+	class CounterWebTest extends WebTestCase
+	{
+
+	}</code>
+</pre>
+
 Every component that extends from <span class="code-hint">AbstractComponent</span> provides a built-in solution for a component state. In detail, the state comprises of three different attributes: state, state message and state type.
 
 The state itself can be any name you need to have. By default there are four different states. 
