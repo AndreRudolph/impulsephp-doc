@@ -8,7 +8,7 @@
     - [Available rules](#available-rules)
 
 <h4><a id="introduction">Introduction</a></h4>
-Functional testing is a common and in most cases one of the last layers in a testing waterfall model. Its purpose is a higher level testing methodology that usually-
+Functional testing is a common and in most cases one of the last layers in a testing waterfall model. Its purpose is to have a more high level perspective of the functions provided by the application.
 
 <h4><a id="component-state">Component state</a></h4>
 
