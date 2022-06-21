@@ -52,3 +52,11 @@ The example below shows the skeleton for any functional test that requires a cli
 There are no recordings defined yet. In the next chapter you'll see how recordings will be created.
 
 <h5><a id="records">records</a></h5>
+
+A record is basically a collection of three different parts. 
+
+<ul>
+	<li>Request: The request itself with all required information that will be send to the application</li>
+    <li>Response verificator: The response verificator can be used to analyze the response of the application to verify its correctness.</li>
+    <li>Page model verificator: The page model verificator is used to verify if the internal page model of the application after the respective request is as expected. It is mostly used for the framework developers to verify the correctness of the internal page state but can also be used by the frameworks user for further verifications.</li>
+</ul>
