@@ -4,8 +4,7 @@
 - [Testing framework](#testing-framework)
 - [Create a test](#create-tests)
     - [Records](#records)
-    - [Custom handling](#custom-handling)
-    - [Available rules](#available-rules)
+    - [Response verificator](#response-verificator)
 
 <h4><a id="introduction">Introduction</a></h4>
 Functional testing is a common and in most cases one of the last layers in a testing waterfall model. Its purpose is to have a more high level perspective and expectations of the functions provided by the application.
@@ -90,3 +89,8 @@ It is a good practice to have each record placed in its own method. The followin
         }
 	}</code>
 </pre>
+
+Creating and defining more complex requests is covered later in this article.
+
+<h5><a id="response-verificator">Response verificator</a></h5>
+A response verificator is a closure function with two arguments: The current response object and (if not the first request) the previous response object.
