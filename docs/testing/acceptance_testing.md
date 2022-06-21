@@ -133,6 +133,40 @@ Every request after the first request should be an AJAX request. For this purpos
 
 A real world scenario test would not just send an ajax request without any content but instead would e.g. simulate a click an a specific button inside your application. Consider having a counter app that increases a displayed counter whenever the user clicks on the button with the id (remember: the id is the components internal id and not the DOM id) btnIncrease.
 
+To achieve this, the RequestBuilder offers the <span class="code-hint">command</span> method.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+
+	namespace App\Tests;
+
+	// other imports
+    use Impulse\ImpulseBundle\Events\Events;
+    use Impulse\ImpulseBundle\Tester\Request\Command;
+
+	class CounterWebTest extends WebTestCase
+	{
+        public function testCounter()
+        {
+            $client = static::createClient();
+            $tester = new Tester($client);
+			$tester->record($this->initialRequest());
+            $tester->record($this->ajaxRequest());
+            $tester->run();
+            self::assertResponseIsSuccessful();
+        }
+        
+        public function ajaxRequest(): Record
+        {
+        	$request = RequestBuilder::ajax('POST', '/_impulse/event/')
+            	->command(new Command(Events::CLICK, null, 'btnIncrease'))
+            	->create();
+           
+            return new Record($request, null, null);
+        }
+	}</code>
+</pre>
+
 <h5><a id="response-verificator">Response verificator</a></h5>
 A response verificator is a closure function with two arguments: The current response object and (if not the first request) the previous response object. You may use common PHPUnit assertions to verify the response. See the example below for a simple status code verification.
 
