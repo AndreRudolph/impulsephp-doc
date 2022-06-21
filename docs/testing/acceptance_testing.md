@@ -49,7 +49,7 @@ The example below shows the skeleton for any functional test that requires a cli
 	}</code>
 </pre>
 
-There are no recordings defined yet. In the next chapter you'll see how recordings will be created.
+There are no recordings defined yet that can be executed. In the next we'll explain recordings in depth.
 
 <h5><a id="records">records</a></h5>
 
