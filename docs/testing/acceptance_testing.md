@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [Testing framework](#testing-framework)
-- [Validation with validator](#validation)
+- [Create a test](#create-tests)
     - [Validator and rules](#validator-and-rules)
     - [Custom handling](#custom-handling)
     - [Available rules](#available-rules)
@@ -14,6 +14,7 @@ Functional testing is a common and in most cases one of the last layers in a tes
 
 The Impulse framework provides a testing framework that has been especially designed for creating and executing functional tests. It is based on the awesome testing library provided by the Symfony framework. You don't need to install any further dependencies since they are installed by default with the Impulse framework.
 
+<h4><a id="testing-framework">Create tests</a></h4>
 
 Every component that extends from <span class="code-hint">AbstractComponent</span> provides a built-in solution for a component state. In detail, the state comprises of three different attributes: state, state message and state type.
 
