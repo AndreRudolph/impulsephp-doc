@@ -65,6 +65,7 @@ A record is basically a collection of three different parts.
 It is a good practice to have each record placed in its own method. The following code will run a single record by sending a GET request to the root URI with no verificators.
 
 <h5><a id="requests">Requests</a></h5>
+The first part of any record is the request that will be send to the server. The testing framework offers a Facade for creating requests for convenient use cases.
 
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
