@@ -93,4 +93,27 @@ It is a good practice to have each record placed in its own method. The followin
 Creating and defining more complex requests is covered later in this article.
 
 <h5><a id="response-verificator">Response verificator</a></h5>
-A response verificator is a closure function with two arguments: The current response object and (if not the first request) the previous response object.
+A response verificator is a closure function with two arguments: The current response object and (if not the first request) the previous response object. You may use common PHPUnit assertions to verify the response. See the example below for a simple status code verification.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+
+	namespace App\Tests;
+
+	// imports
+
+	class CounterWebTest extends WebTestCase
+	{
+        public function initialRequest(): Record
+        {
+        	$request = RequestBuilder::request('GET', '/')->create();
+            
+            $responseVerificator = function(Response $response, ?Response $previousResponse)
+            {
+            	$this->assertEquals(200, $response->getStatusCode());
+            };
+            
+            return new Record($request, responseVerificator, null);
+        }
+	}</code>
+</pre>
