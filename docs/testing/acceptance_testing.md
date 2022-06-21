@@ -61,7 +61,7 @@ A record is basically a collection of three different parts.
     <li>Page model verificator: The page model verificator is used to verify if the internal page model of the application after the respective request is as expected. It is mostly used for the framework developers to verify the correctness of the internal page state but can also be used by the frameworks user for further verifications.</li>
 </ul>
 
-It is a good practice to have each record placed in its own method. The following code will create a record without any verificators.
+It is a good practice to have each record placed in its own method. The following code will run a single record by sending a GET request to the root URI with no verificators.
 
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
