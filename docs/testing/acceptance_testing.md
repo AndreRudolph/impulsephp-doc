@@ -131,6 +131,8 @@ Every request after the first request should be an AJAX request. For this purpos
 
 <h5><a id="sending-events-through-requests">Sending events through requests</a></h5>
 
+A real world scenario test would not just send an ajax request without any content but instead would e.g. simulate a click an a specific button inside your application. Consider having a counter app that increases a displayed counter whenever the user clicks on the button with the id (remember: the id is the components internal id and not the DOM id) btnIncrease.
+
 <h5><a id="response-verificator">Response verificator</a></h5>
 A response verificator is a closure function with two arguments: The current response object and (if not the first request) the previous response object. You may use common PHPUnit assertions to verify the response. See the example below for a simple status code verification.
 
