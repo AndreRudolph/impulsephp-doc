@@ -60,3 +60,33 @@ A record is basically a collection of three different parts.
     <li>Response verificator: The response verificator can be used to analyze the response of the application to verify its correctness.</li>
     <li>Page model verificator: The page model verificator is used to verify if the internal page model of the application after the respective request is as expected. It is mostly used for the framework developers to verify the correctness of the internal page state but can also be used by the frameworks user for further verifications.</li>
 </ul>
+
+It is a good practice to have each record placed in its own method. The following code will create a record without any verificators.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+
+	namespace App\Tests;
+
+	// other imports
+    use Impulse\ImpulseBundle\Tester\Record;
+    use Impulse\ImpulseBundle\Tester\Request\RequestBuilder;
+
+	class CounterWebTest extends WebTestCase
+	{
+        public function testCounter()
+        {
+            $client = static::createClient();
+            $tester = new Tester($client);
+			$tester->record();
+            $tester->run();
+            self::assertResponseIsSuccessful();
+        }
+        
+        public function initialRequest(): Record
+        {
+        	$request = RequestBuilder::request('GET', '/')->create();
+            return new Record($request, null, null);
+        }
+	}</code>
+</pre>
