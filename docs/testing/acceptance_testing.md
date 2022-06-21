@@ -16,7 +16,7 @@ The Impulse framework provides a testing framework that has been especially desi
 
 <h4><a id="create-tests">Create tests</a></h4>
 
-A functional test is very simple to create. The example below shows a skeleton of a functional test.
+A functional test is very simple to create. The example below shows the skeleton for any functional test that requires a client and a tester instance.
 
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
@@ -46,6 +46,8 @@ A functional test is very simple to create. The example below shows a skeleton o
         }
 	}</code>
 </pre>
+
+
 
 Every component that extends from <span class="code-hint">AbstractComponent</span> provides a built-in solution for a component state. In detail, the state comprises of three different attributes: state, state message and state type.
 
