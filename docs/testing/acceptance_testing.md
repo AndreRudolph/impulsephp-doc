@@ -5,6 +5,7 @@
 - [Create a test](#create-tests)
     - [Records](#records)
     - [Response verificator](#response-verificator)
+    - [Page model verificator](#page-model-verificator)
 
 <h4><a id="introduction">Introduction</a></h4>
 Functional testing is a common and in most cases one of the last layers in a testing waterfall model. Its purpose is to have a more high level perspective and expectations of the functions provided by the application.
@@ -114,6 +115,33 @@ A response verificator is a closure function with two arguments: The current res
             };
             
             return new Record($request, responseVerificator, null);
+        }
+	}</code>
+</pre>
+
+<h5><a id="page-model-verificator">Page model verificator</a></h5>
+A page model verificator is like the response verificator a closure function with the exact same parameters. You could use one verificator for both types of verifications but it is a good practice to separate concerns.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+
+	namespace App\Tests;
+
+	// imports
+
+	class CounterWebTest extends WebTestCase
+	{
+        public function initialRequest(): Record
+        {
+        	$request = RequestBuilder::request('GET', '/')->create();
+                       
+            $pageModelVerificator = function(Response $response, ?Response $previousResponse)
+            {
+            	$pageModel = $response->getPageModel();
+                $this->assertTrue($pageModel->hasComponentWithId('idOfComponent'));
+            }
+                       
+            return new Record($request, null, null);
         }
 	}</code>
 </pre>
