@@ -1,16 +1,19 @@
 <h3 class="doc-title">Functional testing</h3>
 
 - [Introduction](#introduction)
-- [Component state](#component-state)
+- [Testing framework](#testing-framework)
 - [Validation with validator](#validation)
     - [Validator and rules](#validator-and-rules)
     - [Custom handling](#custom-handling)
     - [Available rules](#available-rules)
 
 <h4><a id="introduction">Introduction</a></h4>
-Functional testing is a common and in most cases one of the last layers in a testing waterfall model. Its purpose is to have a more high level perspective of the functions provided by the application.
+Functional testing is a common and in most cases one of the last layers in a testing waterfall model. Its purpose is to have a more high level perspective and expectations of the functions provided by the application.
 
-<h4><a id="component-state">Component state</a></h4>
+<h4><a id="testing-framework">Testing framework</a></h4>
+
+The Impulse framework provides a testing framework that has been especially designed for creating and executing functional tests. It is based on the awesome testing library provided by the Symfony framework.
+
 
 Every component that extends from <span class="code-hint">AbstractComponent</span> provides a built-in solution for a component state. In detail, the state comprises of three different attributes: state, state message and state type.
 
