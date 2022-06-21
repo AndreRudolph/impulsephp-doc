@@ -79,15 +79,6 @@ The first part of any record is the request that will be send to the server. The
 
 	class CounterWebTest extends WebTestCase
 	{
-        public function testCounter()
-        {
-            $client = static::createClient();
-            $tester = new Tester($client);
-			$tester->record($this->initialRequest());
-            $tester->run();
-            self::assertResponseIsSuccessful();
-        }
-        
         public function initialRequest(): Record
         {
         	$request = RequestBuilder::request('GET', '/')->create();
@@ -109,16 +100,6 @@ Every request after the first request should be an AJAX request. For this purpos
 
 	class CounterWebTest extends WebTestCase
 	{
-        public function testCounter()
-        {
-            $client = static::createClient();
-            $tester = new Tester($client);
-			$tester->record($this->initialRequest());
-            $tester->record($this->ajaxRequest());
-            $tester->run();
-            self::assertResponseIsSuccessful();
-        }
-        
         public function ajaxRequest(): Record
         {
         	$request = RequestBuilder::ajax('POST', '/_impulse/event/')
