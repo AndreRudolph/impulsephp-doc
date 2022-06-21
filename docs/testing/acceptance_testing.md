@@ -4,6 +4,7 @@
 - [Testing framework](#testing-framework)
 - [Create a test](#create-tests)
     - [Records](#records)
+    - [Requests](#requests)
     - [Response verificator](#response-verificator)
     - [Page model verificator](#page-model-verificator)
 
