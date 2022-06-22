@@ -14,7 +14,9 @@ However, this article explains events more in depth and will also cover the topi
 
 <h4><a id="global-listener">Global listener</a></h4>
 
-Very complex web applications may consist of many different, independent sections that are losely connected to each other conceptually. Sometimes when something happens in one section, e.g. a record will be updated, other sections might be interested in listening to this event and update themselfes accordingly.
+Very complex web applications may consist of many different, independent sections that are losely connected to each other conceptually. Sometimes, when something happens in one section, e.g. a record will be updated, other sections might be interested in listening to this event and update themselfes accordingly.
+
+This is a use case for global listener. A controller or component can subscribe themselfes as a listener to one or more global events and are automatically invoked once one of these events are triggered.
 
 Consider you have a complex web application with many different, independent but yet active sections. For example 
 
