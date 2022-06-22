@@ -57,11 +57,14 @@ There are no recordings defined yet that can be executed. In the next we'll expl
 
 A record is basically a collection of three different parts. 
 
-<ul>
-	<li>Request: <br />The request itself with all required information that will be send to the application</li>
-    <li>Response verificator: The response verificator can be used to analyze the response of the application to verify its correctness.</li>
-    <li>Page model verificator: The page model verificator is used to verify if the internal page model of the application after the respective request is as expected. It is mostly used for the framework developers to verify the correctness of the internal page state but can also be used by the frameworks user for further verifications.</li>
-</ul>
+<h6>Request</h6>
+The request itself with all required information that will be send to the application.
+
+<h6>Response verificator</h6>
+The response verificator can be used to analyze the response of the application to verify its correctness.
+
+<h6>Page model verificator</h6>
+The page model verificator is used to verify if the internal page model of the application after the respective request is as expected. It is mostly used for the framework developers to verify the correctness of the internal page state but can also be used by the frameworks user for further verifications.
 
 It is a good practice to have each record placed in its own method. The following code will run a single record by sending a GET request to the root URI with no verificators.
 
