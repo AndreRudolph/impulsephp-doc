@@ -35,12 +35,13 @@ According to the agreed example above we will have a UserList component that sub
 
 	class UserList extends Ul
 	{
-        public function afterCreateChildren()
+        public function afterCreateChildren(): void
         {
+        	parent::afterCreateChildren();
         	$this->getPage()->subscribe('userChanged', $this, 'onUserChanged');
         }
         
-        public function onUserChanged(PageContract $page, User $user)
+        public function onUserChanged(PageContract $page, User $user): void
         {
         	// update the list
         }
@@ -60,16 +61,20 @@ A global event can be broadcast from anywhere inside a controller or component b
 
 	use App\Entities\User;
 
-	class UserList extends Ul
+	class UserDetails extends Div
 	{
-        public function afterCreateChildren()
+        private ?Button $btnSave = null;
+        
+        public function afterCreateChildren(): void
         {
-        	$this->getPage()->subscribe('userChanged', $this, 'onUserChanged');
+        	parent::afterCreateChildren();
+            $this->btnSave->addEventListener(Events::CLICK, $this, 'onUserSave');
         }
         
-        public function onUserChanged(PageContract $page, User $user)
+        public function onUserSave(ClickEvent $event): void
         {
-        	// update the list
+        	// $user = ...
+            $this->getPage()->sendEvent('userChanged', $user);
         }
 	}</code>
 </pre>
