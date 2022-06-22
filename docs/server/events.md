@@ -2,9 +2,9 @@
 
 - [Introduction](#introduction)
 - [Global listener](#global-listener)
-	- [Register listener](#register-listener)
+	- [Subscribe](#register-listener)
     - [Broadcast event](#broadcast-event)
-    - [Unsubscribe listener](#unsubscribe-listener)
+    - [Unsubscribe](#unsubscribe-listener)
 
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -18,7 +18,9 @@ Very complex web applications may consist of many different, independent section
 
 This is a use case for global listener. A controller or component can subscribe themselfes as a listener to one or more global events and are automatically invoked once one of these events are triggered. The following examples are component based but controllers can be registered the same way as global listener.
 
-<h4><a id="testing-framework">Register listener</a></h4>
+The subscribe, unsubscribe and broadcast are handled by the Page instance.
+
+<h4><a id="testing-framework">Subscribe</a></h4>
 
 The Impulse framework provides a testing framework that has been especially designed for creating and executing functional tests. It is based on the awesome testing library provided by the Symfony framework. You don't need to install any further dependencies since they are installed by default with the Impulse framework.
 
