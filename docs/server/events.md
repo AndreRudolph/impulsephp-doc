@@ -14,13 +14,48 @@ However, this article explains events more in depth and will also cover the topi
 
 <h4><a id="global-listener">Global listener</a></h4>
 
-Very complex web applications may consist of many different, independent sections that are losely connected to each other conceptually. Sometimes, when something happens in one section, e.g. a record will be updated, other sections might be interested in listening to this event and update themselfes accordingly.
+Very complex web applications may consist of many different, independent sections that are losely connected to each other conceptually. Sometimes, when something happens in one section, e.g. a record will be updated, other sections might be interested in listening to this event and update themselfes accordingly. 
 
-This is a use case for global listener. A controller or component can subscribe themselfes as a listener to one or more global events and are automatically invoked once one of these events are triggered. The following examples are component based but controllers can be registered the same way as global listener.
+This is a use case for global listener. A controller or component can subscribe themselfes as a listener to one or more global events and are automatically invoked once one of these events are triggered. 
 
-The subscribe, unsubscribe and broadcast are handled by the Page instance.
+The following examples are component based but controllers can be registered the same way as global listener. The subscribe, unsubscribe and broadcast are handled by the Page instance.
+
+For this article we assume a simple application with a left sided user list and a right sided user details view. Whenever you select an user, the user details will be populated based on the user. Once you saved the user by clicking on the save button, the changes will be persisted and the user list will be notified about the change.
 
 <h4><a id="testing-framework">Subscribe</a></h4>
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+
+	namespace App\Tests;
+
+	use Impulse\ImpulseBundle\Components\UidHelperTrait;
+	use Impulse\ImpulseBundle\Events\Events;
+	use Impulse\ImpulseBundle\Tester\Record;
+	use Impulse\ImpulseBundle\Tester\Request\Command;
+	use Impulse\ImpulseBundle\Tester\Request\RequestBuilder;
+	use Impulse\ImpulseBundle\Tester\Response\Response;
+	use Impulse\ImpulseBundle\Tester\Tester;
+	use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+
+	class CounterWebTest extends WebTestCase
+	{
+        public function testCounter()
+        {
+            $client = static::createClient();
+            $tester = new Tester($client);
+
+            // add recordings here
+
+            $tester->run();
+            self::assertResponseIsSuccessful();
+        }
+	}</code>
+</pre>
+
+
+
+
 
 The Impulse framework provides a testing framework that has been especially designed for creating and executing functional tests. It is based on the awesome testing library provided by the Symfony framework. You don't need to install any further dependencies since they are installed by default with the Impulse framework.
 
