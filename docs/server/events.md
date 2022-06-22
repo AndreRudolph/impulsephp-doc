@@ -12,6 +12,8 @@ Event based architectures are a good and common practice to separate concerns an
 
 However, this article explains events more in depth and will also cover the topic of page global event listener.
 
+<h4><a id="global-listener">Global listener</a></h4>
+
 <h4><a id="testing-framework">Testing framework</a></h4>
 
 The Impulse framework provides a testing framework that has been especially designed for creating and executing functional tests. It is based on the awesome testing library provided by the Symfony framework. You don't need to install any further dependencies since they are installed by default with the Impulse framework.
