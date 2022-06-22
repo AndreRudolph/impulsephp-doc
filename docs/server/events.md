@@ -24,11 +24,14 @@ For this article we assume a simple application with a left sided user list and 
 
 <h4><a id="testing-framework">Subscribe</a></h4>
 
+According to the agreed example above we will have a UserList component that subscribes itself to the user change event. 
+
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 
 	namespace App\Tests;
 
+	use App\Entities\User;
 	use Impulse\ImpulseBundle\Components\UidHelperTrait;
 	use Impulse\ImpulseBundle\Events\Events;
 	use Impulse\ImpulseBundle\Tester\Record;
@@ -38,17 +41,16 @@ For this article we assume a simple application with a left sided user list and 
 	use Impulse\ImpulseBundle\Tester\Tester;
 	use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-	class CounterWebTest extends WebTestCase
+	class UserList extends Ul
 	{
-        public function testCounter()
+        public function afterCreateChildren()
         {
-            $client = static::createClient();
-            $tester = new Tester($client);
-
-            // add recordings here
-
-            $tester->run();
-            self::assertResponseIsSuccessful();
+        	$this->getPage()->subscribe('userChanged', $this, 'onUserChanged');
+        }
+        
+        public function onUserChanged(PageContract $page, User $user)
+        {
+        	// update the list
         }
 	}</code>
 </pre>
