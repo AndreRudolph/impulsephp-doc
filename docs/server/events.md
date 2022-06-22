@@ -32,14 +32,6 @@ According to the agreed example above we will have a UserList component that sub
 	namespace App\Tests;
 
 	use App\Entities\User;
-	use Impulse\ImpulseBundle\Components\UidHelperTrait;
-	use Impulse\ImpulseBundle\Events\Events;
-	use Impulse\ImpulseBundle\Tester\Record;
-	use Impulse\ImpulseBundle\Tester\Request\Command;
-	use Impulse\ImpulseBundle\Tester\Request\RequestBuilder;
-	use Impulse\ImpulseBundle\Tester\Response\Response;
-	use Impulse\ImpulseBundle\Tester\Tester;
-	use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 	class UserList extends Ul
 	{
@@ -55,7 +47,7 @@ According to the agreed example above we will have a UserList component that sub
 	}</code>
 </pre>
 
-
+The first parameter is reserved for the Page object. All subsequent parameters are coming from the parameters passed to the broadcast that will be covered in the next chapter. 
 
 
 
