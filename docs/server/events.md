@@ -2,6 +2,9 @@
 
 - [Introduction](#introduction)
 - [Global listener](#global-listener)
+	- [Register listener](#register-listener)
+    - [Broadcast event](#broadcast-event)
+    - [Unsubscribe listener](#unsubscribe-listener)
 
 
 <h4><a id="introduction">Introduction</a></h4>
