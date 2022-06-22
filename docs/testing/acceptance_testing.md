@@ -4,7 +4,7 @@
 - [Testing framework](#testing-framework)
 - [Create a test](#create-tests)
 - [Requests](#requests)
-    - [Sending events through requests](#sending-events-through-requests)
+    - [Component events](#component events)
 - [Verification](#verification)
     - [Response verificator](#response-verificator)
     - [Page model verificator](#page-model-verificator)
@@ -113,7 +113,7 @@ Every request after the first request should be an AJAX request. For this purpos
 	}</code>
 </pre>
 
-<h5><a id="sending-events-through-requests">Sending events through requests</a></h5>
+<h5><a id="component-events">Component events</a></h5>
 
 A real world scenario test would not just send an ajax request without any content but instead would e.g. simulate a click an a specific button inside your application. Consider having a counter app that increases a displayed counter whenever the user clicks on the button with the id (remember: the id is the components internal id and not the DOM id) btnIncrease.
 
