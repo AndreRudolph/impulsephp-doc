@@ -131,16 +131,6 @@ To achieve this, the RequestBuilder offers the <span class="code-hint">command</
 
 	class CounterWebTest extends WebTestCase
 	{
-        public function testCounter()
-        {
-            $client = static::createClient();
-            $tester = new Tester($client);
-			$tester->record($this->initialRequest());
-            $tester->record($this->ajaxRequest());
-            $tester->run();
-            self::assertResponseIsSuccessful();
-        }
-        
         public function ajaxRequest(): Record
         {
         	$request = RequestBuilder::ajax('POST', '/_impulse/event/')
@@ -153,6 +143,30 @@ To achieve this, the RequestBuilder offers the <span class="code-hint">command</
 </pre>
 
 <h5><a id="component-modifications">Component modifications</a></h5>
+
+Like component events, it is easy to provide component modifications for a request (like simulating an input for a textbox). By calling the <span class="code-hint">component</span> method of the <span class="code-hint">RequestBuilder</span> you can simply pass values as component modifications.
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+
+	namespace App\Tests;
+
+	// other imports
+    use Impulse\ImpulseBundle\Events\Events;
+    use Impulse\ImpulseBundle\Tester\Request\Command;
+
+	class CounterWebTest extends WebTestCase
+	{
+        public function ajaxRequest(): Record
+        {
+        	$request = RequestBuilder::ajax('POST', '/_impulse/event/')
+            	->component('textboxId', 'value', 'my entered value')
+            	->create();
+           
+            return new Record($request, null, null);
+        }
+	}</code>
+</pre>
 
 <h4><a id="verification">Verification</h4>
 
