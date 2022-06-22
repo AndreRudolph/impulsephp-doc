@@ -11,9 +11,7 @@
     - [Page model verificator](#page-model-verificator)
 
 <h4><a id="introduction">Introduction</a></h4>
-Functional testing is a common and in most cases one of the last layers in a testing waterfall model. Its purpose is to have a more high level perspective and expectations of the functions provided by the application.
-
-In scope of the Impulse PHP Framework with functional tests we mean tests that are directly working with the implemented application by accessing its published URLs. So a test defines a collection of consecutive requests (we call it records) send to the application.
+Event based architectures are a good and common practice to separate concerns and responsibilities between event emitter and event listener. In the previous documentations of controllers and components you have learned how event listeners can be easily added to your application.
 
 <h4><a id="testing-framework">Testing framework</a></h4>
 
