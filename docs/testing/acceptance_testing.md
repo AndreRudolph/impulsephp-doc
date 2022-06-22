@@ -168,7 +168,7 @@ Like component events, it is easy to provide component modifications for a reque
 	}</code>
 </pre>
 
-<h4><a id="verification">Verification</h4>
+<h4><a id="verification">Verification</a></h4>
 
 <h5><a id="response-verificator">Response verificator</a></h5>
 A response verificator is a closure function with two arguments: The current response object and (if not the first request) the previous response object. You may use common PHPUnit assertions to verify the response. See the example below for a simple status code verification.
