@@ -10,7 +10,7 @@
     - [Page model verificator](#page-model-verificator)
 
 <h4><a id="introduction">Introduction</a></h4>
-Functional testing is a common and in most cases one of the last layers in a testing waterfall model. Its purpose is to have a more high level perspective and expectations of the functions provided by the application.
+Functional testing is a common part in the testing process of an application. Its purpose is to have a more high level perspective and expectations of the functions provided by the application.
 
 In scope of the Impulse PHP Framework with functional tests we mean tests that are directly working with the implemented application by accessing its published URLs. So a test defines a collection of consecutive requests (we call it records) send to the application.
 
