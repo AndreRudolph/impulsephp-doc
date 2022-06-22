@@ -22,7 +22,7 @@ The following examples are component based but controllers can be registered the
 
 For this article we assume a simple application with a left sided user list and a right sided user details view. Whenever you select an user, the user details will be populated based on the user. Once you saved the user by clicking on the save button, the changes will be persisted and the user list will be notified about the change.
 
-<h4><a id="testing-framework">Subscribe</a></h4>
+<h5><a id="testing-framework">Subscribe</a></h5>
 
 According to the agreed example above we will have a UserList component that subscribes itself to the user change event. 
 
@@ -49,6 +49,7 @@ According to the agreed example above we will have a UserList component that sub
 
 The first parameter is reserved for the Page object. All subsequent parameters are coming from the parameters passed to the broadcast that will be covered in the next chapter. 
 
+<h5><a id="broadcast-event">Broadcast event</a></h5>
 
 
 The Impulse framework provides a testing framework that has been especially designed for creating and executing functional tests. It is based on the awesome testing library provided by the Symfony framework. You don't need to install any further dependencies since they are installed by default with the Impulse framework.
