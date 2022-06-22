@@ -5,6 +5,7 @@
 - [Create a test](#create-tests)
 - [Requests](#requests)
     - [Component events](#component events)
+    - [Component modifications](#component-modifications)
 - [Verification](#verification)
     - [Response verificator](#response-verificator)
     - [Page model verificator](#page-model-verificator)
@@ -150,6 +151,8 @@ To achieve this, the RequestBuilder offers the <span class="code-hint">command</
         }
 	}</code>
 </pre>
+
+<h5><a id="component-modifications">Component modifications</a></h5>
 
 <h4><a id="verification">Verification</h4>
 
