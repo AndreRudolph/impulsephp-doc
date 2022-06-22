@@ -3,14 +3,14 @@
 - [Introduction](#introduction)
 - [Testing framework](#testing-framework)
 - [Create a test](#create-tests)
-    - [Records](#records)
-    - [Requests](#requests)
+- [Requests](#requests)
     - [Sending events through requests](#sending-events-through-requests)
+- [Verification](#verification)
     - [Response verificator](#response-verificator)
     - [Page model verificator](#page-model-verificator)
 
 <h4><a id="introduction">Introduction</a></h4>
-Functional testing is a common part in the testing process of an application. Its purpose is to have a more high level perspective and expectations of the functions provided by the application.
+Functional testing is a common and in most cases one of the last layers in a testing waterfall model. Its purpose is to have a more high level perspective and expectations of the functions provided by the application.
 
 In scope of the Impulse PHP Framework with functional tests we mean tests that are directly working with the implemented application by accessing its published URLs. So a test defines a collection of consecutive requests (we call it records) send to the application.
 
@@ -65,7 +65,7 @@ A record is basically a collection of three different parts.
 
 It is a good practice to have each record placed in its own method. The following code will run a single record by sending a GET request to the root URI with no verificators.
 
-<h5><a id="requests">Requests</a></h5>
+<h4><a id="requests">Requests</a></h4>
 The first part of any record is the request that will be send to the server. The testing framework offers a Facade for creating requests for convenient use cases.
 
 <pre class="code-white line-numbers language-php">
