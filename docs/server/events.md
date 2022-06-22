@@ -14,6 +14,10 @@ However, this article explains events more in depth and will also cover the topi
 
 <h4><a id="global-listener">Global listener</a></h4>
 
+Very complex web applications may consist of many different, independent sections that are losely connected to each other conceptually. Sometimes when something happens in one section, e.g. a record will be updated, other sections might be interested in listening to this event and update themselfes accordingly.
+
+Consider you have a complex web application with many different, independent but yet active sections. For example 
+
 <h4><a id="testing-framework">Testing framework</a></h4>
 
 The Impulse framework provides a testing framework that has been especially designed for creating and executing functional tests. It is based on the awesome testing library provided by the Symfony framework. You don't need to install any further dependencies since they are installed by default with the Impulse framework.
