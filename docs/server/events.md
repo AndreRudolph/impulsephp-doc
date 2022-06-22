@@ -13,6 +13,8 @@
 <h4><a id="introduction">Introduction</a></h4>
 Event based architectures are a good and common practice to separate concerns and responsibilities between event emitter and event listener. In the previous documentations of controllers and components you have learned how event listeners can be easily added to your application.
 
+However, this article explains events more in depth and will also cover the topic of page global event listener.
+
 <h4><a id="testing-framework">Testing framework</a></h4>
 
 The Impulse framework provides a testing framework that has been especially designed for creating and executing functional tests. It is based on the awesome testing library provided by the Symfony framework. You don't need to install any further dependencies since they are installed by default with the Impulse framework.
