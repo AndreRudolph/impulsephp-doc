@@ -1,14 +1,8 @@
 <h3 class="doc-title">Events</h3>
 
 - [Introduction](#introduction)
-- [Testing framework](#testing-framework)
-- [Create a test](#create-tests)
-- [Requests](#requests)
-    - [Component events](#component events)
-    - [Component modifications](#component-modifications)
-- [Verification](#verification)
-    - [Response verificator](#response-verificator)
-    - [Page model verificator](#page-model-verificator)
+- [Global listener](#global-listener)
+
 
 <h4><a id="introduction">Introduction</a></h4>
 Event based architectures are a good and common practice to separate concerns and responsibilities between event emitter and event listener. In the previous documentations of controllers and components you have learned how event listeners can be easily added to your application.
