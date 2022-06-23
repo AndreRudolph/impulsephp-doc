@@ -29,10 +29,6 @@ According to the agreed example above we will have a UserList component that sub
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 
-	namespace App\Tests;
-
-	use App\Entities\User;
-
 	class UserList extends Ul
 	{
         public function afterCreateChildren(): void
@@ -56,10 +52,6 @@ A global event can be broadcast from anywhere inside a controller or component b
 
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
-
-	namespace App\Tests;
-
-	use App\Entities\User;
 
 	class UserDetails extends Div
 	{
@@ -87,10 +79,6 @@ However, when you want or need to unsubscribe the controller / component manuall
 
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
-
-	namespace App\Tests;
-
-	use App\Entities\User;
 
 	class UserList extends Ul
 	{
