@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [Global listener](#global-listener)
-	- [Subscribe](#register-listener)
+	- [Subscribe](#subscribe-listener)
     - [Broadcast event](#broadcast-event)
     - [Unsubscribe](#unsubscribe-listener)
 
@@ -22,7 +22,7 @@ The following examples are component based but controllers can be registered the
 
 For this article we assume a simple application with a left sided user list and a right sided user details view. Whenever you select an user, the user details will be populated based on the user. Once you saved the user by clicking on the save button, the changes will be persisted and the user list will be notified about the change.
 
-<h5><a id="testing-framework">Subscribe</a></h5>
+<h5><a id="subscribe-listener">Subscribe</a></h5>
 
 According to the agreed example above we will have a UserList component that subscribes itself to the user change event. 
 
@@ -79,3 +79,4 @@ A global event can be broadcast from anywhere inside a controller or component b
 	}</code>
 </pre>
 
+<h5><a id="unsubscribe-listener">Unsubscribe listener</a></h5>
