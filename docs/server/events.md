@@ -80,3 +80,38 @@ A global event can be broadcast from anywhere inside a controller or component b
 </pre>
 
 <h5><a id="unsubscribe-listener">Unsubscribe listener</a></h5>
+
+When a global page listener is no longer referenced from any component and thus be removed from the page, the controller will be automatically unsubscribed as a global page listener. 
+
+However, when you want or need to unsubscribe the controller / component manually beforehand, then you can use the unsubscribe method of the page object. Let's take as an example that you want to remove the subscription once the UserListController has been broadcasted in the first place. 
+
+<pre class="code-white line-numbers language-php">
+	<code class="imp-code language-php"><?php
+	namespace App\Controller;
+    use Impulse\ImpulseBundle\Controller\AbstractController;
+    use Impulse\ImpulseBundle\Execution\Events\Event;
+    use Impulse\ImpulseBundle\UI\Components\Window;
+
+    class UserListController extends AbstractController
+    {
+    	private ?Window $wndUserList = null;
+    
+    	public function afterCreate(Event $event): void
+    	{
+        	parent::afterCreate($event);
+        	$this->createList();
+        	$event->getPage()->subscribe('UserSaved', $this, 'onUserSave');
+    	}
+        
+        public function onUserSave(): void
+        {
+        	$this->wndUserList->getPage()->unsubscribe('UserSaved', $this, 'onUserSave');
+        	$this->createList();
+        }
+        
+        private function createList(): void
+        {
+        	// creates the list of user records
+        }
+	}</code>
+</pre>
