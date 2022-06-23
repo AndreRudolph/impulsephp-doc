@@ -75,9 +75,6 @@ The first part of any record is the request that will be send to the server. The
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 
-	namespace App\Tests;
-
-	// other imports
     use Impulse\ImpulseBundle\Tester\Record;
     use Impulse\ImpulseBundle\Tester\Request\RequestBuilder;
 
@@ -96,9 +93,6 @@ Every request after the first request should be an AJAX request. For this purpos
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 
-	namespace App\Tests;
-
-	// other imports
     use Impulse\ImpulseBundle\Tester\Record;
     use Impulse\ImpulseBundle\Tester\Request\RequestBuilder;
 
@@ -123,9 +117,6 @@ To achieve this, the RequestBuilder offers the <span class="code-hint">command</
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 
-	namespace App\Tests;
-
-	// other imports
     use Impulse\ImpulseBundle\Events\Events;
     use Impulse\ImpulseBundle\Tester\Request\Command;
 
@@ -149,9 +140,6 @@ Like component events, it is easy to provide component modifications for a reque
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
 
-	namespace App\Tests;
-
-	// other imports
     use Impulse\ImpulseBundle\Events\Events;
     use Impulse\ImpulseBundle\Tester\Request\Command;
 
@@ -175,10 +163,6 @@ A response verificator is a closure function with two arguments: The current res
 
 <pre class="code-white line-numbers language-php">
 	<code class="imp-code language-php"><?php
-
-	namespace App\Tests;
-
-	// imports
 
 	class CounterWebTest extends WebTestCase
 	{
