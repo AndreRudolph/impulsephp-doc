@@ -27,7 +27,7 @@ A component is basically an object of a certain class with a load of properties 
 
 Since the basic serialization mechanism of PHP is not suitable for our needs, the components instead have a method called <span class="code-hint">getServerData</span> that creates an array of attributes and their values that will be used for later serialization. The following example is taken from the <span class="code-hint">Image</span> component class.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     
     class Image extends AbstractComponent 
@@ -65,7 +65,7 @@ can a) be send to the client to update the UI and b) consider the changes in the
 
 To record a change that is intended for the client, the <span class="code-hint">updateClientAttribute</span> method is used for. In the Image component again there is a setter for the src attribute that records changes that will later be populated to the client.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     
     class Image extends AbstractComponent 
@@ -89,7 +89,7 @@ The reactivation process of a component will be covered in a "Learn more" sectio
 
 For a complete list of currently registered components you can run the following command in your projects root directory:
 
-  <pre class="code-white imp-code line-numbers language-shell">
+  <pre class="code-white imp-code language-shell">
   	<code class="language-bash">php bin/console debug:impulse:components</code>
   </pre>
 
@@ -105,7 +105,7 @@ A shortened extract of the output might look as the following:
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-bash">
+  <pre class="code-white imp-code language-bash">
   	<code class="language-bash"> ------------------------- ----------------------------------------------------- 
       Alias                     Class                                                
      ------------------------- ----------------------------------------------------- 
@@ -138,7 +138,7 @@ Impulse is designed to provide programmers the possibility to create their own c
 
 Suppose you want to create a component class, lets call it **_Message_**, with a message that shall be displayed at the client. You can simply add a message property along with its getter and setter method.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     
     class Message extends AbstractComponent 
@@ -169,7 +169,7 @@ The property <span class="code-hint">uiClass</span> later indicates which javasc
 
 The main purpose is to show the message to the client and therefor there is a method called <span class="code-hint">getClientData</span> which returns an array with all contain informations of the component that are relevant for the client.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     
     class Message extends AbstractComponent 
@@ -189,7 +189,7 @@ You also need to call the <span class="code-hint">getClientData</span> of the pa
 
 If the client should also be informed about changes of the message property, we can use the <span class="code-hint">updateClientAttribute</span> method as mentioned in the introduction.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     
     class Message extends AbstractComponent
@@ -208,7 +208,7 @@ If the client should also be informed about changes of the message property, we 
 
 Applying the server state is straight forward and we need to just implement the <span class="code-hint">getServerData</span> method.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     
     class Message extends AbstractComponent 
@@ -228,7 +228,7 @@ Applying the server state is straight forward and we need to just implement the 
 
 Since the main focus of this article is the server side documentation, we will just provide a quick start component snippet for the client component. Please check out the component client documentation for more details.
 
-<pre class="imp-code code-white line-numbers language-js">
+<pre class="imp-code code-white language-js">
 	<code class="language-js">import AbstractComponent 
 	from 'path/to/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
     
@@ -254,7 +254,7 @@ Since the main focus of this article is the server side documentation, we will j
 
 Custom attributes are usefuly whenever you want to enrich a component with very specific informations for later work with these attributes. Consider you want to associate a button with an entity id of a database record. You can simply achieve this by calling the <span class="code-hin">setCustomAttribute</span> method of that component.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     
 namespace App\Controller;
@@ -283,7 +283,7 @@ Another great approach of creating complex and reusable components are template 
 
 The example below shows how template components work with a greeting example.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     
     #[Template('app/components/greeting.html.twig')]
