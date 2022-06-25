@@ -21,7 +21,7 @@ Marked with that interface, the Impulse framework will delegate the component ob
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\UI\Components;
     use Impulse\ImpulseBundle\UI\Components\AbstractComponent;
@@ -36,5 +36,3 @@ Marked with that interface, the Impulse framework will delegate the component ob
         }
 	}</code>
 </pre>
-
-
