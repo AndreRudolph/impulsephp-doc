@@ -14,15 +14,6 @@ Middlewares are a piece of code encapsulated in a class that can be executed eit
 
 A middleware that just does nothing looks like the following.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller\Middleware;
@@ -44,15 +35,6 @@ So basically a middlware is identified by implementing the <span class="code-hin
 Let's consider you want to have an often used action like checking if a user is authenticated and do not grant access if the user is not. That's a perfect example for a middleware that can be re-used for different methods
 of the same controller or even for different controllers. 
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller\Middleware;
@@ -80,15 +62,6 @@ of the same controller or even for different controllers.
 
 Let's take this middleware and register it for a specific controller method.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     namespace App\Controller;
@@ -118,15 +91,6 @@ Post action middlewares must implement the interace <span class="code-hint">Impu
 
 The interface <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware</span> requires an implementation of the method execute along with an array parameter <span class="code-hint">$context</span>. This context array can have values that have been set to a middleware registration.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
 <pre class="code-white language-php">
 	<code class="imp-code language-php">class MyController extends AbstractController
     {
