@@ -42,3 +42,13 @@ The initializer now needs to be considered by using the <span class="code-hint">
 </pre>
 
 <h4><a id="prioritizing">Prioritizing</a></h4>
+Every attribute initializer has its own priority defined and they are requested in order with higher priority first. However, when you want to priorizize one attribute above or below another, then you must change the priority accordingly. Suppose you want your custom attribute initializer at the very first, you can chose a higher priority.
+
+<pre class="code-white language-yaml">
+	<code class="imp-code language-yaml">services:
+    
+    App\UI\Components\Initializer\Attributes\MyAttributeInitializer:
+        class: App\UI\Components\Initializer\Attributes\MyAttributeInitializer
+        tags:
+            - { name: 'impulse.components.attribute_initializer', priority: 2000 }</code>
+</pre>
