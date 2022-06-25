@@ -23,7 +23,7 @@ A middleware that just does nothing looks like the following.
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller\Middleware;
 	use Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware;
@@ -53,7 +53,7 @@ of the same controller or even for different controllers.
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller\Middleware;
 	use Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware;
@@ -89,7 +89,7 @@ Let's take this middleware and register it for a specific controller method.
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     namespace App\Controller;
 
@@ -127,7 +127,7 @@ The interface <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php">class MyController extends AbstractController
     {
         #[PreMiddleware(LoggingMiddleware::class, context: ['method' => 'afterCreate']])]
