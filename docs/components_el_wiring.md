@@ -30,7 +30,7 @@ The probably most used and useful functions is the type function. It works almos
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace Impulse\ImpulseBundle\UI\Components;
     use ...
@@ -57,7 +57,7 @@ Unlike the type function the instanceOf function consideres the full qualified n
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\UI\Components;
     use ...
@@ -84,7 +84,7 @@ A more generic function is the component function which has one parameter that r
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
     
     class SpecialComponent {
@@ -107,7 +107,7 @@ The example above evaluates and finds components with the id **_specialId_** . H
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
     class SpecialComponent {
