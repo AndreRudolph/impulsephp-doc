@@ -17,7 +17,7 @@ Typically values containing resources like database connections or file handles 
 
 To exclude these properties from the serialization process you can simply annotate them with <span class="code-hint">#[Transient]</span> attribute.
 
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -42,7 +42,7 @@ In conclusion, the excluded properties will not be wired again after reactivatio
 
 Single component references will be handled automatically by the framework and will be rewired once the controller will be reactivated. Sometimes you might also need to have a property list of component references for handling a dynamic and generated form for example. To achieve this you have to wrap them in a <span class="code-hint">ComponentList</span>.
 
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\ImpulseBundle\Controller\AbstractController;
