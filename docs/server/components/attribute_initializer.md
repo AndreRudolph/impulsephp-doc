@@ -18,15 +18,15 @@ An attribute initializer must implement the <span class="code-hint">Impulse\Impu
 
 	class MyAttributeInitializer implements AttributeInitializer
 	{
-      public function supports(ComponentInterface $component, string $attribute, mixed $value): bool
-      {
-          // check if component and attribute are supported
-      }
+        public function supports(ComponentInterface $component, string $attribute, mixed $value): bool
+        {
+            // check if component and attribute are supported
+        }
 
-      public function apply(ComponentInterface $component, string $attribute, mixed $value): void
-      {
-          // apply the initialization to the component
-      }
+        public function apply(ComponentInterface $component, string $attribute, mixed $value): void
+        {
+            // apply the initialization to the component
+        }
 	}</code>
 </pre>
 
