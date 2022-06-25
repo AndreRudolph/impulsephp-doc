@@ -18,7 +18,7 @@ Views (templates) work quite a bit different than you are used to with Symfony. 
 
 The following example is a minimal example with just a simple text output.
 
-  <pre class="imp-code code-white line-numbers language-twig">
+  <pre class="imp-code code-white language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;Hello world&lt;/window&gt;
       &lt;/impulse&gt;</code>
@@ -31,7 +31,7 @@ every template must not have more than one root tag. The file extension is the s
 
 It is a common good practice (separation of concerns) to separate views into smaller pieces to become reusable and more descriptively. Hence it is possible to load views directly into a certain place in another view.
 
-  <pre class="code-white line-numbers language-twig">
+  <pre class="code-white language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
               &lt;import src="helloWorld.html.twig" /&gt;
@@ -39,7 +39,7 @@ It is a common good practice (separation of concerns) to separate views into sma
       &lt;/impulse&gt;</code>
   </pre>
   
-  <pre class="code-white line-numbers language-twig">
+  <pre class="code-white language-twig">
       <code class="language-twig">&lt;impulse&gt;
           &lt;window&gt;
               &lt;div&gt;Hello world&lt;/div&gt;
