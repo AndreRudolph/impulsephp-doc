@@ -12,7 +12,7 @@ Assume you would like to have a component that is not stored in the users sessio
         </div>
     </div>
   </div>
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace Impulse\ImpulseBundle\UI\Components;
 	use Impulse\ImpulseBundle\Components\VolatileInterface;
@@ -25,30 +25,3 @@ Assume you would like to have a component that is not stored in the users sessio
 </div>
 
 In future there will be native components implemented that marked as volatile to optimize processing speed & memory consumption since they don't need to be managed by the server.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
