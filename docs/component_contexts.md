@@ -18,7 +18,7 @@ All available components are automatically registered within the class <span cla
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-shell">
+  <pre class="code-white imp-code language-shell">
   	<code class="language-bash">php bin/console debug:impulse:components</code>
   </pre>
 </div>
@@ -43,7 +43,7 @@ Let's consider you have your own implementation of a button and the classes is p
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-markup">
+  <pre class="code-white imp-code language-markup">
   	<code class="language-markup">&lt;impulse&gt;
     	&lt;button /&gt; &lt;!-- uses App\UI\Components\Button class --&gt;
         &lt;app:button /&gt; &lt;!-- uses App\UI\Components\Button class --&gt;
@@ -68,7 +68,7 @@ There might be cases where you do not want to have any automatic overwrites and 
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-yaml">
+  <pre class="code-white imp-code language-yaml">
   	<code class="language-yaml">services:
     	App\UI\Components\:
         	resource: '../src/UI/Components'
