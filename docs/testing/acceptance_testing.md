@@ -72,7 +72,7 @@ It is a good practice to have each record placed in its own method. The followin
 <h4><a id="requests">Requests</a></h4>
 The first part of any record is the request that will be send to the server. The testing framework offers a Facade for creating requests for convenient use cases.
 
-<pre class="code-white language-php">
+<pre>
 	<code class="imp-code language-php"><?php
 
     use Impulse\ImpulseBundle\Tester\Record;
@@ -82,7 +82,9 @@ The first part of any record is the request that will be send to the server. The
 	{
         public function initialRequest(): Record
         {
-        	$request = RequestBuilder::request('GET', '/')->create();
+        	$request = RequestBuilder::request('GET', '/')
+            	->create();
+                
             return new Record($request, null, null);
         }
 	}</code>
@@ -170,8 +172,7 @@ A response verificator is a closure function with two arguments: The current res
         {
         	$request = RequestBuilder::request('GET', '/')->create();
             
-            $responseVerificator = function(Response $response, ?Response $previousResponse)
-            {
+            $responseVerificator = function(Response $response, ?Response $previousResponse) {
             	$this->assertEquals(200, $response->getStatusCode());
             };
             
@@ -198,8 +199,7 @@ A page model verificator is like the response verificator a closure function wit
         {
         	$request = RequestBuilder::request('GET', '/')->create();
                        
-            $pageModelVerificator = function(Response $response, ?Response $previousResponse)
-            {
+            $pageModelVerificator = function(Response $response, ?Response $previousResponse) {
             	$pageModel = $response->getPageModel();
                 $this->assertTrue($pageModel->hasComponentWithId('idOfComponent'));
             }
