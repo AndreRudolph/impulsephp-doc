@@ -30,6 +30,15 @@ An attribute initializer must implement the <span class="code-hint">Impulse\Impu
 	}</code>
 </pre>
 
-Now the initializer must be registered to the list of initializers. 
+The initializer now needs to be considered by using the <span class="code-hint">impulse.components.attribute_initializer</span> service tag.
+
+<pre class="code-white language-yaml">
+	<code class="imp-code language-yaml">services:
+    
+    App\UI\Components\Initializer\Attributes\MyAttributeInitializer:
+        class: App\UI\Components\Initializer\Attributes\MyAttributeInitializer
+        tags:
+            - { name: 'impulse.components.attribute_initializer', priority: 200 }</code>
+</pre>
 
 <h4><a id="prioritizing">Prioritizing</a></h4>
