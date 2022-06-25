@@ -26,7 +26,7 @@ For this article we assume a simple application with a left sided user list and 
 
 According to the agreed example above we will have a UserList component that subscribes itself to the user change event. 
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
 	class UserList extends Ul
@@ -50,7 +50,7 @@ The first parameter is reserved for the Page object. All subsequent parameters a
 
 A global event can be broadcast from anywhere inside a controller or component by calling the <span class="code-hint">broadcast</span> method of the page object. The following simplified component represents the UserDetails component that broadcasts the <span class="code-hint">userChanged</span> event once the save button has been clicked.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
 	class UserDetails extends Div
@@ -77,7 +77,7 @@ When a global page listener is no longer referenced from any component and thus 
 
 However, when you want or need to unsubscribe the controller / component manually beforehand, then you can use the unsubscribe method of the page object. Let's take as an example that you want to remove the subscription once the UserList component has been detached.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
 	class UserList extends Ul
