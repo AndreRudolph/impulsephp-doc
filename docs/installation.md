@@ -26,7 +26,7 @@ After the symfony project has been created, you need to install the WebpackEncor
     <div class="button yellow"></div>
     <div class="button green"></div>
   </div>
-  <pre class="code-white imp-code line-numbers language-shell">
+  <pre class="code-white imp-code language-shell">
 	<code class="language-bash">composer require symfony/webpack-encore-bundle</code>
   </pre>
 </div>
@@ -39,7 +39,7 @@ Since the ImpulseBundle is still a private repository and not available via pack
     <div class="button yellow"></div>
     <div class="button green"></div>
   </div>
-  <pre class="code-white imp-code line-numbers language-json">
+  <pre class="code-white imp-code language-json">
 	<code class="language-json">    "repositories": {
         "impulsebundle": {
             "type": "vcs",
@@ -61,7 +61,7 @@ Now it's time to let composer install that package by running the update command
     <div class="button yellow"></div>
     <div class="button green"></div>
   </div>
-  <pre class="code-white imp-code line-numbers language-shell">
+  <pre class="code-white imp-code language-shell">
 	<code class="language-bash">composer update</code>
   </pre>
 </div>
@@ -75,7 +75,7 @@ following the instructions once the command has been finished.
     <div class="button yellow"></div>
     <div class="button green"></div>
   </div>
-  <pre class="code-white imp-code line-numbers language-shell">
+  <pre class="code-white imp-code language-shell">
 	<code class="language-bash">php bin/console impulse:init</code>
   </pre>
 </div>
