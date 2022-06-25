@@ -23,7 +23,7 @@ The Impulse framework provides a testing framework that has been especially desi
 
 The example below shows the skeleton for any functional test that requires a client and a tester instance.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
 	namespace App\Tests;
@@ -72,7 +72,7 @@ It is a good practice to have each record placed in its own method. The followin
 <h4><a id="requests">Requests</a></h4>
 The first part of any record is the request that will be send to the server. The testing framework offers a Facade for creating requests for convenient use cases.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
     use Impulse\ImpulseBundle\Tester\Record;
@@ -90,7 +90,7 @@ The first part of any record is the request that will be send to the server. The
 
 Every request after the first request should be an AJAX request. For this purpose, the RequestBuilder offers an ajax method.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
     use Impulse\ImpulseBundle\Tester\Record;
@@ -114,7 +114,7 @@ A real world scenario test would not just send an ajax request without any conte
 
 To achieve this, the RequestBuilder offers the <span class="code-hint">command</span> method.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
     use Impulse\ImpulseBundle\Events\Events;
@@ -137,7 +137,7 @@ To achieve this, the RequestBuilder offers the <span class="code-hint">command</
 
 Like component events, it is easy to provide component modifications for a request (like simulating an input for a textbox). By calling the <span class="code-hint">component</span> method of the <span class="code-hint">RequestBuilder</span> you can simply pass values as component modifications.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
     use Impulse\ImpulseBundle\Events\Events;
@@ -161,7 +161,7 @@ Like component events, it is easy to provide component modifications for a reque
 <h5><a id="response-verificator">Response verificator</a></h5>
 A response verificator is a closure function with two arguments: The current response object and (if not the first request) the previous response object. You may use common PHPUnit assertions to verify the response. See the example below for a simple status code verification.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
 	class CounterWebTest extends WebTestCase
@@ -185,7 +185,7 @@ Please note that the initial response will return a html document (since its the
 <h5><a id="page-model-verificator">Page model verificator</a></h5>
 A page model verificator is like the response verificator a closure function with the exact same parameters. You could use one verificator for both types of verifications but it is a good practice to separate concerns.
 
-<pre class="code-white line-numbers language-php">
+<pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
 	namespace App\Tests;
