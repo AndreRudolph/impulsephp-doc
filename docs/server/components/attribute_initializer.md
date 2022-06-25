@@ -10,7 +10,7 @@ Components internal state is handled automatically in most cases by the Impulse 
 <h4><a id="create-listener">Create initializer</a></h4>
 An attribute initializer must implement the <span class="code-hint">Impulse\ImpulseBundle\Components\Initializer\Attributes\AttributeInitializer</span> interface. he <span class="code-hint">supports</span> method determins whether this initializer should handle a specific attribute & component combination or not. The <span class="code-hint">apply</span> method applies the initialization of this attribute for the component with the given value.
 
-<pre class="code-white language-php">
+<pre>
 	<code class="imp-code language-php"><?php
 
 	use Impulse\ImpulseBundle\Components\Initializer\Attributes\AttributeInitializer;
