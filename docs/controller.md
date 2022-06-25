@@ -38,7 +38,7 @@ As previousely mentioned, a controller will be rarely called directly from the f
         </div>
     </div>
 </div>-->
-<pre class="code-white line-numbers language-markup">
+<pre class="code-white language-markup">
 	<code class="imp-code language-markup">&lt;impulse&gt;
 		&lt;window bind="App\Controller\AppController" /&gt;
     &lt;/impulse&gt;</code>
@@ -46,7 +46,7 @@ As previousely mentioned, a controller will be rarely called directly from the f
 
 The <span class="highlightText">bind</span> attribute defines which controller will be executed by the framework. The following controller is a minimal example. 
 
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
   	<code class="imp-code language-php"><?php
   	namespace App\Controller;
   	use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -71,7 +71,7 @@ The main purpose of controllers in Impulse is that they can directly interact wi
 
 One option is by wiring by convention by naming properties with the related component ids.
 
-  <pre class="code-white line-numbers language-markup">
+  <pre class="code-white language-markup">
 	<code class="imp-code language-markup">&lt;impulse&gt;
     	&lt;window&gt;
         	&lt;textbox id="tb" /&gt;
@@ -81,7 +81,7 @@ One option is by wiring by convention by naming properties with the related comp
 
 We have created a textbox with the id <span class="highlightText">tb</span>. This component is - by convention - wireable for a controller and can be accessed via controller property.
 
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -110,7 +110,7 @@ If you do not want to have components injected into properties automatically and
 
 The signature of this method is the following:
 
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
 	<code class="imp-code language-php">protected function getComponentById(PageContract $page, string $id): ?ComponentContract;</code>
   </pre>
 
@@ -120,13 +120,13 @@ Important note: As of now this method does not consider the scope of the id. It 
 
 The more complex the application gets the more it should be divided in smaller parts (single responsiblity principle). For exactly this purpose you can easily load views inside your controller. The following example shows how this works.
 
-  <pre class="code-white line-numbers language-markup">
+  <pre class="code-white language-markup">
   	<code class="imp-code language-markup">&lt;impulse&gt;
 		&lt;window id="wndMain" bind="App\Controller\AppController" /&gt;
 	&lt;/impulse&gt;</code>
   </pre>
 
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -152,7 +152,7 @@ By default this will remove all childs of the given parent component internally.
 
 Though you can create complex component trees by creating them manually, sometimes it becomes more handy to create component objects on the fly by using inline views rather than real views. Inline views can be created and renderer within the controller. To achieve this, the <span class="code-hint">AbstractController</span> class offers a method called <span>createComponents</span>. A simple example could be creating a list based on array.
 
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -181,7 +181,7 @@ Like in real twig template you can also use the twig functionalities in inline v
 
 Controllers are designed to work as event listeners to listen to events occur at client side. The framework internally maps client events to AJAX requests that will be send to the server and thus delegated to the correct controller instance. How this in detail works is decscribed in the **_Event mapping_** section. However, the example below demonstrates how event listeners can registered by annotation.
 
-  <pre class="code-white line-numbers language-markup">
+  <pre class="code-white language-markup">
   	<code class="imp-code language-markup">&lt;impulse&gt;
 		&lt;window bind="App\Controller\AppController"&gt;
 			&lt;textbox id="tbName" /&gt;
@@ -193,7 +193,7 @@ Controllers are designed to work as event listeners to listen to events occur at
 
 The controller contains a method that is annotated with the **_Listen_** annotation which needs the event it listens to and the component on which the event shall be registered. For registering the same event listener to multiple components, you can use the **_components_** parameter of the Listen annotation instead.
 
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -219,7 +219,7 @@ The controller contains a method that is annotated with the **_Listen_** annotat
 
 Though this is a clean way to define event listeners, it has one drawback. It can't (currently) be registered dynamically for components which ids are not set or not known. For this purpose you can register event listeners manually to components.
 
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 	use Impulse\Bundles\ImpulseBundle\Controller\AbstractController;
