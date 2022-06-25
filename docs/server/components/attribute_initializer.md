@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Create initializer](#create-initializer)
+- [Prioritizing](#prioritizing)
 
 <h4><a id="introduction">Introduction</a></h4>
 Components internal state is handled automatically in most cases by the Impulse PHP framework. However, components that are needed for processing the current request are reactivated and its state will be restored. You might face the isssue that, in some cases, you need a custom initialization of a specific component attribute. This is where attribute initializer are used for.
@@ -30,3 +31,5 @@ An attribute initializer must implement the <span class="code-hint">Impulse\Impu
 </pre>
 
 The initializer must implement both <span class="code-hint">supports</span> and <span class="code-hint">apply</span> methods. The <span class="code-hint">supports</span> method determins whether this initializer should handle a specific attribute & component combination or not. The latter applies the initialization of this attribute for the component with the given value.
+
+<h4><a id="prioritizing">Prioritizing</a></h4>
