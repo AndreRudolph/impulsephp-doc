@@ -26,7 +26,7 @@ The example below shows the skeleton for any functional test that requires a cli
 <pre class="code-white language-php">
 	<code class="imp-code language-php"><?php
 
-namespace App\Tests;
+	namespace App\Tests;
 
 	use Impulse\ImpulseBundle\Components\UidHelperTrait;
 	use Impulse\ImpulseBundle\Events\Events;
