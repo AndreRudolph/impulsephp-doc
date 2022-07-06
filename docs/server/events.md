@@ -20,7 +20,23 @@ There are basically three different options to register a controller as event li
 <h6>Attributes approach</h6>
 A very simple but yet limited approach is by using attributes.
 
-Code here
+  <pre class="code-white language-php">
+  	<code class="imp-code language-php"><?php
+	namespace App\Controller;
+	use Impulse\ImpulseBundle\Controller\AbstractController;
+	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+    use Impulse\ImpulseBundle\Events\Events;
+	use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+
+	class AppController extends AbstractController
+	{
+        #[Listen(event: Events::CLICK, component: 'btnGreet')]
+		public function onClick(Event $event)
+		{
+			// handle event here
+		}
+	}</code>
+  </pre>
 
 The drawback of this approach is that you can only pass ids of components since this feature does not support any kind of dynamic declarations (such as css 3 selectors) for now. 
 
