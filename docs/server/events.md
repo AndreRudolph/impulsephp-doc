@@ -31,7 +31,7 @@ A very simple but yet limited approach is by using attributes.
 	class AppController extends AbstractController
 	{
         #[Listen(event: Events::CLICK, component: 'btnGreet')]
-		public function onClick(Event $event)
+		public function onClick(Event $event): void
 		{
 			// handle event here
 		}
@@ -41,9 +41,31 @@ A very simple but yet limited approach is by using attributes.
 Note that you can also assign one than more components to an event by using an components array instead of component. The drawbacks of this approach is that it works only components that were created automatically by rendering the templates and second only for components that have an id.
 
 <h6>Manual approach</h6>
-The second approach might be the most reliable approach since you can also register event listeners on newly created components or such of which you don't have any internal id known or set.
+The second approach is the most flexible approach but requires more boilerplate code. You can use this for registering event listeners to all kind of components regardless when they were created.
 
-Code here
+  <pre class="code-white language-php">
+  	<code class="imp-code language-php"><?php
+	namespace App\Controller;
+	use Impulse\ImpulseBundle\Controller\AbstractController;
+	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+    use Impulse\ImpulseBundle\Events\Events;
+	use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+
+	class AppController extends AbstractController
+	{
+    	private ?Button $btn = null;
+    
+    	public function afterCreate(Event $event): void
+        {
+        	$this->btn->addEventListener(Events::CLICK, $this, 'onClick');
+        }
+    
+		public function onClick(Event $event): void
+		{
+			// handle event here
+		}
+	}</code>
+  </pre>
 
 <h6>Template approach</h6>
 With the last option you can easily register the controller as listener to component events inside a template. This only works if the template has a controller bounded.
