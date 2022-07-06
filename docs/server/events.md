@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [Controllers](#controllers)
-- [Components](#components)
+- [Template components](#components)
 - [Global listener](#global-listener)
 	- [Subscribe](#subscribe-listener)
     - [Broadcast event](#broadcast-event)
@@ -78,9 +78,8 @@ Another option is to register controller as event listener in templates. Note th
       &lt;/impulse&gt;</code>
   </pre>
 
-<h4><a id="components">Components</a></h4>
-
-Components can themselfes register as event listener in the same way as controllers by one exception. Listen attributes are currently not implemented for components but will be in future.
+<h4><a id="components">Template components</a></h4>
+The previous approaches work the same for template components with one exception. Registering by Listen attributes are currently not implemented for components but will be in future.
 
 <h4><a id="global-listener">Global listener</a></h4>
 
