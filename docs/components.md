@@ -315,3 +315,5 @@ The example below shows how template components work with a greeting example.
 This approach is a good way to encapsulate view based logic in components rather than in controllers.
 
 <h4><a id="event-listening">Event listening</a></h4>
+
+How components are registered as event listeners can be read in the Events documentation.
