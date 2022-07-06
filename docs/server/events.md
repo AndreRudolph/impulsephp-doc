@@ -80,6 +80,8 @@ Another option is to register controller as event listener in templates. Note th
 
 <h4><a id="components">Components</a></h4>
 
+Components can themselfes register as event listener in the same way as controllers by one exception. Listen attributes are currently not implemented for components but will be in future.
+
 <h4><a id="global-listener">Global listener</a></h4>
 
 Very complex web applications may consist of many different, independent sections that are losely connected to each other conceptually. Sometimes, when something happens in one section, e.g. a record will be updated, other sections might be interested in listening to this event and update themselfes accordingly. 
