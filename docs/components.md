@@ -11,6 +11,7 @@
     - [Client component](#client_component)
 - [Custom attributes](#custom-attributes)
 - [Template components](#template-components)
+- [Event listening](#event-listening)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -312,3 +313,5 @@ The example below shows how template components work with a greeting example.
 </pre>
 
 This approach is a good way to encapsulate view based logic in components rather than in controllers.
+
+<h4><a id="event-listening">Event listening</a></h4>
