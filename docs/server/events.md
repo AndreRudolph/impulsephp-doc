@@ -30,6 +30,9 @@ The second approach might be the most reliable approach since you can also regis
 Code here
 
 <h6>Template approach</h6>
+With the last option you can easily register the controller as listener to component events inside a template. This only works if the template has a controller bounded.
+
+Code here
 
 <h4><a id="components">Components</a></h4>
 
