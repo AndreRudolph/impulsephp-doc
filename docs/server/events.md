@@ -68,7 +68,8 @@ The second approach is the most flexible approach but requires more boilerplate 
   </pre>
 
 <h6>Template approach</h6>
-With the last option you can easily register the controller as listener to component events inside a template. This only works if the template has a controller bounded.
+Another option is to register controller as event listener in templates. Note that this only works if the template has a bounded controller.
+
 
 Code here
 
