@@ -15,7 +15,7 @@ Event based architectures are a good and common practice to separate concerns an
 However, this article explains events more in depth and will also cover the topic of page global event listener.
 
 <h4><a id="controllers">Controllers</a></h4>
-There are basically three different options to register a controller as event listener.
+There are basically three different options to register a controller as event listener. In practice you might use a combination of all of them since each of them has pros / cons and limitations.
 
 <h6>Attributes approach</h6>
 A very simple but yet limited approach is by using attributes.
