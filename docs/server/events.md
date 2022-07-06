@@ -37,8 +37,8 @@ A very simple but yet limited approach is by using attributes.
 		}
 	}</code>
   </pre>
-
-The drawback of this approach is that you can only pass ids of components since this feature does not support any kind of dynamic declarations (such as css 3 selectors) for now. 
+  
+Note that you can also assign one than more components to an event by using an components array instead of component. The drawbacks of this approach is that it works only components that were created automatically by rendering the templates and second only for components that have an id.
 
 <h6>Manual approach</h6>
 The second approach might be the most reliable approach since you can also register event listeners on newly created components or such of which you don't have any internal id known or set.
