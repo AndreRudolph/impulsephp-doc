@@ -14,6 +14,10 @@ Event based architectures are a good and common practice to separate concerns an
 
 However, this article explains events more in depth and will also cover the topic of page global event listener.
 
+<h4><a id="controller-listener">Controller listener</a></h4>
+
+<h4><a id="component-listener">Component listener</a></h4>
+
 <h4><a id="global-listener">Global listener</a></h4>
 
 Very complex web applications may consist of many different, independent sections that are losely connected to each other conceptually. Sometimes, when something happens in one section, e.g. a record will be updated, other sections might be interested in listening to this event and update themselfes accordingly. 
