@@ -2,6 +2,9 @@
 
 - [Introduction](#introduction)
 - [Controller listener](#controller-listener)
+    - [Attributes](#attributes)
+    - [Direct](#direct)
+    - [Views](#views)
 - [Component listener](#component-listener)
 - [Global listener](#global-listener)
 	- [Subscribe](#subscribe-listener)
