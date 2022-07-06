@@ -1,6 +1,8 @@
 <h3 class="doc-title">Events</h3>
 
 - [Introduction](#introduction)
+- [Controller listener](#controller-listener)
+- [Component listener](#component-listener)
 - [Global listener](#global-listener)
 	- [Subscribe](#subscribe-listener)
     - [Broadcast event](#broadcast-event)
