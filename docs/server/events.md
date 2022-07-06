@@ -70,8 +70,13 @@ The second approach is the most flexible approach but requires more boilerplate 
 <h6>Template approach</h6>
 Another option is to register controller as event listener in templates. Note that this only works if the template has a bounded controller.
 
-
-Code here
+  <pre class="code-white language-twig">
+      <code class="language-twig">&lt;impulse&gt;
+          &lt;window bind="App\Controller\AppController" &gt;
+              &lt;button id="btn" ev:click="onClick" /&gt;
+          &lt;/window&gt;
+      &lt;/impulse&gt;</code>
+  </pre>
 
 <h4><a id="components">Components</a></h4>
 
