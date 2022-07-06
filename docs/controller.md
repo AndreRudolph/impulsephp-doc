@@ -137,7 +137,7 @@ The more complex the application gets the more it should be divided in smaller p
 	{
 		private ?Window $wndMain = null;
 
-		public function handleEvent(Event $event)
+		public function afterCreate(Event $event): void
 		{
 			$this->importView('importedView.imp', $this->wndMain);
 		}
