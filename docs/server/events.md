@@ -1,8 +1,8 @@
 <h3 class="doc-title">Events</h3>
 
 - [Introduction](#introduction)
-- [Controller listener](#controller-listener)
-- [Component listener](#component-listener)
+- [Controllers](#controllers)
+- [Components](#components)
 - [Global listener](#global-listener)
 	- [Subscribe](#subscribe-listener)
     - [Broadcast event](#broadcast-event)
@@ -14,9 +14,9 @@ Event based architectures are a good and common practice to separate concerns an
 
 However, this article explains events more in depth and will also cover the topic of page global event listener.
 
-<h4><a id="controller-listener">Controller listener</a></h4>
+<h4><a id="controllers">Controllers</a></h4>
 
-<h4><a id="component-listener">Component listener</a></h4>
+<h4><a id="components">Components</a></h4>
 
 <h4><a id="global-listener">Global listener</a></h4>
 
