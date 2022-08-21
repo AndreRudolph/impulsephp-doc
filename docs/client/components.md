@@ -33,7 +33,7 @@ Creating the client side of components is quite easy. Let's take again that java
             this.message = message;
         }
 
-        getTemplate() {
+        getTemplate(attributes) {
             return '<div><%= component.message %></div>';
         }
     }
