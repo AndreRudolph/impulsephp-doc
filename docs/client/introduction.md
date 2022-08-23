@@ -1,8 +1,13 @@
 <h3 class="doc-title">Introduction</h3>
 
 - [Introduction](#introduction)
+- [Typescript](#typescript)
 
 <h4><a id="introduction">Introduction</a></h4>
-Since the Impulse PHP Framework is also partly a client side framework, it comes with its own javascript (typescript) engine and bundled scss files. It allows to add and / or modify core services as well as adding your own customized components. 
+This articles purpose is to give you a brief overview of used client side technologies and frameworks that are used by the Impulse framework.
 
-This articles purpose is to give you a brief overview of used technologies and frameworks that are used by the Impulse framework.
+<h4><a id="typescript">Typescript</a></h4>
+Typescript is a well known and established industry standard when it comes to reliable implementation and maintenance of javascript applications. It can be transpiled to javascript by using a transpiler and offers much more features than javascript which makes the development process more clean, fast and predictable: Types, generics, interfaces, etc.
+
+<h4><a id="scss">SCSS</a></h4>
+SCSS is a great tool to organize the work with stylesheets by providing variables, mixins, includes and of course nesting css rules with syntactic sugar.
