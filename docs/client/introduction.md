@@ -9,7 +9,6 @@
 	- React
     - Bootstrap
     - webpack (encore)
-- [Typescript](#typescript)
 
 <h4><a id="introduction">Introduction</a></h4>
 This articles purpose is to give you a brief overview of used client side technologies and frameworks that are used by the Impulse framework.
