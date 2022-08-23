@@ -11,6 +11,8 @@
     - webpack (encore)
 
 <h4><a id="introduction">Introduction</a></h4>
+Though you can create awesome and complex javascript based web applications with the Impulse PHP Framework by using pure PHP, you might face situations that need custom javascript code.
+
 This articles purpose is to give you a brief overview of used client side technologies and frameworks that are used by the Impulse framework.
 
 <h4><a id="technologies">Technologies</a></h4>
