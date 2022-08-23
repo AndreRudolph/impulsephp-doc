@@ -8,6 +8,7 @@
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
+The Impulse PHP Framework comes with its own javascript (typescript) engine and many possibilities for developers to create their own components.
 
 Every server component is mapped to a client side component. This article covers the basics for rendering and updating components aswell as creating and handling event listeners.
 
