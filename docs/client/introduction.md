@@ -17,6 +17,9 @@ This articles purpose is to give you a brief overview of used client side techno
 
 <h4><a id="technologies">Technologies</a></h4>
 
+<h5><a id="npm"></a>NPM</h5>
+NPM is a package manager that keeps track of thousands of different npm packages. The Impulse PHP Framework typescript and scss source files are independent npm packages that can be installed to your project.
+
 <h5><a id="typescript">Typescript</a></h5>
 Typescript is a well known and established industry standard when it comes to reliable implementation and maintenance of javascript applications. It can be transpiled to javascript by using a transpiler and offers much more features than javascript which makes the development process more clean, fast and predictable: Types, generics, interfaces, etc.
 
