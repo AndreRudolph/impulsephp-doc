@@ -6,9 +6,9 @@
 	- [Typescript](#typescript)
     - [SCSS](#scss)
 - [Frameworks](#frameworks)
-	- React
-    - Bootstrap
-    - webpack (encore)
+	- [React](#react)
+    - [Bootstrap](#bootstrap)
+    - [webpack (encore)](#webpack)
 
 <h4><a id="introduction">Introduction</a></h4>
 Though you can create awesome and complex javascript based web applications with the Impulse PHP Framework by using pure PHP, you might face situations that need custom javascript code.
@@ -27,3 +27,5 @@ Typescript is a well known and established industry standard when it comes to re
 SCSS is a great tool to organize the work with stylesheets by providing variables, mixins, includes and of course nesting css rules with syntactic sugar.
 
 <h4><a id="frameworks">Frameworks</a></h4>
+
+<h5><a id="react">React</a></h5>
