@@ -1,6 +1,6 @@
 <h3 class="doc-title">Introduction</h3>
 
-<div id="stickyTest" />
+<div id="stickyTest"></div>
 - [Introduction](#introduction)
 - [Techologies](#technologies)
     - [NPM](#npm)
