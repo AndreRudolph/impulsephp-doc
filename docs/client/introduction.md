@@ -10,6 +10,8 @@
     - [Bootstrap](#bootstrap)
     - [webpack (encore)](#webpack)
 - [Installation](#installation)
+	- [Quickstart](#quickstart)
+    
 
 <h4><a id="introduction">Introduction</a></h4>
 Though you can create awesome and complex javascript based web applications with the Impulse PHP Framework by using pure PHP, you might face situations that need custom javascript code.
@@ -30,3 +32,7 @@ SCSS is a great tool to organize the work with stylesheets by providing variable
 <h4><a id="frameworks">Frameworks</a></h4>
 
 <h5><a id="react">React</a></h5>
+
+<h4><a id="installation">Installation</a></h4>
+
+<h5><a id="quickstart">Quickstart</a></h5>
