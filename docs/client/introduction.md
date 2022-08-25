@@ -9,6 +9,7 @@
 	- [React](#react)
     - [Bootstrap](#bootstrap)
     - [webpack (encore)](#webpack)
+- [Installation](#installation)
 
 <h4><a id="introduction">Introduction</a></h4>
 Though you can create awesome and complex javascript based web applications with the Impulse PHP Framework by using pure PHP, you might face situations that need custom javascript code.
