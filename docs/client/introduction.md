@@ -36,3 +36,6 @@ SCSS is a great tool to organize the work with stylesheets by providing variable
 <h4><a id="installation">Installation</a></h4>
 
 <h5><a id="quickstart">Quickstart</a></h5>
+If you prefer a simple setup with no need of compiling impulse sources and creating your own components you may proceed with this quickstart section.
+
+Every release of the Impulse framework provides already compiled versions of the client app as well as the different stylesheet themes that you can directly include.
