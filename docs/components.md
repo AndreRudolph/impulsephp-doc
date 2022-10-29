@@ -230,21 +230,20 @@ Applying the server state is straight forward and we need to just implement the 
 Since the main focus of this article is the server side documentation, we will just provide a quick start component snippet for the client component. Please check out the component client documentation for more details.
 
 <pre class="imp-code code-white language-js">
-	<code class="language-js">import AbstractComponent 
-	from 'path/to/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/UI/Components/AbstractComponent';
+	<code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
     
-    export default class Message extends AbstractComponent {
-        constructor() {
-            super();
-            this.message = '';
+    export class Message extends AbstractReactComponent {
+    	private message: string;
+    
+        constructor(props) {
+            super(props);
+            this.message = props.message;
         }
-
-        setMessage(message) {
-            this.message = message;
-        }
-
-        getTemplate() {
-            return '<div><%= component.message %></div>';
+        
+        getTemplate(attributes) {
+        	return (
+                <div {...attributes}>{{ this.message }}</div>
+            );
         }
     }
     
