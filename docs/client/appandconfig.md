@@ -18,19 +18,18 @@ Once the Impulse framework has been initialized, the original webpack.config.js 
 The app.js is the entry point of the Impulse javascript application. Its purpose is to create the Impulse App instance, sets the configuration (see section below) and to run it. 
 
 <pre class="imp-code code-white line-numbers language-js">
-	<code class="language-js">import './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/ImpulseCore';
-	import './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/ImpulseComponents';
-	import './app/AppComponents';
-	import './../scss/app.scss';
+	<code class="language-js">
+import './../scss/app.scss';
+import '@impulsephp/client-ts';
+import ImpulseRuntime from './config';
+import { AppBundle } from "./app/AppBundle";
+import { App } from "../../../impulse-client-ts";
 
-    import App from './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/Kernel/App';
-    import ImpulseRuntime from './config';
-
-    document.addEventListener("DOMContentLoaded", (event) => {
-        let app = new App();
-        app.setConfig(ImpulseRuntime);
-        app.run();
-    });</code>
+document.addEventListener("DOMContentLoaded", (event) => {
+    let app = new App();
+    app.setConfig(ImpulseRuntime);
+    app.run();
+});</code>
 </pre>
 
 As you might have noticed, the sources are not copied to the assets/ directory and rather being imported from the ImpulseBundle. The main reason is that the user of the framework does not need to manually copy the source files by hand with every framework update and thus to minimize compatibility issues with newer versions.
@@ -42,29 +41,33 @@ The previous mentioned WebpackEncoreBundle provides an awesome configuration fac
 The example below is the default configuration file.
 
 <pre class="imp-code code-white line-numbers language-js">
-	<code class="language-js">import Impulse from './../../vendor/impulsephp/impulsebundle/src/Resources/assets/js/impulse-bundle/Impulse/Kernel/Impulse';
+	<code class="language-js">
+import { Impulse } from '@impulsephp/client-ts';
 
-    let ImpulseRuntime = Impulse.new();
+let ImpulseRuntime: Impulse = Impulse.new();
 
-    ImpulseRuntime
+ImpulseRuntime
 
-        // enables the page main busy indicator. Otherwise no busy indicator will take effect for a server request. The
-        // default indicator itself can be exchanged by calling registerBusyIndicator.
-        .enableBusyIndicator()
+    // enables the page main busy indicator. Otherwise no busy indicator will take effect for a server request. The
+    // default indicator itself can be exchanged by calling registerBusyIndicator.
+    .enableBusyIndicator()
 
-        // overwrites the default page busy indicator implementation.
-        // .registerBusyIndicator(new MyBusyIndicatorClass())
+    // disable the reset of scroll position after refresh
+    // .disableScrollReset()
 
-        // registers a new request listener.
-        // .registerRequestListener(new MyRequestListener())
+    // overwrites the default page busy indicator implementation.
+    // .registerBusyIndicator(new MyBusyIndicatorClass())
 
-        // registers a new response listener.
-        // .registerResponseListener(new MyResponseListener())
+    // registers a new request listener.
+    // .registerRequestListener(new MyRequestListener())
 
-        // sets the timeout for each server request for the underlying axios library. The value 0 means that there is no timeout.
-        .setRequestTimeout(0);
+    // registers a new response listener.
+    // .registerResponseListener(new MyResponseListener())
 
-    export default ImpulseRuntime;</code>
+    // sets the timeout for each server request for the underlying axios library. The value 0 means that there is no timeout.
+    .setRequestTimeout(0);
+
+export default ImpulseRuntime;</code>
 </pre>
 
 <h4><a id="appcomponents-js">AppComponents.js</a></h4>
