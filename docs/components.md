@@ -28,8 +28,8 @@ A component is basically an object of a certain class with a load of properties 
 
 Since the basic serialization mechanism of PHP is not suitable for our needs, the components instead have a method called <span class="code-hint">getServerData</span> that creates an array of attributes and their values that will be used for later serialization. The following example is taken from the <span class="code-hint">Image</span> component class.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php"><?php
     
     class Image extends AbstractComponent 
     {
