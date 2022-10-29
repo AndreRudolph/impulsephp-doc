@@ -66,8 +66,8 @@ can a) be send to the client to update the UI and b) consider the changes in the
 
 To record a change that is intended for the client, the <span class="code-hint">updateClientAttribute</span> method is used for. In the Image component again there is a setter for the src attribute that records changes that will later be populated to the client.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php"><?php
     
     class Image extends AbstractComponent 
     {
@@ -139,8 +139,8 @@ Impulse is designed to provide programmers the possibility to create their own c
 
 Suppose you want to create a component class, lets call it **_Message_**, with a message that shall be displayed at the client. You can simply add a message property along with its getter and setter method.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php"><?php
     
     class Message extends AbstractComponent 
     {
@@ -170,8 +170,8 @@ The property <span class="code-hint">uiClass</span> later indicates which javasc
 
 The main purpose is to show the message to the client and therefor there is a method called <span class="code-hint">getClientData</span> which returns an array with all contain informations of the component that are relevant for the client.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php"><?php
     
     class Message extends AbstractComponent 
     {    
@@ -190,8 +190,8 @@ You also need to call the <span class="code-hint">getClientData</span> of the pa
 
 If the client should also be informed about changes of the message property, we can use the <span class="code-hint">updateClientAttribute</span> method as mentioned in the introduction.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php"><?php
     
     class Message extends AbstractComponent
     {
@@ -209,8 +209,8 @@ If the client should also be informed about changes of the message property, we 
 
 Applying the server state is straight forward and we need to just implement the <span class="code-hint">getServerData</span> method.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php"><?php
     
     class Message extends AbstractComponent 
     {
@@ -255,8 +255,8 @@ Since the main focus of this article is the server side documentation, we will j
 
 Custom attributes are usefuly whenever you want to enrich a component with very specific informations for later work with these attributes. Consider you want to associate a button with an entity id of a database record. You can simply achieve this by calling the <span class="code-hin">setCustomAttribute</span> method of that component.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php"><?php
     
 namespace App\Controller;
 use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -284,8 +284,8 @@ Another great approach of creating complex and reusable components are template 
 
 The example below shows how template components work with a greeting example.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php"><?php
     
     #[Template('app/components/greeting.html.twig')]
     class Greeting extends Div implements AfterCreateChilds
@@ -305,8 +305,8 @@ The example below shows how template components work with a greeting example.
     }</code>
 </pre>
 
-<pre class="code-white language-markup">
-	<code class="imp-code language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
+<pre class="imp-code code-white language-markup">
+	<code class="language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
 		&lt;textbox id="tbName" placeholder="Enter your name here" /&gt;
 		&lt;button id="btnGreet" label="Greet" /&gt;
     &lt;/div&gt;</code>
