@@ -1,10 +1,14 @@
 <h3 class="doc-title">Components</h3>
 
 - [Introduction](#introduction)
-- [Create components](#create-components)
-- [Updates from server](#updates-from-server)
+- [Writing components](#create-components)
+  - [States](#states)
+  - [Rendering](#rendering)
+  - [Updates](#updates)
 - [Component lifecycle](#component-lifecycle)
 - [Event listener](#event-listener)
+  - [Adding listener](#adding-listener)
+  - [Removing listener](#removing-listener)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -15,7 +19,7 @@ side component.
 The component system is based on React components. If you are not familiar with React. we highly recommend to first get 
 used to <a href="https://reactjs.org/">React</a>.
 
-<h5><a id="create-components">Create custom component</a></h5>
+<h4><a id="create-components">Writing component</a></h4>
 
 All component classes must either directly or indirectly extend the <span class="code-hint">AbstractReactComponent</span>
 class. The constructor takes the properties from the server side component as argument.
@@ -73,7 +77,7 @@ export class Message extends AbstractReactComponent
 
 Thanks to React, you can use <span class="code-hint">Conditional rendering</span> here.
 
-<h5><a id="updates-from-server">Updates from server</a></h5>
+<h5><a id="updates">Updates</a></h5>
 
 Components can receive updates from their respective server component. Let's assume the message property will be updated
 on server side, a setter must be provided to receive the updated value.
@@ -93,3 +97,5 @@ window.Message = Message;</code>
 
 Whenever a new message is set, React internally triggers again the rendering process of the component. Thus you don't 
 need to manually update the Document Object Model.
+
+<h4><a id="component-lifecycle">Component lifecycle</a></h4>
