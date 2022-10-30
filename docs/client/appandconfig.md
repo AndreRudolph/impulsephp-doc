@@ -1,17 +1,16 @@
 <h3 class="doc-title">App & Configuration</h3>
 
 - [Introduction](#introduction)
-- [app.js](#app-js)
-- [config.js](#config-js)
-- [AppComponents.js](#appcomponents-js)
+- [Typescript files](#typescript-files)
+  - [app.js](#app-js)
+  - [config.js](#config-js)
+  - [AppBundle.js](#appbundle-js)
+  - [AppComponentProvider.js](#appcomponentprovider-js)
+- [SCSS files](#scss-files)
+  - [app.scss](#app-scss)
 
-<h4><a id="introduction">Introduction</a></h4>
-
-Managing complex applications becomes tricky when dealing with assets like javascript, sass / scss and static resources like images or media in general. To reduce this complexity, the Impulse PHP Framework takes advantage of using webpack as a module builder to compile, minify and collect all required assets together. 
-
-Luckily the Symfony framework already provides the awesome WebpackEncoreBundle that wraps webpack by providing a handy facade for its configuration.
-
-Once the Impulse framework has been initialized, the original webpack.config.js had been replaced and all files in the assets/ directory had been removed.
+<h4><a name="introduction">Introduction</a></h4>
+This article gives you a brief overview of the assets provided by the framework.
 
 <h4><a id="app-js">app.js</a></h4>
 
@@ -32,13 +31,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });</code>
 </pre>
 
-As you might have noticed, the sources are not copied to the assets/ directory and rather being imported from the ImpulseBundle. The main reason is that the user of the framework does not need to manually copy the source files by hand with every framework update and thus to minimize compatibility issues with newer versions.
-
 <h4><a id="config-js">config.js</a></h4>
 
-The previous mentioned WebpackEncoreBundle provides an awesome configuration facade for webpack configuration. We decided to use the same approach for configuring the Impulse client engine by providing a fluent interface API.
+The config.js file provides basic configurations for the Impulse client runtime environment. The configuration style may
+look familiar to you if you have worked with WebpackEncoreBundle previousely.
 
-The example below is the default configuration file.
+Below is the default configuration file.
 
 <pre class="imp-code code-white line-numbers language-js">
 	<code class="language-js">
@@ -70,6 +68,27 @@ ImpulseRuntime
 export default ImpulseRuntime;</code>
 </pre>
 
-<h4><a id="appcomponents-js">AppComponents.js</a></h4>
+<h4><a id="appbundle-js">AppBundle.js</a></h4>
 
-This file is automatically imported in the app.js file and its purpose is to bundle all custom js component files together. Whenever you create a component javascript class you have to import it here.
+The AppBundle provides you some convenient methods to register component providers and registering new services as well
+as replacing existing ones with your custom implementations.
+
+<h4><a id="appcomponentprovider-js">AppComponentProvider.js</a></h4>
+
+The AppComponentProvider class is the place where you can register your custom client component classes of your app.
+
+<pre class="imp-code code-white line-numbers language-js">
+	<code class="language-js">
+import { ComponentClassRegistry } from '@impulsephp/client-ts';
+import { ComponentProvider } from '@impulsephp/client-ts';
+
+import { Message } from "./components/Message";
+
+export class AppComponentProvider implements ComponentProvider
+{
+    boot(componentClassRegistry: ComponentClassRegistry)
+    {
+        componentClassRegistry.register(Message.name, Message);
+    }
+}</code>
+</pre>
