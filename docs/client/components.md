@@ -7,6 +7,7 @@
   - [Updates](#updates)
 - [Component lifecycle](#component-lifecycle)
 - [Event listener](#event-listener)
+  - [Emit events](#emit-events)
   - [Primitive Listener](#primitive-listener)
   - [Adding listener](#adding-listener)
   - [Removing listener](#removing-listener)
@@ -79,7 +80,7 @@ export class Message extends AbstractReactComponent
 
 Thanks to React, you can use <span class="code-hint">Conditional rendering</span> here.
 
-<h5><a id="updates">Updates</a></h5>
+<h6><a id="updates">Updates</a></h6>
 
 Components can receive updates from their respective server component. Let's assume the message property will be updated
 on server side, a setter must be provided to receive the updated value.
@@ -115,6 +116,32 @@ Thus, each Impulse client component internally stores a priority event listener 
 you to register / unregister your custom event listeners at runtime without touching any existing listener for the same
 event. Checkout the next chapter for a more code based explanation.
 
+<h5><a id="emit-events">Emit events</a></h5>
+
+Event listener should be emitted by calling the emit method whenever you want an event to be processed.
+
+<pre class="imp-code code-white line-numbers language-js">
+	<code class="language-js">
+export class Message extends AbstractReactComponent 
+{
+    getTemplate(attributes) {
+        return (
+            &lt;button 
+                {...attributes} 
+                click={(event) => this.emitEvent(event, 'click')} 
+            &gt;
+                Click me
+            &lt;/button&gt;
+        );
+    }
+}
+
+window.Message = Message;</code>
+</pre>
+
+This, internally, will run through every registered click listener that is attached to the click event. In the next 
+chapter you'll learn how to register listener.
+
 <h5><a id="adding-listener">Adding listener</a></h5>
 To register your event listener you can implement the registerEventListener method.
 
@@ -128,42 +155,17 @@ export class Message extends AbstractReactComponent
 
         this.addEventListener((event) => {
             console.log('I am listener 1.');
-        }, 'click', 400, 'click');
+        }, 'click', 400);
 
         this.addEventListener((event) => {
             console.log('I am listener 2.');
-        }, 'click', 500, 'click');
+        }, 'click', 500);
     }
 }
 
 window.Message = Message;</code>
 </pre>
 
-You may wonder why there are two <span class="code-hint">click</span> parameters passed as arguments. The first one
-indicates the native DOM event name, the latter one is an internal event name and optional. The emitter chapter explains
-why and in which cases both of these event names are required.
-
-However, as you can see the code registers two click listener with different priorities. The higher the priority, the
-earlier the callback will be executed. This means, first the second listener code will be executed and after that the
+As you can see the code registers two click listener with different priorities. The higher the priority, the
+earlier the callback will be executed. This means, first the second listener code will be executed and afterwards the
 first one.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5><a id="primitive-listener">Primitive listener</a></h5>
-
-Most native DOM event listeners such as click, mouseenter, etc. are automatically be created for the components
-when they are registered as server side event listeners.
-
-
-It's worth knowing that primitive DOM event listener such as click, mouseenter, 
