@@ -9,8 +9,8 @@
 - [Event listener](#event-listener)
   - [Emit events](#emit-events)
   - [Primitive Listener](#primitive-listener)
-  - [Adding listener](#adding-listener)
-  - [Removing listener](#removing-listener)
+  - [Add listener](#adding-listener)
+  - [Remove listener](#removing-listener)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -142,7 +142,7 @@ window.Message = Message;</code>
 This, internally, will run through every registered click listener that is attached to the click event. In the next 
 chapter you'll learn how to register listener.
 
-<h5><a id="adding-listener">Adding listener</a></h5>
+<h6><a id="adding-listener">Add listener</a></h6>
 To register your event listener you can implement the registerEventListener method.
 
 <pre class="imp-code code-white line-numbers language-js">
@@ -169,3 +169,7 @@ window.Message = Message;</code>
 As you can see the code registers two click listener with different priorities. The higher the priority, the
 earlier the callback will be executed. This means, first the second listener code will be executed and afterwards the
 first one.
+
+<h6><a id="Removing-listener">Remove listener</a></h6>
+
+TODO
