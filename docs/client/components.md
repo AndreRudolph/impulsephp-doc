@@ -13,6 +13,7 @@
   - [Remove listener](#removing-listener)
 - [Learn more about components](#advanced_topics)
 
+<div id="content">
 <h4><a id="introduction">Introduction</a></h4>
 
 Components exist on both server and client side. Each component that is defined on server side is rendered as a client
@@ -173,3 +174,4 @@ first one.
 <h6><a id="Removing-listener">Remove listener</a></h6>
 
 TODO
+</div>
