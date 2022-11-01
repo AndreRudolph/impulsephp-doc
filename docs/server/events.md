@@ -20,52 +20,54 @@ There are basically three different options to register a controller as event li
 <h6>Attributes approach</h6>
 A very simple but yet limited approach is by using attributes.
 
-  <pre class="code-white language-php">
-  	<code class="imp-code language-php"><?php
-	namespace App\Controller;
-	use Impulse\ImpulseBundle\Controller\AbstractController;
-	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-    use Impulse\ImpulseBundle\Events\Events;
-	use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+  <pre class="imp-code code-white language-php">
+  	<code class="language-php">
+<?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\Controller\Annotations\Listen;
 
-	class AppController extends AbstractController
-	{
-        #[Listen(event: Events::CLICK, component: 'btnGreet')]
-		public function onClick(Event $event): void
-		{
-			// handle event here
-		}
-	}</code>
-  </pre>
+class AppController extends AbstractController
+{
+    #[Listen(event: Events::CLICK, component: 'btnGreet')]
+    public function onClick(Event $event): void
+    {
+        // handle event here
+    }
+}</code>
+</pre>
   
 Note that you can also assign one than more components to an event by using an components array instead of component. The drawbacks of this approach is that it works only components that were created automatically by rendering the templates and second only for components that have an id.
 
 <h6>Manual approach</h6>
 The second approach is the most flexible approach but requires more boilerplate code. You can use this for registering event listeners to all kind of components regardless when they were created.
 
-  <pre class="code-white language-php">
-  	<code class="imp-code language-php"><?php
-	namespace App\Controller;
-	use Impulse\ImpulseBundle\Controller\AbstractController;
-	use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
-    use Impulse\ImpulseBundle\Events\Events;
-	use Impulse\ImpulseBundle\Controller\Annotations\Listen;
+  <pre class="imp-code code-white language-php">
+  	<code class="language-php">
+<?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
+use Impulse\ImpulseBundle\Events\Events;
+use Impulse\ImpulseBundle\Controller\Annotations\Listen;
 
-	class AppController extends AbstractController
-	{
-    	private ?Button $btn = null;
-    
-    	public function afterCreate(Event $event): void
-        {
-        	$this->btn->addEventListener(Events::CLICK, $this, 'onClick');
-        }
-    
-		public function onClick(Event $event): void
-		{
-			// handle event here
-		}
-	}</code>
-  </pre>
+class AppController extends AbstractController
+{
+    private ?Button $btn = null;
+
+    public function afterCreate(Event $event): void
+    {
+        $this->btn->addEventListener(Events::CLICK, $this, 'onClick');
+    }
+
+    public function onClick(Event $event): void
+    {
+        // handle event here
+    }
+}</code>
+</pre>
 
 <h6>Template approach</h6>
 Another option is to register controller as event listener in templates. Note that this only works if the template has a bounded controller.
@@ -95,22 +97,23 @@ For this article we assume a simple application with a left sided user list and 
 
 According to the agreed example above we will have a UserList component that subscribes itself to the user change event. 
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class=" language-php">
+<?php
 
-	class UserList extends Ul
-	{
-        public function afterCreateChildren(): void
-        {
-        	parent::afterCreateChildren();
-        	$this->getPage()->subscribe('userChanged', $this, 'onUserChanged');
-        }
-        
-        public function onUserChanged(PageContract $page, User $user): void
-        {
-        	// update the list
-        }
-	}</code>
+class UserList extends Ul
+{
+    public function afterCreateChildren(): void
+    {
+        parent::afterCreateChildren();
+        $this->getPage()->subscribe('userChanged', $this, 'onUserChanged');
+    }
+    
+    public function onUserChanged(PageContract $page, User $user): void
+    {
+        // update the list
+    }
+}</code>
 </pre>
 
 The first parameter is reserved for the Page object. All subsequent parameters are coming from the parameters passed to the broadcast that will be covered in the next chapter. 
@@ -119,25 +122,26 @@ The first parameter is reserved for the Page object. All subsequent parameters a
 
 A global event can be broadcast from anywhere inside a controller or component by calling the <span class="code-hint">broadcast</span> method of the page object. The following simplified component represents the UserDetails component that broadcasts the <span class="code-hint">userChanged</span> event once the save button has been clicked.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php">
+<?php
 
-	class UserDetails extends Div
-	{
-        private ?Button $btnSave = null;
-        
-        public function afterCreateChildren(): void
-        {
-        	parent::afterCreateChildren();
-            $this->btnSave->addEventListener(Events::CLICK, $this, 'onUserSave');
-        }
-        
-        public function onUserSave(ClickEvent $event): void
-        {
-        	// $user = ...
-            $this->getPage()->sendEvent('userChanged', $user);
-        }
-	}</code>
+class UserDetails extends Div
+{
+    private ?Button $btnSave = null;
+    
+    public function afterCreateChildren(): void
+    {
+        parent::afterCreateChildren();
+        $this->btnSave->addEventListener(Events::CLICK, $this, 'onUserSave');
+    }
+    
+    public function onUserSave(ClickEvent $event): void
+    {
+        // $user = ...
+        $this->getPage()->sendEvent('userChanged', $user);
+    }
+}</code>
 </pre>
 
 <h5><a id="unsubscribe-listener">Unsubscribe listener</a></h5>
@@ -146,20 +150,21 @@ When a global page listener is no longer referenced from any component and thus 
 
 However, when you want or need to unsubscribe the controller / component manually beforehand, then you can use the unsubscribe method of the page object. Let's take as an example that you want to remove the subscription once the UserList component has been detached.
 
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code code-white language-php">
+	<code class="language-php">
+<?php
 
-	class UserList extends Ul
-	{
-        public function afterCreateChildren(): void
-        {
-        	parent::afterCreateChildren();
-        	$this->addEventListener(Events::DETACH, $this, 'onDetach');
-        }
-        
-        public function onDetach(): void
-        {
-        	$this->getPage()->unsubscribe('userChanged', $this, 'onUserChanged');
-        }
-	}</code>
+class UserList extends Ul
+{
+    public function afterCreateChildren(): void
+    {
+        parent::afterCreateChildren();
+        $this->addEventListener(Events::DETACH, $this, 'onDetach');
+    }
+    
+    public function onDetach(): void
+    {
+        $this->getPage()->unsubscribe('userChanged', $this, 'onUserChanged');
+    }
+}</code>
 </pre>
