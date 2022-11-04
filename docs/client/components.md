@@ -78,7 +78,24 @@ export class Message extends AbstractReactComponent
 }</code>
 </pre>
 
-Thanks to React, you can use <span class="code-hint">Conditional rendering</span> here.
+Thanks to React, you can use <span class="code-hint">Conditional rendering</span> here. When you also want to allow
+child components be rendered, then you must use the <span class="code-hint">this.includeChildren()</span> here.
+
+<pre class="imp-code code-white line-numbers language-js">
+	<code class="language-js">
+export class Message extends AbstractReactComponent
+{
+    getTemplate(attributes)
+    {
+        return (
+            &lt;div {...attributes}&gt;
+                { this.getState('message') }
+                { this.includeChildren() }
+            &lt;/div&gt;
+        );
+    }
+}</code>
+</pre>
 
 <h6><a id="updates">Updates</a></h6>
 
