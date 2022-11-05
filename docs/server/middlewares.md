@@ -15,17 +15,17 @@ Middlewares are a piece of code encapsulated in a class that can be executed eit
 A middleware that just does nothing looks like the following.
 
 <pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
-	namespace App\Controller\Middleware;
-	use Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware;
+<code class="imp-code language-php"><?php
+namespace App\Controller\Middleware;
+use Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware;
 
-    class MySpecialMiddleware implements EventListenerMiddleware
+class MySpecialMiddleware implements EventListenerMiddleware
+{
+    public function execute(array $context): bool
     {
-        public function execute(array $context): bool
-        {
-            return true;
-        }
-    }</code>
+        return true;
+    }
+}</code>
 </pre>
 
 So basically a middlware is identified by implementing the <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware</span> interface. How a middleware will be applied to a specific controller method is captured in the next chapter.
@@ -36,50 +36,50 @@ Let's consider you want to have an often used action like checking if a user is 
 of the same controller or even for different controllers. 
 
 <pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
-	namespace App\Controller\Middleware;
-	use Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware;
-	use Psr\Container\ContainerInterface;
-	use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+<code class="imp-code language-php"><?php
+namespace App\Controller\Middleware;
+use Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware;
+use Psr\Container\ContainerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-    class AuthenticationRequiredMiddleware extends AbstractController implements EventListenerMiddleware
+class AuthenticationRequiredMiddleware extends AbstractController implements EventListenerMiddleware
+{
+    public function __construct(ContainerInterface $container)
     {
-        public function __construct(ContainerInterface $container)
-        {
-            $this->container = $container;
+        $this->container = $container;
+    }
+
+    public function execute(array $context): ?Redirect
+    {
+        if (!$this->isGranted('IS_AUTHENTICATED_FULLY')) {
+            return false;
         }
 
-        public function execute(array $context): ?Redirect
-        {
-            if (!$this->isGranted('IS_AUTHENTICATED_FULLY')) {
-                return false;
-            }
-
-            return null;
-        }
-    }</code>
+        return null;
+    }
+}</code>
 </pre>
 
 Let's take this middleware and register it for a specific controller method.
 
 <pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
-    namespace App\Controller;
+<code class="imp-code language-php"><?php
+namespace App\Controller;
 
-    use App\Controller\Middleware\AuthenticationRequiredMiddleware;
-    use Impulse\ImpulseBundle\Controller\AbstractController;
-    use Impulse\ImpulseBundle\Controller\Annotations\PreMiddleware;
-    use Impulse\ImpulseBundle\Execution\Events\Event;
+use App\Controller\Middleware\AuthenticationRequiredMiddleware;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\PreMiddleware;
+use Impulse\ImpulseBundle\Execution\Events\Event;
 
 
-    class MyController extends AbstractController
+class MyController extends AbstractController
+{
+    #[PreMiddleware(AuthenticationRequiredMiddleware::class)]
+    public function afterCreate(Event $event): void
     {
-        #[PreMiddleware(AuthenticationRequiredMiddleware::class)]
-        public function afterCreate(Event $event): void
-        {
-            parent::afterCreate($event);
-        }
-    }</code>
+        parent::afterCreate($event);
+    }
+}</code>
 </pre>
 
 As you can see, the middleware is registered by a <span class="code-hint">Impulse\ImpulseBundle\Controller\Annotations\PreMiddleware</span> property (annotation) and thus will be executed before the controller method itself will be executed. Since the middleware will return false in case of no authentication, the controller method will not be executed in that case.
@@ -92,14 +92,14 @@ Post action middlewares must implement the interace <span class="code-hint">Impu
 The interface <span class="code-hint">Impulse\ImpulseBundle\Execution\Middleware\EventListenerMiddleware</span> requires an implementation of the method execute along with an array parameter <span class="code-hint">$context</span>. This context array can have values that have been set to a middleware registration.
 
 <pre class="code-white language-php">
-	<code class="imp-code language-php">class MyController extends AbstractController
+<code class="imp-code language-php">class MyController extends AbstractController
+{
+    #[PreMiddleware(LoggingMiddleware::class, context: ['method' => 'afterCreate']])]
+    public function afterCreate(Event $event): void
     {
-        #[PreMiddleware(LoggingMiddleware::class, context: ['method' => 'afterCreate']])]
-        public function afterCreate(Event $event): void
-        {
-            parent::afterCreate($event);
-        }
-    }</code>
+        parent::afterCreate($event);
+    }
+}</code>
 </pre>
 
 <div class="info-box info">In future the context parameters will be enriched by view arguments.</div>

@@ -17,8 +17,7 @@ This article gives you a brief overview of the assets provided by the framework.
 The app.js is the entry point of the Impulse javascript application. Its purpose is to create the Impulse App instance, sets the configuration (see section below) and to run it. 
 
 <pre class="imp-code code-white line-numbers language-js">
-	<code class="language-js">
-import './../scss/app.scss';
+<code class="language-js">import './../scss/app.scss';
 import '@impulsephp/client-ts';
 import ImpulseRuntime from './config';
 import { AppBundle } from "./app/AppBundle";
@@ -39,8 +38,7 @@ look familiar to you if you have worked with WebpackEncoreBundle previousely.
 Below is the default configuration file.
 
 <pre class="imp-code code-white line-numbers language-js">
-	<code class="language-js">
-import { Impulse } from '@impulsephp/client-ts';
+<code class="language-js">import { Impulse } from '@impulsephp/client-ts';
 
 let ImpulseRuntime: Impulse = Impulse.new();
 
@@ -78,8 +76,7 @@ as replacing existing ones with your custom implementations.
 The AppComponentProvider class is the place where you can register your custom client component classes of your app.
 
 <pre class="imp-code code-white line-numbers language-js">
-	<code class="language-js">
-import { ComponentClassRegistry } from '@impulsephp/client-ts';
+<code class="language-js">import { ComponentClassRegistry } from '@impulsephp/client-ts';
 import { ComponentProvider } from '@impulsephp/client-ts';
 
 import { Message } from "./components/Message";
