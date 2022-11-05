@@ -251,7 +251,7 @@ use Impulse\ImpulseBundle\Controller\AbstractController;
 
 class AppController extends AbstractController
 {
-	private Button $btnDeleteUser;
+    private Button $btnDeleteUser;
     
     public function afterCreate() 
     {
