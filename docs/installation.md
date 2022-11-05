@@ -24,7 +24,7 @@ After the symfony project has been created, you need to install the WebpackEncor
 
 Since the ImpulseBundle is still a private repository and not available via packagist, the bundle must point to its repostory by adding the following segments to the composer json:
 
-<pre class="language-json code-white imp-code language-shell">
+<pre class="language-json code-white imp-code">
 <code class="language-json">"repositories": {
     "impulsebundle": {
         "type": "vcs",
