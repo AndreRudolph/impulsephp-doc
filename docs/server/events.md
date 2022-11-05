@@ -20,9 +20,8 @@ There are basically three different options to register a controller as event li
 <h6>Attributes approach</h6>
 A very simple but yet limited approach is by using attributes.
 
-  <pre class="imp-code code-white language-php">
-  	<code class="language-php">
-<?php
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
 namespace App\Controller;
 use Impulse\ImpulseBundle\Controller\AbstractController;
 use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
@@ -44,9 +43,8 @@ Note that you can also assign one than more components to an event by using an c
 <h6>Manual approach</h6>
 The second approach is the most flexible approach but requires more boilerplate code. You can use this for registering event listeners to all kind of components regardless when they were created.
 
-  <pre class="imp-code code-white language-php">
-  	<code class="language-php">
-<?php
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
 namespace App\Controller;
 use Impulse\ImpulseBundle\Controller\AbstractController;
 use Impulse\Bundles\ImpulseBundle\Execution\Events\Event;
@@ -72,13 +70,11 @@ class AppController extends AbstractController
 <h6>Template approach</h6>
 Another option is to register controller as event listener in templates. Note that this only works if the template has a bounded controller.
 
-  <pre class="code-white language-twig">
-      <code class="language-twig">&lt;impulse&gt;
-          &lt;window bind="App\Controller\AppController" &gt;
-              &lt;button id="btn" ev:click="onClick" /&gt;
-          &lt;/window&gt;
-      &lt;/impulse&gt;</code>
-  </pre>
+<pre class="code-white language-twig">
+<code class="language-twig">&lt;window bind="App\Controller\AppController" &gt;
+  &lt&lt;button id="btn" ev:click="onClick" /&gt;
+&lt/window&gt;</code>
+</pre>
 
 <h4><a id="components">Template components</a></h4>
 The previous approaches work the same for template components with one exception. Registering by Listen attributes are currently not implemented for components but will be in future.
@@ -98,8 +94,7 @@ For this article we assume a simple application with a left sided user list and 
 According to the agreed example above we will have a UserList component that subscribes itself to the user change event. 
 
 <pre class="imp-code code-white language-php">
-	<code class=" language-php">
-<?php
+<code class=" language-php"><?php
 
 class UserList extends Ul
 {
@@ -123,8 +118,7 @@ The first parameter is reserved for the Page object. All subsequent parameters a
 A global event can be broadcast from anywhere inside a controller or component by calling the <span class="code-hint">broadcast</span> method of the page object. The following simplified component represents the UserDetails component that broadcasts the <span class="code-hint">userChanged</span> event once the save button has been clicked.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php">
-<?php
+<code class="language-php"><?php
 
 class UserDetails extends Div
 {
@@ -151,8 +145,7 @@ When a global page listener is no longer referenced from any component and thus 
 However, when you want or need to unsubscribe the controller / component manually beforehand, then you can use the unsubscribe method of the page object. Let's take as an example that you want to remove the subscription once the UserList component has been detached.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php">
-<?php
+<code class="language-php"><?php
 
 class UserList extends Ul
 {
