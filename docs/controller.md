@@ -28,8 +28,8 @@ A minimalistic controller class is an empty class that extends the AbstractContr
 
 As previousely mentioned, a controller will be rarely called directly from the frameworks user. 
 
-<pre class="code-white language-markup">
-<code class="imp-code language-markup">&lt;window bind="App\Controller\AppController" /&gt;</code>
+<pre class="imp-code code-white language-markup">
+<code class="language-markup">&lt;window bind="App\Controller\AppController" /&gt;</code>
 </pre>
 
 The <span class="highlightText">bind</span> attribute defines which controller will be executed by the framework. The following controller is a minimal example. 
