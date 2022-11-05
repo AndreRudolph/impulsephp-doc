@@ -72,8 +72,8 @@ Another option is to register controller as event listener in templates. Note th
 
 <pre class="code-white language-twig">
 <code class="language-twig">&lt;window bind="App\Controller\AppController" &gt;
-  &lt&lt;button id="btn" ev:click="onClick" /&gt;
-&lt/window&gt;</code>
+  &lt;button id="btn" ev:click="onClick" /&gt;
+&lt;/window&gt;</code>
 </pre>
 
 <h4><a id="components">Template components</a></h4>
