@@ -6,9 +6,8 @@
 <h5><a id="static-file-downloads">Static file downloads</a></h5>
 In web applications it is a common use case to provide static file downloads such as media, manuals, licenses, etc. that are served from the web server. To achieve this, the <span class="code-hint">AbstractController</span> provides a convenient method called <span class="code-hint">downloadFile</span>.
 
-  <pre class="imp-code code-white language-php">
-  	<code class="language-php">
-<?php
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
 namespace App\Controller;
 use Impulse\ImpulseBundle\Controller\AbstractController;
 use Impulse\ImpulseBundle\Controller\Annotations\Listen;
@@ -23,7 +22,7 @@ class AppController extends AbstractController
         $this->downloadFile('path/to/file.ext', 'fileName.ext');
     }
 }</code>
-  </pre>
+</pre>
   
 The first parameter must be a publicly available path for the static file. The second parameter will be the name of the file that will be downloaded on the user's device.
 
@@ -31,9 +30,8 @@ The first parameter must be a publicly available path for the static file. The s
 
 Providing dynamically generated one time files like reports or statistics for download is a common task for web applications. Hence the <span class="code-hint">AbstractController</span> implements a convenient method called <span class="code-hint">downloadRaw</span> which takes the name of the file, it's content (string) and an optional content type.
 
-  <pre class="imp-code code-white language-php">
-  	<code class="language-php">
-<?php
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
 namespace App\Controller;
 use Impulse\ImpulseBundle\Controller\AbstractController;
 use Impulse\ImpulseBundle\Controller\Annotations\Listen;
@@ -49,6 +47,6 @@ class AppController extends AbstractController
         $this->downloadRaw('generaredFile.txt', $payload, 'text/plain');
     }
 }</code>
-  </pre>
+</pre>
   
 If no content type is declared, <span class="code-hint">application/octet-stream</span> is used by default.
