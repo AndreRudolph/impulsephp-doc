@@ -28,38 +28,26 @@ A minimalistic controller class is an empty class that extends the AbstractContr
 
 As previousely mentioned, a controller will be rarely called directly from the frameworks user. 
 
-<!--<pre class="code-white line-numbers language-markup">-->
-<!--<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>-->
 <pre class="code-white language-markup">
-	<code class="imp-code language-markup">&lt;impulse&gt;
-		&lt;window bind="App\Controller\AppController" /&gt;
-    &lt;/impulse&gt;</code>
+<code class="imp-code language-markup">&lt;window bind="App\Controller\AppController" /&gt;</code>
 </pre>
 
 The <span class="highlightText">bind</span> attribute defines which controller will be executed by the framework. The following controller is a minimal example. 
 
-  <pre class="code-white language-php">
-  	<code class="imp-code language-php"><?php
-  	namespace App\Controller;
-  	use Impulse\ImpulseBundle\Controller\AbstractController;
-    use Impulse\ImpulseBundle\Execution\Events\Event;
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Execution\Events\Event;
 
-  	class AppController extends AbstractController
-  	{
-		public function afterCreate(Event $event)
-		{
-        	parent::afterCreate($event);
-        }
-  	}</code>
-  </pre>
+class AppController extends AbstractController
+{
+    public function afterCreate(Event $event)
+    {
+        parent::afterCreate($event);
+    }
+}</code>
+</pre>
 
 For doing initial tasks you can override the <span class="code-hint">afterCreate</span> method from the <span class="code-hint">AbstractController</span> or you can leave it out. The method will be called by the framework automativally once the view has been rendered and its components been created.
 
@@ -71,34 +59,32 @@ The main purpose of controllers in Impulse is that they can directly interact wi
 
 One option is by wiring by convention by naming properties with the related component ids.
 
-  <pre class="code-white language-markup">
-	<code class="imp-code language-markup">&lt;impulse&gt;
-    	&lt;window&gt;
-        	&lt;textbox id="tb" /&gt;
-		&lt;/window&gt;
-	&lt;/impulse&gt;</code>
-  </pre>
+<pre class="imp-code code-white language-markup">
+<code class="language-markup">&lt;window&gt;
+    &lt;textbox id="tb" /&gt;
+&lt;/window&gt;</code>
+</pre>
 
 We have created a textbox with the id <span class="highlightText">tb</span>. This component is - by convention - wireable for a controller and can be accessed via controller property.
 
-  <pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
-	namespace App\Controller;
-	use Impulse\ImpulseBundle\Controller\AbstractController;
-	use Impulse\ImpulseBundle\Execution\Events\Event;
-	use Impulse\ImpulseBundle\UI\Components\Textbox;
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Execution\Events\Event;
+use Impulse\ImpulseBundle\UI\Components\Textbox;
 
-	class AppController extends AbstractController
-	{
-		private ?Textbox $tb = null;
+class AppController extends AbstractController
+{
+    private ?Textbox $tb = null;
 
-		public function afterCreate(Event $event)
-		{
-			parent::afterCreate($event);
-			$this->tb->setValue('Hello world!');
-		}
-	}</code>
-  </pre>
+    public function afterCreate(Event $event)
+    {
+        parent::afterCreate($event);
+        $this->tb->setValue('Hello world!');
+    }
+}</code>
+</pre>
   
 In the example above, once the controller was created, the afterCreate method will be called automatically (see chapter before) and the textbox value will be set to Hello World!.
 
@@ -110,9 +96,9 @@ If you do not want to have components injected into properties automatically and
 
 The signature of this method is the following:
 
-  <pre class="code-white language-php">
-	<code class="imp-code language-php">protected function getComponentById(PageContract $page, string $id): ?ComponentContract;</code>
-  </pre>
+<pre class="imp-code  code-white language-php">
+<code class="language-php">protected function getComponentById(PageContract $page, string $id): ?ComponentContract;</code>
+</pre>
 
 Important note: As of now this method does not consider the scope of the id. It is currently not possible to have a page with two identical ids in different scopes.
 
@@ -120,29 +106,27 @@ Important note: As of now this method does not consider the scope of the id. It 
 
 The more complex the application gets the more it should be divided in smaller parts (single responsiblity principle). For exactly this purpose you can easily load views inside your controller. The following example shows how this works.
 
-  <pre class="code-white language-markup">
-  	<code class="imp-code language-markup">&lt;impulse&gt;
-		&lt;window id="wndMain" bind="App\Controller\AppController" /&gt;
-	&lt;/impulse&gt;</code>
-  </pre>
+<pre class="imp-code code-white language-markup">
+<code class=" language-markup">&lt;window id="wndMain" bind="App\Controller\AppController" /&gt;</code>
+</pre>
 
-  <pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
-	namespace App\Controller;
-	use Impulse\ImpulseBundle\Controller\AbstractController;
-	use Impulse\ImpulseBundle\Execution\Events\Event;
-	use Impulse\ImpulseBundle\UI\Components\Window;
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Execution\Events\Event;
+use Impulse\ImpulseBundle\UI\Components\Window;
 
-	class AppController extends AbstractController
-	{
-		private ?Window $wndMain = null;
+class AppController extends AbstractController
+{
+    private ?Window $wndMain = null;
 
-		public function afterCreate(Event $event): void
-		{
-			$this->importView('importedView.imp', $this->wndMain);
-		}
-	}</code>
-  </pre>
+    public function afterCreate(Event $event): void
+    {
+        $this->importView('importedView.imp', $this->wndMain);
+    }
+}</code>
+</pre>
   
 Line 13 is the important line. The <span class="highlightText">importView</span> method is called and takes two arguments. The first one is the view that will be imported and the second argument is the component that will be the direct parent of the root component of the imported view.
 
@@ -152,28 +136,28 @@ By default this will remove all childs of the given parent component internally.
 
 Though you can create complex component trees by creating them manually, sometimes it becomes more handy to create component objects on the fly by using inline views rather than real views. Inline views can be created and renderer within the controller. To achieve this, the <span class="code-hint">AbstractController</span> class offers a method called <span>createComponents</span>. A simple example could be creating a list based on array.
 
-  <pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
-	namespace App\Controller;
-	use Impulse\ImpulseBundle\Controller\AbstractController;
-	use Impulse\ImpulseBundle\Execution\Events\Event;
-	use Impulse\ImpulseBundle\UI\Components\Div;
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Execution\Events\Event;
+use Impulse\ImpulseBundle\UI\Components\Div;
 
-	class AppController extends AbstractController
-	{
-		private ?Div $container = null;
+class AppController extends AbstractController
+{
+    private ?Div $container = null;
 
-		public function handleEvent(Event $event)
-		{
-        	$values = range('A', 'Z');
-			$this->createComponents('&lt;ul&gt;
-            	&#123;% for value in values %}
-                	&lt;li&gt;&#123;&#123; value }}&lt;/li&gt;
-                &#123;% endfor %};
-            &lt;/ul&gt;', $this->container, compact('values'));
-		}
-	}</code>
-  </pre>
+    public function handleEvent(Event $event)
+    {
+        $values = range('A', 'Z');
+        $this->createComponents('&lt;ul&gt;
+            &#123;% for value in values %}
+                &lt;li&gt;&#123;&#123; value }}&lt;/li&gt;
+            &#123;% endfor %};
+        &lt;/ul&gt;', $this->container, compact('values'));
+    }
+}</code>
+</pre>
 
 Like in real twig template you can also use the twig functionalities in inline views as well.
 
