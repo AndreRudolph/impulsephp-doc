@@ -32,15 +32,13 @@ It is a common good practice (separation of concerns) to separate views into sma
 <pre class="imp-code code-white language-twig">
 <code class="language-twig">&lt;window&gt;
   &lt;import src="helloWorld.html.twig" /&gt;
-&lt;/window&gt;
-</code>
+&lt;/window&gt;</code>
 </pre>
   
 <pre class="imp-code code-white language-twig">
 <code class="language-twig">&lt;window&gt;
   &lt;div&gt;Hello world&lt;/div&gt;
-&lt;/window&gt;
-</code>
+&lt;/window&gt;</code>
 </pre>
 
 <h5><a id="view-inheritance">View inheritance</a></h5>
