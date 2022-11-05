@@ -29,23 +29,23 @@ A component is basically an object of a certain class with a load of properties 
 Since the basic serialization mechanism of PHP is not suitable for our needs, the components instead have a method called <span class="code-hint">getServerData</span> that creates an array of attributes and their values that will be used for later serialization. The following example is taken from the <span class="code-hint">Image</span> component class.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php"><?php
+<code class="language-php"><?php
+
+class Image extends AbstractComponent 
+{
+    protected string $src = '';
+    protected ?string $alt = null;
     
-    class Image extends AbstractComponent 
+    // other methods
+    
+    public function getServerData(): array
     {
-        protected string $src = '';
-        protected ?string $alt = null;
-        
-        // other methods
-        
-        public function getServerData(): array
-        {
-            $data = parent::getServerData();
-            $data['src'] = $this->src;
-            $data['alt'] = $this->alt;
-            return $data;
-        }
-    }</code>
+        $data = parent::getServerData();
+        $data['src'] = $this->src;
+        $data['alt'] = $this->alt;
+        return $data;
+    }
+}</code>
 </pre>
 
 Basically the implementation of the Image class retrieves the server data from its parent class and adding both the src and the alt attribute and their values to the array.
@@ -67,21 +67,21 @@ can a) be send to the client to update the UI and b) consider the changes in the
 To record a change that is intended for the client, the <span class="code-hint">updateClientAttribute</span> method is used for. In the Image component again there is a setter for the src attribute that records changes that will later be populated to the client.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php"><?php
+<code class="language-php"><?php
+
+class Image extends AbstractComponent 
+{
+    protected string $src = '';
+    // other attributes
     
-    class Image extends AbstractComponent 
+    // other methods
+    
+    public function setSrc($src)
     {
-        protected string $src = '';
-        // other attributes
-        
-        // other methods
-        
-        public function setSrc($src)
-        {
-            $this->src = $src;
-            $this->updateClientAttribute($src, 'src');
-        }
-    }</code>
+        $this->src = $src;
+        $this->updateClientAttribute($src, 'src');
+    }
+}</code>
 </pre>
 
 The reactivation process of a component will be covered in a "Learn more" section at the bottom of this article. 
@@ -90,44 +90,33 @@ The reactivation process of a component will be covered in a "Learn more" sectio
 
 For a complete list of currently registered components you can run the following command in your projects root directory:
 
-  <pre class="code-white imp-code language-shell">
-  	<code class="language-bash">php bin/console debug:impulse:components</code>
-  </pre>
+<pre class="code-white imp-code language-shell">
+<code class="language-bash">php bin/console debug:impulse:components</code>
+</pre>
 
 A shortened extract of the output might look as the following:
 
-<div>
-  <div class="code-header">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="button red"></div>
-          	<div class="button yellow"></div>
-          	<div class="button green"></div>
-        </div>
-    </div>
-  </div>
-  <pre class="code-white imp-code language-bash">
-  	<code class="language-bash"> ------------------------- ----------------------------------------------------- 
-      Alias                     Class                                                
-     ------------------------- ----------------------------------------------------- 
-      a                         Impulse\ImpulseBundle\UI\Components\A                
-      impulse:a                 Impulse\ImpulseBundle\UI\Components\A                
-      blockquote                Impulse\ImpulseBundle\UI\Components\Blockquote       
-      impulse:blockquote        Impulse\ImpulseBundle\UI\Components\Blockquote       
-      br                        Impulse\ImpulseBundle\UI\Components\Br               
-      impulse:br                Impulse\ImpulseBundle\UI\Components\Br               
-      button                    Impulse\ImpulseBundle\UI\Components\Button           
-      impulse:button            Impulse\ImpulseBundle\UI\Components\Button           
-      carousel                  Impulse\ImpulseBundle\UI\Components\Carousel         
-      impulse:carousel          Impulse\ImpulseBundle\UI\Components\Carousel         
-      ...           
-      upload                    Impulse\ImpulseBundle\UI\Components\Upload           
-      impulse:upload            Impulse\ImpulseBundle\UI\Components\Upload           
-      window                    Impulse\ImpulseBundle\UI\Components\Window           
-      impulse:window            Impulse\ImpulseBundle\UI\Components\Window                             
-     ------------------------- -----------------------------------------------------</code>
-  </pre>
-</div>
+<pre class="code-white imp-code language-bash">
+<code class="language-bash">------------------------- ----------------------------------------------------- 
+Alias                     Class                                                
+------------------------- ----------------------------------------------------- 
+a                         Impulse\ImpulseBundle\UI\Components\A                
+impulse:a                 Impulse\ImpulseBundle\UI\Components\A                
+blockquote                Impulse\ImpulseBundle\UI\Components\Blockquote       
+impulse:blockquote        Impulse\ImpulseBundle\UI\Components\Blockquote       
+br                        Impulse\ImpulseBundle\UI\Components\Br               
+impulse:br                Impulse\ImpulseBundle\UI\Components\Br               
+button                    Impulse\ImpulseBundle\UI\Components\Button           
+impulse:button            Impulse\ImpulseBundle\UI\Components\Button           
+carousel                  Impulse\ImpulseBundle\UI\Components\Carousel         
+impulse:carousel          Impulse\ImpulseBundle\UI\Components\Carousel         
+...           
+upload                    Impulse\ImpulseBundle\UI\Components\Upload           
+impulse:upload            Impulse\ImpulseBundle\UI\Components\Upload           
+window                    Impulse\ImpulseBundle\UI\Components\Window           
+impulse:window            Impulse\ImpulseBundle\UI\Components\Window                             
+------------------------- -----------------------------------------------------</code>
+</pre>
 
 You wonder why every component is listed twice? The reason behind this is covered in the <a href="#component_contexts">Component contexts</a> section below.
 
@@ -140,28 +129,28 @@ Impulse is designed to provide programmers the possibility to create their own c
 Suppose you want to create a component class, lets call it **_Message_**, with a message that shall be displayed at the client. You can simply add a message property along with its getter and setter method.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php"><?php
+<code class="language-php"><?php
+
+class Message extends AbstractComponent 
+{
+    private string $message = 'Hello World';
     
-    class Message extends AbstractComponent 
+    public function __construct() 
     {
-        private string $message = 'Hello World';
-        
-        public function __construct() 
-        {
-        	parent::__construct();
-            $this->uiClass = 'Message';
-        }
-        
-        public function setMessage(string $message): void
-        {
-        	$this->message = $message;
-        }
-        
-        public function getMessage(): string
-        {
-        	return $this->message;
-        }
-    }</code>
+        parent::__construct();
+        $this->uiClass = 'Message';
+    }
+    
+    public function setMessage(string $message): void
+    {
+        $this->message = $message;
+    }
+    
+    public function getMessage(): string
+    {
+        return $this->message;
+    }
+}</code>
 </pre>
 
 The property <span class="code-hint">uiClass</span> later indicates which javascript class will be associated with that component.
@@ -171,19 +160,19 @@ The property <span class="code-hint">uiClass</span> later indicates which javasc
 The main purpose is to show the message to the client and therefor there is a method called <span class="code-hint">getClientData</span> which returns an array with all contain informations of the component that are relevant for the client.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php"><?php
+<code class="language-php"><?php
+
+class Message extends AbstractComponent 
+{    
+    // ... message property and its getter and setter
     
-    class Message extends AbstractComponent 
-    {    
-        // ... message property and its getter and setter
-        
-        public function getClientData(): array
-        {
-        	$data = parent::getClientData();
-            $data['message'] = $this->message;
-            return $data;
-        }
-    }</code>
+    public function getClientData(): array
+    {
+        $data = parent::getClientData();
+        $data['message'] = $this->message;
+        return $data;
+    }
+}</code>
 </pre>
 
 You also need to call the <span class="code-hint">getClientData</span> of the parent class (at least of AbstractComponent) since it contains necessary meta informations for the Impulse client engine.
@@ -191,18 +180,18 @@ You also need to call the <span class="code-hint">getClientData</span> of the pa
 If the client should also be informed about changes of the message property, we can use the <span class="code-hint">updateClientAttribute</span> method as mentioned in the introduction.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php"><?php
+<code class="language-php"><?php
+
+class Message extends AbstractComponent
+{
+    // ... 
     
-    class Message extends AbstractComponent
+    public function setMessage(string $message): void
     {
-        // ... 
-        
-        public function setMessage(string $message): void
-        {
-        	$this->message = $message;
-            $this->updateClientAttribue($message, 'message');
-        }
-    }</code>
+        $this->message = $message;
+        $this->updateClientAttribue($message, 'message');
+    }
+}</code>
 </pre>
 
 <h5><a id="server_synchronization">Server state</a></h5>
@@ -210,19 +199,19 @@ If the client should also be informed about changes of the message property, we 
 Applying the server state is straight forward and we need to just implement the <span class="code-hint">getServerData</span> method.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php"><?php
+<code class="language-php"><?php
+
+class Message extends AbstractComponent 
+{
+    // ... message property and its getter and setter
     
-    class Message extends AbstractComponent 
+    public function getServerData(): array
     {
-        // ... message property and its getter and setter
-        
-        public function getServerData(): array
-        {
-        	$data = parent::getServerData();
-            $data['message'] = $this->message;
-            return $data;
-        }
-    }</code>
+        $data = parent::getServerData();
+        $data['message'] = $this->message;
+        return $data;
+    }
+}</code>
 </pre>
 
 <h5><a id="client_component">Client component</a></h5>
@@ -230,24 +219,24 @@ Applying the server state is straight forward and we need to just implement the 
 Since the main focus of this article is the server side documentation, we will just provide a quick start component snippet for the client component. Please check out the component client documentation for more details.
 
 <pre class="imp-code code-white language-js">
-	<code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
-    
-    export class Message extends AbstractReactComponent {
-    	private message: string;
-    
-        constructor(props) {
-            super(props);
-            this.message = props.message;
-        }
-        
-        getTemplate(attributes) {
-        	return (
-                <div {...attributes}>{{ this.message }}</div>
-            );
-        }
+<code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
+
+export class Message extends AbstractReactComponent {
+    private message: string;
+
+    constructor(props) {
+        super(props);
+        this.message = props.message;
     }
     
-    window.Message = Message;</code>
+    getTemplate(attributes) {
+        return (
+            &lt;div {...attributes}&gt;{{ this.message }}&lt;/div&gt;
+        );
+    }
+}
+
+window.Message = Message;</code>
 </pre>
 
 <h5><a id="custom-attributes">Custom attributes</a></h5>
@@ -255,7 +244,7 @@ Since the main focus of this article is the server side documentation, we will j
 Custom attributes are usefuly whenever you want to enrich a component with very specific informations for later work with these attributes. Consider you want to associate a button with an entity id of a database record. You can simply achieve this by calling the <span class="code-hin">setCustomAttribute</span> method of that component.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php"><?php
+<code class="language-php"><?php
     
 namespace App\Controller;
 use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -284,31 +273,31 @@ Another great approach of creating complex and reusable components are template 
 The example below shows how template components work with a greeting example.
 
 <pre class="imp-code code-white language-php">
-	<code class="language-php"><?php
+<code class="language-php"><?php
+
+#[Template('app/components/greeting.html.twig')]
+class Greeting extends Div implements AfterCreateChilds
+{
+    private Textbox $tbName;
+    private Button $btnGreet;
     
-    #[Template('app/components/greeting.html.twig')]
-    class Greeting extends Div implements AfterCreateChilds
+    public function afterCreateChilds(): void
     {
-		private Textbox $tbName;
-        private Button $btnGreet;
-        
-        public function afterCreateChilds(): void
-        {
-        	$this->btnGreet->addEventListener(Events::CLICK, $this, 'onGreet');
-        }
-        
-        public function onGreet(): void
-        {
-        		
-        }
-    }</code>
+        $this->btnGreet->addEventListener(Events::CLICK, $this, 'onGreet');
+    }
+    
+    public function onGreet(): void
+    {
+            
+    }
+}</code>
 </pre>
 
 <pre class="imp-code code-white language-markup">
-	<code class="language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
-		&lt;textbox id="tbName" placeholder="Enter your name here" /&gt;
-		&lt;button id="btnGreet" label="Greet" /&gt;
-    &lt;/div&gt;</code>
+<code class="language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
+    &lt;textbox id="tbName" placeholder="Enter your name here" /&gt;
+    &lt;button id="btnGreet" label="Greet" /&gt;
+&lt;/div&gt;</code>
 </pre>
 
 This approach is a good way to encapsulate view based logic in components rather than in controllers.
