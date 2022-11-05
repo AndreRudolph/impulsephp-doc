@@ -46,7 +46,7 @@ Now it's time to let composer install that package by running the update command
 The ImpulseBundle is now available. To finally initialize it, you can execute the provided init command and 
 following the instructions once the command has been finished.
 
-<pre class="language-shell code-white imp-code language-shell">
+<pre class="language-shell code-white imp-code">
 <code class="language-shell">php bin/console impulse:init</code>
 </pre>
 
