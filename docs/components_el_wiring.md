@@ -21,25 +21,16 @@ You can define the component(s) that will be wired into an attribute of the clas
 
 The probably most used and useful functions is the type function. It works almost similar as the <a href="#instanceOf">instanceOf()</a> function below with one exception. It compares only the short name of the class (like Radio in the example below) instead of its full qualified namespace.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
-	namespace Impulse\ImpulseBundle\UI\Components;
-    use ...
+<pre class="imp-code language-php">
+<code class="language-php"><?php
+namespace Impulse\ImpulseBundle\UI\Components;
+use ...
 
-    class RadioGroup extends AbstractComponent implements AfterCreateChilds
-    {
-        #[Wire('type("Radio")'))]
-        private ?Collection $radios;
-	}</code>
+class RadioGroup extends AbstractComponent implements AfterCreateChilds
+{
+    #[Wire('type("Radio")'))]
+    private ?Collection $radios;
+}</code>
 </pre>
 
 This expression function matches all components with the class short name Radio either in the component class itself or interfaces or parent classes.  
@@ -48,25 +39,16 @@ This expression function matches all components with the class short name Radio 
 
 Unlike the type function the instanceOf function consideres the full qualified namespace for matching.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
-	namespace App\UI\Components;
-    use ...
+<pre class="imp-code language-php">
+<code class="language-php"><?php
+namespace App\UI\Components;
+use ...
 
-    class SpecialComponent extends AbstractComponent
-    {
-        #[Wire('instanceOf("Impulse\\\\ImpulseBundle\\\\UI\\\\Components\\\\Radio")')]
-        private ?Collection $radios;
-	}</code>
+class SpecialComponent extends AbstractComponent
+{
+    #[Wire('instanceOf("Impulse\\\\ImpulseBundle\\\\UI\\\\Components\\\\Radio")')]
+    private ?Collection $radios;
+}</code>
 </pre>
 
 This function works the same like PHPs instanceof and also works with inheritance and interfaces.
@@ -75,46 +57,28 @@ This function works the same like PHPs instanceof and also works with inheritanc
 
 A more generic function is the component function which has one parameter that retrieves an attribute value of the component for comparison. The following example will look for all components with the id **_specialId_** .
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
-    
-    class SpecialComponent {
+<pre class="imp-code language-php">
+<code class="language-php"><?php
 
-	    #[Wire('component("id") === "specialId"')]
-        private ?Collection $radios;
-    }</code>
+class SpecialComponent {
+
+    #[Wire('component("id") === "specialId"')]
+    private ?Collection $radios;
+}</code>
 </pre>
 
 <h5><a id="id">id()</a></h5>
 
 The example above evaluates and finds components with the id **_specialId_** . However, the Impulse framework provides a shortcut for this syntax with the id function. The following example is equivalent to the above example.
 
-<div class="code-header">
-	<div class="container-fluid">
-		<div class="row">
-          <div class="button red"></div>
-          <div class="button yellow"></div>
-          <div class="button green"></div>
-        </div>
-    </div>
-</div>
-<pre class="code-white language-php">
-	<code class="imp-code language-php"><?php
+<pre class="imp-code language-php">
+<code class="language-php"><?php
 
-    class SpecialComponent {
+class SpecialComponent {
 
-        #[Wire('id() === "specialId"')]
-        private ?Collection $radios;
-    }</code>
+    #[Wire('id() === "specialId"')]
+    private ?Collection $radios;
+}</code>
 </pre>
 
 <h5><a id="uid">uid()</a></h5>
