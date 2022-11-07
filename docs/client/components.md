@@ -198,6 +198,6 @@ However, you need to register attributes as syncable.
 
 constructor(props)
 {
-    this.addSyncable('propertyName');
+    this.addSyncable("propertyName");
 }</code>
 </pre>
