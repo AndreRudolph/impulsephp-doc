@@ -194,5 +194,6 @@ TODO
 
 <h4><a id="synchronize-with-server">Synchronize with server</a></h4>
 
-In some cases you might need to synchronize client state component (e.g. text input or a selected
-item) with the server. For this purpose Impulse identifies <span class="code-hint">dirty</span> components. 
+When creating custom components or extending existing ones, you might need to synchronize client state component 
+(e.g. text input or a selected item) with the server. For this purpose Impulse identifies 
+<span class="code-hint">dirty</span> components. 
