@@ -194,8 +194,11 @@ When creating custom or extending existing components, you might need to synchro
 However, you need to register attributes as syncable.
 
 <pre class="imp-code code-white  language-js">
-<code class="language-js">constructor(props)
+<code class="language-js">
+private value: string;
+
+constructor(props)
 {
-    
+    this.addSyncable('propertyName');
 }</code>
 </pre>
