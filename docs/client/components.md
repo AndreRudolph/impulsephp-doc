@@ -11,6 +11,7 @@
   - [Primitive Listener](#primitive-listener)
   - [Add listener](#adding-listener)
   - [Remove listener](#removing-listener)
+- [Synchronize with server](#synchronize-with-server)
 - [Learn more about components](#advanced_topics)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -190,3 +191,5 @@ first one.
 <h6><a id="Removing-listener">Remove listener</a></h6>
 
 TODO
+
+<h4><a id="synchronize-with-server">Synchronize with server</a></h4>
