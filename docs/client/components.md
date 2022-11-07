@@ -27,7 +27,7 @@ used to <a href="https://reactjs.org/">React</a>.
 All component classes must either directly or indirectly extend the <span class="code-hint">AbstractReactComponent</span>
 class. The constructor takes the properties from the server side component as argument.
 
-<pre class="imp-code code-white line-numbers language-js">
+<pre class="imp-code code-white  language-js">
 <code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
 
 export class Message extends AbstractReactComponent
@@ -45,7 +45,7 @@ export class Message extends AbstractReactComponent
 A common practice is to register properties as state in React. The <span class="code-hint">initializeStates</span> method
 will be called automatically in the parent constructor.
 
-<pre class="imp-code code-white line-numbers language-js">
+<pre class="imp-code code-white  language-js">
 <code class="language-js">export class Message extends AbstractReactComponent
 {
     initializeStates(props)
@@ -64,7 +64,7 @@ This enables React to re-render the component whenever the message state changes
 
 For most use cases you can implement the <span class="code-hint">getTemplate</span> method to render the component.
 
-<pre class="imp-code code-white line-numbers language-js">
+<pre class="imp-code code-white  language-js">
 <code class="language-js">export class Message extends AbstractReactComponent
 {
     getTemplate(attributes)
@@ -79,7 +79,7 @@ For most use cases you can implement the <span class="code-hint">getTemplate</sp
 Thanks to React, you can use <span class="code-hint">Conditional rendering</span> here. When you also want to allow
 child components be rendered, then you must use the <span class="code-hint">this.includeChildren()</span> here.
 
-<pre class="imp-code code-white line-numbers language-js">
+<pre class="imp-code code-white  language-js">
 <code class="language-js">export class Message extends AbstractReactComponent
 {
     getTemplate(attributes)
@@ -99,7 +99,7 @@ child components be rendered, then you must use the <span class="code-hint">this
 Components can receive updates from their respective server component. Let's assume the message property will be updated
 on server side, a setter must be provided to receive the updated value.
 
-<pre class="imp-code code-white line-numbers language-js">
+<pre class="imp-code code-white  language-js">
 <code class="language-js">export class Message extends AbstractReactComponent 
 {
     setMessage(message) 
@@ -133,7 +133,7 @@ event. Checkout the next chapter for a more code based explanation.
 
 Event listener should be emitted by calling the emit method whenever you want an event to be processed.
 
-<pre class="imp-code code-white line-numbers language-js">
+<pre class="imp-code code-white  language-js">
 <code class="language-js">export class Message extends AbstractReactComponent 
 {
     getTemplate(attributes) {
@@ -157,7 +157,7 @@ chapter you'll learn how to register listener.
 <h6><a id="adding-listener">Add listener</a></h6>
 To register your event listener you can implement the registerEventListener method.
 
-<pre class="imp-code code-white line-numbers language-js">
+<pre class="imp-code code-white  language-js">
 <code class="language-js">export class Message extends AbstractReactComponent 
 {
     registerEventListener()
@@ -193,7 +193,7 @@ When creating custom or extending existing components, you might need to synchro
 
 However, you need to register attributes as syncable.
 
-<pre class="imp-code code-white line-numbers language-js">
+<pre class="imp-code code-white  language-js">
 <code class="language-js">constructor(props)
 {
     

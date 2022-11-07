@@ -24,7 +24,7 @@ In websocket context the websocket server needs to keep track of all registeres 
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-php">
+  <pre class="code-white imp-code  language-php">
 	<code class="language-php"><?php
 
     namespace App\Controller\Websocket;
@@ -59,7 +59,7 @@ As previousely mentioned, the ConnectionHandler class provides a method to retri
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-php">
+  <pre class="code-white imp-code  language-php">
 	<code class="language-php"><?php
 
     namespace App\Controller\Websocket;
@@ -103,7 +103,7 @@ Often you don't want to update your own client but instead just inform all the o
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-php">
+  <pre class="code-white imp-code  language-php">
 	<code class="language-php"><?php
 
     namespace App\Controller\Websocket;
@@ -146,7 +146,7 @@ The WebsocketPageServiceInterface provides the most convenient methods that are 
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-php">
+  <pre class="code-white imp-code  language-php">
 	<code class="language-php"><?php
 
     namespace App\Controller\Websocket;
@@ -186,7 +186,7 @@ You can retrieve a component by a specific id from a specific connection by usin
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-php">
+  <pre class="code-white imp-code  language-php">
 	<code class="language-php"><?php
 
     namespace App\Controller\Websocket;
@@ -229,7 +229,7 @@ You can retrieve a component by a specific id from a specific connection by usin
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-php">
+  <pre class="code-white imp-code  language-php">
 	<code class="language-php"><?php
 
     namespace App\Controller\Websocket;

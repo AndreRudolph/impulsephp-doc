@@ -26,7 +26,7 @@ Route definitions in the Impulse framework are similar to symfonys native route 
         </div>
     </div>
   </div>
-  <pre class="code-white line-numbers language-yaml">
+  <pre class="code-white  language-yaml">
   	<code class="language-yaml">index:
       path: index
       controller: App\Controller\ImpulseController::index

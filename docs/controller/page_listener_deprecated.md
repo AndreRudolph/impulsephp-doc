@@ -24,7 +24,7 @@ A controller can be easily registered as a global page listener by calling the s
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white  language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
     use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -70,7 +70,7 @@ As previousely mentioned, a global page event can be triggerd by any controller.
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white  language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
     use Impulse\ImpulseBundle\Controller\AbstractController;
@@ -105,7 +105,7 @@ However, when you want or need to unsubscribe the controller manually beforehand
         </div>
     </div>
 </div>
-<pre class="code-white line-numbers language-php">
+<pre class="code-white  language-php">
 	<code class="imp-code language-php"><?php
 	namespace App\Controller;
     use Impulse\ImpulseBundle\Controller\AbstractController;

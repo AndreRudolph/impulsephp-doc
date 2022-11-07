@@ -12,7 +12,7 @@ In this chapter all available configuration parameters of the Impulse bundle wil
 
 The following configuration is a complete example.
 
-<pre class="code-white imp-code line-numbers language-yaml code-xl">
+<pre class="code-white imp-code  language-yaml code-xl">
 <code class="language-yaml">impulse:
     client:
         bundles: [ 'ImpulseBundle' ]

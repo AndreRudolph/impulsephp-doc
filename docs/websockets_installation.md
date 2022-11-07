@@ -25,7 +25,7 @@ Installation of the ImpulseWebsocketBundle is pretty easy by adding it to compos
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-shell">
+  <pre class="code-white imp-code  language-shell">
 	<code class="language-bash">composer require impulsephp/impulsewebsocketbundle</code>
   </pre>
 </div>
@@ -42,7 +42,7 @@ If not provided automatically, you need to create the config file impulse_websoc
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-yaml">
+  <pre class="code-white imp-code  language-yaml">
 	<code class="language-yaml">impulse_websockets:
 		enabled: true
 		protocol: 'ws'
@@ -63,7 +63,7 @@ After that, you need to extend the App's ImpulseController by the one provided b
         </div>
     </div>
   </div>
-  <pre class="code-white line-numbers language-php">
+  <pre class="code-white  language-php">
   	<code class="imp-code language-php"><?php
 	namespace App\Controller;
 
@@ -86,7 +86,7 @@ The last step is to include the js ImpulseWebsocketBundle by copying it from the
         </div>
     </div>
   </div>
-  <pre class="code-white line-numbers language-js">
+  <pre class="code-white  language-js">
   	<code class="imp-code language-js">import './impulse-bundle/ImpulseCore';
 	import './impulse-bundle/ImpulseComponents';
 	import './impulse-websocket-bundle/ImpulseWebsocketBundleEntry';
@@ -115,7 +115,7 @@ The last step is to include the js ImpulseWebsocketBundle by copying it from the
         </div>
     </div>
   </div>
-  <pre class="code-white imp-code line-numbers language-shell">
+  <pre class="code-white imp-code  language-shell">
 	<code class="language-bash">php bin/console impulse_websocket:wsserver</code>
   </pre>
 </div>
