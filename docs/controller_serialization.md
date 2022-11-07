@@ -17,24 +17,24 @@ Typically values containing resources like database connections or file handles 
 
 To exclude these properties from the serialization process you can simply annotate them with <span class="code-hint">#[Transient]</span> attribute.
 
-  <pre class="code-white language-php">
-  	<code class="imp-code language-php"><?php
-	namespace App\Controller;
-	use Impulse\ImpulseBundle\Controller\AbstractController;
-	use Impulse\ImpulseBundle\Controller\Annotations\Transient;
-    use Doctrine\ORM\EntityManagerInterface;
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Controller\Annotations\Transient;
+use Doctrine\ORM\EntityManagerInterface;
 
-	class AppController extends AbstractController
-	{
-    	#[Transient]
-		private EntityManagerInterface $em;
-        
-        public function __construct(EntityManagerInterface $em)
-        {
-        	$this->em = $em;
-        }
-	}</code>
-  </pre>
+class AppController extends AbstractController
+{
+    #[Transient]
+    private EntityManagerInterface $em;
+    
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+}</code>
+</pre>
   
 In conclusion, the excluded properties will not be wired again after reactivation unless they will be wired automatically by Symfony's dependency injection container.
 
@@ -42,34 +42,34 @@ In conclusion, the excluded properties will not be wired again after reactivatio
 
 Single component references will be handled automatically by the framework and will be rewired once the controller will be reactivated. Sometimes you might also need to have a property list of component references for handling a dynamic and generated form for example. To achieve this you have to wrap them in a <span class="code-hint">ComponentList</span>.
 
-  <pre class="code-white language-php">
-  	<code class="imp-code language-php"><?php
-	namespace App\Controller;
-	use Impulse\ImpulseBundle\Controller\AbstractController;
-    use Impulse\ImpulseBundle\Execution\ComponentList;
-    use Impulse\ImpulseBundle\UI\Components\Button;
-    use Impulse\ImpulseBundle\UI\Components\Label;
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\Controller\AbstractController;
+use Impulse\ImpulseBundle\Execution\ComponentList;
+use Impulse\ImpulseBundle\UI\Components\Button;
+use Impulse\ImpulseBundle\UI\Components\Label;
 
-	class AppController extends AbstractController
-	{
-    	private Button $btn;
-        private Label $lb;
-    	private ComponentList $myComponentList;
-        
-        public function __construct()
-        {
-        	super::__construct();
-            $this->myComponentList = new ComponentList();
-        }
-        
-        public function afterCreate()
-        {
-        	parent::afterCreate();
-            $this->myComponentList->add($button);
-            $this->myComponentList->add($lb);
-        }
-	}</code>
-  </pre>
+class AppController extends AbstractController
+{
+    private Button $btn;
+    private Label $lb;
+    private ComponentList $myComponentList;
+    
+    public function __construct()
+    {
+        super::__construct();
+        $this->myComponentList = new ComponentList();
+    }
+    
+    public function afterCreate()
+    {
+        parent::afterCreate();
+        $this->myComponentList->add($button);
+        $this->myComponentList->add($lb);
+    }
+}</code>
+</pre>
 
 <h5><a id="controller-references">Controller references</a></h5>
 
