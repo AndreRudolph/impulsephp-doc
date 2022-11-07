@@ -105,12 +105,13 @@ The return value of the validation is a <span class="code-hint">Impulse\ImpulseB
 
 The result object offers different methods for working with the validation results:
 
-- <span class="code-hint">passes()</span> returns true if the validation was successful and false if not
-- <span class="code-hint">fails()</span> returns true if the validation failed and true if validation passed
-- <span class="code-hint">getFailedValidationsCount()</span> returns the number of failed validations
-- <span class="code-hint">getResult()</span> returns a map with all failed validation results for all components. You will most likely need this if you need multiple validation messages per input.
-- <span class="code-hint">getFlatResult()</span> returns a map with exactly one failed validation per component. You will most likely need this if you need only one validation message per input.
-
+<ul class="contentList">
+  <li><span class="code-hint">passes()</span> returns true if the validation was successful and false if not</li>
+  <li><span class="code-hint">fails()</span> returns true if the validation failed and true if validation passed</li>
+  <li><span class="code-hint">getFailedValidationsCount()</span> returns the number of failed validations</li>
+  <li><span class="code-hint">getResult()</span> returns a map with all failed validation results for all components. You will most likely need this if you need multiple validation messages per input.</li>
+  <li><span class="code-hint">getFlatResult()</span> returns a map with exactly one failed validation per component. You will most likely need this if you need only one validation message per input.</li>
+</ul>
 
 <h5><a id="custom-handling">Custom handling</a></h5>
 
