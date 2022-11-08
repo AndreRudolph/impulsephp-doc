@@ -134,7 +134,7 @@ event. Checkout the next chapter for a more code based explanation.
 Event listener should be emitted by calling the emit method whenever you want an event to be processed.
 
 <pre class="imp-code code-white  language-js">
-<code class="language-js">export class Message extends AbstractReactComponent 
+<code class="language-js">export class Counter extends AbstractReactComponent 
 {
     getTemplate(attributes) {
         return (
@@ -142,7 +142,7 @@ Event listener should be emitted by calling the emit method whenever you want an
                 {...attributes} 
                 click={(event) => this.emitEvent(event, 'click')} 
             &gt;
-                Click me
+                {this.geState('counter')}
             &lt;/button&gt;
         );
     }
