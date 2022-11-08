@@ -138,10 +138,7 @@ Event listener should be emitted by calling the emit method whenever you want an
 {
     getTemplate(attributes) {
         return (
-            &lt;button 
-                {...attributes} 
-                click={(event) => this.emitEvent(event, 'click')} 
-            &gt;
+            &lt;button {...attributes} click={(event) => this.emitEvent(event, 'click')}&gt;
                 {this.geState('counter')}
             &lt;/button&gt;
         );
