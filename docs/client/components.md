@@ -62,8 +62,8 @@ This enables React to re-render the component whenever the message state changes
 
 <h6>Rendering</h6>
 For rendering the component you can implement the <span class="code-hint">getTemplate</span> method. By adding 
-<span class="code-hint">{...attributes}</span> you ensure that all attributes coming from the parent classes are set
-correctly.
+<span class="code-hint">{...attributes}</span> you ensure that all attributes (id, data attributes, class, etc.) 
+coming from the parent classes are set correctly.
 
 <pre class="imp-code code-white  language-js">
 <code class="language-js">export class Message extends AbstractReactComponent
