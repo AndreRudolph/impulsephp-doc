@@ -30,14 +30,14 @@ class. The constructor takes the properties from the server side component as ar
 <pre class="imp-code code-white  language-js">
 <code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
 
-export class Message extends AbstractReactComponent
+export class Counter extends AbstractReactComponent
 {
-    private message: string;
+    private counter: integer;
 
     constructor(props)
     {
         super(props);
-        this.message = props.message;
+        this.counter = props.counter;
     }
 }</code>
 </pre>
@@ -46,13 +46,14 @@ A common practice is to register properties as state in React. The <span class="
 will be called automatically in the parent constructor.
 
 <pre class="imp-code code-white  language-js">
-<code class="language-js">export class Message extends AbstractReactComponent
+<code class="language-js">export class Counter extends AbstractReactComponent
 {
     initializeStates(props)
     {
         super.initializeStates(props);
+
         this.addStates({
-            message: props.message
+            counter: props.counter
         });
     }
 }</code>
