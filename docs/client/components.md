@@ -27,6 +27,10 @@ used to <a href="https://reactjs.org/">React</a>.
 All component classes must either directly or indirectly extend the <span class="code-hint">AbstractReactComponent</span>
 class. The constructor takes the properties from the server side component as argument.
 
+For rendering the component you can implement the <span class="code-hint">getTemplate</span> method. By adding
+<span class="code-hint">{...attributes}</span> you ensure that all attributes (id, data attributes, class, etc.)
+coming from the parent classes are set correctly.
+
 <pre class="imp-code code-white  language-js">
 <code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
 
@@ -39,8 +43,18 @@ export class Counter extends AbstractReactComponent
         super(props);
         this.counter = props.counter;
     }
+
+    getTemplate(attributes)
+    {
+        return (
+            &lt;div {...attributes}&gt;{ this.counter }&lt;/div&gt;
+        );
+    }
 }</code>
 </pre>
+
+Thanks to React, you can use <span class="code-hint">Conditional rendering</span> here. When you also want to allow
+child components be rendered, then you must use the <span class="code-hint">this.includeChildren()</span> here.
 
 A common practice is to register properties as state in React. The <span class="code-hint">initializeStates</span> method
 will be called automatically in the parent constructor.
