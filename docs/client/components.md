@@ -88,7 +88,7 @@ will be called automatically in the parent constructor.
 
 This enables React to re-render the component whenever the message state changes.
 
-<h6><a id="updates">Updates</a></h6>
+<h5><a id="updates">Updates</a></h5>
 
 Components can receive updates from their respective server component. Let's assume the message property will be updated
 on server side, a setter must be provided to receive the updated value.
@@ -145,7 +145,7 @@ window.Message = Message;</code>
 This, internally, will run through every registered click listener that is attached to the click event. In the next 
 chapter you'll learn how to register listener.
 
-<h6><a id="adding-listener">Add listener</a></h6>
+<h5><a id="adding-listener">Add listener</a></h5>
 To register your event listener you can implement the registerEventListener method.
 
 <pre class="imp-code code-white  language-js">
