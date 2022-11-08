@@ -67,7 +67,7 @@ child components be rendered, then you must use the <span class="code-hint">this
 }</code>
 </pre>
 
-<h4><a id="states">States</a></h4>
+<h5><a id="states">States</a></h5>
 
 A common practice is to register properties as state in React. The <span class="code-hint">initializeStates</span> method
 will be called automatically in the parent constructor.
