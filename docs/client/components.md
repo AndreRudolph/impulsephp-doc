@@ -66,12 +66,12 @@ For rendering the component you can implement the <span class="code-hint">getTem
 coming from the parent classes are set correctly.
 
 <pre class="imp-code code-white  language-js">
-<code class="language-js">export class Message extends AbstractReactComponent
+<code class="language-js">export class Counter extends AbstractReactComponent
 {
     getTemplate(attributes)
     {
         return (
-            &lt;div {...attributes}&gt;{ this.getState('message') }&lt;/div&gt;
+            &lt;div {...attributes}&gt;{ this.getState('counter') }&lt;/div&gt;
         );
     }
 }</code>
