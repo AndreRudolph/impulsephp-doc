@@ -101,11 +101,7 @@ A shortened extract of the output might look as the following:
 Alias                     Class                                                
 ------------------------- ----------------------------------------------------- 
 a                         Impulse\ImpulseBundle\UI\Components\A                
-impulse:a                 Impulse\ImpulseBundle\UI\Components\A                
-blockquote                Impulse\ImpulseBundle\UI\Components\Blockquote       
-impulse:blockquote        Impulse\ImpulseBundle\UI\Components\Blockquote       
-br                        Impulse\ImpulseBundle\UI\Components\Br               
-impulse:br                Impulse\ImpulseBundle\UI\Components\Br               
+impulse:a                 Impulse\ImpulseBundle\UI\Components\A                  
 button                    Impulse\ImpulseBundle\UI\Components\Button           
 impulse:button            Impulse\ImpulseBundle\UI\Components\Button           
 carousel                  Impulse\ImpulseBundle\UI\Components\Carousel         
