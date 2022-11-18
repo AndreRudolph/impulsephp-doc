@@ -30,7 +30,7 @@ Let's assume we have a Counter client component that receives the initial counte
 
 For rendering the component into the DOM you can implement the <span class="code-hint">getTemplate</span> method.
 
-<pre class="imp-code code-white  language-js">
+<pre class="imp-code code-white language-js code-xl">
 <code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
 
 export class Counter extends AbstractReactComponent
