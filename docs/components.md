@@ -124,7 +124,7 @@ Impulse is designed to provide programmers the possibility to create their own c
 
 Suppose you want to create a component class, lets call it **_Message_**, with a message that shall be displayed at the client. You can simply add a message property along with its getter and setter method.
 
-<pre class="imp-code code-white language-php">
+<pre class="imp-code code-white language-php code-xl">
 <code class="language-php"><?php
 
 class Message extends AbstractComponent 
@@ -239,7 +239,7 @@ window.Message = Message;</code>
 
 Custom attributes are usefuly whenever you want to enrich a component with very specific informations for later work with these attributes. Consider you want to associate a button with an entity id of a database record. You can simply achieve this by calling the <span class="code-hin">setCustomAttribute</span> method of that component.
 
-<pre class="imp-code code-white language-php">
+<pre class="imp-code code-white language-php code-xl">
 <code class="language-php"><?php
     
 namespace App\Controller;
