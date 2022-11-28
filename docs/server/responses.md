@@ -101,4 +101,24 @@ If no content type is declared, <span class="code-hint">application/octet-stream
 
 <h4><a id="import-resources">Import resources</a></h4>
 
+In some scenarios you need to dynamically import resources such as javascript files or stylesheets. This most likely
+will be the case when user accepts usage of advertisements or statistics cookies with the cookie consent.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+namespace App\Controller;
+use Impulse\ImpulseBundle\Response\CssImport;
+use Impulse\ImpulseBundle\Response\ScriptImport;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(Event $event)
+    {
+        $page = $event->getPage();
+        $page->addResponse(new ScriptImport('build/test.js', true, ['crossorigin' => 'anonymous']));
+        $page->addResponse(new CssImport('build/test.css', true, ['crossorigin' => 'anonymous']));
+    }
+}</code>
+</pre>
+
 <h4><a id="javascript-response">Javascript response</a></h4>
