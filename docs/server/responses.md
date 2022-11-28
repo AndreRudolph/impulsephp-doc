@@ -2,7 +2,9 @@
 
 - [Introduction](#introduction)
 - [Reserved namespaces](#reserved-namespaces)
-- [Dynamic file downloads](#dynamic-file-downloads)
+- [File downloads](#file-downloads)
+  - [Static file downloads](#static-file-downloads) 
+  - [Dynamic file downloads](#dynamic-file-downloads)
 
 <h4><a id="introduction">Introduction</a></h4>
 In most other, non ajax based, frameworks you as a developer are responsible for collecting and handling all required 
