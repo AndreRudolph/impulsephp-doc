@@ -112,8 +112,9 @@ class AppController extends AbstractController
 {
     public function afterCreate(Event $event)
     {
-        $this->importScript('build/test.js', true, ['crossorigin' => 'anonymous']);
-        $this->importStylesheet('build/test.css', true, ['crossorigin' => 'anonymous']);
+        $options = ['crossorigin' => 'anonymous'];
+        $this->importScript('build/test.js', true, $options);
+        $this->importStylesheet('build/test.css', true, $options);
     }
 }</code>
 </pre>
