@@ -18,6 +18,8 @@ redirects, file downloads and even importing scripts and stylesheets on the fly.
 
 <h4><a id="redirects">Redirects</a></h4>
 
+<h4><a id="file-downloads">File downloads</a></h4>
+
 <h5><a id="static-file-downloads">Static file downloads</a></h5>
 In web applications it is a common use case to provide static file downloads such as media, manuals, licenses, etc. that are served from the web server. To achieve this, the <span class="code-hint">AbstractController</span> provides a convenient method called <span class="code-hint">downloadFile</span>.
 
@@ -65,3 +67,7 @@ class AppController extends AbstractController
 </pre>
 
 If no content type is declared, <span class="code-hint">application/octet-stream</span> is used by default.
+
+<h4><a id="import-resources">Import resources</a></h4>
+
+<h4><a id="javascript-response">Javascript response</a></h4>
