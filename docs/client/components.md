@@ -16,21 +16,21 @@
 <h4><a id="introduction">Introduction</a></h4>
 
 Components exist on both server and client side. Each component that is defined on server side is rendered as a client
-side component. 
+side component.
 
-The component system is based on React components. If you are not familiar with React. we highly recommend to first get 
+The component system is based on React components. If you are not familiar with React. we highly recommend to first get
 used to <a href="https://reactjs.org/">React</a>.
 
 <h4><a id="create-components">Writing component</a></h4>
 
 All component classes must either directly or indirectly extend the <span class="code-hint">AbstractReactComponent</span>
-class. The constructor takes the properties from the server side component as argument.
+class. The properties of the server side component that are shared with the client component are passed in the constructor.
 
-For rendering the component you can implement the <span class="code-hint">getTemplate</span> method. By adding
-<span class="code-hint">{...attributes}</span> you ensure that all attributes (id, data attributes, class, etc.)
-coming from the parent classes are set correctly.
+Let's assume we have a Counter client component that receives the initial counter value from its server's counterpart.
 
-<pre class="imp-code code-white  language-js">
+For rendering the component into the DOM you can implement the <span class="code-hint">getTemplate</span> method.
+
+<pre class="imp-code code-white language-js code-xl">
 <code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
 
 export class Counter extends AbstractReactComponent
@@ -52,7 +52,12 @@ export class Counter extends AbstractReactComponent
 }</code>
 </pre>
 
-Thanks to React, you can use <span class="code-hint">Conditional rendering</span> here. When you also want to allow
+By adding <span class="code-hint">{...attributes}</span> you ensure that all attributes (id, data attributes, class, etc.)
+coming from the parent classes are set correctly.
+
+Thanks to React, you can use <span class="code-hint">Conditional rendering</span> here.
+
+When you also want to allow
 child components be rendered, then you must use the <span class="code-hint">this.includeChildren()</span> here.
 
 <pre class="imp-code code-white  language-js">
@@ -105,7 +110,7 @@ on server side, a setter must be provided to receive the updated value.
 window.Message = Message;</code>
 </pre>
 
-Whenever a new message is set, React internally triggers again the rendering process of the component. Thus you don't 
+Whenever a new message is set, React internally triggers again the rendering process of the component. Thus you don't
 need to manually update the Document Object Model.
 
 <h4><a id="component-lifecycle">Component lifecycle</a></h4>
@@ -115,9 +120,9 @@ TODO with image
 <h4><a id="event-listener">Event listener</a></h4>
 
 When it comes to components you will sooner or later need to implement your custom event listeners. Impulse uses the
-same attribute notion React uses for registering listener, e.g. <span class="code-hint">onClick={doSomething()}</span>. 
-The problem with this notion is, that you can't register / unregister separate event listeners dynamically for the same 
-event. 
+same attribute notion React uses for registering listener, e.g. <span class="code-hint">onClick={doSomething()}</span>.
+The problem with this notion is, that you can't register / unregister separate event listeners dynamically for the same
+event.
 
 Thus, each Impulse client component internally stores a priority event listener callback map which enables
 you to register / unregister your custom event listeners at runtime without touching any existing listener for the same
@@ -142,7 +147,7 @@ Event listener should be emitted by calling the emit method whenever you want an
 window.Message = Message;</code>
 </pre>
 
-This, internally, will run through every registered click listener that is attached to the click event. In the next 
+This, internally, will run through every registered click listener that is attached to the click event. In the next
 chapter you'll learn how to register listener.
 
 <h5><a id="adding-listener">Add listener</a></h5>
@@ -178,8 +183,8 @@ TODO
 
 <h4><a id="synchronize-with-server">Synchronize with server</a></h4>
 
-When creating custom or extending existing components, you might need to synchronize client state of a component 
-(e.g. text input or a selected item) with the server. For this purpose Impulse identifies 
+When creating custom or extending existing components, you might need to synchronize client state of a component
+(e.g. text input or a selected item) with the server. For this purpose Impulse identifies
 <span class="code-hint">dirty</span> components and automatically synchronizing them with the server.
 
 However, you need to register attributes as syncable.
