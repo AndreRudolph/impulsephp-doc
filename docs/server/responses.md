@@ -17,8 +17,7 @@ client. Apart from that, a pre-defined set of custom responses is provided to ma
 redirects, file downloads and even importing scripts and stylesheets on the fly.
 
 <h4><a id="redirects">Redirects</a></h4>
-Redirects can be achieved by either returning them directly in controllers or by adding them to the 
-<span class="code-hint">ResponseQueue</span>.
+Redirects can be created by returning them directly in controllers
 
 <pre class="imp-code code-white language-php">
 <code class="language-php"><?php
@@ -29,6 +28,23 @@ class AppController extends AbstractController
     public function afterCreate(Event $event)
     {
         return new Redirect('landing_route', false);
+    }
+}</code>
+</pre>
+
+or by adding them to the <span class="code-hint">ResponseQueue</span>.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+use Impulse\ImpulseBundle\Execution\Interrupts\Redirect;
+use Impulse\ImpulseBundle\Response\RedirectResponse;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(Event $event)
+    {
+        $redirect = new Redirect('landing_route', false);
+        $event->getPage()->addResponse(new RedirectResponse($redirect));
     }
 }</code>
 </pre>
