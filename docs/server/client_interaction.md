@@ -162,3 +162,31 @@ class AppController extends AbstractController
 
 It only takes one argument i.e. the javascript code defined as a callback. 
 The callback itself takes exactly one argument, which is the Client object.
+
+<h4><a name="import-resources">Import resources</a></h4>
+With the client interface you will also have the option to import
+scripts or stylesheets on the fly.
+
+<h5><a name="import-css">Import css</a></h5>
+The code below shows how you can import a css file.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+use Impulse\ImpulseBundle\UI\Client\ClientInterface;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(ClientInterface $client, Event $event)
+    {
+        $client->importCss('build/test.css', []);
+    }
+}</code>
+</pre>
+
+The method itself offers three arguments. The first is the source of the file
+which can be an absolute url or an URI that will be resolved by the Symfony's 
+assets packages. The second parameter is optional and, if set, must be an associative
+array that declares configurations like CORS.
+
+The third parameter (default: true) indicates whether the source should be automatically
+be resolved by the assets package or not.
