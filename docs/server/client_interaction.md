@@ -56,5 +56,6 @@ class AppController extends AbstractController
 }</code>
 </pre>
 
-The first parameter specifies the path for the file where the name of the file
-is provides as a second argument.
+The first parameter specifies the path together with the name of the file
+that will be downloaded. The second, optional parameter, can be used if the 
+provided download file will have another file name.
