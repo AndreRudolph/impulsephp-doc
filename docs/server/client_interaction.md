@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Redirects](#redirects)
+- [Change URL](#change-url)
 - [File downloads](#file-downloads)
     - [Static files](#static-file-downloads)
     - [Dynamic files](#dynamic-file-downloads)
@@ -33,6 +34,10 @@ class AppController extends AbstractController
     }
 }</code>
 </pre>
+
+<h4><a name="change-url">Change URL</a></h4>
+In case you manually want to change the client's browser URL (no redirect), the client
+interface provides you the <span class="code-hint">changeUrl(string $routeName, array $parameters = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_URL</span> method.
 
 <h4><a name="file-downloads">File downloads</a></h4>
 The client interface provides methods for providing file downloads to the user.
