@@ -10,6 +10,8 @@
     - [Scroll to position](#scroll-to-position)
     - [Scroll up](#scroll-up)
 - [Execute javascript](#execute-javascript)
+- [Log messages](#log-messages)
+- [Alert messages](#alert-messages)
 - [Import resources](#importing-resources)
     - [Import css](#import-css)
     - [Import javascript](#import-javascript)
@@ -162,6 +164,27 @@ class AppController extends AbstractController
 
 It only takes one argument i.e. the javascript code defined as a callback. 
 The callback itself takes exactly one argument, which is the Client object.
+
+<h4><a name="log-messages">Log messages</a></h4>
+You can also create log messages in the browser's console by using the
+<span class="code-hint">log</span>.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+use Impulse\ImpulseBundle\UI\Client\ClientInterface;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(ClientInterface $client, Event $event)
+    {
+        $client->log('this is a message', Impulse\ImpulseBundle\UI\Client\Commands\Log::LOG);
+    }
+}</code>
+</pre>
+
+It offers the same log levels the console offers: log, info, debug, warn, error.
+
+<h4><a name="alert-messages">Alert messages</a></h4>
 
 <h4><a name="import-resources">Import resources</a></h4>
 With the client interface you will also have the option to import
