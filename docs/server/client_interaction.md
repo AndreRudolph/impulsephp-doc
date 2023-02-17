@@ -85,3 +85,22 @@ that declares the type of the content. By default it is set to <span class="code
 With the client interface you are also able to send commands to client to change the current scroll position.
 
 <h5><a name="scroll-to-position">Scroll to position</a></h5>
+In case you want to send a command to the browser to scroll to a specific position,
+you can use the <span class="code-hint">scrollTo(x, y)</span> method.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+use Impulse\ImpulseBundle\UI\Client\ClientInterface;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(ClientInterface $client, Event $event)
+    {
+        $client->scrollTo(0, 0);
+    }
+}</code>
+</pre>
+
+The code above will scroll the client's browser to the top left corner.
+You may also leave out one coordinate and set it to null in order to do not
+scrolling for that specific coordinate.
