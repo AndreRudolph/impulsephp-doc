@@ -190,3 +190,10 @@ array that declares configurations like CORS.
 
 The third parameter (default: true) indicates whether the source should be automatically
 be resolved by the assets package or not.
+
+It basically creates a link tag in the DOM.
+
+<h5><a name="import-javascript">Import javascript</a></h5>
+
+Analogous to css import, you can use the <span class="code-hint">importJavascript</span> method.
+It offers the exact same method signature but instead will create a new script tag in the DOM.
