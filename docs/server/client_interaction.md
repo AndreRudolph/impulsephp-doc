@@ -9,8 +9,10 @@
 - [Scrolling](#scrolling)
     - [Scroll to position](#scroll-to-position)
     - [Scroll up](#scroll-up)
+- [Execute javascript](#execute-javascript)
 - [Import resources](#importing-resources)
-- [Javascript response](#javascript-response)
+    - [Import css](#import-css)
+    - [Import javascript](#import-javascript)
 
 <h4 name="introduction">Introduction</h4>
 
@@ -38,6 +40,19 @@ class AppController extends AbstractController
 <h4><a name="change-url">Change URL</a></h4>
 In case you manually want to change the client's browser URL (no redirect), the client
 interface provides you the <span class="code-hint">changeUrl(string $routeName, array $parameters = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_URL</span> method.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+use Impulse\ImpulseBundle\UI\Client\ClientInterface;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(ClientInterface $client, Event $event)
+    {
+        $client->changeUrl('route_name', []);
+    }
+}</code>
+</pre>
 
 <h4><a name="file-downloads">File downloads</a></h4>
 The client interface provides methods for providing file downloads to the user.
