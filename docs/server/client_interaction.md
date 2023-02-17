@@ -187,12 +187,13 @@ It offers the same log levels the console offers: log, info, debug, warn, error.
 <pre class="imp-code code-white language-php">
 <code class="language-php"><?php
 use Impulse\ImpulseBundle\UI\Client\ClientInterface;
+use Impulse\ImpulseBundle\UI\Client\Commands\Log;
 
 class AppController extends AbstractController
 {
     public function afterCreate(ClientInterface $client, Event $event)
     {
-        $client->alert('this is a message', Impulse\ImpulseBundle\UI\Client\Commands\Log::LOG);
+        $client->alert('this is a message', Log::LOG);
     }
 }</code>
 </pre>
