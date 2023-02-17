@@ -192,7 +192,7 @@ class AppController extends AbstractController
 {
     public function afterCreate(ClientInterface $client, Event $event)
     {
-        $client->alert('this is an alert message');
+        $client->alert('this is a message', Impulse\ImpulseBundle\UI\Client\Commands\Log::LOG);
     }
 }</code>
 </pre>
@@ -200,6 +200,18 @@ class AppController extends AbstractController
 <h4><a name="alert-messages">Alert messages</a></h4>
 You can also instruct the client to print browser alert messages to the user.
 
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+use Impulse\ImpulseBundle\UI\Client\ClientInterface;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(ClientInterface $client, Event $event)
+    {
+        $client->alert('this is an alert message');
+    }
+}</code>
+</pre>
 
 <h4><a name="import-resources">Import resources</a></h4>
 With the client interface you will also have the option to import
