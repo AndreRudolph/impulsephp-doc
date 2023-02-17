@@ -125,7 +125,7 @@ The code above will scroll the client's browser to the top left corner.
 You may also leave out one coordinate and set it to null in order to do not
 scrolling for that specific coordinate.
 
-<h5><a name="scroll-to-position">Scroll to top</a></h5>
+<h5><a name="scroll-up">Scroll up</a></h5>
 The <span class="code-hint">scrollTop</span> is basically using the <span class="code-hint">scrollTo</span>
 method but just sets the y-coordinate to 0.
 
@@ -141,3 +141,24 @@ class AppController extends AbstractController
     }
 }</code>
 </pre>
+
+<h4><a name="execute-javascript">Execute javascript</a></h4>
+You might face situations where your server needs to send javascript code
+that must be executed in the browser. Luckily, that's where the
+<span class="code-hint">executeJavascript</span> method is created for.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+use Impulse\ImpulseBundle\UI\Client\ClientInterface;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(ClientInterface $client, Event $event)
+    {
+        $client->executeJavascript('(client) => console.log(client)');
+    }
+}</code>
+</pre>
+
+It only takes one argument i.e. the javascript code defined as a callback. 
+The callback itself takes exactly one argument, which is the Client object.
