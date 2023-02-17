@@ -33,3 +33,28 @@ class AppController extends AbstractController
     }
 }</code>
 </pre>
+
+<h4><a name="file-downloads">File downloads</a></h4>
+The client interface provides methods for providing file downloads to the user.
+Below you will find two different variants of file downloads.
+
+<h5><a name="static-file-downloads">Static file downloads</a></h5>
+Static files mean already existing files that are publicly available by the webserver
+and can be served for downloads. For this purpose, the client interface provides the method
+<span class="code-hint">downloadFile</span>.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+use Impulse\ImpulseBundle\UI\Client\ClientInterface;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(ClientInterface $client, Event $event)
+    {
+        $client->downloadFile('/path/to/the/file', 'name_of_the_file.txt');
+    }
+}</code>
+</pre>
+
+The first parameter specifies the path for the file where the name of the file
+is provides as a second argument.
