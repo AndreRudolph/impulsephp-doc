@@ -104,3 +104,20 @@ class AppController extends AbstractController
 The code above will scroll the client's browser to the top left corner.
 You may also leave out one coordinate and set it to null in order to do not
 scrolling for that specific coordinate.
+
+<h5><a name="scroll-to-position">Scroll to top</a></h5>
+The <span class="code-hint">scrollTop</span> is basically using the <span class="code-hint">scrollTo</span>
+method but just sets the y-coordinate to 0.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+use Impulse\ImpulseBundle\UI\Client\ClientInterface;
+
+class AppController extends AbstractController
+{
+    public function afterCreate(ClientInterface $client, Event $event)
+    {
+        $client->scrollTop();
+    }
+}</code>
+</pre>
