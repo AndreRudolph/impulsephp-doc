@@ -81,3 +81,7 @@ The first parameter defines the name of the file that will be generated
 along with its content as second parameter. There is an optional third parameter
 that declares the type of the content. By default it is set to <span class="code-hint">application/octet-stream</span>.
 
+<h4><a name="scrolling">Scrolling</a></h4>
+With the client interface you are also able to send commands to client to change the current scroll position.
+
+<h5><a name="scroll-to-position">Scroll to position</a></h5>
