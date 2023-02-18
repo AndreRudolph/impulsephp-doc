@@ -53,11 +53,11 @@ interface provides you the <span class="code-hint">changeUrl(string $routeName, 
 <code class="language-php">$client->changeUrl('route_name', []);</code>
 </pre>
 
-<h6><a name="file-downloads">File downloads</a></h6>
+<h4><a name="file-downloads">File downloads</a></h4>
 The client interface provides methods for providing file downloads to the user.
 Below you will find two different variants of file downloads.
 
-<h5><a name="static-file-downloads">Static files</a></h5>
+<h6><a name="static-file-downloads">Static files</a></h6>
 Static files mean already existing files that are publicly available by the webserver
 and can be served for downloads. For this purpose, the client interface provides the method
 <span class="code-hint">downloadFile</span>.
