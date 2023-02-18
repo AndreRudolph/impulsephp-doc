@@ -53,7 +53,7 @@ interface provides you the <span class="code-hint">changeUrl(string $routeName, 
 <code class="language-php">$client->changeUrl('route_name', []);</code>
 </pre>
 
-<h4><a name="file-downloads">File downloads</a></h4>
+<h6><a name="file-downloads">File downloads</a></h6>
 The client interface provides methods for providing file downloads to the user.
 Below you will find two different variants of file downloads.
 
@@ -70,7 +70,7 @@ The first parameter specifies the path together with the name of the file
 that will be downloaded. The second, optional parameter, can be used if the 
 provided download file will have another file name.
 
-<h5><a name="dynamic-file-downloads">Dynamic files</a></h5>
+<h6><a name="dynamic-file-downloads">Dynamic files</a></h6>
 Providing dynamically generated one time files like reports or statistics for download is a common task for web applications.
 Hence the client interface provides a method with name <span class="code-hint">downloadRaw</span>.
 
