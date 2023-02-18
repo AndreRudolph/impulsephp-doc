@@ -127,10 +127,6 @@ You can also create log messages in the browser's console by using the
 
 It offers the same log levels the console offers: log, info, debug, warn, error.
 
-<pre class="imp-code code-white language-php">
-<code class="language-php">$client->alert('this is a message', Log::LOG);</code>
-</pre>
-
 <h4><a name="alert-messages">Alert messages</a></h4>
 You can also instruct the client to print browser alert messages to the user.
 
