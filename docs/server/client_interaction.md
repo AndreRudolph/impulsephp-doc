@@ -159,3 +159,7 @@ It basically creates a link tag in the DOM.
 
 Analogous to css import, you can use the <span class="code-hint">importJavascript</span> method.
 It offers the exact same method signature but instead will create a new script tag in the DOM.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php">$client->importJavascript('build/test.js', []);</code>
+</pre>
