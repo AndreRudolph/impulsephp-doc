@@ -75,7 +75,7 @@ Providing dynamically generated one time files like reports or statistics for do
 Hence the client interface provides a method with name <span class="code-hint">downloadRaw</span>.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"$client->downloadRaw('file.txt', 'Content of the file');</code>
+<code class="language-php">$client->downloadRaw('file.txt', 'Content of the file');</code>
 </pre>
 
 The first parameter defines the name of the file that will be generated
