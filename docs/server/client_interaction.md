@@ -20,11 +20,9 @@
 
 Impulse provides a client interface for common actions that will
 take place at client side, such as redirects, scrolling, file downloads
-as well as many other actions.
-
-<h4><a id="redirects">Redirects</a></h4>
-Redirects can be simply achieved by using the <span class="code-hint">redirect</span> 
-method of the client interface.
+as well as many other actions. An object of this interface will be passed
+to every <span class="code-hint">afterCreate</span> and every event listener
+method as first argument.
 
 <pre class="imp-code code-white language-php">
 <code class="language-php"><?php
@@ -34,9 +32,17 @@ class AppController extends AbstractController
 {
     public function afterCreate(ClientInterface $client, Event $event)
     {
-        $client->redirect('route_name', []);
+        
     }
 }</code>
+</pre>
+
+<h4><a id="redirects">Redirects</a></h4>
+Redirects can be simply achieved by using the <span class="code-hint">redirect</span> 
+method of the client interface.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php">$client->redirect('route_name', []);</code>
 </pre>
 
 <h4><a name="change-url">Change URL</a></h4>
