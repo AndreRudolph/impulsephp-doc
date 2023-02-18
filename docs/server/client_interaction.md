@@ -85,7 +85,7 @@ that declares the type of the content. By default it is set to <span class="code
 <h4><a name="scrolling">Scrolling</a></h4>
 With the client interface you are also able to send commands to client to change the current scroll position.
 
-<h5><a name="scroll-to-position">Scroll to position</a></h5>
+<h6><a name="scroll-to-position">Scroll to position</a></h6>
 In case you want to send a command to the browser to scroll to a specific position,
 you can use the <span class="code-hint">scrollTo(x, y)</span> method.
 
@@ -97,7 +97,7 @@ The code above will scroll the client's browser to the top left corner.
 You may also leave out one coordinate and set it to null in order to do not
 scrolling for that specific coordinate.
 
-<h5><a name="scroll-up">Scroll up</a></h5>
+<h6><a name="scroll-up">Scroll up</a></h6>
 The <span class="code-hint">scrollTop</span> is basically using the <span class="code-hint">scrollTo</span>
 method but just sets the y-coordinate to 0.
 
@@ -142,7 +142,7 @@ You can also instruct the client to print browser alert messages to the user.
 With the client interface you will also have the option to import
 scripts or stylesheets on the fly.
 
-<h5><a name="import-css">Import css</a></h5>
+<h6><a name="import-css">Import css</a></h6>
 The code below shows how you can import a css file.
 
 <pre class="imp-code code-white language-php">
@@ -159,7 +159,7 @@ be resolved by the assets package or not.
 
 It basically creates a link tag in the DOM.
 
-<h5><a name="import-javascript">Import javascript</a></h5>
+<h6><a name="import-javascript">Import javascript</a></h6>
 
 Analogous to css import, you can use the <span class="code-hint">importJavascript</span> method.
 It offers the exact same method signature but instead will create a new script tag in the DOM.
