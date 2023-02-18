@@ -50,16 +50,7 @@ In case you manually want to change the client's browser URL (no redirect), the 
 interface provides you the <span class="code-hint">changeUrl(string $routeName, array $parameters = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_URL</span> method.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->changeUrl('route_name', []);
-    }
-}</code>
+<code class="language-php">$client->changeUrl('route_name', []);</code>
 </pre>
 
 <h4><a name="file-downloads">File downloads</a></h4>
@@ -72,16 +63,7 @@ and can be served for downloads. For this purpose, the client interface provides
 <span class="code-hint">downloadFile</span>.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->downloadFile('/path/to/the/file', 'name_of_the_file.txt');
-    }
-}</code>
+<code class="language-php">$client->downloadFile('/path/to/the/file', 'name_of_the_file.txt');</code>
 </pre>
 
 The first parameter specifies the path together with the name of the file
@@ -93,16 +75,7 @@ Providing dynamically generated one time files like reports or statistics for do
 Hence the client interface provides a method with name <span class="code-hint">downloadRaw</span>.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->downloadRaw('file.txt', 'Content of the file');
-    }
-}</code>
+<code class="language-php"$client->downloadRaw('file.txt', 'Content of the file');</code>
 </pre>
 
 The first parameter defines the name of the file that will be generated
@@ -117,16 +90,7 @@ In case you want to send a command to the browser to scroll to a specific positi
 you can use the <span class="code-hint">scrollTo(x, y)</span> method.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->scrollTo(0, 0);
-    }
-}</code>
+<code class="language-php">$client->scrollTo(0, 0);</code>
 </pre>
 
 The code above will scroll the client's browser to the top left corner.
@@ -138,16 +102,7 @@ The <span class="code-hint">scrollTop</span> is basically using the <span class=
 method but just sets the y-coordinate to 0.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->scrollTop();
-    }
-}</code>
+<code class="language-php">$client->scrollTop();</code>
 </pre>
 
 <h4><a name="execute-javascript">Execute javascript</a></h4>
@@ -156,16 +111,7 @@ that must be executed in the browser. Luckily, that's where the
 <span class="code-hint">executeJavascript</span> method is created for.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->executeJavascript('(client) => console.log(client)');
-    }
-}</code>
+<code class="language-php">$client->executeJavascript('(client) => console.log(client)');</code>
 </pre>
 
 It only takes one argument i.e. the javascript code defined as a callback. 
@@ -176,48 +122,20 @@ You can also create log messages in the browser's console by using the
 <span class="code-hint">log</span>.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->log('this is a message', Impulse\ImpulseBundle\UI\Client\Commands\Log::LOG);
-    }
-}</code>
+<code class="language-php">$client->log('this is a message', Impulse\ImpulseBundle\UI\Client\Commands\Log::LOG);</code>
 </pre>
 
 It offers the same log levels the console offers: log, info, debug, warn, error.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-use Impulse\ImpulseBundle\UI\Client\Commands\Log;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->alert('this is a message', Log::LOG);
-    }
-}</code>
+<code class="language-php">$client->alert('this is a message', Log::LOG);</code>
 </pre>
 
 <h4><a name="alert-messages">Alert messages</a></h4>
 You can also instruct the client to print browser alert messages to the user.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->alert('this is an alert message');
-    }
-}</code>
+<code class="language-php">$client->alert('this is an alert message');</code>
 </pre>
 
 <h4><a name="import-resources">Import resources</a></h4>
@@ -228,16 +146,7 @@ scripts or stylesheets on the fly.
 The code below shows how you can import a css file.
 
 <pre class="imp-code code-white language-php">
-<code class="language-php"><?php
-use Impulse\ImpulseBundle\UI\Client\ClientInterface;
-
-class AppController extends AbstractController
-{
-    public function afterCreate(ClientInterface $client, Event $event)
-    {
-        $client->importCss('build/test.css', []);
-    }
-}</code>
+<code class="language-php">$client->importCss('build/test.css', []);</code>
 </pre>
 
 The method itself offers three arguments. The first is the source of the file
