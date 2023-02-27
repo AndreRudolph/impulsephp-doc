@@ -22,3 +22,29 @@ instead the names of the later called methods. For this purpose the framework pr
 a <span class="code-hint">Listener</span> decorator for registering listeners.
 
 <h4 name="register-listener">Register listener</h4>
+
+Whenever you want to register a listener you should extend the parent's <span class="code-hint">
+registerEventListener</span> method and register the decorators.
+
+<pre class="imp-code code-white language-js code-xl">
+<code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
+
+export class MyComponent extends AbstractReactComponent
+{
+    @Listener([
+        { event: 'click', method: 'handleClick', priority: 500 }
+    ])
+    registerEventListener()
+    {
+        super.registerEventListener();
+    }
+
+    public handleClick()
+    {
+        return (event, initiator, next) => {
+            // apply your logic here
+            next(event, initiator);
+        };
+    }
+}</code>
+</pre>
