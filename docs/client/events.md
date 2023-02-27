@@ -29,18 +29,15 @@ registerEventListener</span> method and register the decorators.
 <pre class="imp-code code-white language-js code-xl">
 <code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
 
-export class MyComponent extends AbstractReactComponent
-{
+export class MyComponent extends AbstractReactComponent {
     @Listener([
         { event: 'click', method: 'handleClick', priority: 500 }
     ])
-    registerEventListener()
-    {
+    registerEventListener() {
         super.registerEventListener();
     }
 
-    public handleClick()
-    {
+    public handleClick() {
         return (event, initiator, next) => {
             // apply your logic here
             next(event, initiator);
