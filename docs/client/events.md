@@ -34,12 +34,9 @@ export class MyComponent extends AbstractReactComponent {
 }</code>
 </pre>
 
-Once an event is being emitted, all listeners for this event are wrapped by callbacks
-that 
-
 Every listener method should return a callback with at least three arguments: The event
 itself, the component that initiated the event (usually the same) and a callback for the
-next listener.
+next listener. The chaining of event listeners is done automatically. 
 
 <h4><a id="register-listener">Register listener</a></h4>
 
