@@ -20,6 +20,16 @@ Internally, each component holds a priority event listener map with the events a
 and a list with registered listeners. Usually the listeners are not added directly but
 instead the names of the listener methods. 
 
+An example map could look like the following:
+
+<pre class="imp-code code-white language-js code-xl">
+<code class="language-js">{
+    click: [
+        400: [undefined, 'handlerMethod']
+    ]
+}</code>
+</pre>
+
 Once an even is being emitted, a chain of listeners will be created automatically by
 wrapping each listener in a callback with a reference to the next listener. This provides
 the flexibility to cancel further event processing or delay it for later.
