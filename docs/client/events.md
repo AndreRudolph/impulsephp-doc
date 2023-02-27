@@ -3,6 +3,7 @@
 - [Introduction](#introduction)
 - [Internal workflow](#internal-workflow)
 - [Register listener](#register-listener)
+- [Priorities](#priorities)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -63,3 +64,14 @@ export class MyComponent extends AbstractReactComponent {
 Every listener method should return a callback with at least three arguments: The event
 itself, the component that initiated the event (usually the same) and a callback for the
 next listener. The chaining of event listeners is done automatically. 
+
+<h4><a id="priorities">Priorities</a></h4>
+
+Each listener needs to have a valid priority for a correct ordering of listeners when
+the event they are registered for is being emitted. You should always remember that
+a component may have a server side registered listener that will automatically be created
+and registered on client side as well. The default priority of the default server event
+listener is set to 200. 
+
+Having priorities gives you the opportunity to dynamically execute logic before or after
+a specific already registered event listener or to completely cancel the latter execution.
