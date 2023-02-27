@@ -18,8 +18,28 @@ registering event listeners.
 
 Internally, each component holds a priority event listener map with the events as keys
 and a list with registered listeners. Usually the listeners are not added directly but
-instead the names of the later called methods. For this purpose the framework provides
+instead the names of the listener methods. For this purpose the framework provides
 a <span class="code-hint">Listener</span> decorator for registering listeners.
+
+<pre class="imp-code code-white language-js code-xl">
+<code class="language-js">import { AbstractReactComponent } from '@impulsephp/client-ts';
+
+export class MyComponent extends AbstractReactComponent {
+    @Listener([
+        { event: 'click', method: 'handleClick', priority: 500 }
+    ])
+    registerEventListener() {
+        super.registerEventListener();
+    }
+}</code>
+</pre>
+
+Once an event is being emitted, all listeners for this event are wrapped by callbacks
+that 
+
+Every listener method should return a callback with at least three arguments: The event
+itself, the component that initiated the event (usually the same) and a callback for the
+next listener.
 
 <h4><a id="register-listener">Register listener</a></h4>
 
