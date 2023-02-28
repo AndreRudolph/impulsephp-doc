@@ -79,8 +79,7 @@ method.
             &lt;button onClick={(event) => this.emitEvent(event, 'eventName'}&gt;Click me&lt;/button&gt;
         &lt;/div&gt;
     );
-}
-</code>
+}</code>
 </pre>
 
 This will internally create and execute the chain of event listeners for the given event name. If you
