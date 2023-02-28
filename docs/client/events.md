@@ -72,9 +72,9 @@ next listener. The chaining of event listeners is done automatically.
 <code class="language-js">getTemplate()
 {
     return (
-        <div>
-            <button onClick={(event) => this.emitEvent(event, 'eventName'}>Click me</button>
-        </div>
+        &lt;div&gt;
+            &lt;button onClick={(event) => this.emitEvent(event, 'eventName'}&gt;Click me&lt;/button&gt;
+        &lt;/div&gt;
     );
 }
 </code>
