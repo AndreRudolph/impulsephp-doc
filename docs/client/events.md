@@ -83,6 +83,10 @@ method.
 </code>
 </pre>
 
+This will internally create and execute the chain of event listeners for the given event name. If you
+want to pass any arguments to the event listeners further than the event itself, the <span class="code-hint">emitEvent</span>
+declares the third argument as variadric.
+
 <h4><a id="priorities">Priorities</a></h4>
 
 Each listener needs to have a valid priority for a correct ordering of listeners when
