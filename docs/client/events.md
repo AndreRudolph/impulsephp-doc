@@ -3,6 +3,7 @@
 - [Introduction](#introduction)
 - [Internal workflow](#internal-workflow)
 - [Register listener](#register-listener)
+- [Emit event](#emit-event)
 - [Priorities](#priorities)
 
 <h4><a id="introduction">Introduction</a></h4>
@@ -64,6 +65,22 @@ export class MyComponent extends AbstractReactComponent {
 Every listener method should return a callback with at least three arguments: The event
 itself, the component that initiated the event (usually the same) and a callback for the
 next listener. The chaining of event listeners is done automatically. 
+
+<h4><a id="emit-event">Emit event</a></h4>
+
+<pre class="imp-code code-white language-js code-xl">
+<code class="language-js">getTemplate()
+{
+    return (
+        <div>
+            <button onClick={(event) => this.emitEvent(event, 'eventName'}>Click me</button>
+        </div>
+    );
+}
+</code>
+</pre>
+
+Events can be emitted directly within a React event listener.
 
 <h4><a id="priorities">Priorities</a></h4>
 
