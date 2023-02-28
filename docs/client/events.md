@@ -68,6 +68,9 @@ next listener. The chaining of event listeners is done automatically.
 
 <h4><a id="emit-event">Emit event</a></h4>
 
+Events can be emitted directly within a React event listener by calling the <span class="code-hint">emitEvent</span>
+method.
+
 <pre class="imp-code code-white language-js code-xl">
 <code class="language-js">getTemplate()
 {
@@ -79,8 +82,6 @@ next listener. The chaining of event listeners is done automatically.
 }
 </code>
 </pre>
-
-Events can be emitted directly within a React event listener.
 
 <h4><a id="priorities">Priorities</a></h4>
 
