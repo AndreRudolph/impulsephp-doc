@@ -5,11 +5,6 @@
   - [States](#states)
   - [Updates](#updates)
 - [Component lifecycle](#component-lifecycle)
-- [Event listener](#event-listener)
-  - [Emit events](#emit-events)
-  - [Primitive Listener](#primitive-listener)
-  - [Add listener](#adding-listener)
-  - [Remove listener](#removing-listener)
 - [Synchronize with server](#synchronize-with-server)
 - [Learn more about components](#advanced_topics)
 
@@ -116,70 +111,6 @@ need to manually update the Document Object Model.
 <h4><a id="component-lifecycle">Component lifecycle</a></h4>
 
 TODO with image
-
-<h4><a id="event-listener">Event listener</a></h4>
-
-When it comes to components you will sooner or later need to implement your custom event listeners. Impulse uses the
-same attribute notion React uses for registering listener, e.g. <span class="code-hint">onClick={doSomething()}</span>.
-The problem with this notion is, that you can't register / unregister separate event listeners dynamically for the same
-event.
-
-Thus, each Impulse client component internally stores a priority event listener callback map which enables
-you to register / unregister your custom event listeners at runtime without touching any existing listener for the same
-event. Checkout the next chapter for a more code based explanation.
-
-<h5><a id="emit-events">Emit events</a></h5>
-
-Event listener should be emitted by calling the emit method whenever you want an event to be processed.
-
-<pre class="imp-code code-white  language-js">
-<code class="language-js">export class Counter extends AbstractReactComponent 
-{
-    getTemplate(attributes) {
-        return (
-            &lt;button {...attributes} click={(event) => this.emitEvent(event, 'click')}&gt;
-                {this.geState('counter')}
-            &lt;/button&gt;
-        );
-    }
-}
-
-window.Message = Message;</code>
-</pre>
-
-This, internally, will run through every registered click listener that is attached to the click event. In the next
-chapter you'll learn how to register listener.
-
-<h5><a id="adding-listener">Add listener</a></h5>
-To register your event listener you can implement the registerEventListener method.
-
-<pre class="imp-code code-white  language-js">
-<code class="language-js">export class Message extends AbstractReactComponent 
-{
-    registerEventListener()
-    {
-        super.registerEventListener();
-
-        this.addEventListener((event) => {
-            console.log('I am listener 1.');
-        }, 'click', 400);
-
-        this.addEventListener((event) => {
-            console.log('I am listener 2.');
-        }, 'click', 500);
-    }
-}
-
-window.Message = Message;</code>
-</pre>
-
-As you can see the code registers two click listener with different priorities. The higher the priority, the
-earlier the callback will be executed. This means, first the second listener code will be executed and afterwards the
-first one.
-
-<h6><a id="Removing-listener">Remove listener</a></h6>
-
-TODO
 
 <h4><a id="synchronize-with-server">Synchronize with server</a></h4>
 
