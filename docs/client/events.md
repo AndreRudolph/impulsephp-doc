@@ -122,3 +122,20 @@ to the next event listener callback, you can simply cancel it by not calling it.
 
 So when the condition is met the next listener will be executed. If not, the further event
 processing is cancelled.
+
+<h5><a id="delay-further-processing">Delay further processing</a></h5>
+
+In some cases you might want to delay the further processing till another process is finished.
+An example would be that you need to wait for a fetch call to complete and then continue processing
+the upcoming event listeners. Below is an example:
+
+<pre class="imp-code code-white language-js code-xl">
+<code class="language-js">public handleClick() {
+    return (event, initiator, next) => {
+        fetch("https://example.org/some/endpoint")
+            .then(function() {
+                next(event, initiator);
+            });
+    };
+}</code>
+</pre>
