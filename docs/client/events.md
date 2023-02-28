@@ -119,3 +119,6 @@ to the next event listener callback, you can simply cancel it by not calling it.
     };
 }</code>
 </pre>
+
+So when the condition is met the next listener will be executed. If not, the further event
+processing is cancelled.
