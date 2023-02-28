@@ -5,6 +5,9 @@
 - [Register listener](#register-listener)
 - [Emit event](#emit-event)
 - [Priorities](#priorities)
+- [Event processing](#event-processing)
+  - [Cancellation of processing](#cancellation-of-processing)
+  - [Delay further processing](#delay-further-processing)
 
 <h4><a id="introduction">Introduction</a></h4>
 
@@ -96,3 +99,23 @@ listener is set to 200.
 
 Having priorities gives you the opportunity to dynamically execute logic before or after
 a specific already registered event listener or to completely cancel the latter execution.
+
+<h4><a id="event-processing">Event processing</a></h4>
+
+<h5><a id="cancellation-of-processing">Cancellation of processing</a></h5>
+
+Let's assume you have a bunch of different event listeners registered to the same event and
+you want to, conditionally, stop further processing at a specific point. This is when the
+previously explained chain of listeners comes handy. Since you will always have a reference
+to the next event listener callback, you can simply cancel it by not calling it.
+
+<pre class="imp-code code-white language-js code-xl">
+<code class="language-js">public handleClick() {
+    return (event, initiator, next) => {
+        let condition = // apply logic here for determining if the condition is met
+        if (condition) {
+            next(event, initiator);
+        }
+    };
+}</code>
+</pre>
