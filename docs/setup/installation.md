@@ -28,13 +28,21 @@ Since the ImpulseBundle is still a private repository and not available via pack
 <code class="language-json">"repositories": {
     "impulsebundle": {
         "type": "vcs",
-        "url": "https://Atomtastic@bitbucket.org/Atomtastic/impulsebundle.git"
+        "url": "https://github.com/AndreRudolph/impulsebundle.git"
     }
-},
+},</code>
+</pre>
 
-"require": {
-    "impulsephp/impulsebundle": "dev-master@dev",
-}</code>
+<pre class="language-bash code-white imp-code">
+<code class="language-bash">composer require "impulsephp/impulsebundle: dev-master@dev"</code>
+</pre>
+
+<pre class="language-bash code-white imp-code">
+<code class="language-bash">composer require "symfony/maker-bundle: ^1.48"</code>
+</pre>
+
+<pre class="language-bash code-white imp-code">
+<code class="language-bash">composer require "symfony/security-bundle: ^6.2"</code>
 </pre>
 
 Now it's time to let composer install that package by running the update command.
