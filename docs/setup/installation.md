@@ -22,6 +22,15 @@ After the symfony project has been created, you need to install the WebpackEncor
 <code class="language-shell">composer require symfony/webpack-encore-bundle</code>
 </pre>
 
+<pre class="language-bash code-white imp-code">
+<code class="language-bash">composer require "symfony/maker-bundle: ^1.48"</code>
+</pre>
+
+<pre class="language-bash code-white imp-code">
+<code class="language-bash">composer require "symfony/security-bundle: ^6.2"</code>
+</pre>
+
+
 Since the ImpulseBundle is still a private repository and not available via packagist, the bundle must point to its repostory by adding the following segments to the composer json:
 
 <pre class="language-json code-white imp-code">
@@ -37,25 +46,20 @@ Since the ImpulseBundle is still a private repository and not available via pack
 <code class="language-bash">composer require "impulsephp/impulsebundle: dev-master@dev"</code>
 </pre>
 
-<pre class="language-bash code-white imp-code">
-<code class="language-bash">composer require "symfony/maker-bundle: ^1.48"</code>
-</pre>
-
-<pre class="language-bash code-white imp-code">
-<code class="language-bash">composer require "symfony/security-bundle: ^6.2"</code>
-</pre>
-
-Now it's time to let composer install that package by running the update command.
-
-<pre class="code-white imp-code language-shell">
-<code class="language-bash">composer update</code>
-</pre>
 
 The ImpulseBundle is now available. To finally initialize it, you can execute the provided init command and 
 following the instructions once the command has been finished.
 
 <pre class="language-shell code-white imp-code">
+<code class="language-shell">npm install</code>
+</pre>
+
+<pre class="language-shell code-white imp-code">
 <code class="language-shell">php bin/console impulse:init</code>
+</pre>
+
+<pre class="language-shell code-white imp-code">
+<code class="language-shell">npm run dev</code>
 </pre>
 
 You can now open the web application via browser (e.g. http://localhost/project/public/). You should see the example entry page.
