@@ -27,6 +27,20 @@ After the symfony project has been created, you need to install the WebpackEncor
 </pre>
 
 <pre class="language-bash code-white imp-code">
+<code class="language-bash">composer require "doctrine/orm: ^2.8"</code>
+</pre>
+
+<pre class="language-bash code-white imp-code">
+<code class="language-bash">composer require "doctrine/doctrine-bundle: ^2.2"</code>
+</pre>
+
+<pre class="language-bash code-white imp-code">
+<code class="language-bash">composer require "doctrine/doctrine-migrations-bundle: ^3.0"</code>
+</pre>
+
+
+
+<pre class="language-bash code-white imp-code">
 <code class="language-bash">composer require "symfony/security-bundle: ^6.2"</code>
 </pre>
 
@@ -56,6 +70,10 @@ following the instructions once the command has been finished.
 
 <pre class="language-shell code-white imp-code">
 <code class="language-shell">php bin/console impulse:init</code>
+</pre>
+
+<pre class="language-shell code-white imp-code">
+<code class="language-shell">npm install @babel/preset-react@^7.0.0 --save-dev</code>
 </pre>
 
 <pre class="language-shell code-white imp-code">
