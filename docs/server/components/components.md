@@ -18,7 +18,7 @@
 <h4><a id="introduction">Introduction</a></h4>
 
 A component is an object with state and event listeners attached to it. It will be managed
-by the server and rendered by the client.
+by the server and rendered by the client. 
 
 <h4><a id="creating-components">Creating components</a></h4>
 
@@ -26,9 +26,9 @@ Components should extend the AbstractComponent or one of its descendant classes.
 way is by using template based components.
 
 <pre class="imp-code code-white language-markup">
-<code class="language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
-    &lt;textbox id="tbName" placeholder="Enter your name here" on:ok="greet" /&gt;
-    &lt;button id="btnGreet" label="Greet" on:click="greet" /&gt;
+<code class="language-markup">&lt;div bind="App\UI\Components\Counter"&gt;
+    &lt;textbox id="tbCount" value="0" /&gt;
+    &lt;button id="btnIncrement" label="Increment" on:click="increment" /&gt;
 &lt;/div&gt;</code>
 </pre>
 
@@ -36,17 +36,16 @@ way is by using template based components.
 <code class="language-php"><?php
 use Impulse\ImpulseBundle\Controller\Helper\Notifications;
 
-#[Template('app/components/greeting.html.twig')]
-class Greeting extends Div implements AfterCreateChilds
+#[Template('app/components/counter.html.twig')]
+class Counter extends Div implements AfterCreateChilds
 {
     use Notifications;
 
-    private Textbox $tbName;
+    private Textbox $tbCounter;
     
-    public function onGreet(): void
+    public function increment(): void
     {
-        $message = sprintf('Hello %s', $this->tbName->getValue());
-        $this->notifySuccess()->message($message)->create($this->getClient());
+        $this->tbCounter->setValue($this->tbCounter->getValue() + 1);
     }
 }</code>
 </pre>
