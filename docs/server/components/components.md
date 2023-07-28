@@ -23,7 +23,8 @@ by the server and rendered by the client.
 <h4><a id="creating-components">Creating components</a></h4>
 
 Components should extend the AbstractComponent or one of its descendant classes. An easy
-way is by using template based components.
+way is by using template based components. For registering event listeners you can
+use the <span class="code-hint">on:{eventName}="{methodName}"</span> notation.
 
 <pre class="imp-code code-white language-markup">
 <code class="language-markup">&lt;div bind="App\UI\Components\Counter"&gt;
