@@ -48,7 +48,8 @@ class Counter extends Div implements AfterCreateChilds
 }</code>
 </pre>
 
-You can then use this component in your templates:
+You can then directly use this component in your templates. The component structure
+of your template component will automatically be placed there.
 
 <pre class="imp-code code-white language-markup">
 <code class="language-markup">&lt;div&gt;
