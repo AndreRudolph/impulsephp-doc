@@ -34,13 +34,10 @@ way is by using template based components.
 
 <pre class="imp-code code-white language-php">
 <code class="language-php"><?php
-use Impulse\ImpulseBundle\Controller\Helper\Notifications;
 
 #[Template('app/components/counter.html.twig')]
 class Counter extends Div implements AfterCreateChilds
 {
-    use Notifications;
-
     private Textbox $tbCounter;
     
     public function increment(): void
