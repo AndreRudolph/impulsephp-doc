@@ -57,6 +57,16 @@ of your template component will automatically be placed there.
 &lt;/div&gt;</code>
 </pre>
 
+<h5><a id="custom-values">Custom values</a></h5>
+
+Consider you want to pass an initial value to the counter component.
+
+<pre class="imp-code code-white language-markup">
+<code class="language-markup">&lt;div&gt;
+    &lt;counter initValue="42" />
+&lt;/div&gt;</code>
+</pre>
+
 <div style="margin-top: 200px" />
 
 <pre class="imp-code code-white language-php">
