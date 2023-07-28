@@ -67,6 +67,31 @@ Consider you want to pass an initial value to the counter component.
 &lt;/div&gt;</code>
 </pre>
 
+For doing this, you need to provide a setter in the component class.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+
+#[Template('app/components/counter.html.twig')]
+class Counter extends Div implements AfterCreateChilds 
+{
+    private int $initValue = 0;
+    private Textbox $tbCounter;
+
+    public function setInitValue(int $initValue): void 
+    {
+        $this->initValue = $initValue;
+    }
+
+    public function afterCreate(Event $event): void
+    {
+        parent::afterCreate($event);
+        $this->tbCounter->setValue($this->initValue);
+    }
+
+}</code>
+</pre>
+
 <div style="margin-top: 200px" />
 
 <pre class="imp-code code-white language-php">
