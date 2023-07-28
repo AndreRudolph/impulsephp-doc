@@ -1,6 +1,7 @@
 <h3 class="doc-title">Components</h3>
 
 - [Introduction](#introduction)
+- [Creating components](#creating-components)
     - [Server state](#server-state)
     - [Client state](#client-state)
     - [Reactivation](#reactivation)
@@ -16,11 +17,51 @@
 
 <h4><a id="introduction">Introduction</a></h4>
 
-Components are the key concept behind the idea of the Impulse PHP Framework. A component represents an object that is (mostly) stored on both server and client side. At the client side, a component is a rendered HTML representation of the component and all of its descendants. At the server side, the state of the component is stored in the users session in order to reactivate the components state whenever it will be accessed at server side again.
+A component is an object with state and event listeners attached to it. It will be managed
+by the server and rendered by the client.
 
-Once a component is stored at server side, it remains in an updateable state which tracks changes to the object state and stores them back in the session. The changes are later synchronized with the client to update the appeareance of the HTML representation. 
+<h4><a id="creating-components">Creating components</a></h4>
 
-All of these (and even more) concepts and mechanisms are covered by this documentation and further references at the bottom the page.
+Components should extend the AbstractComponent or one of its descendant classes. An easy
+way is by using template based components.
+
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+
+#[Template('app/components/greeting.html.twig')]
+class Greeting extends Div implements AfterCreateChilds
+{
+    private Textbox $tbName;
+    private Button $btnGreet;
+    
+    public function onGreet(): void
+    {
+            
+    }
+}</code>
+</pre>
+
+<pre class="imp-code code-white language-markup">
+<code class="language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
+    &lt;textbox id="tbName" placeholder="Enter your name here" on:ok="greet" /&gt;
+    &lt;button id="btnGreet" label="Greet" on:click="greet" /&gt;
+&lt;/div&gt;</code>
+</pre>
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+
+class Text extends Div {
+    private string $text = '';
+
+    public function getClientData(): array {
+        $data = parent::getClientData();
+        $data['text'] 
+    }
+}</code>
+</pre>
+
 
 <h5><a id="server-state">Server state</a></h5>
 
