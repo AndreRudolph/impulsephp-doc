@@ -25,6 +25,12 @@ by the server and rendered by the client.
 Components should extend the AbstractComponent or one of its descendant classes. An easy
 way is by using template based components.
 
+<pre class="imp-code code-white language-markup">
+<code class="language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
+    &lt;textbox id="tbName" placeholder="Enter your name here" on:ok="greet" /&gt;
+    &lt;button id="btnGreet" label="Greet" on:click="greet" /&gt;
+&lt;/div&gt;</code>
+</pre>
 
 <pre class="imp-code code-white language-php">
 <code class="language-php"><?php
@@ -40,13 +46,6 @@ class Greeting extends Div implements AfterCreateChilds
             
     }
 }</code>
-</pre>
-
-<pre class="imp-code code-white language-markup">
-<code class="language-markup">&lt;div bind="App\UI\Components\Greeting"&gt;
-    &lt;textbox id="tbName" placeholder="Enter your name here" on:ok="greet" /&gt;
-    &lt;button id="btnGreet" label="Greet" on:click="greet" /&gt;
-&lt;/div&gt;</code>
 </pre>
 
 <pre class="imp-code code-white language-php">
