@@ -56,6 +56,8 @@ You can then use this component in your templates:
 &lt;/div&gt;</code>
 </pre>
 
+<div style="margin-top: 200px" />
+
 <pre class="imp-code code-white language-php">
 <code class="language-php"><?php
 
