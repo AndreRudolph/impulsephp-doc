@@ -34,16 +34,19 @@ way is by using template based components.
 
 <pre class="imp-code code-white language-php">
 <code class="language-php"><?php
+use Impulse\ImpulseBundle\Controller\Helper\Notifications;
 
 #[Template('app/components/greeting.html.twig')]
 class Greeting extends Div implements AfterCreateChilds
 {
+    use Notifications;
+
     private Textbox $tbName;
-    private Button $btnGreet;
     
     public function onGreet(): void
     {
-            
+        $message = sprintf('Hello %s', $this->tbName->getValue());
+        $this->notifySuccess()->message($message)->create($this->getClient());
     }
 }</code>
 </pre>
