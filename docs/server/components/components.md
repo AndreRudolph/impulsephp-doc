@@ -50,6 +50,14 @@ class Counter extends Div implements AfterCreateChilds
 }</code>
 </pre>
 
+You can then use this component in your templates:
+
+<pre class="imp-code code-white language-markup">
+<code class="language-markup">&lt;div&gt;
+    &lt;counter />
+&lt;/div&gt;</code>
+</pre>
+
 <pre class="imp-code code-white language-php">
 <code class="language-php"><?php
 
