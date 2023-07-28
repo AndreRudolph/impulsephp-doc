@@ -89,6 +89,8 @@ class Counter extends Div implements AfterCreateChilds
         $this->tbCounter->setValue($this->initValue);
     }
 
+    // increment method
+
 }</code>
 </pre>
 
