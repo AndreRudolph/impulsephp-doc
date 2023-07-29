@@ -70,12 +70,11 @@ class Counter extends Div implements AfterCreateChilds {
     private int $currentValue = 0;
 
     public function setInitValue(int $initValue): void {
-        $this->initValue = $initValue;
+        $this->currentValue = $initValue;
     }
 
     public function afterCreate(Event $event): void {
         parent::afterCreate($event);
-        $this->currentValue = $this->initValue;
         $this->tbCounter->setValue($this->initValue);
     }
 
