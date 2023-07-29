@@ -70,14 +70,53 @@ class Counter extends Div implements AfterCreateChilds {
         $this->initValue = $initValue;
     }
 
+    public function setCurrentValue(int $currentValue): void {
+        $this->currentValue = $currentValue;
+    }
+
     public function afterCreate(Event $event): void {
         parent::afterCreate($event);
+        $this->tbCounter->setValue($this->initValue);
+    }
+
+    public function increment(): void {
+        $this->tbCounter->setValue($this->tbCounter->getValue() + 1);
+    }
+
+    public function getServerData(): array {
+        $data = parent::getServerData();
+        $data['currentValue'] = $this->currentValue;
+        return $data;
+    }
+
+    // increment method
+}</code>
+</pre>
+
+<h5><a id="persisting-values">Persisting values</a></h5>
+
+While the approach above is working, it may not be best practice to rely on 
+having the textbox storing the counter value. Instead, you can use the 
+<span class="code-hint">getServerData</span> method to persist the current value.
+
+<pre class="imp-code code-white language-php">
+<code class="language-php"><?php
+
+class Counter extends Div implements AfterCreateChilds {
+    private int $currentValue = 0;
+
+    // public function setInitValue(int $initValue): void 
+
+    public function afterCreate(Event $event): void {
+        parent::afterCreate($event);
+        $this->currentValue = $this->initValue;
         $this->tbCounter->setValue($this->initValue);
     }
 
     // increment method
 }</code>
 </pre>
+
 
 <div style="margin-top: 200px" />
 
