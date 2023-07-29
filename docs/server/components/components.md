@@ -37,12 +37,10 @@ use the <span class="code-hint">on:{eventName}="{methodName}"</span> notation.
 <code class="language-php"><?php
 
 #[Template('app/components/counter.html.twig')]
-class Counter extends Div implements AfterCreateChilds
-{
+class Counter extends Div implements AfterCreateChilds {
     private Textbox $tbCounter;
     
-    public function increment(): void
-    {
+    public function increment(): void {
         $this->tbCounter->setValue($this->tbCounter->getValue() + 1);
     }
 }</code>
