@@ -38,6 +38,11 @@ After the symfony project has been created, you need to install the WebpackEncor
 <code class="language-bash">composer require "doctrine/doctrine-migrations-bundle: ^3.0"</code>
 </pre>
 
+<pre class="language-bash code-white imp-code">
+<code class="language-bash">composer require "doctrine/doctrine-fixtures-bundle: ^3.4"</code>
+</pre>
+
+
 
 
 <pre class="language-bash code-white imp-code">

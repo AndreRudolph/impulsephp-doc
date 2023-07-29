@@ -61,7 +61,9 @@ Consider you want to pass an initial value to the counter component.
 <code class="language-markup">&lt;counter initValue="42" /></code>
 </pre>
 
-For doing this, you need to provide a setter in the component class.
+For doing this, you need to provide a setter in the component class
+and set the initial value in the <span class="code-hint">afterCreate</span>
+method.
 
 <pre class="imp-code code-white language-php">
 <code class="language-php"><?php
@@ -80,6 +82,15 @@ class Counter extends Div implements AfterCreateChilds {
 
     // increment method
 }</code>
+</pre>
+
+A more convenient way is to directly use directives in the template.
+
+<pre class="imp-code code-white language-markup">
+<code class="language-markup">&lt;div bind="App\UI\Components\Counter"&gt;
+    &lt;textbox id="tbCount" value="@{self.value}" /&gt;
+    &lt;button id="btnIncrement" label="Increment" on:click="increment" /&gt;
+&lt;/div&gt;</code>
 </pre>
 
 <h5><a id="persisting-values">Persisting values</a></h5>
