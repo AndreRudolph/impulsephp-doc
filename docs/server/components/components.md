@@ -56,9 +56,7 @@ HTML tag. The component structure  of your template component will automatically
 Consider you want to pass an initial value to the counter component.
 
 <pre class="imp-code code-white language-markup">
-<code class="language-markup">&lt;div&gt;
-    &lt;counter initValue="42" />
-&lt;/div&gt;</code>
+<code class="language-markup">&lt;counter initValue="42" /></code>
 </pre>
 
 For doing this, you need to provide a setter in the component class.
