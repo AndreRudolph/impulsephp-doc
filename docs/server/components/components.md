@@ -88,8 +88,6 @@ class Counter extends Div implements AfterCreateChilds {
         $data['currentValue'] = $this->currentValue;
         return $data;
     }
-
-    // increment method
 }</code>
 </pre>
 
