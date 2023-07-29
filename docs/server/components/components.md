@@ -90,6 +90,7 @@ class Counter extends Div implements AfterCreateChilds {
     }
 }</code>
 </pre>
+Cool
 
 <h5><a id="persisting-values">Persisting values</a></h5>
 
